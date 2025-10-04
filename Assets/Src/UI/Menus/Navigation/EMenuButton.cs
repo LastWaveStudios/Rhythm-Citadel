@@ -11,6 +11,7 @@ namespace UI.Menus.Navigation
 		Back,
 		Pause,
 		Resume,
+		ReturnToMainMenu,
 		Exit
 	}
 }

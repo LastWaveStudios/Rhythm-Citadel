@@ -4,16 +4,17 @@ using UnityEngine;
 
 namespace UI.Menus.States
 {
-    internal class Main : AMenuState
+    internal class Pause : AMenuState
     {
-        public Main() : base("Menus/MainMenu") { }
+        public Pause() : base("Menus/PauseMenu") { }
 
         protected override void OnMenuNavigation(EMenuButton option)
         {
             switch (option)
             {
-                case EMenuButton.Play:
-                    MenuManager.Instance.SetState(new LevelSelector());
+                case EMenuButton.Resume:
+                    // TODO: Maybe store the gameplay state for returning to that instance if we used for something useful
+                    MenuManager.Instance.SetState(new Gameplay());
                     break;
                 case EMenuButton.Options:
                     MenuManager.Instance.SetState(new Options());
@@ -21,15 +22,8 @@ namespace UI.Menus.States
                 case EMenuButton.Tutorial:
                     MenuManager.Instance.SetState(new Tutorial());
                     break;
-                case EMenuButton.Credits:
-                    MenuManager.Instance.SetState(new Credits());
-                    break;
-                case EMenuButton.Exit:
-#if UNITY_EDITOR
-                    EditorApplication.isPlaying = false;
-#else
-                    Application.Quit();
-#endif
+                case EMenuButton.ReturnToMainMenu:
+                    MenuManager.Instance.SetState(new Main());
                     break;
                 default:
                     Debug.LogError($"Main::OnMenuNavigation ERROR_UNKNOWN_OPTION: {option}");
