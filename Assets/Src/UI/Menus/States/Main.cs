@@ -17,16 +17,13 @@ namespace UI.Menus.States
                     Debug.Log("Play clicked");
                     break;
                 case EMenuButton.Options:
-                    //MenuManager.Instance.SetState(new Options());
-                    Debug.Log("Options clicked");
+                    MenuManager.Instance.SetState(new Options());
                     break;
                 case EMenuButton.Tutorial:
-                    //MenuManager.Instance.SetState(new Options());
-                    Debug.Log("Tutorial clicked");
+                    MenuManager.Instance.SetState(new Tutorial());
                     break;
                 case EMenuButton.Credits:
-                    //MenuManager.Instance.SetState(new Credits());
-                    Debug.Log("Credits clicked");
+                    MenuManager.Instance.SetState(new Credits());
                     break;
                 case EMenuButton.Exit:
 #if UNITY_EDITOR
