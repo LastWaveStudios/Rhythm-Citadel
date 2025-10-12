@@ -16,14 +16,13 @@ public class TestingScript : MonoBehaviour
 
     public Tilemap tilemap;
     public GameObject miPath;
-    public List<TileBase> paths;
+    public List<Path> paths;
     private Path script;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        script = new Path();
-        paths = new List<TileBase>();
-        paths = script.GeneratePath(miPath, tilemap);
+        script = new Path(miPath, tilemap);
+        paths.Add(script);
     }
 
     // Update is called once per frame
