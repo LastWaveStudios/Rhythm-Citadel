@@ -2,11 +2,11 @@ using UnityEngine;
 
 public abstract class ITower
 {
-   //REHACER INTERFAZ CON LA NUEVA TARJETA
-    /*private float speedAtack;
-    private int typeOfDamage;
-    private float cost;
-    private int area;   //No estoy segura del tipo de la variable
+    private int damageType;
+    private int range;  //Nº de tiles de alcance
 
-    public void attack() { }*/
+    public abstract bool CheckRhythm();
+    public abstract void Disable();
+    public abstract void Shoot();
+    public void SelectTarget() { }  //Implementar
 }

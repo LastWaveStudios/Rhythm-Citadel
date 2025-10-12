@@ -8,12 +8,12 @@ public abstract class IEnemy
     private int health;
     private float speed;
     private int damage;
-    private int typeOfDamage;
+    private int damageType;
     //private Path path;
 
     public void move() { }  //Implementar desplazamiento cuando el path este en la rama principal
     public void atack() { }
     public void TakeDamage() { }
 
-    //En el trello esta hecha la tarjeta de crear tipos de daño, pero no encuentro el script
+    //Enum de DamageTypeEnum
 }
