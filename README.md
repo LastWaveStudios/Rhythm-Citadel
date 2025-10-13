@@ -1,8 +1,7 @@
-**GRADO EN DISEÑO Y DESARROLLO DE VIDEOJUEGOS (2025-2026)![horizontal line]**
+**GRADO EN DISEÑO Y DESARROLLO DE VIDEOJUEGOS (2025-2026)**
 
 <a name="_aczyuw2yex2w"></a>**Rhythm Citadel**
 
-![Línea corta](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.002.png)
 
 **v1.0.0**
 
@@ -19,144 +18,145 @@
 - **George Picu Hordoan**
 - **Unai Retes Corada**
 # <a name="_wuaa1e1q7e9s"></a>**Índice**
-[**Índice	2**](#_wuaa1e1q7e9s)
 
-[**Índice de Referencias	4**](#_wkvqgjyqn5h3)
+# Índice
 
-[**1. Introducción	5**](#_9hw3krwubpli)
+[**Índice de Referencias	4**]
 
-[1.1. Descripción breve del concepto	5](#_llmga6i1zse3)
+[**1. Introducción	5**]
 
-[1.2. Descripción breve de la historia y personajes	5](#_uvgv8p4be62m)
+[1.1. Descripción breve del concepto	5]
 
-[1.3. Propósito, público objetivo y plataformas	5](#_hr0qj4zaoc0w)
+[1.2. Descripción breve de la historia y personajes	5]
 
-[**2. Monetización	6**](#_59fvc613qgjm)
+[1.3. Propósito, público objetivo y plataformas	5]
 
-[2.1. Tipo de modelo de monetización	6](#_wxbdd9g03lqq)
+- [Monetización](#monetización)
 
-[2.2. Tablas de productos y precios	6](#_ih4stx1nl7f4)
+[2.1. Tipo de modelo de monetización	6]
 
-[**3. Planificación y Costes	7**](#_17do483stfmq)
+[2.2. Tablas de productos y precios	6]
 
-[3.1. El equipo humano	7](#_yl4kaax1ki32)
+[**3. Planificación y Costes	7**]
 
-[3.2. Estimación temporal del desarrollo	7](#_87slgzwsn5gr)
+[3.1. El equipo humano	7]
 
-[3.3. Costes asociados	8](#_lkhm11hmimyf)
+[3.2. Estimación temporal del desarrollo	7]
 
-[**4. Mecánicas y Elementos de Juego	9**](#_lkjnfwb8bnul)
+[3.3. Costes asociados	8]
 
-[4.1. Descripción detallada del concepto de juego	9](#_ng025nwv064s)
+[**4. Mecánicas y Elementos de Juego	9**]
 
-[4.2. Descripción detallada de las mecánicas de juego	9](#_d5wikr45vl2r)
+[4.1. Descripción detallada del concepto de juego	9]
 
-[4.3. Controles	10](#_55ejrvndtsmi)
+[4.2. Descripción detallada de las mecánicas de juego	9]
 
-[4.4. Niveles y misiones	10](#_hneq3awresnk)
+[4.3. Controles	10]
 
-[4.5. Enemigos	11](#_22rogyqkqn0x)
+[4.4. Niveles y misiones	10]
 
-[4.6. Torretas	12](#_yoqhjppzldic)
+[4.5. Enemigos	11]
 
-[4.7. Bailarina/Director/Cosa a defender	13](#_ghwyb75kg3oi)
+[4.6. Torretas	12]
 
-[**5. Trasfondo	14**](#_uguy4tyq6aat)
+[4.7. Bailarina/Director/Cosa a defender	13]
 
-[5.1. Descripción detallada de la historia y la trama	14](#_i4olq31hqyc9)
+[**5. Trasfondo	14**]
 
-[5.2. Personajes	14](#_ultu1uadgopp)
+[5.1. Descripción detallada de la historia y la trama	14]
 
-[5.3. Entornos y lugares	14](#_pd9a5v484yfy)
+[5.2. Personajes	14]
 
-[**6. Arte	15**](#_y1st5y440aph)
+[5.3. Entornos y lugares	14]
 
-[6.1. Estética general del juego	15](#_ht9hfd9l4tv2)
+[**6. Arte	15**]
 
-[6.2. Apartado visual	15](#_9kw5v48vbgs)
+[6.1. Estética general del juego	15]
 
-[6.2.1. Torretas	15](#_tu71hwjf1wi5)
+[6.2. Apartado visual	15]
 
-[6.2.2. Enemigos	17](#_rne780hqrqz0)
+[6.2.1. Torretas	15]
 
-[6.2.3. Niveles	21](#_wbxsklqgf1fr)
+[6.2.2. Enemigos	17]
 
-[6.2.4. Interfaces	23](#_xfogp7fg58x2)
+[6.2.3. Niveles	21]
 
-[6.3. Escenarios	24](#_6wnagpu1lu2y)
+[6.2.4. Interfaces	23]
 
-[**7. Audio	25**](#_hn1qqkhyyroj)
+[6.3. Escenarios	24]
 
-[7.1. Música	25](#_tz6iagxa4500)
+[**7. Audio	25**]
 
-[7.2. Efectos de sonido (SFX)	25](#_pt6z4z8i4l08)
+[7.1. Música	25]
 
-[**8. Interfaz	26**](#_e0f7xy9s5fc0)
+[7.2. Efectos de sonido (SFX)	25]
 
-[8.1. Diseños básicos de los menús	26](#_rk92y44uqqae)
+[**8. Interfaz	26**]
 
-[8.2. Diagrama de flujo	26](#_q52vk3381wgy)
+[8.1. Diseños básicos de los menús	26]
 
-[**9. Hoja de ruta del desarrollo	27**](#_euuywtcizk7b)
+[8.2. Diagrama de flujo	26]
 
-[9.1. Hito 1	27](#_5ph78pz9ov0c)
+[**9. Hoja de ruta del desarrollo	27**]
 
-[9.2. Hito 2	27](#_fzhjka38940f)
+[9.1. Hito 1	27]
 
-[9.3. Hito 3	27](#_5289m6ajb1pq)
+[9.2. Hito 2	27]
 
-[9.4. Fecha de lanzamiento	27](#_nwq6gd9jcf5h)
+[9.3. Hito 3	27]
 
-# <a name="_7mpnesstkbq"></a>**
+[9.4. Fecha de lanzamiento	27]
+
+
 # <a name="_wkvqgjyqn5h3"></a>**Índice de Referencias**
-[Tabla Productos	6](#_ybio2sr34qc6)
+[Tabla Productos	6]
 
-[Tabla Estimación Temporal	8](#_g55ge0rtnzwf)
+[Tabla Estimación Temporal	8]
 
-[Violín	15](#_vivtul9fhuwd)
+[Violín	15]
 
-[Trompeta	16](#_gvuu9wbsqcf2)
+[Trompeta	16]
 
-[Tambor	17](#_l8p47l5v9z3c)
+[Tambor	17]
 
-[Piano	17](#_h61b5j61g5yt)
+[Piano	17]
 
-[Negra	18](#_pz10mp8gdgy2)
+[Negra	18]
 
-[Blanca	18](#_qjiv5a3emy39)
+[Blanca	18]
 
-[Corchea	19](#_xrmkynq44iuk)
+[Corchea	19]
 
-[Redonda	19](#_77ejh2t9kyqm)
+[Redonda	19]
 
-[Silencio de Negra	20](#_x6dhk6fdlkcv)
+[Silencio de Negra	20]
 
-[Clave de Sol	20](#_lbwg2b7x6yj)
+[Clave de Sol	20]
 
-[Nivel Tutorial	21](#_l3cuwqoxbh1l)
+[Nivel Tutorial	21]
 
-[Nivel 1	22](#_r13hl2y4yqw4)
+[Nivel 1	22]
 
-[Nivel 2	22](#_1z9ttv2q6w3d)
+[Nivel 2	22]
 
-[Nivel 3	23](#_smznkshxbh9k)
+[Nivel 3	23]
 
-[Interfaces	23](#_2f3bvgz1dyzl)
+[Interfaces	23]
 
-[Diagrama de Interfaces	26](#_yz69hm5ko19m)
+[Diagrama de Interfaces	26]
 
 
 
-Elevator Pitch
-1. # <a name="_9hw3krwubpli"></a>**Introducción**
+**Elevator Pitch**
+ # <a name="_9hw3krwubpli"></a>**Introducción**
    1. ## <a name="_llmga6i1zse3"></a>**Descripción breve del concepto**
-En Rhythm Citadel tendremos que defender la [estructura](#_ghwyb75kg3oi) de los malvados ataques de las notas musicales. Para ello, tendremos que colocar diferentes torretas defensivas
-1. ## <a name="_uvgv8p4be62m"></a>**Descripción breve de la historia y personajes**
+En Rhythm Citadel tendremos que defender la *estructura* de los malvados ataques de las notas musicales. Para ello, tendremos que colocar diferentes torretas defensivas
+   1. ## <a name="_uvgv8p4be62m"></a>**Descripción breve de la historia y personajes**
 
-1. ## <a name="_hr0qj4zaoc0w"></a>**Propósito, público objetivo y plataformas**  
+   1. ## <a name="_hr0qj4zaoc0w"></a>**Propósito, público objetivo y plataformas**  
 
-### <a name="_qysyulfhp43r"></a>
-1. # <a name="_59fvc613qgjm"></a>**Monetización**
+<a id="monetización"></a>
+## Monetización
    1. ## <a name="_wxbdd9g03lqq"></a>**Tipo de modelo de monetización**
 Anuncios y dependiendo de si hay que desarrollarlas, skins o no. Alguna torreta que sea “mejor”. Posibles DLCs o niveles extra.
 
@@ -173,7 +173,6 @@ Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargable
 |Pack Dificultad|<p>Incluye la</p><p>dificultad "Virtuoso"</p>|0,95|
 |Pack Completo|<p>Incluye todos</p><p>los packs</p>|3,95|
 |<h3><a name="_ybio2sr34qc6"></a>Tabla Productos</h3>|||
-## <a name="_u5099je63813"></a>**
 1. # <a name="_17do483stfmq"></a>**Planificación y Costes**
    1. ## <a name="_yl4kaax1ki32"></a>**El equipo humano**
 **Fase ALPHA**
@@ -234,11 +233,11 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
 |Otros|Reuniones|7|
 |||8|
 |<h3><a name="_g55ge0rtnzwf"></a>Tabla Estimación Temporal</h3>|||
-1. ## <a name="_lkhm11hmimyf"></a>**Costes asociados** 
-## <a name="_ng4xsdyz66cr"></a>**
+1. ## <a name="_lkhm11hmimyf"></a>**Costes asociados**
+
 1. # <a name="_lkjnfwb8bnul"></a>**Mecánicas y Elementos de Juego**
    1. ## <a name="_ng025nwv064s"></a>**Descripción detallada del concepto de juego**
-Rhythm Citadel es un videojuego estilo tower defense, donde el jugador deberá defender una [estructura](#_ghwyb75kg3oi) de hordas de notas musicales que tienen como objetivo romperla. Para ello,. deberá colocar y accionar unas torretas equipadas con instrumentos musicales para que ataquen a los enemigos y los destruyan antes de que lleguen a la estructura.. 
+Rhythm Citadel es un videojuego estilo tower defense, donde el jugador deberá defender una estructura de hordas de notas musicales que tienen como objetivo romperla. Para ello,. deberá colocar y accionar unas torretas equipadas con instrumentos musicales para que ataquen a los enemigos y los destruyan antes de que lleguen a la estructura.. 
 
 Estas torretas se construirán gastando vinilos, y una vez construidas se podrán mejorar o vender para recuperar parte de los vinilos gastados. Los enemigos derrotados también le darán al jugador un determinado número de vinilos para que pueda ir mejorando el tablero.
 
@@ -246,7 +245,7 @@ La dificultad del nivel irá aumentando a medida que avancen las hordas, que con
 1. ## <a name="_d5wikr45vl2r"></a>**Descripción detallada de las mecánicas de juego**
 Rhythm Citadel es un juego con diversas mecánicas basadas en un “caos” rítmico.
 
-Las partidas se dividen en 2 fases, la fase de preparación, en la que se colocan las torretas en sitios designados y se asignan sus inputs, así como la fase de combate en la que viene la horda de enemigos y se tiene que activar las torretas, esto se hace siguiendo el ritmo marcado en el patrón rítmico que tiene cada torreta. Las torretas tienen un patrón rítmico y en base a las mejoras construidas, evoluciona de una u otra manera modificando también su comportamiento, como por ejemplo con un cambio del área de efecto, rango, daño y/o frecuencia de ataque (esto se especificará para cada torreta en el apartado de [torretas](#_yoqhjppzldic)).
+Las partidas se dividen en 2 fases, la fase de preparación, en la que se colocan las torretas en sitios designados y se asignan sus inputs, así como la fase de combate en la que viene la horda de enemigos y se tiene que activar las torretas, esto se hace siguiendo el ritmo marcado en el patrón rítmico que tiene cada torreta. Las torretas tienen un patrón rítmico y en base a las mejoras construidas, evoluciona de una u otra manera modificando también su comportamiento, como por ejemplo con un cambio del área de efecto, rango, daño y/o frecuencia de ataque (esto se especificará para cada torreta en el apartado de torretas.
 
 Los patrones rítmicos que tengan las torretas serán fijos por el tipo de torreta y su modificación teniendo todos una extensión de un compás, el mismo que tenga la canción de fondo. Esto permite que haya una uniformidad entre las diferentes torretas al mismo tiempo que permite todo tipo de dificultades como ritmos regulares o contratiempos.
 
@@ -258,9 +257,9 @@ Habrá distintas dificultades de juego las cuales alterarán las estadísticas d
 
 Por otra parte además de las torretas y los enemigos el juego consta de defensas tácticas, como barreras, empujes y ralentizaciones, se especificarán en su apartado correspondiente.
 
-Por último Rhythm Citadel tiene un sistema de economía con el que se podrán construir y mejorar las [torretas](#_yoqhjppzldic) en base a cómo el jugador considere su mejor disposición en el nivel. 
+Por último Rhythm Citadel tiene un sistema de economía con el que se podrán construir y mejorar las torretas en base a cómo el jugador considere su mejor disposición en el nivel. 
 
-La economía de la partida se basa en Vinilos, la moneda del juego. Al iniciar el nivel, el jugador cuenta con una cantidad de Vinilos para desplegar sus primeras defensas. La única forma de obtener más Vinilos es derrotando [enemigos](#_22rogyqkqn0x) durante cada oleada, creando un flujo constante de recursos que incentiva la eliminación eficiente de las hordas, al igual que encontrar la organización óptima para las defensas..
+La economía de la partida se basa en Vinilos, la moneda del juego. Al iniciar el nivel, el jugador cuenta con una cantidad de Vinilos para desplegar sus primeras defensas. La única forma de obtener más Vinilos es derrotando enemigos durante cada oleada, creando un flujo constante de recursos que incentiva la eliminación eficiente de las hordas, al igual que encontrar la organización óptima para las defensas..
 
 (Posible habilidad ultimate, que silencie el campo excepto las torretas (en esencia un silencio durante varios compases que tus torretas pueden romper como si estuviesen “a capella” pero los enemigos al quedarse sin el ritmo (caja de música) no podrán moverse hasta que se restaure).
 1. ## <a name="_55ejrvndtsmi"></a>**Controles**
@@ -283,8 +282,8 @@ Se ha planteado también hacer un modo de oleadas infinitas tras haber terminado
 
 - Tutorial: Se introducen las negras y las blancas, y lo que es la mecánica de ritmo en sí con el instrumento x (definir instrumentos)
 - Nivel 1: Se introducen las redondas con enemigos más peligrosos, actuando de pseudo-jefes y apareciendo como enemigos poco comunes en el resto de niveles.
-- Nivel 2: Se introducen los [Silencios de Negra](#_rne780hqrqz0) y las [Corcheas](#_22rogyqkqn0x).
-- Nivel 3: En este nivel aparecen todos los enemigos, con una [Clave de Sol](#_22rogyqkqn0x) única actuando de jefe final en la última oleada del nivel.
+- Nivel 2: Se introducen los Silencios de Negra y las Corcheas.
+- Nivel 3: En este nivel aparecen todos los enemigos, con una Clave de Sol única actuando de jefe final en la última oleada del nivel.
 
 La cantidad de enemigos de cada oleada aumenta según el nivel, tal que en el tercero una oleada contiene muchísimos más enemigos que en el primero.
 1. ## <a name="_22rogyqkqn0x"></a>**Enemigos**
@@ -350,85 +349,22 @@ Aquí se desglosan las estadísticas de cada torreta:
 
 (Añadir precio, patrones rítmicos, mejoras  y estadísticas dentro de cada torreta)
 1. ## <a name="_ghwyb75kg3oi"></a>**Bailarina/Director/Cosa a defender**
-## <a name="_jsd5x19iku6l"></a>**
 1. # <a name="_uguy4tyq6aat"></a>**Trasfondo**
    1. ## <a name="_i4olq31hqyc9"></a>**Descripción detallada de la historia y la trama**
 
 1. ## <a name="_ultu1uadgopp"></a>**Personajes**
 
 1. ## <a name="_pd9a5v484yfy"></a>**Entornos y lugares**
-## <a name="_z1kiq048ae6u"></a>**
+
 1. # <a name="_y1st5y440aph"></a>**Arte**
    1. ## <a name="_ht9hfd9l4tv2"></a>**Estética general del juego**
 
 1. ## <a name="_9kw5v48vbgs"></a>**Apartado visual**
    1. ## <a name="_tu71hwjf1wi5"></a>**Torretas**
+   2.  ## <a name="_rne780hqrqz0"></a>**Enemigos**
+   3.   ## <a name="_wbxsklqgf1fr"></a>**Niveles**
 
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.003.png)|
-| :-: |
-|<h3><a name="_vivtul9fhuwd"></a>Violín</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.004.png)|
-| :-: |
-|<h3><a name="_gvuu9wbsqcf2"></a>Trompeta</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.005.png)|
-| :-: |
-|<h3><a name="_l8p47l5v9z3c"></a>Tambor</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.006.png)|
-| :-: |
-|<h3><a name="_h61b5j61g5yt"></a>Piano</h3>|
-
-1. ## <a name="_rne780hqrqz0"></a>**Enemigos**
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.007.png)|
-| :-: |
-|<h3><a name="_pz10mp8gdgy2"></a>Negra</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.008.png)|
-| :-: |
-|<h3><a name="_qjiv5a3emy39"></a>Blanca</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.009.png)|
-| :-: |
-|<h3><a name="_xrmkynq44iuk"></a>Corchea</h3>|
-
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.010.png)|
-| :-: |
-|<h3><a name="_77ejh2t9kyqm"></a>Redonda</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.011.png)|
-| :-: |
-|<h3><a name="_x6dhk6fdlkcv"></a>Silencio de Negra</h3>|
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.012.png)|
-| :-: |
-|<h3><a name="_lbwg2b7x6yj"></a>Clave de Sol</h3>|
-1. ## <a name="_wbxsklqgf1fr"></a>**Niveles**
-
-|<h2>![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.013.png)</h2>|
-| :-: |
-|<h3><a name="_gn451249eqv2"></a><a name="_l3cuwqoxbh1l"></a>Nivel Tutorial</h3>|
-
-|<h2>![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.014.png)</h2>|
-| :-: |
-|<h3><a name="_harfnzs4z2th"></a><a name="_r13hl2y4yqw4"></a>Nivel 1</h3>|
-
-|<h2>![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.015.png)</h2>|
-| :-: |
-|<h3><a name="_obbokh7byqkh"></a><a name="_1z9ttv2q6w3d"></a>Nivel 2</h3>|
-##
-
-|<h2>![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.016.png)</h2>|
-| :-: |
-|<h3><a name="_uq4wqw65g3q0"></a><a name="_oan5y05ljnob"></a><a name="_smznkshxbh9k"></a>Nivel 3</h3>|
 1. ## <a name="_xfogp7fg58x2"></a>**Interfaces**
-
-|![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.017.png)|
-| :-: |
-|<h3><a name="_2f3bvgz1dyzl"></a>Interfaces</h3>|
 
 1. ## <a name="_6wnagpu1lu2y"></a>**Escenarios**
 ##
@@ -465,26 +401,18 @@ Interfaz:
 General:
 
 - Durante la fase de combate sonará un mecanismo de engranajes (pertenecientes a la caja musical).
-  ## <a name="_e8f3fku9rvxz"></a>**
 1. # <a name="_e0f7xy9s5fc0"></a>**Interfaz**
    1. ## <a name="_rk92y44uqqae"></a>**Diseños básicos de los menús**
 
 1. ## <a name="_q52vk3381wgy"></a>**Diagrama de flujo** 
-## ![](Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.018.png)
 
-|<h3><a name="_4jr5zob7lsf6"></a><a name="_yz69hm5ko19m"></a>Diagrama de Interfaces</h3>|
-| :-: |
-## <a name="_g9apvj40fwvg"></a>**
 1. # <a name="_euuywtcizk7b"></a>**Hoja de ruta del desarrollo**
    1. ## <a name="_5ph78pz9ov0c"></a>**Hito 1**
-
-1. ## <a name="_fzhjka38940f"></a>**Hito 2**
-
-1. ## <a name="_5289m6ajb1pq"></a>**Hito 3**
+   2.  ## <a name="_fzhjka38940f"></a>**Hito 2**
+   3.   ## <a name="_5289m6ajb1pq"></a>**Hito 3**
 
 1. ## <a name="_nwq6gd9jcf5h"></a>**Fecha de lanzamiento**
 
-![pie de página]
 
 [horizontal line]: Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.001.png
 [pie de página]: Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.019.png
