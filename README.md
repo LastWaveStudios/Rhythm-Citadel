@@ -17,27 +17,28 @@
 - **Iván García García**
 - **George Picu Hordoan**
 - **Unai Retes Corada**
-- 
+  
 # Índice
 
 - [Índice](Indice)
 
 - [Índice de Referencias](IDR)
 
-1. [Introducción](#introducción)
+## 1. [Introducción](#introducción)
    - 1.1 [Descripción breve del concepto](#descripción-breve-del-concepto)
    - 1.2 [Descripción breve de la historia y personajes](#descripción-breve-de-la-historia-y-personajes)
    - 1.3 [Propósito, público objetivo y plataformas](#propósito-público-objetivo-y-plataformas)
-2. [Monetización](#monetización)
+
+## 2. [Monetización](#monetización)
 - 2.1. [Tipo de modelo de monetización](#tipo-de-modelo-de-monetización)
 - 2.2. [Tablas de productos y precios](#tablas-de-productos-y-precios)
 
-## 3. Planificación y Costes
+## 3. [Planificación y Costes](planificación-y-costes)
 - 3.1. [El equipo humano](#el-equipo-humano)
 - 3.2. [Estimación temporal del desarrollo](#estimación-temporal-del-desarrollo)
 - 3.3. [Costes asociados](#costes-asociados)
 
-## 4. Mecánicas y Elementos de Juego
+## 4. [Mecánicas y Elementos de Juego](mecánicas-y-elementos-de-juego)
 - 4.1. [Descripción detallada del concepto de juego](#descripción-detallada-del-concepto-de-juego)
 - 4.2. [Descripción detallada de las mecánicas de juego](#descripción-detallada-de-las-mecánicas-de-juego)
 - 4.3. [Controles](#controles)
@@ -46,12 +47,12 @@
 - 4.6. [Torretas](#torretas)
 - 4.7. [Bailarina/Director/Cosa a defender](#bailarinadirectorcosa-a-defender)
 
-## 5. Trasfondo
+## 5. [Trasfondo](#trasfondo)
 - 5.1. [Descripción detallada de la historia y la trama](#descripción-detallada-de-la-historia-y-la-trama)
 - 5.2. [Personajes](#personajes)
 - 5.3. [Entornos y lugares](#entornos-y-lugares)
 
-## 6. Arte
+## 6. [Arte](arte)
 - 6.1. [Estética general del juego](#estética-general-del-juego)
 - 6.2. [Apartado visual](#apartado-visual)
   - 6.2.1. [Torretas](#torretas-1)
@@ -59,21 +60,21 @@
   - 6.2.3. [Niveles](#niveles)
   - 6.2.4. [Interfaces](#interfaces)
 
-## 7. Audio
+## 7. [Audio](audio)
 - 7.1. [Música](#música)
 - 7.2. [Efectos de sonido (SFX)](#efectos-de-sonido-sfx)
 
-## 8. Interfaz
+## 8. [Interfaz](interfaz)
 - 8.1. [Diseños básicos de los menús](#diseños-básicos-de-los-menús)
 - 8.2. [Diagrama de flujo](#diagrama-de-flujo)
 
-## 9. Hoja de ruta del desarrollo
+## 9. [Hoja de ruta del desarrollo](hoja-de-ruta-del-desarrollo)
 - 9.1. [Hito 1](#hito-1)
 - 9.2. [Hito 2](#hito-2)
 - 9.3. [Hito 3](#hito-3)
 - 9.4. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
-# <a name="_wkvqgjyqn5h3"></a>**Índice de Referencias**
+## **Índice de Referencias**
 [Tabla Productos	6]
 
 [Tabla Estimación Temporal	8]
