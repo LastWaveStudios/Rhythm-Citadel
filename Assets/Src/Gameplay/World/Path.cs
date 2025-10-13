@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 
 /// <summary>
 /// 
-/// Crea el path para devolverselo al world manager
+/// Path es una clase y GeneratePath es su constructor
 /// a lo mejor hay que cambiar que en vez de tile base sea un vector3Int que indica la posicion del tile que nos interese.
 /// La linea que creo que funciona como queremos esta comentada pero habria que cambiar el tipo de dato.
 /// Tambien creo que los tiles se agregan como objetos vacios por alguna razon, pero no lo tengo claro
@@ -13,8 +13,9 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class Path
 {
-    List<TileBase> tileList = new List<TileBase>();
-    public List<TileBase> GeneratePath(GameObject pathToLook, Tilemap tilemap) // por ahora esta como parametro, si usamos el singelton tendr� que cogerlo directamente
+    private List<TileBase> tileList = new List<TileBase>();
+    public Path (GameObject pathToLook, Tilemap tilemap) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
+
     {
 
         foreach (Transform child in pathToLook.transform)
@@ -35,12 +36,16 @@ public class Path
                 Debug.Log(startingCell + movementDirection * i);
             }
         }
-
-        return tileList;
     }
 
     public List<TileBase> GetTileList()
     {
         return tileList;
     }
+
+    public TileBase GetTile(int index)
+    {
+        return tileList[index];
+    }
+
 }
