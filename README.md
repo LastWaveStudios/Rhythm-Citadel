@@ -17,96 +17,61 @@
 - **Iván García García**
 - **George Picu Hordoan**
 - **Unai Retes Corada**
-# <a name="_wuaa1e1q7e9s"></a>**Índice**
-
+- 
 # Índice
 
-[**Índice de Referencias	4**]
+- [Índice](Indice)
 
-[**1. Introducción	5**]
+- [Índice de Referencias](IDR)
 
-[1.1. Descripción breve del concepto	5]
+1. [Introducción](#introducción)
+   - 1.1 [Descripción breve del concepto](#descripción-breve-del-concepto)
+   - 1.2 [Descripción breve de la historia y personajes](#descripción-breve-de-la-historia-y-personajes)
+   - 1.3 [Propósito, público objetivo y plataformas](#propósito-público-objetivo-y-plataformas)
+2. [Monetización](#monetización)
+- 2.1. [Tipo de modelo de monetización](#tipo-de-modelo-de-monetización)
+- 2.2. [Tablas de productos y precios](#tablas-de-productos-y-precios)
 
-[1.2. Descripción breve de la historia y personajes	5]
+## 3. Planificación y Costes
+- 3.1. [El equipo humano](#el-equipo-humano)
+- 3.2. [Estimación temporal del desarrollo](#estimación-temporal-del-desarrollo)
+- 3.3. [Costes asociados](#costes-asociados)
 
-[1.3. Propósito, público objetivo y plataformas	5]
+## 4. Mecánicas y Elementos de Juego
+- 4.1. [Descripción detallada del concepto de juego](#descripción-detallada-del-concepto-de-juego)
+- 4.2. [Descripción detallada de las mecánicas de juego](#descripción-detallada-de-las-mecánicas-de-juego)
+- 4.3. [Controles](#controles)
+- 4.4. [Niveles y misiones](#niveles-y-misiones)
+- 4.5. [Enemigos](#enemigos)
+- 4.6. [Torretas](#torretas)
+- 4.7. [Bailarina/Director/Cosa a defender](#bailarinadirectorcosa-a-defender)
 
-- [Monetización](#monetización)
+## 5. Trasfondo
+- 5.1. [Descripción detallada de la historia y la trama](#descripción-detallada-de-la-historia-y-la-trama)
+- 5.2. [Personajes](#personajes)
+- 5.3. [Entornos y lugares](#entornos-y-lugares)
 
-[2.1. Tipo de modelo de monetización	6]
+## 6. Arte
+- 6.1. [Estética general del juego](#estética-general-del-juego)
+- 6.2. [Apartado visual](#apartado-visual)
+  - 6.2.1. [Torretas](#torretas-1)
+  - 6.2.2. [Enemigos](#enemigos-1)
+  - 6.2.3. [Niveles](#niveles)
+  - 6.2.4. [Interfaces](#interfaces)
 
-[2.2. Tablas de productos y precios	6]
+## 7. Audio
+- 7.1. [Música](#música)
+- 7.2. [Efectos de sonido (SFX)](#efectos-de-sonido-sfx)
 
-[**3. Planificación y Costes	7**]
+## 8. Interfaz
+- 8.1. [Diseños básicos de los menús](#diseños-básicos-de-los-menús)
+- 8.2. [Diagrama de flujo](#diagrama-de-flujo)
 
-[3.1. El equipo humano	7]
-
-[3.2. Estimación temporal del desarrollo	7]
-
-[3.3. Costes asociados	8]
-
-[**4. Mecánicas y Elementos de Juego	9**]
-
-[4.1. Descripción detallada del concepto de juego	9]
-
-[4.2. Descripción detallada de las mecánicas de juego	9]
-
-[4.3. Controles	10]
-
-[4.4. Niveles y misiones	10]
-
-[4.5. Enemigos	11]
-
-[4.6. Torretas	12]
-
-[4.7. Bailarina/Director/Cosa a defender	13]
-
-[**5. Trasfondo	14**]
-
-[5.1. Descripción detallada de la historia y la trama	14]
-
-[5.2. Personajes	14]
-
-[5.3. Entornos y lugares	14]
-
-[**6. Arte	15**]
-
-[6.1. Estética general del juego	15]
-
-[6.2. Apartado visual	15]
-
-[6.2.1. Torretas	15]
-
-[6.2.2. Enemigos	17]
-
-[6.2.3. Niveles	21]
-
-[6.2.4. Interfaces	23]
-
-[6.3. Escenarios	24]
-
-[**7. Audio	25**]
-
-[7.1. Música	25]
-
-[7.2. Efectos de sonido (SFX)	25]
-
-[**8. Interfaz	26**]
-
-[8.1. Diseños básicos de los menús	26]
-
-[8.2. Diagrama de flujo	26]
-
-[**9. Hoja de ruta del desarrollo	27**]
-
-[9.1. Hito 1	27]
-
-[9.2. Hito 2	27]
-
-[9.3. Hito 3	27]
-
-[9.4. Fecha de lanzamiento	27]
-
+## 9. Hoja de ruta del desarrollo
+- 9.1. [Hito 1](#hito-1)
+- 9.2. [Hito 2](#hito-2)
+- 9.3. [Hito 3](#hito-3)
+- 9.4. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
 # <a name="_wkvqgjyqn5h3"></a>**Índice de Referencias**
 [Tabla Productos	6]
@@ -148,22 +113,21 @@
 
 
 **Elevator Pitch**
- # <a name="_9hw3krwubpli"></a>**Introducción**
-   1. ## <a name="_llmga6i1zse3"></a>**Descripción breve del concepto**
+ # **Introducción**
+   1. ## **Descripción breve del concepto**
 En Rhythm Citadel tendremos que defender la *estructura* de los malvados ataques de las notas musicales. Para ello, tendremos que colocar diferentes torretas defensivas
-   1. ## <a name="_uvgv8p4be62m"></a>**Descripción breve de la historia y personajes**
+   1. ## **Descripción breve de la historia y personajes**
 
-   1. ## <a name="_hr0qj4zaoc0w"></a>**Propósito, público objetivo y plataformas**  
+   1. ## **Propósito, público objetivo y plataformas**  
 
-<a id="monetización"></a>
 ## Monetización
-   1. ## <a name="_wxbdd9g03lqq"></a>**Tipo de modelo de monetización**
+   1. ## **Tipo de modelo de monetización**
 Anuncios y dependiendo de si hay que desarrollarlas, skins o no. Alguna torreta que sea “mejor”. Posibles DLCs o niveles extra.
 
 Al ser un juego gratuito para jugar, sin conexión y no tener un modo competitivo, tendremos que adaptar nuestra monetización a los jugadores de tipo Achievers y Explorers.
 
 Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargables, el jugador podrá jugar más niveles que los principales, teniendo estos una dificultad mayor. También se han añadido nuevos enemigos y torretas en los niveles adicionales, para que el jugador note el cambio con respecto a los niveles base del juego. También, en esta expansión se añadirá el modo  de dificultad “Virtuoso”, el modo más difícil de juego, donde se añadirán más enemigos a las oleadas, al igual que mejorar las estadísticas de los enemigos.
-1. ## <a name="_ih4stx1nl7f4"></a>**Tablas de productos y precios**
+1. ## **Tablas de productos y precios**
 ##
 
 |<a name="_obqkpqee2b6c"></a>Nombre|Descripción|Precio|
@@ -173,8 +137,8 @@ Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargable
 |Pack Dificultad|<p>Incluye la</p><p>dificultad "Virtuoso"</p>|0,95|
 |Pack Completo|<p>Incluye todos</p><p>los packs</p>|3,95|
 |<h3><a name="_ybio2sr34qc6"></a>Tabla Productos</h3>|||
-1. # <a name="_17do483stfmq"></a>**Planificación y Costes**
-   1. ## <a name="_yl4kaax1ki32"></a>**El equipo humano**
+1. # **Planificación y Costes**
+   1. ## **El equipo humano**
 **Fase ALPHA**
 
 Para empezar a planificar el videojuego, se hizo una reunión para decidir el género del videojuego al igual que su temática. Una vez decidido esto, se empezaron a detallar las mecánicas del videojuego, al igual que se empezaron a idear los primeros enemigos y las primeras torretas.
@@ -210,7 +174,7 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
   - Música
   - Efectos de sonido
 
-1. ## <a name="_87slgzwsn5gr"></a>**Estimación temporal del desarrollo**
+1. ## **Estimación temporal del desarrollo**
 
 
 |||Tiempo (h)|
@@ -233,16 +197,16 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
 |Otros|Reuniones|7|
 |||8|
 |<h3><a name="_g55ge0rtnzwf"></a>Tabla Estimación Temporal</h3>|||
-1. ## <a name="_lkhm11hmimyf"></a>**Costes asociados**
+1. ## **Costes asociados**
 
-1. # <a name="_lkjnfwb8bnul"></a>**Mecánicas y Elementos de Juego**
-   1. ## <a name="_ng025nwv064s"></a>**Descripción detallada del concepto de juego**
+1. # **Mecánicas y Elementos de Juego**
+   1. ## **Descripción detallada del concepto de juego**
 Rhythm Citadel es un videojuego estilo tower defense, donde el jugador deberá defender una estructura de hordas de notas musicales que tienen como objetivo romperla. Para ello,. deberá colocar y accionar unas torretas equipadas con instrumentos musicales para que ataquen a los enemigos y los destruyan antes de que lleguen a la estructura.. 
 
 Estas torretas se construirán gastando vinilos, y una vez construidas se podrán mejorar o vender para recuperar parte de los vinilos gastados. Los enemigos derrotados también le darán al jugador un determinado número de vinilos para que pueda ir mejorando el tablero.
 
 La dificultad del nivel irá aumentando a medida que avancen las hordas, que contendrán más enemigos y de mayor fuerza. 
-1. ## <a name="_d5wikr45vl2r"></a>**Descripción detallada de las mecánicas de juego**
+1. ## **Descripción detallada de las mecánicas de juego**
 Rhythm Citadel es un juego con diversas mecánicas basadas en un “caos” rítmico.
 
 Las partidas se dividen en 2 fases, la fase de preparación, en la que se colocan las torretas en sitios designados y se asignan sus inputs, así como la fase de combate en la que viene la horda de enemigos y se tiene que activar las torretas, esto se hace siguiendo el ritmo marcado en el patrón rítmico que tiene cada torreta. Las torretas tienen un patrón rítmico y en base a las mejoras construidas, evoluciona de una u otra manera modificando también su comportamiento, como por ejemplo con un cambio del área de efecto, rango, daño y/o frecuencia de ataque (esto se especificará para cada torreta en el apartado de torretas.
@@ -273,7 +237,7 @@ Cada torreta tendrá una tecla asignada que tendrá que pulsar al ritmo correspo
 - Saxofón: tecla U
 - Tambor: tecla L
 
-  1. ## <a name="_hneq3awresnk"></a>**Niveles y misiones**
+  1. ## **Niveles y misiones**
 En el lanzamiento final habrá cuatro niveles, un tutorial rápido, y tres del juego en sí, con orden ascendente de dificultad. Los enemigos se introducirán gradualmente según el nivel.
 
 Cada nivel del juego tendrá un layout distinto para los “raíles” (caminos) que seguirán los enemigos, con más oleadas y raíles más complejos por cada nivel que se avance. A su vez esto implica que las posiciones para colocar las torres y el cómo distribuirlas mejor a los lados de los raíles será distinto por nivel.
@@ -286,7 +250,7 @@ Se ha planteado también hacer un modo de oleadas infinitas tras haber terminado
 - Nivel 3: En este nivel aparecen todos los enemigos, con una Clave de Sol única actuando de jefe final en la última oleada del nivel.
 
 La cantidad de enemigos de cada oleada aumenta según el nivel, tal que en el tercero una oleada contiene muchísimos más enemigos que en el primero.
-1. ## <a name="_22rogyqkqn0x"></a>**Enemigos**
+1. ## **Enemigos**
    1. **Básicos**
 - Negra: Se trata de un enemigo terrestre que va por los raíles a una velocidad estándar. Golpeando las torres y a la bailarina con su propio cuerpo haciendo un daño básico. 
 - Blanca: Se trata de otro enemigo terrestre el cual va ligeramente más lento que las negras, así como un daño algo mayor. 
@@ -313,7 +277,7 @@ Aquí se desglosan las estadísticas de cada enemigo:
 |Corchea|70/110/150|Melee|15-22|Rápida|<p>Cuerda</p><p>(10%)</p>|12|Cuando recibe suficiente daño, se separa y se enfada|5|1s|
 |Clave de Sol|7000/8000/9000|Melee|150-250|Lenta|Cuerda y Percusión (15%)|200|???|20|2,5s|
 
-1. ## <a name="_yoqhjppzldic"></a>**Torretas**
+1. ## **Torretas**
 Cada torreta va a tener mejoras individuales a medida que se vaya mejorando durante el transcurso del nivel. Para comprar o mejorar las torretas, el jugador tendrá que gastar cierta cantidad de Vinilos. Cada torreta tendrá características que la diferencien del resto, ya sea el tipo de ataque, su rango o su coste. 
 
 - Trompeta
@@ -348,33 +312,33 @@ Aquí se desglosan las estadísticas de cada torreta:
 ||Mejora B|300||Percusión|||
 
 (Añadir precio, patrones rítmicos, mejoras  y estadísticas dentro de cada torreta)
-1. ## <a name="_ghwyb75kg3oi"></a>**Bailarina/Director/Cosa a defender**
-1. # <a name="_uguy4tyq6aat"></a>**Trasfondo**
-   1. ## <a name="_i4olq31hqyc9"></a>**Descripción detallada de la historia y la trama**
+1. ## **Bailarina/Director/Cosa a defender**
+1. # **Trasfondo**
+   1. ## **Descripción detallada de la historia y la trama**
 
-1. ## <a name="_ultu1uadgopp"></a>**Personajes**
+1. ## **Personajes**
 
-1. ## <a name="_pd9a5v484yfy"></a>**Entornos y lugares**
+1. ## **Entornos y lugares**
 
-1. # <a name="_y1st5y440aph"></a>**Arte**
-   1. ## <a name="_ht9hfd9l4tv2"></a>**Estética general del juego**
+1. # **Arte**
+   1. ## **Estética general del juego**
 
-1. ## <a name="_9kw5v48vbgs"></a>**Apartado visual**
-   1. ## <a name="_tu71hwjf1wi5"></a>**Torretas**
-   2.  ## <a name="_rne780hqrqz0"></a>**Enemigos**
-   3.   ## <a name="_wbxsklqgf1fr"></a>**Niveles**
+1. ## **Apartado visual**
+   1. ## **Torretas**
+   2.  ## **Enemigos**
+   3.   ## **Niveles**
 
-1. ## <a name="_xfogp7fg58x2"></a>**Interfaces**
+1. ## **Interfaces**
 
-1. ## <a name="_6wnagpu1lu2y"></a>**Escenarios**
+1. ## **Escenarios**
 ##
-1. # <a name="_6f3p33k01nlm"></a><a name="_hn1qqkhyyroj"></a>**Audio**
+1. # **Audio**
 El audio va a ser un elemento esencial del proyecto, por tanto se le va a dedicar bastante tiempo y esfuerzo. 
-1. ## <a name="_tz6iagxa4500"></a>**Música**
+1. ## **Música**
 Para la música se emplearán, los instrumentos de las torres, así como el órgano y la percusión, que será el instrumento principal, puesto que es el instrumento representante de la revolución industrial y el más mecánico que existe, también tendrá mucha percusión puesto que se siente mecánica, las canciones serán compuestas en compases y escalas variadas, utilizando principalmente la de 3/4, 4/4, 3/8 y 6/8 y para las dificultades más elevadas puede que 12/8 o 16/8 puesto que permiten tener patrones rítmicos largos y complejos.
 
 Se emplea el Audacity para grabar el sonido a través de un cable de jack a jack, y el LMMS a través de un cable midi para poder editar los sonidos que sean necesarios, utilizando un teclado electrónico.
-1. ## <a name="_pt6z4z8i4l08"></a>**Efectos de sonido (SFX)**
+1. ## **Efectos de sonido (SFX)**
 
 Los efectos de sonido, se compondrán de sonidos mecánicos, así como de los propios sonidos de los instrumentos, que estarán por separado para poder tener un feedback sonoro cuando se pulsen correctamente los ritmos, estos serán grabados con el audacity.
 
@@ -401,17 +365,17 @@ Interfaz:
 General:
 
 - Durante la fase de combate sonará un mecanismo de engranajes (pertenecientes a la caja musical).
-1. # <a name="_e0f7xy9s5fc0"></a>**Interfaz**
-   1. ## <a name="_rk92y44uqqae"></a>**Diseños básicos de los menús**
+1. # **Interfaz**
+   1. ## **Diseños básicos de los menús**
 
-1. ## <a name="_q52vk3381wgy"></a>**Diagrama de flujo** 
+1. ## **Diagrama de flujo** 
 
-1. # <a name="_euuywtcizk7b"></a>**Hoja de ruta del desarrollo**
-   1. ## <a name="_5ph78pz9ov0c"></a>**Hito 1**
-   2.  ## <a name="_fzhjka38940f"></a>**Hito 2**
-   3.   ## <a name="_5289m6ajb1pq"></a>**Hito 3**
+1. # **Hoja de ruta del desarrollo**
+   1. ## **Hito 1**
+   2.  ## **Hito 2**
+   3.   ## **Hito 3**
 
-1. ## <a name="_nwq6gd9jcf5h"></a>**Fecha de lanzamiento**
+1. ## **Fecha de lanzamiento**
 
 
 [horizontal line]: Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.001.png
