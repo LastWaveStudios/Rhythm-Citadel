@@ -10,8 +10,7 @@ namespace Gameplay.RhythmSystem
         [SerializeField] private int BPM;
         [SerializeField] private double maxOffset;
 
-        private double timeSinceStart = 0.0;
-        private double timeOfLastJ = 0.0;
+        private double _timeOfLastJ = 0.0;
 
         public void Start ()
         {
@@ -21,17 +20,19 @@ namespace Gameplay.RhythmSystem
 
             RhythmManager.Instance.onQuarter += OnQuarter;
 
-            timeSinceStart = AudioSettings.dspTime;
         }
 
         public void Update()
         {
-            
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                _timeOfLastJ = AudioSettings.dspTime;
+            }
         }
 
         private void OnQuarter(double deltaTime)
         {
-            double timeSinceLastJ = timeOfLastJ * 1000.0;
+            double timeSinceLastJ = (AudioSettings.dspTime - _timeOfLastJ) * 1000.0;
             if (timeSinceLastJ <= maxOffset)
             {
                 Debug.Log($"Tapped Correctly: {timeSinceLastJ}");
