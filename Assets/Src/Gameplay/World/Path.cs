@@ -14,10 +14,10 @@ using UnityEngine.Tilemaps;
 public class Path
 {
     private List<TileBase> tileList = new List<TileBase>();
-    public Path (GameObject pathToLook, Tilemap tilemap) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
 
+    public Path (GameObject pathToLook) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
     {
-
+        Tilemap tilemap = WorldManager.FindAnyObjectByType<Tilemap>();
         foreach (Transform child in pathToLook.transform)
         {
             GameObject go = child.gameObject;
