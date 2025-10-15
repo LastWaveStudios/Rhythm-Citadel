@@ -70,7 +70,11 @@ public class TowerManager : MonoBehaviour
 
     #endregion
 
-    // Construye una torre que se le pase en la posición que se le pase
+    /// <summary>
+    /// Instancia una torre en el tile que se le pase
+    /// </summary>
+    /// <param name="spawnPosition"> Coordenadas del tile </param>
+    /// <param name="towerToSpawn"> Prefab de la torre a spawnear</param>
     void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
     {
         Vector3 tileCenter = tilemap.GetCellCenterWorld(spawnPosition);
@@ -79,7 +83,10 @@ public class TowerManager : MonoBehaviour
 
     }
 
-    // Destruye la torre de la celda en la que se pinche
+    /// <summary>
+    /// Destruye la torre del tile que se le pase
+    /// </summary>
+    /// <param name="desrtoyPosition">Coordenadas del tile</param>
     void DestroyTower(Vector3Int desrtoyPosition)
     {
 
