@@ -4,21 +4,21 @@ namespace Gameplay.World
 {
     public enum Directions
     {
-        UP,
-        DOWN,
-        LEFT,
-        RIGHT
+        Up,
+        Down,
+        Left,
+        Right
     }
     public class AnchorPoint : MonoBehaviour
     {
 
-        [SerializeField] private int tilesCount = 0;
-        [SerializeField] private Directions direction = Directions.UP;
+        [SerializeField] private int _tilesCount = 0;
+        [SerializeField] private Directions _direction = Directions.Up;
 
         // Cuantos tiles dice cada punto de ancla que agreguemos
         public int getTilesCount()
         {
-            return tilesCount;
+            return _tilesCount;
         }
 
 
@@ -27,22 +27,22 @@ namespace Gameplay.World
         {
             Vector3Int nextDirection = Vector3Int.zero;
 
-            switch (direction)
+            switch (_direction)
             {
-                case Directions.UP:
+                case Directions.Up:
                     nextDirection = Vector3Int.up;
                     break;
-                case Directions.LEFT:
+                case Directions.Left:
                     nextDirection = Vector3Int.left;
                     break;
-                case Directions.RIGHT:
+                case Directions.Right:
                     nextDirection = Vector3Int.right;
                     break;
-                case Directions.DOWN:
+                case Directions.Down:
                     nextDirection = Vector3Int.down;
                     break;
                 default:
-                    Debug.LogError("Una dirección rara: " + direction);
+                    Debug.LogError("Una dirección rara: " + _direction);
                     break;
             }
 

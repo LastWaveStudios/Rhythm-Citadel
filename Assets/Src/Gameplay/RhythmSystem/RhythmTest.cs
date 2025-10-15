@@ -4,16 +4,16 @@ namespace Gameplay.RhythmSystem
 {
     public class RhythmTest : MonoBehaviour
     {
-        [SerializeField] private RhythmPattern pattern;
-        [SerializeField] private Signature signatureToUseInTest;
-        [SerializeField] private int BPM;
-        [SerializeField] private double maxOffset;
+        [SerializeField] private RhythmPattern _pattern;
+        [SerializeField] private Signature _signatureToUseInTest;
+        [SerializeField] private int _BPM;
+        [SerializeField] private double _maxOffset;
 
         private int _noteCount;
 
         public void Start ()
         {
-            RhythmManager.Instance.UseMeasure(signatureToUseInTest, BPM);
+            RhythmManager.Instance.UseMeasure(_signatureToUseInTest, _BPM);
             RhythmManager.Instance.ResetCounts();
             RhythmManager.Instance.StartRhythm();
 
@@ -24,9 +24,9 @@ namespace Gameplay.RhythmSystem
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                _noteCount = (_noteCount + 1) % pattern.patternNotes.Count;
+                _noteCount = (_noteCount + 1) % _pattern.patternNotes.Count;
 
-                if (RhythmManager.Instance.IsInTime(pattern.patternNotes[_noteCount], pattern.GetIndexOfSixteenthOnMeasure(_noteCount), maxOffset))
+                if (RhythmManager.Instance.IsInTime(_pattern.patternNotes[_noteCount], _pattern.GetIndexOfSixteenthOnMeasure(_noteCount), _maxOffset))
                 {
                     Debug.Log("Tapped GOOD");
                 }

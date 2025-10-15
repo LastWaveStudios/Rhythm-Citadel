@@ -15,7 +15,7 @@ namespace Gameplay.World
     /// </summary>
     public class Path
     {
-        private List<TileBase> tileList = new List<TileBase>();
+        private List<TileBase> _tileList = new List<TileBase>();
 
         public Path(GameObject pathToLook) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
         {
@@ -33,7 +33,7 @@ namespace Gameplay.World
 
                 for (int i = 0; i < maxTile; i++)
                 {
-                    tileList.Add(tilemap.GetTile(startingCell + movementDirection * i));
+                    _tileList.Add(tilemap.GetTile(startingCell + movementDirection * i));
                     //tileList.Add(startingCell + movementDirection * i);
                     Debug.Log(startingCell + movementDirection * i);
                 }
@@ -42,12 +42,12 @@ namespace Gameplay.World
 
         public List<TileBase> GetTileList()
         {
-            return tileList;
+            return _tileList;
         }
 
         public TileBase GetTile(int index)
         {
-            return tileList[index];
+            return _tileList[index];
         }
     }
 }
