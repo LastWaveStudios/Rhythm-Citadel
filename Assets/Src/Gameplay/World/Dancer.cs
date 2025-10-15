@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class Dancer : MonoBehaviour
+namespace Gameplay.World
 {
-    private float health = 100;
-
-    public void TakeDamage(float damage)
+    public class Dancer : MonoBehaviour
     {
-        health -= damage;
-    }
+        private float _health = 100;
 
-    public bool CheckDeath()
-    {
-        return health<=0;
+        public void TakeDamage(float damage)
+        {
+            _health -= damage;
+        }
+
+        public bool CheckDeath()
+        {
+            return _health <= 0;
+        }
     }
 }
+
