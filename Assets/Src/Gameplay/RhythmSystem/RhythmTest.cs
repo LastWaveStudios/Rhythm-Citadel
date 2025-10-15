@@ -10,7 +10,7 @@ namespace Gameplay.RhythmSystem
         [SerializeField] private int BPM;
         [SerializeField] private double maxOffset;
 
-        private double _timeOfLastJ = 0.0;
+        private int _noteCount;
 
         public void Start ()
         {
@@ -18,28 +18,24 @@ namespace Gameplay.RhythmSystem
             RhythmManager.Instance.ResetCounts();
             RhythmManager.Instance.StartRhythm();
 
-            RhythmManager.Instance.onQuarter += OnQuarter;
-
+            _noteCount = -1;
         }
 
         public void Update()
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                _timeOfLastJ = AudioSettings.dspTime;
-            }
-        }
+                _noteCount = (_noteCount + 1) % pattern.patternNotes.Count;
 
-        private void OnQuarter(double deltaTime)
-        {
-            double timeSinceLastJ = (AudioSettings.dspTime - _timeOfLastJ) * 1000.0;
-            if (timeSinceLastJ <= maxOffset)
-            {
-                Debug.Log($"Tapped Correctly: {timeSinceLastJ}");
-            }
-            else
-            {
-                Debug.Log($"Tapped Incorrectly: {timeSinceLastJ}");
+                if (RhythmManager.Instance.IsInTime(pattern.patternNotes[_noteCount], pattern.GetIndexOfSixteenthOnMeasure(_noteCount), maxOffset))
+                {
+                    Debug.Log("Tapped GOOD");
+                }
+                else
+                {
+                    Debug.Log("Tapped BAD");
+                    _noteCount = -1;
+                }
             }
         }
     }

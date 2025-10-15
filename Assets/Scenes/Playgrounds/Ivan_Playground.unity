@@ -323,7 +323,7 @@ MonoBehaviour:
     beatNoteDuration: 4
     maxSixteenthsOnOneMeasure: 16
   BPM: 60
-  maxOffset: 200
+  maxOffset: 100
 --- !u!4 &929533667
 Transform:
   m_ObjectHideFlags: 0

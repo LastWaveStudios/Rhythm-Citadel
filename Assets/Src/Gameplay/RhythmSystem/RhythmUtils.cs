@@ -109,6 +109,17 @@ namespace Gameplay.RhythmSystem
             spaceInSixteenths = copy.spaceInSixteenths;
         }
 
+        public uint GetIndexOfSixteenthOnMeasure(int noteIndex)
+        {
+            // Assume we pass a valid noteIndex
+            uint numberOfSixteenths = 0;
+            for (int i = 0; i < noteIndex; i++)
+            {
+                numberOfSixteenths += patternNotes[i].durationInSixteenths;
+            }
+            return numberOfSixteenths;
+        }
+
         // Add one note to the pattern at the final returns if the note can be added (if the index is -1 (default) the note is added to the final
         public bool AddNote(Note note, int index = -1)
         {
