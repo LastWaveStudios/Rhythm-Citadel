@@ -54,10 +54,12 @@ public class TowerManager : MonoBehaviour
         if (selectedTile == buildableTile)
         {
             SpawnTower(clickedCellPosition, tower);
+            tilemap.SetTile(clickedCellPosition, unBuildableTile);
         }
         else if (selectedTile == unBuildableTile)
         {
             DestroyTower(clickedCellPosition);
+            tilemap.SetTile(clickedCellPosition, buildableTile);
         }
         else
         {
@@ -71,31 +73,20 @@ public class TowerManager : MonoBehaviour
     // Construye una torre que se le pase en la posición que se le pase
     void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
     {
-        TileBase selectedTile = tilemap.GetTile(spawnPosition);
-        if (selectedTile == buildableTile)
-        {
-            Vector3 tileCenter = tilemap.GetCellCenterWorld(spawnPosition);
-            UnityEngine.GameObject instantiatedTower = Instantiate(tower, tileCenter, Quaternion.identity);
-            tilemap.SetTile(spawnPosition, unBuildableTile);
-            existingTowers.Add(spawnPosition, instantiatedTower);
-        }
-        else
-        {
-            Debug.LogError("En este tile no se puede construir");
-        }
+        Vector3 tileCenter = tilemap.GetCellCenterWorld(spawnPosition);
+        UnityEngine.GameObject instantiatedTower = Instantiate(tower, tileCenter, Quaternion.identity);
+        existingTowers.Add(spawnPosition, instantiatedTower);
+
     }
 
     // Destruye la torre de la celda en la que se pinche
     void DestroyTower(Vector3Int desrtoyPosition)
     {
-        TileBase selectedTile = tilemap.GetTile(desrtoyPosition);
-        if (selectedTile == unBuildableTile)
-        {
-            existingTowers.TryGetValue(desrtoyPosition, out UnityEngine.GameObject towerToDestroy);
-            Destroy(towerToDestroy);
-            existingTowers.Remove(desrtoyPosition);
-            tilemap.SetTile(desrtoyPosition, buildableTile);
-        }
+
+        existingTowers.TryGetValue(desrtoyPosition, out UnityEngine.GameObject towerToDestroy);
+        Destroy(towerToDestroy);
+        existingTowers.Remove(desrtoyPosition);
+
     }
 
 }
