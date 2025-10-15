@@ -10,12 +10,8 @@ public class TowerManager : MonoBehaviour
     [SerializeField] private TileBase unBuildableTile;
 
     private Dictionary<Vector3Int, UnityEngine.GameObject> existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
-
+    #region Gestión de clicks
     // Update is called once per frame
     void Update()
     {
@@ -34,32 +30,20 @@ public class TowerManager : MonoBehaviour
         return tilemap.WorldToCell(clickedPosition);
     }
 
-    void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
-    {
-        TileBase selectedTile = tilemap.GetTile(spawnPosition);
-        if (selectedTile == buildableTile)
-        {
-            Vector3 tileCenter = tilemap.GetCellCenterWorld(spawnPosition);
-            UnityEngine.GameObject instantiatedTower = Instantiate(tower, tileCenter, Quaternion.identity);
-            tilemap.SetTile(spawnPosition, unBuildableTile);
-            existingTowers.Add(spawnPosition, instantiatedTower);
-        }
-        else
-        {
-            Debug.LogError("En este tile no se puede construir");
-        }
-    }
 
-    void DestroyTower(Vector3Int desrtoyPosition)
+    // METODO A ARREGLAR
+    Vector3Int getPositionClickedOrtographic()
     {
-        TileBase selectedTile = tilemap.GetTile(desrtoyPosition);
-        if (selectedTile == unBuildableTile)
+        Plane gridPlane = new Plane(Vector3.up, Vector3.zero);
+        Ray rayFromCameraToPlane = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        Vector3 worldPosition = Vector3.zero;
+
+        if (gridPlane.Raycast(rayFromCameraToPlane, out float distance))
         {
-            existingTowers.TryGetValue(desrtoyPosition, out UnityEngine.GameObject towerToDestroy);
-            Destroy(towerToDestroy);
-            existingTowers.Remove(desrtoyPosition);
-            tilemap.SetTile(desrtoyPosition, buildableTile);
+            worldPosition = rayFromCameraToPlane.GetPoint(distance);
         }
+        return tilemap.WorldToCell(worldPosition);
     }
 
     void InputHandler()
@@ -80,6 +64,38 @@ public class TowerManager : MonoBehaviour
             Debug.Log("Otro tile)");
         }
 
-
     }
+
+    #endregion
+
+    // Construye una torre que se le pase en la posición que se le pase
+    void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
+    {
+        TileBase selectedTile = tilemap.GetTile(spawnPosition);
+        if (selectedTile == buildableTile)
+        {
+            Vector3 tileCenter = tilemap.GetCellCenterWorld(spawnPosition);
+            UnityEngine.GameObject instantiatedTower = Instantiate(tower, tileCenter, Quaternion.identity);
+            tilemap.SetTile(spawnPosition, unBuildableTile);
+            existingTowers.Add(spawnPosition, instantiatedTower);
+        }
+        else
+        {
+            Debug.LogError("En este tile no se puede construir");
+        }
+    }
+
+    // Destruye la torre de la celda en la que se pinche
+    void DestroyTower(Vector3Int desrtoyPosition)
+    {
+        TileBase selectedTile = tilemap.GetTile(desrtoyPosition);
+        if (selectedTile == unBuildableTile)
+        {
+            existingTowers.TryGetValue(desrtoyPosition, out UnityEngine.GameObject towerToDestroy);
+            Destroy(towerToDestroy);
+            existingTowers.Remove(desrtoyPosition);
+            tilemap.SetTile(desrtoyPosition, buildableTile);
+        }
+    }
+
 }
