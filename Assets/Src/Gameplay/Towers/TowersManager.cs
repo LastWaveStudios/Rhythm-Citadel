@@ -7,7 +7,7 @@ namespace Gameplay.Towers
 {
     public class TowersManager : Utilities.Singleton<TowersManager>
     {
-        // TODO: Maybe use a dictionary with the keyCode of the keyboard as key and the towersGroup as value
+        // used like a dictionary by keys 0-5 id of input group
         private List<TowersGroup> towersGroups;
 
         // Maybe use the keyCode for know the group in this same, logic or if not the keyCode,

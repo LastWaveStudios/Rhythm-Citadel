@@ -18,23 +18,22 @@ namespace Gameplay.RhythmSystem
             RhythmManager.Instance.StartRhythm();
 
             _noteCount = -1;
+
+            GameInput.InputReader.Instance.onTapGroup5 += CheckRhythm;
         }
 
-        public void Update()
+        public void CheckRhythm()
         {
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                _noteCount = (_noteCount + 1) % _pattern.patternNotes.Count;
+            _noteCount = (_noteCount + 1) % _pattern.patternNotes.Count;
 
-                if (RhythmManager.Instance.IsInTime(_pattern.patternNotes[_noteCount], _pattern.GetIndexOfSixteenthOnMeasure(_noteCount), _maxOffset))
-                {
-                    Debug.Log("Tapped GOOD");
-                }
-                else
-                {
-                    Debug.Log("Tapped BAD");
-                    _noteCount = -1;
-                }
+            if (RhythmManager.Instance.IsInTime(_pattern.patternNotes[_noteCount], _pattern.GetIndexOfSixteenthOnMeasure(_noteCount), _maxOffset))
+            {
+                Debug.Log("Tapped GOOD");
+            }
+            else
+            {
+                Debug.Log("Tapped BAD");
+                _noteCount = -1;
             }
         }
     }

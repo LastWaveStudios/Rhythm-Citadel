@@ -13,14 +13,16 @@ namespace Gameplay.Towers
         public bool isEnabled;
 
         private int _indexOfNoteInPattern;
+        private double _maxOffset;
 
-        public TowersGroup(RhythmPattern pattern, double timeOfDisable)
+        public TowersGroup(RhythmPattern pattern, double timeOfDisable, double maxOffset)
         {
             _pattern = pattern;
             _towers = new List<ATower>();
             _indexOfNoteInPattern = -1;
             this.timeOfDisable = timeOfDisable;
             isEnabled = true;
+            _maxOffset = maxOffset;
         }
 
         public bool CheckRhythmForGroup(double CurrentTime)
