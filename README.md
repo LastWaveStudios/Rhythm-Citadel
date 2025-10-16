@@ -1,6 +1,6 @@
 **GRADO EN DISEÑO Y DESARROLLO DE VIDEOJUEGOS (2025-2026)**
 
-<a name="_aczyuw2yex2w"></a>**Rhythm Citadel**
+## **Rhythm Citadel**
 
 
 **v1.0.0**
@@ -75,42 +75,22 @@
 - 9.4. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
 ## **Índice de Referencias**
-[Tabla Productos	6]
 
-[Tabla Estimación Temporal	8]
-
-[Violín	15]
-
-[Trompeta	16]
-
-[Tambor	17]
-
-[Piano	17]
-
-[Negra	18]
-
-[Blanca	18]
-
-[Corchea	19]
-
-[Redonda	19]
-
-[Silencio de Negra	20]
-
-[Clave de Sol	20]
-
-[Nivel Tutorial	21]
-
-[Nivel 1	22]
-
-[Nivel 2	22]
-
-[Nivel 3	23]
-
-[Interfaces	23]
-
-[Diagrama de Interfaces	26]
-
+- [Figura 1: Torreta Piano](#figura-1)
+- [Figura 2: Torreta Tambor](#figura-2)
+- [Figura 3: Torreta Trompeta](#figura-3)
+- [Figura 4: Torreta Violín](#figura-4)
+- [Figura 5: Enemigo Negra](#figura-5)
+- [Figura 6: Enemigo Blanca](#figura-6)
+- [Figura 7: Enemigo Corchea](#figura-7)
+- [Figura 8: Enemigo Redonda](#figura-8)
+- [Figura 9: Enemigo Silencio](#figura-9)
+- [Figura 10: Enemigo Clave de Sol](#figura-10)
+- [Figura 11: Tutorial](#figura-11)
+- [Figura 12: Nivel 1](#figura-12)
+- [Figura 13: Nivel 2](#figura-13)
+- [Figura 14: Nivel 3](#figura-14)
+- [Figura 15: Interfaces](#figura-15)
 
 
 **Elevator Pitch**
@@ -337,11 +317,71 @@ Aquí se desglosan las estadísticas de cada torreta:
 
 1. ## **Apartado visual**
    1. ## **Torretas**
-   2.  ## **Enemigos**
+      <a id="figura-1"></a>
+      ![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
+      *Figura 1: Torreta Piano*  
+      
+      <a id="figura-2"></a>
+      ![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
+      *Figura 2: Torreta Tambor*
+      
+      <a id="figura-3"></a>
+      ![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
+      *Figura 3: Torreta Trompeta*  
+      
+      <a id="figura-4"></a>
+      ![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
+      *Figura 4: Torreta Violín*   
+   
+   3.  ## **Enemigos**
+      <a id="figura-5"></a>
+      ![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
+      *Figura 5: Enemigo Negra*  
+      
+      <a id="figura-6"></a>
+      ![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
+      *Figura 6: Enemigo Blanca*  
+      
+      <a id="figura-7"></a>
+      ![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
+      *Figura 7: Enemigo Corchea*  
+      
+      <a id="figura-8"></a>
+      ![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
+      *Figura 8: Enemigo Redonda*     
+      
+      <a id="figura-9"></a>
+      ![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
+      *Figura 9: Enemigo Silencio*  
+      
+      <a id="figura-10"></a>
+      ![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
+      *Figura 10: Enemigo Clave de Sol*  
+   
    3.   ## **Niveles**
+      <a id="figura-11"></a>
+      ![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
+      *Figura 11: Tutorial*  
+      
+      <a id="figura-12"></a>
+      ![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
+      *Figura 12: Nivel 1*     
+      
+      <a id="figura-13"></a>
+      ![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
+      *Figura 13: Nivel 2*     
+      
+      <a id="figura-14"></a>
+      ![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
+      *Figura 14: Nivel 3*  
+   
 
 1. ## **Interfaces**
-
+      <a id="figura-15"></a>
+      ![Interfaces](./Imagenes_ReadMe/Interfaces.png)  
+      *Figura 15: Interfaces*   
+   
+   
 1. ## **Escenarios**
 ##
  # **Audio**
@@ -380,7 +420,10 @@ General:
  # **Interfaz**
    1. ## **Diseños básicos de los menús**
 
-  1. ## **Diagrama de flujo** 
+  1. ## **Diagrama de flujo**
+     ![DiagramaFlujo](./Imagenes_ReadMe/DiagramaInterfaces.png)  
+      *Figura 16: Diagrama de Interfaces*     
+     
 
  # **Hoja de ruta del desarrollo**
    1. ## **Hito 1**
