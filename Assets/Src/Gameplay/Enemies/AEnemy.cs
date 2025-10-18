@@ -37,23 +37,30 @@ namespace Gameplay.Enemies
         }
        IEnumerator Move()
         {
-            _nextTile = WorldManager.Instance.GetNextTile(_path, _index);
-            _index++;
-            Debug.Log("El valor de _nextTile es de " + _nextTile);
-            if (_nextTile==null)
+            bool moving = true;
+            while (moving)
             {
-                Debug.Log("Objecto destruido");
-                Destroy(gameObject);
-            } else
-            {
-                Vector3 _newPos = tilemap.GetCellCenterWorld(_nextTile);
-                Debug.Log("La nueva posicion es "+ _newPos);
-                _position.position = _newPos;
-                yield return new WaitForSeconds(2f);
+                Debug.Log("Este mensaje debe aparecer 2 veces " + indicePrueba);
+                _nextTile = WorldManager.Instance.GetNextTile(_path, _index);
+                _index++;
+                Debug.Log("El valor de _nextTile es de " + _nextTile);
+                if (_nextTile == null)
+                {
+                    Debug.Log("Objecto destruido");
+                    moving = false;
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Vector3 _newPos = tilemap.GetCellCenterWorld(_nextTile);
+                    Debug.Log("La nueva posicion es " + _newPos);
+                    _position.position = _newPos;
+                    Debug.Log("La nueva posicion es " + _position.position);
+                }
+                indicePrueba++;
+                Debug.Log("Indice de la corutina aumentado " + indicePrueba);
+                yield return new WaitForSeconds(1f);
             }
-            indicePrueba++;
-            Debug.Log("Indice de la corutina aumentado " + indicePrueba);
-                
         }
         public void Atack() { }
         public void TakeDamage() { }
