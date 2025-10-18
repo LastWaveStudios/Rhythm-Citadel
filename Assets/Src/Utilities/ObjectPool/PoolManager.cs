@@ -4,14 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 namespace Utilities.ObjectPool
 {
-    public class PoolManager
+    public class PoolManager: IPoolManager
     {
-        private Dictionary<System.Type, IObjectPool> pools = new();
+        private Dictionary<System.Type, IObjectPool> _pools = new();
 
         public void Release(IPoolableObject obj)
         {
             var objectType = obj.GetType();
-            if (pools.TryGetValue(objectType, out var pool))
+            if (_pools.TryGetValue(objectType, out var pool))
                 pool.Release(obj);
             else
                 Debug.LogError($"No registered pool for object type {objectType.Name}");
@@ -19,7 +19,7 @@ namespace Utilities.ObjectPool
 
         public IPoolableObject Get(System.Type objectType)
         {
-            if (pools.TryGetValue(objectType, out var pool))
+            if (_pools.TryGetValue(objectType, out var pool))
             {
                 return pool.Get();
             }
@@ -37,7 +37,7 @@ namespace Utilities.ObjectPool
                 return;
             }
 
-            pools[type] = pool;
+            _pools[type] = pool;
         }
         
     }
