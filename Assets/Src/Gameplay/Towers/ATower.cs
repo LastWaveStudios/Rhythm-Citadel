@@ -5,7 +5,7 @@ namespace Gameplay.Towers
     public abstract class ATower
     {
         protected int _damageType;
-        protected int _range;  //Nº de tiles de alcance
+        protected int _range;  //Numero de tiles de alcance
 
         public abstract bool CheckRhythm();
         public abstract void Disable();
