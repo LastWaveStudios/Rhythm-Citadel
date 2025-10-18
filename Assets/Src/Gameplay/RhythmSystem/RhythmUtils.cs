@@ -49,7 +49,7 @@ namespace Gameplay.RhythmSystem
             this.duration = duration;
             this.isDottedNote = isDottedNote;
             this.isSilence = isSilence;
-            this.durationInSixteenths = (uint)duration;
+            this.durationInSixteenths = (uint)duration + (isDottedNote? (uint)duration/2 : 0);
         }
     }
 
