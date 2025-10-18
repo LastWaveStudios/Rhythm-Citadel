@@ -13,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - BackGround
+  - Nota
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Decoration
     uniqueID: 1056092215
+    locked: 0
+  - name: Notas
+    uniqueID: 1594761013
     locked: 0
   m_RenderingLayers:
   - Default

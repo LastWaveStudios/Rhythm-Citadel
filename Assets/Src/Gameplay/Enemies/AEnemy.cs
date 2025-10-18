@@ -1,22 +1,61 @@
-
+using Gameplay.World;
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Tilemaps;
 
 
 namespace Gameplay.Enemies
 {
-    public abstract class AEnemy
+    public class AEnemy: MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
     {
-        //Entiendo que no es [SerializeField] porque estos datos se asignaran en cuanto se generen y no en el inspector
         protected int _health;
         protected float _speed;
         protected int _damage;
         protected int _damageType;
-        //private Path path;
+        protected int _path = 0;    //Valor del path al que accede
+        protected int _index = 0;   //Numero del tile actual
+        protected Vector3Int _nextTile;
+        protected Transform _position;
+        [SerializeField] Tilemap tilemap;   //No se pueden obtener las coordenadas directamente de un TileBase, por lo que se necesita identificar el Tilemap
 
-        public void Move() { }  //Implementar desplazamiento cuando el path este en la rama principal
+        private void Awake()
+        {
+            if (_position == null)
+            {
+                _position = transform;
+            }
+        }
+        private void Start()
+        {
+            {
+                StartCoroutine(Move());
+            }
+        }
+       IEnumerator Move()
+        {
+            bool moving = true;
+            while (moving)
+            {
+                _nextTile = WorldManager.Instance.GetNextTile(_path, _index);
+                _index++;
+                Vector3Int _null = new Vector3Int(0, 0, 1);
+                if (_nextTile == _null)
+                {
+                    moving = false;
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Vector3 _newPos = tilemap.GetCellCenterWorld(_nextTile);
+                    _position.position = _newPos;
+                }
+                yield return new WaitForSeconds(1f);
+            }
+        }
         public void Atack() { }
         public void TakeDamage() { }
 
-        //Enum de DamageTypeEnum
     }
 }
 
