@@ -25,6 +25,7 @@ namespace Gameplay.Enemies
             {
                 _position = transform;
             }
+            tilemap = WorldManager.FindAnyObjectByType<Tilemap>();
         }
         private void Start()
         {

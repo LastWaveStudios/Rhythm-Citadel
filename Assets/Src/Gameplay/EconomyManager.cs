@@ -6,7 +6,7 @@ namespace Gameplay
 {
 
 
-    public class TowerManager : MonoBehaviour
+    public class EconomyManager : MonoBehaviour
     {
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
         [SerializeField] private Tilemap _tilemap;
@@ -67,8 +67,9 @@ namespace Gameplay
         /// <param name="towerToSpawn"> Prefab de la torre a spawnear</param>
         void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
         {
+            Vector3 offset = new Vector3(0, _tilemap.cellSize.y / 2, 0);
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
-            UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter, Quaternion.identity);
+            UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
             existingTowers.Add(spawnPosition, instantiatedTower);
         }
 

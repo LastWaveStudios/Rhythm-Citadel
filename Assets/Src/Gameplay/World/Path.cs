@@ -16,7 +16,7 @@ namespace Gameplay.World
     public class Path
     {
         private List<Vector3Int> _tileList = new List<Vector3Int>();
-
+        private Vector3Int _spawnPoint;
         public Path(GameObject pathToLook) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
         {
             Tilemap tilemap = WorldManager.FindAnyObjectByType<Tilemap>();
@@ -37,6 +37,10 @@ namespace Gameplay.World
                     _tileList.Add(startingCell + movementDirection * i);
                    // Debug.Log(startingCell + movementDirection * i);
                 }
+                if (go.tag == "SpawnPoint")
+                {
+                    _spawnPoint = startingCell;
+                }
             }
         }
 
@@ -56,8 +60,10 @@ namespace Gameplay.World
                 Vector3Int _null= new Vector3Int(0,0,1);
                 return _null;
             }
-             
-
+        }
+        public Vector3Int GetSpawnPoint()
+        {
+            return _spawnPoint;
         }
     }
 }

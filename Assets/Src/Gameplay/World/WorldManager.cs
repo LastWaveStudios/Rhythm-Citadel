@@ -42,6 +42,16 @@ namespace Gameplay.World
         {
 
         }
+
+        public List<Vector3Int> GetSpawnPoints()
+        {
+            List<Vector3Int> spawnPointsList = new List<Vector3Int>();
+            foreach (Path pathObject in _paths)
+            {
+                spawnPointsList.Add(pathObject.GetSpawnPoint());
+            }
+            return spawnPointsList;
+        }
     }
 }
 
