@@ -27,6 +27,7 @@ namespace Gameplay.World
 
         public TileBase GetNextTile(int pathID, int currentIndex)
         {
+            Debug.Log("Index pedido: " + currentIndex);
             return _paths[pathID].GetTile(currentIndex + 1);
         }
 

@@ -35,7 +35,7 @@ namespace Gameplay.World
                 {
                     _tileList.Add(tilemap.GetTile(startingCell + movementDirection * i));
                     //tileList.Add(startingCell + movementDirection * i);
-                    Debug.Log(startingCell + movementDirection * i);
+                   // Debug.Log(startingCell + movementDirection * i);
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace Gameplay.World
 
         public TileBase GetTile(int index)
         {
-            Debug.Log("Longitud de la lista de tiles" + _tileList.Count);
+            //Debug.Log("Longitud de la lista de tiles" + _tileList.Count);
             if (index < _tileList.Count - 1)
             {
                 Debug.Log("El index actual es de " + index);
