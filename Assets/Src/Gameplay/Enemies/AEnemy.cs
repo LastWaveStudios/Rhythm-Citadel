@@ -17,7 +17,6 @@ namespace Gameplay.Enemies
         protected int _index = 0;   //Numero del tile actual
         protected Vector3Int _nextTile;
         protected Transform _position;
-        protected int indicePrueba=0;
         [SerializeField] Tilemap tilemap;   //No se pueden obtener las coordenadas directamente de un TileBase, por lo que se necesita identificar el Tilemap
 
         private void Awake()
@@ -25,13 +24,11 @@ namespace Gameplay.Enemies
             if (_position == null)
             {
                 _position = transform;
-                Debug.Log("Transform asignado");
             }
         }
         private void Start()
         {
             {
-                Debug.Log("Entrando a corrutina "+Time.time);
                 StartCoroutine(Move());
             }
         }
@@ -40,25 +37,19 @@ namespace Gameplay.Enemies
             bool moving = true;
             while (moving)
             {
-                Debug.Log("Este mensaje debe aparecer 2 veces " + indicePrueba);
                 _nextTile = WorldManager.Instance.GetNextTile(_path, _index);
                 _index++;
-                Debug.Log("El valor de _nextTile es de " + _nextTile);
-                if (_nextTile == null)
+                Vector3Int _null = new Vector3Int(0, 0, 1);
+                if (_nextTile == _null)
                 {
-                    Debug.Log("Objecto destruido");
                     moving = false;
                     Destroy(gameObject);
                 }
                 else
                 {
                     Vector3 _newPos = tilemap.GetCellCenterWorld(_nextTile);
-                    Debug.Log("La nueva posicion es " + _newPos);
                     _position.position = _newPos;
-                    Debug.Log("La nueva posicion es " + _position.position);
                 }
-                indicePrueba++;
-                Debug.Log("Indice de la corutina aumentado " + indicePrueba);
                 yield return new WaitForSeconds(1f);
             }
         }

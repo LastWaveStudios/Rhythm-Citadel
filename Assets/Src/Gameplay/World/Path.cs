@@ -26,13 +26,10 @@ namespace Gameplay.World
                 Vector3 anchorPos = go.transform.position;
 
                 Vector3Int startingCell = tilemap.WorldToCell(anchorPos);   // La celda en la que esta el ancla
-                Debug.Log("startingCell vale " + startingCell);
 
                 AnchorPoint anchor = go.GetComponent<AnchorPoint>();    // Todas las anclas tendran que tener ese script
                 Vector3Int movementDirection = anchor.GetNextDirection();   // En que direccion nos manda el ancla
-                Debug.Log("movementDirection vale " + movementDirection);
                 int maxTile = anchor.getTilesCount();   // Lo recojo aqui para no estar todo el rato entrando en el script del AnchorPoint
-                Debug.Log("maxTile vale " + maxTile);
 
                 for (int i = 0; i < maxTile; i++)
                 {
@@ -52,18 +49,15 @@ namespace Gameplay.World
         {
             if (index < _tileList.Count - 1)
             {
-                Debug.Log("El index actual es de " + index);
-                Vector3Int tile = _tileList[index];
-                if (tile == null)
-                {
-                    Debug.Log("Es nulo");
-                }
-                Debug.Log("El TileBase en Path es de " + tile);
-                return tile;
-                //return _tileList[index];
+                return _tileList[index];
             }
-             Vector3Int nulo=new Vector3Int(0,0,0);
-            return nulo;
+            else
+            {
+                Vector3Int _null= new Vector3Int(0,0,1);
+                return _null;
+            }
+             
+
         }
     }
 }

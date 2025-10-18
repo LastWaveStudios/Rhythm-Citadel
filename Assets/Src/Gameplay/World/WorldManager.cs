@@ -27,11 +27,7 @@ namespace Gameplay.World
 
         public Vector3Int GetNextTile(int pathID, int currentIndex)
         {
-            Debug.Log("Index pedido: " + currentIndex);
-            Vector3Int tile = _paths[pathID].GetTile(currentIndex + 1);
-            Debug.Log("Valor del tile en WorldManager " + tile);
-            return tile;
-            //return _paths[pathID].GetTile(currentIndex + 1);
+            return _paths[pathID].GetTile(currentIndex + 1);
         }
 
         void InitPaths()
