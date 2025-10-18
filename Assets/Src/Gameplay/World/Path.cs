@@ -48,7 +48,12 @@ namespace Gameplay.World
         public TileBase GetTile(int index)
         {
             Debug.Log("Longitud de la lista de tiles" + _tileList.Count);
-            return _tileList[index];
+            if (index < _tileList.Count - 1)
+            {
+                Debug.Log("El index actual es de " + index);
+                return _tileList[index];
+            }
+            return null;
         }
     }
 }

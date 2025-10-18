@@ -34,19 +34,26 @@ namespace Gameplay.Enemies
         {
             Debug.Log("Valor del index" + _index);
             _nextTile = WorldManager.Instance.GetNextTile(_path, _index);
-            _index++;
-            Tilemap tilemap = WorldManager.FindAnyObjectByType<Tilemap>();  //No se pueden obtener las coordenadas directamente de un TileBase, por lo que se necesita identificar el Tilemap
-            Vector3Int _newCell;
-            foreach (var cell in tilemap.cellBounds.allPositionsWithin)
+            if (_nextTile==null)
             {
-                if (tilemap.GetTile(cell) == _nextTile)  //Se busca la celda que coincida con el tile indicado
+                Destroy(this);
+            } else
+            {
+                _index++;
+                Tilemap tilemap = WorldManager.FindAnyObjectByType<Tilemap>();  //No se pueden obtener las coordenadas directamente de un TileBase, por lo que se necesita identificar el Tilemap
+                Vector3Int _newCell;
+                foreach (var cell in tilemap.cellBounds.allPositionsWithin)
                 {
-                    Debug.Log("Asignando valor a _newCell");
-                    _newCell = cell;
-                    Vector3 _newPos = tilemap.GetCellCenterWorld(_newCell);
-                    _position.position = _newPos;
+                    if (tilemap.GetTile(cell) == _nextTile)  //Se busca la celda que coincida con el tile indicado
+                    {
+                        Debug.Log("Asignando valor a _newCell");
+                        _newCell = cell;
+                        Vector3 _newPos = tilemap.GetCellCenterWorld(_newCell);
+                        _position.position = _newPos;
+                    }
                 }
             }
+            
         }
         public void Atack() { }
         public void TakeDamage() { }
