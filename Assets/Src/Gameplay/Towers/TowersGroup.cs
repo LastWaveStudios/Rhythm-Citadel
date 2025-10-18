@@ -4,6 +4,14 @@ using System.Collections.Generic;
 
 namespace Gameplay.Towers
 {
+    public enum CheckRhythmStatus
+    {
+        None = 0,
+        Good,
+        Bad,
+        SkipActions
+    }
+
     public class TowersGroup
     {
         private RhythmPattern _pattern;
@@ -25,9 +33,38 @@ namespace Gameplay.Towers
             _maxOffset = maxOffset;
         }
 
-        public bool CheckRhythmForGroup(double CurrentTime)
+        public TowersGroup(double timeOfDisable, double maxOffset)
         {
-            if (!isEnabled) return false;
+            _pattern = new RhythmPattern(new Signature(4, 4));
+            for (int i = 0; i < 4; ++i)
+            {
+                _pattern.AddNote(new Note(NoteDuration.Quarter));
+            }
+
+            _towers = new List<ATower>();
+            _indexOfNoteInPattern = -1;
+            this.timeOfDisable = timeOfDisable;
+            isEnabled = true;
+            _maxOffset = maxOffset;
+        }
+
+        public void AddTower(ATower tower)
+        {
+            _towers.Add(tower);
+        }
+
+        public void RemoveTower(ATower tower)
+        {
+            _towers.Remove(tower);
+        }
+
+        public void SetPattern(RhythmPattern pattern) { _pattern = pattern; }
+        public void SetMaxOffset(double maxOffset) { _maxOffset = maxOffset; }
+
+        public CheckRhythmStatus CheckRhythmForGroup(double CurrentTime)
+        {
+            if (!isEnabled) return CheckRhythmStatus.SkipActions;
+            if (_towers.Count == 0) return CheckRhythmStatus.SkipActions;
 
             _indexOfNoteInPattern = (_indexOfNoteInPattern + 1) % _pattern.patternNotes.Count;
 
@@ -38,13 +75,12 @@ namespace Gameplay.Towers
                 {
                     tower.OnRhythmHit();
                 }
-                return true;
+                return CheckRhythmStatus.Good;
             }
 
             UnityEngine.Debug.Log("Tapped BAD");
             _indexOfNoteInPattern = -1;
-            DisableGroup();
-            return false;
+            return CheckRhythmStatus.Bad;
         }
 
         public void DisableGroup()

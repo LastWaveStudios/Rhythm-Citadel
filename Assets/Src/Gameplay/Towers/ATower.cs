@@ -8,10 +8,10 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        protected int _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
-        protected int _range;  //Nº de tiles de alcance
-        protected float _damage;
-        protected double _timeForProjectile; // Time of projectile to reach the target
+        [SerializeField]protected int _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
+        [SerializeField]protected int _range;  //Nº de tiles de alcance
+        [SerializeField]protected float _damage;
+        [SerializeField]protected double _timeForProjectile; // Time of projectile to reach the target
 
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)

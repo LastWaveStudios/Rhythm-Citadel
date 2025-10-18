@@ -11,14 +11,9 @@ namespace GameInput
         // The delegate { } are just for initialice them to something and ignore the null check on the invokes
 
         #region TowersMap
-        public Action onTapGroup1 = delegate { };
-        public Action onTapGroup2 = delegate { };
-        public Action onTapGroup3 = delegate { };
-        public Action onTapGroup4 = delegate { };
-        public Action onTapGroup5 = delegate { };
-        public Action onTapGroup6 = delegate { };
+        public Action<int> onTapGroup = delegate { };
         #endregion
-
+    
 
         #region EnablersAndDisablers
         private void OnEnable()
@@ -53,33 +48,33 @@ namespace GameInput
         #region TowersMap
         public void OnGroup1(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup1.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(0);
         }
 
         public void OnGroup2(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup2.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(1);
 
         }
 
         public void OnGroup3(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup3.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(2);
         }
 
         public void OnGroup4(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup4.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(3);
         }
 
         public void OnGroup5(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup5.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(4);
         }
 
         public void OnGroup6(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onTapGroup6.Invoke();
+            if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(5);
         }
         #endregion
     }

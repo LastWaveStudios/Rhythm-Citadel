@@ -77,13 +77,13 @@ namespace Gameplay.RhythmSystem
                 if (_sixteenthCount % 2 == 0)
                 {
                     // Callback for Eighth
-                    //Debug.Log("Eighth");
+                    Debug.Log("Eighth");
                     onEighth.Invoke();
                 }
                 if (_sixteenthCount % 4 == 0)
                 {
                     // Callback for Quarter
-                    Debug.Log("Quarter");
+                    //Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
                 if (_sixteenthCount % 8 == 0)
@@ -105,18 +105,25 @@ namespace Gameplay.RhythmSystem
         {
             double timeSinceStart = (AudioSettings.dspTime - _startTime) * 1000.0;
 
-            // Note that the test is doing before the first hit of a measure can also be correct so 1 special case for that
             double timeOfLastMeasureSinceStart = _measureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
-
-            if (indexOfSixteenthOnMeasure == 0 && _sixteenthCount == signature.maxSixteenthsOnOneMeasure)
+            
+            if (_sixteenthCount == 0 && indexOfSixteenthOnMeasure == signature.maxSixteenthsOnOneMeasure - 1)
             {
-                Debug.Log($"TIME: 1 -> rawOffsetTime: " +
-                    $"{(timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure - 1 * _timesOfNotes.Sixteenth) - timeSinceStart}");
-                return (Math.Abs((timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth) - timeSinceStart) <= maxOffset) ? true : false;
+                Debug.Log($"TIME: 1 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
+                return (Math.Abs(timeOfLastMeasureSinceStart - timeSinceStart) <= maxOffset) ? true : false;
+            }
+
+            if (_sixteenthCount == signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
+            {
+                double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+                Debug.Log($"TIME: 2 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+               $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
+                return (Math.Abs(timeOfTargetSinceStartSpecialCase - timeSinceStart) <= maxOffset) ? true : false;
             }
 
             double timeOfTargetSinceStart = timeOfLastMeasureSinceStart + indexOfSixteenthOnMeasure * _timesOfNotes.Sixteenth;
-            Debug.Log($"TIME: 2 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+            Debug.Log($"TIME: 3 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                 $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStart - timeSinceStart}");
             return (Math.Abs(timeOfTargetSinceStart - timeSinceStart) <= maxOffset) ? true : false;
         }
