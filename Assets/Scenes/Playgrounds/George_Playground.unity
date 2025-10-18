@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0ac5916c8c0b438cbb631f2a76012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilesCount: 0
-  _direction: 0
+  _tilesCount: 9
+  _direction: 3
 --- !u!212 &313266821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathObjects:
-  - {fileID: 1402454716}
+  - {fileID: 185055842}
   _tilemap: {fileID: 1402454717}
 --- !u!4 &419729923
 Transform:
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0ac5916c8c0b438cbb631f2a76012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilesCount: 0
+  _tilesCount: 1
   _direction: 0
 --- !u!212 &761968318
 SpriteRenderer:
@@ -1059,8 +1059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0ac5916c8c0b438cbb631f2a76012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilesCount: 0
-  _direction: 0
+  _tilesCount: 10
+  _direction: 3
 --- !u!212 &1501185792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1261,8 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0ac5916c8c0b438cbb631f2a76012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilesCount: 0
-  _direction: 0
+  _tilesCount: 3
+  _direction: 1
 --- !u!212 &1863853529
 SpriteRenderer:
   m_ObjectHideFlags: 0
