@@ -25,6 +25,7 @@ namespace Gameplay.RhythmSystem
         #region CountBeats
         private int _measureCount;
         private int _sixteenthCount;
+        private int _sixteenthCountGlobal;
         #endregion
 
         #region TimesForBeats
@@ -48,6 +49,7 @@ namespace Gameplay.RhythmSystem
         {
             _measureCount = -1;
             _sixteenthCount = -1;
+            _sixteenthCountGlobal = -1;
         }
 
 
@@ -62,6 +64,7 @@ namespace Gameplay.RhythmSystem
                 _lastSixteenth = AudioSettings.dspTime - (_timeSinceLastSixteenth - _timesOfNotes.Sixteenth) / 1000; // again to seconds
                 _timeSinceLastSixteenth = 0.0;
                 _sixteenthCount = (_sixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
+                _sixteenthCountGlobal++;
 
                 if (_sixteenthCount == 0)
                 {
@@ -74,25 +77,25 @@ namespace Gameplay.RhythmSystem
                 onSixteenth.Invoke();
 
                 // check others callback by count
-                if (_sixteenthCount % 2 == 0)
+                if (_sixteenthCountGlobal % 2 == 0)
                 {
                     // Callback for Eighth
                     Debug.Log("Eighth");
                     onEighth.Invoke();
                 }
-                if (_sixteenthCount % 4 == 0)
+                if (_sixteenthCountGlobal % 4 == 0)
                 {
                     // Callback for Quarter
                     //Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
-                if (_sixteenthCount % 8 == 0)
+                if (_sixteenthCountGlobal % 8 == 0)
                 {
                     // Callback for Half
                     //Debug.Log("Half");
                     onHalf.Invoke();
                 }
-                if (_sixteenthCount % 16 == 0)
+                if (_sixteenthCountGlobal % 16 == 0)
                 {
                     // Callback for Whole
                     //Debug.Log("Whole");

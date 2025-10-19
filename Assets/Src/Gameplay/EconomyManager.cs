@@ -1,3 +1,4 @@
+using Gameplay.Towers;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -71,18 +72,21 @@ namespace Gameplay
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
             existingTowers.Add(spawnPosition, instantiatedTower);
+            // TODO: Select the group base on something right now hardcoded for alpha test
+            TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
         }
 
         /// <summary>
         /// Destruye la torre del tile que se le pase
         /// </summary>
-        /// <param name="desrtoyPosition">Coordenadas del tile</param>
-        void DestroyTower(Vector3Int desrtoyPosition)
+        /// <param name="destroyPosition">Coordenadas del tile</param>
+        void DestroyTower(Vector3Int destroyPosition)
         {
-
-            existingTowers.TryGetValue(desrtoyPosition, out UnityEngine.GameObject towerToDestroy);
+            existingTowers.TryGetValue(destroyPosition, out UnityEngine.GameObject towerToDestroy);
+            // TODO: Select the group base on something right now hardcoded for alpha test
+            if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
             Destroy(towerToDestroy);
-            existingTowers.Remove(desrtoyPosition);
+            existingTowers.Remove(destroyPosition);
 
         }
 

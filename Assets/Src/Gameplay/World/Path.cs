@@ -15,6 +15,8 @@ namespace Gameplay.World
     /// </summary>
     public class Path
     {
+        public int TilesCount { get { return _tileList.Count; } }
+
         private List<Vector3Int> _tileList = new List<Vector3Int>();
         private Vector3Int _spawnPoint;
         public Path(GameObject pathToLook) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
