@@ -118,14 +118,14 @@
 
 
  # **Introducción**
- ¿Qué pasaría si el silencio no fuera paz... sino destrucción?
+¿Qué pasaría si el silencio no fuera paz... sino destrucción?
 En una caja musical, la música lo es todo. En este mundo las notas protegen con su vida a la bailarina la cual gira en su plataforma para mantener viva la melodía y el equilibrio de la caja.
 Sin embargo, por azares del destino, las notas que una vez juraron dar su vida por la paz de la caja musical, se han corrompido. Pero la bailarina no está sola, se ha alzado un grupo de instrumentos para protegerla.
 Lidera a este grupo de instrumentos para salvar la caja musical. Solo aquellos con un oído agudo, un sentido del ritmo afinado y una mente estratega serán capaces de salvarla. 
 ¿Eres tú uno de ellos?
 
 1. ## **Descripción breve del concepto**  
-   En Rhythm Citadel hay que defender a una *Bailarina* de los malvados ataques de las notas musicales. Para ello, se deberán colocar diferentes torretas defensivas a lo largo del mapa del juego para que se enfrenten a las notas, que poseerán resistencias a algunos tipos de torres. Una vez colocadas, para atacar el jugador deberá seguir los ritmos de cada torreta, que se indican tanto musical como visualmente. 
+En Rhythm Citadel hay que defender a una *Bailarina* de los malvados ataques de las notas musicales. Para ello, se deberán colocar diferentes torretas defensivas a lo largo del mapa del juego para que se enfrenten a las notas, que poseerán resistencias a algunos tipos de torres. Una vez colocadas, para atacar el jugador deberá seguir los ritmos de cada torreta, que se indican tanto musical como visualmente. 
 
 2. ## **Descripción breve de la historia y personajes**
 Dentro de una caja musical habita una bailarina, la cual girando mantiene la vida de la música. Sin embargo, un ejército de notas mecánicas amenaza con acabar con ella. 
@@ -154,8 +154,8 @@ Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargable
 |Pack Dificultad|<p>Incluye la</p><p>dificultad "Virtuoso"</p>|0,95|
 |Pack Completo|<p>Incluye todos</p><p>los packs</p>|3,95|
 
- # **Planificación y Costes**
-   1.  ## **El equipo humano**
+   # **Planificación y Costes**
+1.  ## **El equipo humano**
 **Fase ALPHA**
 
 Para empezar a planificar el videojuego, se hizo una reunión para decidir el género del videojuego al igual que su temática. Una vez decidido esto, se empezaron a detallar las mecánicas del videojuego, al igual que se empezaron a idear los primeros enemigos y las primeras torretas.
@@ -164,7 +164,7 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
 
 - **Arte:**
 
-  En la parte artística se empezaron a hacer los primeros bocetos de enemigos, torretas y escenarios, al igual que unos diseños básicos de las interfaces principales, como la pantalla de partida o el menú principal.
+En la parte artística se empezaron a hacer los primeros bocetos de enemigos, torretas y escenarios, al igual que unos diseños básicos de las interfaces principales, como la pantalla de partida o el menú principal.
 
   - Logo de equipo
   - Diseño final de enemigos y torretas.
@@ -174,7 +174,7 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
 
 - **Programación:** 
 
-  Por otra parte, se empezó a detallar cómo sería el flujo del videojuego, tanto la conexión de las interfaces como el desarrollo de cada partida.
+Por otra parte, se empezó a detallar cómo sería el flujo del videojuego, tanto la conexión de las interfaces como el desarrollo de cada partida.
 
   - Flujo del juego
   - Diagrama de flujo de UI
@@ -219,7 +219,7 @@ Tras decidir y desarrollar la idea completa del juego, se dividió el equipo en 
 | | Reuniones | 10 | 25/9 | 19/10 |
 | **Total** |  | **67** | **26/9** | **19/10** |
 
- # **Mecánicas y Elementos de Juego**
+  # **Mecánicas y Elementos de Juego**
 1. ## **Descripción detallada del concepto de juego**
 Rhythm Citadel es un videojuego estilo tower defense, donde el jugador deberá defender una Bailarina de hordas de notas musicales que tienen como objetivo romperla. Para ello, deberá colocar y accionar unas torretas equipadas con instrumentos musicales para que ataquen a los enemigos y los destruyan antes de que lleguen a la estructura.
 Estas torretas se construirán gastando vinilos (moneda del juego), y una vez construidas se podrán mejorar o vender para recuperar parte de los vinilos gastados. Los enemigos derrotados también le darán al jugador un determinado número de vinilos para que pueda ir mejorando el tablero.
@@ -284,8 +284,6 @@ La cantidad de enemigos de cada oleada aumenta según el nivel, tal que en el te
     3. ### **Jefes**
 - Clave de sol: Este jefe va lento por los raíles. Suele ir acompañado de varios enemigos a los que infecta para robarles vida y poder curarse. Este enemigo atacará lanzando gotas de ácido a la bailarina para acabar con ella. Si llega a ella acabará con ella de un golpe.
 
-
-
 Aquí se desglosan las estadísticas de cada enemigo:
 
 |Nombre|Vida|Tipo de ataque|Fuerza|Velocidad|Resistencias|Vinilos al derrotar|Habilidad|Daño|<p>Velocidad</p><p>de ataque</p>|
@@ -297,7 +295,7 @@ Aquí se desglosan las estadísticas de cada enemigo:
 |Corchea|70/110/150|Melee|15-22|Rápida|<p>Cuerda</p><p>(10%)</p>|12|Cuando recibe suficiente daño, se separa y se enfada|5|1s|
 |Clave de Sol|7000/8000/9000|Melee|150-250|Lenta|Cuerda y Percusión (15%)|200|???|20|2,5s|
 
-  6. ## **Torretas**
+6. ## **Torretas**
 Cada torreta va a tener mejoras individuales a medida que se vaya mejorando durante el transcurso del nivel. Para comprar o mejorar las torretas, el jugador tendrá que gastar cierta cantidad de Vinilos. Cada torreta tendrá características que la diferencien del resto, ya sea el tipo de ataque, su rango o su coste. 
 
 - Trompeta
@@ -323,7 +321,7 @@ Aquí se desglosan las estadísticas de cada torreta:
 | | 2 | Área | Percusión | 17-38 | 2 |
 | | 3 | Área | Percusión | 35-55 | 2 |  
 
-  7. ## **Economía**
+7. ## **Economía**
 
 Según vaya destruyendo enemigos en las diferentes oleadas, el jugador irá obteniendo la moneda del juego, los Vinilos, que durante las fases de construcción podrá gastar para comprar torres o mejorarlas.
 Para desarrollar la economía del juego, se ha establecido que los enemigos base dan de 3 a 9 vinilos por eliminación y que en una oleada habrá entre 15 y 30 enemigos. Por ello, se calcula que se ganarían entre 45 y 270 vinilos por oleada. 
@@ -350,32 +348,32 @@ A continuación se recoge una estimación del número de enemigos por oleada y v
 | 10 - 13 | 62 | Corcheas + Blancas | 120 | 366 | 243 |
 | 13< | 65 | Todas las variedades | 150 | Indefinido | Indefinido | 
 
-  8. ## **Bailarina**
+8. ## **Bailarina**
 El objetivo de los enemigos es destruir a la bailarina, por lo que el jugador deberá evitarlo a toda costa. La bailarina estará presente en todos los niveles, y se encontrará al final del camino. Esta tendrá una vida determinada que se reiniciará en cada nivel. En el caso de que la bailarina sobreviva al final de la última oleada, se considera que el nivel se ha completado, mientras que si es destruida se considerará que el nivel se ha perdido y se tendrá que reiniciar o volver al menú principal. 
 
-  9. ## **Diagramas de Clases**
+9. ## **Diagramas de Clases**
 - Estos diagramas son una primera aproximación de cómo deberá estar organizado el código. 
 Diagrama de clases - Entidades. En este primer diagrama se muestra una visión general de las entidades que habrá y parte de su interacción. Habrá que tener en cuenta que AEnemy y ATower son clases abstractas de las cuales cada enemigo específico y cada torre específica heredarán un comportamiento básico.
 
 <a id="figura-1"></a>
-      ![DragramaClases](./Imagenes_ReadMe/DiagramaClases.png)  
-      *Figura 1: Diagrama Clases*  
+![DragramaClases](./Imagenes_ReadMe/DiagramaClases.png)  
+*Figura 1: Diagrama Clases*  
       
 - Diagrama de clases - Object pool. Dado que se van a crear y destruir muchas entidades (especialmente enemigos y balas), se ha propuesto implementar el patrón object pool para optimizar los recursos. Para eso se ha creado un primer diagrama de clases para mostrar una aproximación de lo que se quiere conseguir. 
 
 <a id="figura-2"></a>
-      ![ObjectPool](./Imagenes_ReadMe/ObjectPool.png)  
-      *Figura 2: Object Pool* 
+![ObjectPool](./Imagenes_ReadMe/ObjectPool.png)  
+*Figura 2: Object Pool* 
 
-  10. ## **Diagrama de Flujo**
+10. ## **Diagrama de Flujo**
 Se ha creado un diagrama de flujo que muestra cómo debería funcionar una partida para tener una visión más cercana al resultado final esperado.  
 
 <a id="figura-3"></a>
-      ![FlujoPartida](./Imagenes_ReadMe/FlujoPartida.png)  
-      *Figura 3: Diagrama de flujo de una partida*  
+![FlujoPartida](./Imagenes_ReadMe/FlujoPartida.png)  
+*Figura 3: Diagrama de flujo de una partida*  
 
  # **Trasfondo**
-   1. ## **Descripción detallada de la historia y la trama**
+1. ## **Descripción detallada de la historia y la trama**
 Dentro de una caja musical habita una bailarina, la cual, girando mantiene la vida de la música. Sin embargo, un ejército de notas musicales mecánicas amenaza con acabar con ella. Estas notas, que una vez bailaron al mismo ritmo que la bailarina y fueron sus fieles defensores, han sido corrompidos por la codicia y el cansancio provocados por tener que estar siempre en sintonía con la bailarina, y ahora marchan en una rebelión para aniquilarla.
 
 Pero la bailarina no está sola. Un grupo de instrumentos se alza en su defensa, dispuestos a todo para que su querida bailarina pueda seguir dando vida a la caja de música, y estarán dispuestas a acabar a todas las notas que hagan falta para conseguirlo.
@@ -386,106 +384,104 @@ Pero la bailarina no está sola. Un grupo de instrumentos se alza en su defensa,
 Notas: son el enemigo básico del juego. Marcharán en varias hordas, compuestas por diferentes tipos cada uno con diferentes ataques, para acabar con la bailarina, para lo cual tendrán que recorrer un camino soportando los ataques constantes de las torretas antes de llegar a su destino.
 - Claves: son los comandantes que dirigen a las torretas, y son mucho más fuertes que estas. También marchan hacia la bailarina para acabar con ella, pero son mucho más difíciles de matar que las notas musicales, además de hacer mucho más daño.
 
-
 3. ## **Entornos y lugares**
 Toda la historia transcurre dentro de la caja de música, pero en diferentes lugares de esta. Aunque el ambiente será siempre el mismo, el camino que recorran las notas variará según en la zona de la caja de música en la que se encuentren, aunque todos los caminos llevan al mismo sitio: a la bailarina. 
- # **Arte**
-   1. ## **Estética general del juego**
+  # **Arte**
+1. ## **Estética general del juego**
 Rhythm Citadel tendrá una estética cartoon inspirada en el estilo Steampunk, con una paleta de colores mayoritariamente marrones y dorados, además del uso de otros colores para personalizar las torretas, jefes finales y la bailarina. 
 Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, algo común en el estilo Steampunk escogido.
 
-1. ## **Apartado visual**
-   1. ## **Torretas**
-      <a id="figura-4"></a>
-      ![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
-      *Figura 4: Torreta Piano*  
+2. ## **Apartado visual**
+1. ## **Torretas**
+<a id="figura-4"></a>
+![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
+*Figura 4: Torreta Piano*  
       
-      <a id="figura-5"></a>
-      ![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
-      *Figura 5: Torreta Tambor*
+<a id="figura-5"></a>
+![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
+*Figura 5: Torreta Tambor*
       
-      <a id="figura-6"></a>
-      ![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
-      *Figura 6: Torreta Trompeta*  
+<a id="figura-6"></a>
+![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
+*Figura 6: Torreta Trompeta*  
       
-      <a id="figura-7"></a>
-      ![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
-      *Figura 7: Torreta Violín*   
+<a id="figura-7"></a>
+![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
+*Figura 7: Torreta Violín*   
    
-   2.  ## **Enemigos**
-      <a id="figura-8"></a>
-      ![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
-      *Figura 8: Enemigo Negra*  
+2.  ## **Enemigos**
+<a id="figura-8"></a>
+![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
+*Figura 8: Enemigo Negra*  
       
-      <a id="figura-9"></a>
-      ![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
-      *Figura 9: Enemigo Blanca*  
+<a id="figura-9"></a>
+![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
+*Figura 9: Enemigo Blanca*  
       
-      <a id="figura-10"></a>
-      ![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
-      *Figura 10: Enemigo Corchea*  
+<a id="figura-10"></a>
+![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
+*Figura 10: Enemigo Corchea*  
       
-      <a id="figura-11"></a>
-      ![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
-      *Figura 11: Enemigo Redonda*     
+<a id="figura-11"></a>
+![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
+*Figura 11: Enemigo Redonda*     
       
-      <a id="figura-12"></a>
-      ![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
-      *Figura 12: Enemigo Silencio*  
+<a id="figura-12"></a>
+![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
+*Figura 12: Enemigo Silencio*  
       
-      <a id="figura-13"></a>
-      ![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
-      *Figura 13: Enemigo Clave de Sol*
+<a id="figura-13"></a>
+![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
+*Figura 13: Enemigo Clave de Sol*
    
-   3. ## **Bailarina**
-      <a id="figura-14"></a>
-      ![Bailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
-      *Figura 14: Bailarina*
+3. ## **Bailarina**
+<a id="figura-14"></a>
+![Bailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
+*Figura 14: Bailarina*
    
-   4.   ## **Niveles**
-      <a id="figura-15"></a>
-      ![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
-      *Figura 15: Tutorial*  
+4.   ## **Niveles**
+<a id="figura-15"></a>
+![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
+*Figura 15: Tutorial*  
       
-      <a id="figura-16"></a>
-      ![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
-      *Figura 16: Nivel 1*     
+<a id="figura-16"></a>
+![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
+*Figura 16: Nivel 1*     
       
-      <a id="figura-17"></a>
-      ![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
-      *Figura 17: Nivel 2*     
+<a id="figura-17"></a>
+![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
+*Figura 17: Nivel 2*     
       
-      <a id="figura-18"></a>
-      ![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
-      *Figura 18: Nivel 3*  
+<a id="figura-18"></a>
+![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
+*Figura 18: Nivel 3*  
    
 
 1. ## **Interfaces**
-   Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría son menús, pero durante la partida se mostrará la cantidad de vinilos que tendrá el jugador y una ayuda visual para facilitar seguir el ritmo de las torres. Para indicar la cantidad de vida que le queda a la bailarina se dispone de un indicador en la parte superior de la pantalla, pero se plantea el uso de otro tipo de indicador, como el estado de la propia bailarina que se vaya destruyendo para indicar la vida restante.
+Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría son menús, pero durante la partida se mostrará la cantidad de vinilos que tendrá el jugador y una ayuda visual para facilitar seguir el ritmo de las torres. Para indicar la cantidad de vida que le queda a la bailarina se dispone de un indicador en la parte superior de la pantalla, pero se plantea el uso de otro tipo de indicador, como el estado de la propia bailarina que se vaya destruyendo para indicar la vida restante.
 
-      <a id="figura-19"></a>
-      ![Interfaces](./Imagenes_ReadMe/Interfaces.png)  
-      *Figura 19: Interfaces*
+<a id="figura-19"></a>
+![Interfaces](./Imagenes_ReadMe/Interfaces.png)  
+*Figura 19: Interfaces*
 
-   <a id="figura-20"></a>
-      ![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.jpeg)  
-      *Figura 20: Interfaz de Partida*   
+<a id="figura-20"></a>
+![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.jpeg)  
+*Figura 20: Interfaz de Partida*   
    
    
 1. ## **Escenarios**
 El juego se ambienta dentro de una caja musical, donde destacarán las piezas mecánicas que la hacen funcionar en su interior.
 Se observará desde una vista militar donde se verá un tablero por donde se dará todo el gameplay. En el tablero habrán tiles para identificar las zonas donde se podrá poner las torretas, así como el raíl por donde pasan los enemigos. 
 
- # **Audio**
+  # **Audio**
 El audio va a ser un elemento esencial del proyecto, por tanto se le va a dedicar bastante tiempo y esfuerzo. 
 1. ## **Música**
 
-   Para la música se emplearán, los instrumentos de las torres, así como el órgano y la percusión, que será el instrumento principal, puesto que es el instrumento representante de la revolución industrial y el más mecánico que existe, también tendrá mucha percusión puesto que se siente mecánica, las canciones serán compuestas en compases y escalas variadas, utilizando principalmente la de 3/4, 4/4, 3/8 y 6/8 y para las dificultades más elevadas puede que 12/8 o 16/8 puesto que permiten tener patrones rítmicos largos y complejos.
+Para la música se emplearán, los instrumentos de las torres, así como el órgano y la percusión, que será el instrumento principal, puesto que es el instrumento representante de la revolución industrial y el más mecánico que existe, también tendrá mucha percusión puesto que se siente mecánica, las canciones serán compuestas en compases y escalas variadas, utilizando principalmente la de 3/4, 4/4, 3/8 y 6/8 y para las dificultades más elevadas puede que 12/8 o 16/8 puesto que permiten tener patrones rítmicos largos y complejos.
 
 Se emplea el Audacity para grabar el sonido a través de un cable de jack a jack, y el LMMS a través de un cable midi para poder editar los sonidos que sean necesarios, utilizando un teclado electrónico.  
 
 2. ## **Efectos de sonido (SFX)**
-
 
 Los efectos de sonido, se compondrán de sonidos mecánicos, así como de los propios sonidos de los instrumentos, que estarán por separado para poder tener un feedback sonoro cuando se pulsen correctamente los ritmos, estos serán grabados con el audacity.
 
@@ -513,66 +509,67 @@ General:
 
 - Durante la fase de combate sonará un mecanismo de engranajes (pertenecientes a la caja musical).
  # **Interfaz**
-   1. ## **Diseños básicos de los menús**
-      Las diferentes pantallas planteadas son las siguientes:
+1. ## **Diseños básicos de los menús**
+Las diferentes pantallas planteadas son las siguientes:
 - Menú inicial: Es la primera pantalla que se ve y la que permite acceder al resto de pantallas.
   
-  <a id="figura-21"></a>
-      ![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.jpeg)  
-      *Figura 21: Interfaz Menu Inicial*
+<a id="figura-21"></a>
+![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.jpeg)  
+*Figura 21: Interfaz Menu Inicial*
   
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
   
-  <a id="figura-22"></a>
-      ![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.jpeg)  
-      *Figura 22: Interfaz Selector de Dificultad*
+<a id="figura-22"></a>
+![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.jpeg)  
+*Figura 22: Interfaz Selector de Dificultad*
   
-  - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
+- Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
     
 <a id="figura-23"></a>
-      ![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
-      *Figura 23: Interfaz Tutorial*
+![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
+*Figura 23: Interfaz Tutorial*
 
 - Créditos: Es una pantalla donde aparecen los nombres de los integrantes del grupo y sus funciones.
 
 <a id="figura-24"></a>
-      ![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.jpeg)  
-      *Figura 24: Interfaz Créditos*
+![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.jpeg)  
+*Figura 24: Interfaz Créditos*
 
 - Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.
   
 <a id="figura-25"></a>
-      ![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.jpeg)  
-      *Figura 25: Interfaz Pausa*  
+![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.jpeg)  
+*Figura 25: Interfaz Pausa*  
       
 -Opciones: Se incorporará un menú de opciones que permite ajustar el volumen del juego.
 
 <a id="figura-26"></a>
-      ![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.jpeg)  
-      *Figura 26: Interfaz Opciones*
+![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.jpeg)  
+*Figura 26: Interfaz Opciones*
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
 <a id="figura-27"></a>
-      ![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.jpeg)  
-      *Figura 27: Pantalla Victoria o Derrota*
+![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.jpeg)  
+*Figura 27: Pantalla Victoria o Derrota*
 
-  1. ## **Diagrama de flujo**
-     <a id="figura-28"></a>
-     ![DiagramaFlujo](./Imagenes_ReadMe/DiagramaInterfaces.png)  
-      *Figura 28: Diagrama de Interfaces*
+1. ## **Diagrama de flujo**
+<a id="figura-28"></a>
+![DiagramaFlujo](./Imagenes_ReadMe/DiagramaInterfaces.png)  
+*Figura 28: Diagrama de Interfaces*
 
- # **Hoja de ruta del desarrollo**
-  ## **Hitos para la alpha:**
-   1. ### **Hito 1: Sistema de ritmo implementado**
-      El sistema de ritmo es funcional, sigue la lógica establecida y ha sido implementado con las torretas. 
-   2. ### **Hito 2: Movimiento de enemigos**
-      Los enemigos se mueven siguiendo el camino establecido hasta llegar a su destino.
+  # **Hoja de ruta del desarrollo**
+## **Hitos para la alpha:**
+1. ### **Hito 1: Sistema de ritmo implementado**
+El sistema de ritmo es funcional, sigue la lógica establecida y ha sido implementado con las torretas. 
 
-   3. ### **Hito 3: Spawn de torretas**
+2. ### **Hito 2: Movimiento de enemigos**
+Los enemigos se mueven siguiendo el camino establecido hasta llegar a su destino.
+
+3. ### **Hito 3: Spawn de torretas**
 El jugador puede colocar distintas torretas en el mapa del juego haciendo click con el ratón en las zonas destinadas para ello.  
 
-   4. ### **Hito 4: Desarrollo del WorldManager**
+4. ### **Hito 4: Desarrollo del WorldManager**
 Se ha desarrollado un gestor para administrar los diferentes posibles caminos que pueden seguir los enemigos, y así poder obtener fácilmente cual es el siguiente tile al que deben ir.  
 
 5. ### **Hito 5: Diseño de personajes**
@@ -581,28 +578,33 @@ Se tienen los diseños o sprites de las torres, los enemigos y la bailarina.
 2. ## **Fecha de lanzamiento**
 Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubre del 2025.
 
-  # **Post-Mortem**
-  1. ## Lecciones aprendidas individual**
-     1. Claudia Alejandra Fernández Torrejón  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
-     2. Iván García García  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
-     3. George Picu Hordoan  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
-     4. Unai Retes Corada  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
-     5. Ángela Fernández Hernández  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
-     6. Arturo Carretero Aguado  
-      Cosas que se han hecho bien  
-      Cosas que se pueden mejorar  
+# Post-Mortem
 
-  2. ## **Trabajo Grupal**
+1. ## Lecciones aprendidas individual
+   1. ### Claudia Alejandra Fernández Torrejón  
+      - **Cosas que se han hecho bien**: Se ha empezado a avanzar con el apartado visual ni bien se determinó el concepto del juego. Además de conseguir acabar con el apartado de enemigos, torretas e incluso realización de una animación de la bailarina. El desarrollo del juego en general se ha dado de forma fluida, debido a la buena distribución de trabajo entre los miembros. Donde todos cumplieron con el trabajo asignado así como las deadlines impuestas por el propio equipo.    
+      - **Cosas que se pueden mejorar**: Aunque las tareas que me fueron asignadas eran principalmente de arte, podría haberme involucrado más en la parte de programación tratando de comprender mejor cómo se programaron las mecánicas y el juego en general.     
+   
+   2. ### Iván García García  
+      - **Cosas que se han hecho bien**: Se ha comenzado a desarrollar el proyecto desde el inicio, en la mayoría de apartados, tanto documentación como arte, audio (pensado) y programación. Ha habido una comunicación decente por parte de todos, con mucho trabajo durante las clases (no en explicaciones) en los que estábamos todos, pero aportando más en lo que cada uno se especializa y/o se le da mejor  
+      - **Cosas que se pueden mejorar**: Quizás en cuanto al diseño técnico de las mecánicas los UML deberían haber sido un poco más estrictos, puesto que ha habido bastantes cambios, en ciertas mecánicas.      
+   
+   3. ### George Picu Hordoan     
+      - **Cosas que se han hecho bien**: Tomar la iniciativa y organizar reuniones. Preparar las reuniones ha sido fácil y durante creo que se ha aprovechado muy bien el tiempo. También me parece que se ha avanzado bien en la práctica.  
+      - **Cosas que se pueden mejorar**: A la hora de organizar el proyecto, me parece que me ha faltado claridad o por donde empezar a planificar cosas. No es que no se haya hecho, pero hubo que volver sobre lo mismo o tardamos más de lo que me hubiera gustado en tener claro lo que hay que hacer. 
+   
+   4. ### Unai Retes Corada  
+      - **Cosas que se han hecho bien**: Se ha hecho una buena división de las tareas que se tenían que ir haciendo a lo largo del proyecto, al igual que se han respetado las fechas propuestas para tener ciertos apartados completados. Cada miembro del grupo ha trabajado correctamente y no han habido quejas sobre la parte del proyecto que tenía que desarrollar cada miembro.  
+      - **Cosas que se pueden mejorar**: Que haya más participación de todos los miembros del grupo a la hora de dar ideas para hacer el videojuego y también durante las reuniones. Se tardó mucho en empezar a hacer la programación del videojuego. También a la hora de la programación ha habido algunos pequeños fallos de comunicación que han provocado que ciertas tareas consuman más tiempo de lo necesario.   
+   
+   5. ### Ángela Fernández Hernández  
+      - **Cosas que se han hecho bien**: Dividir el trabajo en pequeñas tareas usando la herramienta Trello, facilitando así el avance del proyecto. Además, la división fue exitosa ya que permitió posteriormente a la persona que lo unió que esta tarea fuese relativamente sencilla.    
+      - **Cosas que se pueden mejorar**: Organizarme mejor para ser más constante realizando las tareas, teniendo en cuenta el tiempo que me lleva investigar sobre ciertas cosas que no controlo.  
+   
+   6. ### Arturo Carretero Aguado  
+      - **Cosas que se han hecho bien**: La división de tareas mediante el tablero de Trello, el progreso constante del equipo como conjunto y la comunicación entre miembros.  
+      - **Cosas que se pueden mejorar**: Me parece que ha faltado claridad en las especificaciones de algunas tareas y la metodología general a seguir para el formato/encapsulación general de los archivos a la hora de programar.   
 
-[horizontal line]: Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.001.png
-[pie de página]: Aspose.Words.c1307298-b278-4a2c-8240-63ef948a314e.019.png
+2. ## Trabajo Grupal
+   - **Cosas que se han hecho bien**: Desde un primer momento se han organizando reuniones para plantear el concepto del juego y, posteriormente, la división de tareas. Por otra parte, cabe destacar que el grupo ha avanzado a buen ritmo.
+   - **Cosas que se pueden mejorar**: En cuanto a los aspectos que se pueden mejorar de cara a las siguientes fases del proyecto, se considera que ha faltado claridad a la hora de planificar ciertas tareas, dejando en ocasiones poco claro lo que se tenía que hacer o cómo llevarlo a cabo.
