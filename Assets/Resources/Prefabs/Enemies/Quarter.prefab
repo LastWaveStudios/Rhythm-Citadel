@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7827658112153487297}
   - component: {fileID: 2354619113254610209}
-  - component: {fileID: 6145429030495438147}
+  - component: {fileID: 3853794591271115361}
   m_Layer: 7
   m_Name: Quarter
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6145429030495438147
+--- !u!114 &3853794591271115361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3031065314200888794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd7500678f74f2428a84ef7c375e71d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3900b79a5846a4d479cd40a8b66748ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  _health: 100
+  _moveTime: 0.5
+  _damage: 1
+  _damageType: 2

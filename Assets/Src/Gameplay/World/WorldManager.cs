@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -28,6 +29,16 @@ namespace Gameplay.World
         public Vector3Int GetNextTile(int pathID, int currentIndex)
         {
             return _paths[pathID].GetTile(currentIndex + 1);
+        }
+
+        public Vector3 GetCellCenterWorld(Vector3Int CellCoordinates)
+        {
+            return _tilemap.GetCellCenterWorld(CellCoordinates);
+        }
+
+        public Vector3Int GetCellFromWorldPos(Vector3 Pos)
+        {
+            return _tilemap.WorldToCell(Pos);
         }
 
         void InitPaths()

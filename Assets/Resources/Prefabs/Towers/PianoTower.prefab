@@ -103,4 +103,4 @@ MonoBehaviour:
   _damageType: 0
   _range: 0
   _damage: 0
-  _timeForProjectile: 0
+  _timeForProjectile: 0.1
