@@ -31,6 +31,11 @@ namespace Gameplay.World
             return _paths[pathID].GetTile(currentIndex + 1);
         }
 
+        public Vector3Int GetTile(int pathID, int index)
+        {
+            return _paths[pathID].GetTile(index);
+        }
+
         public Vector3 GetCellCenterWorld(Vector3Int CellCoordinates)
         {
             return _tilemap.GetCellCenterWorld(CellCoordinates);
@@ -47,10 +52,6 @@ namespace Gameplay.World
             {
                 _paths.Add(new Path(pathObject));
             }
-
-        }
-        void UpdateEnemiesOnPath(Path path)
-        {
 
         }
 

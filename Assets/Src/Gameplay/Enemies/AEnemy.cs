@@ -18,6 +18,11 @@ namespace Gameplay.Enemies
         public void Attack() { }
         public void TakeDamage() { }
         protected abstract void OnRhythmUpdate();
+
+        public Vector3Int GetTile()
+        {
+            return WorldManager.Instance.GetTile(_path, _index);
+        }
     }
 }
 

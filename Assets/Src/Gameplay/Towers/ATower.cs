@@ -1,3 +1,7 @@
+using Gameplay.Enemies;
+using Gameplay.World;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Towers
@@ -13,6 +17,16 @@ namespace Gameplay.Towers
         [SerializeField]protected float _damage;
         [SerializeField]protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
 
+        protected Vector3Int _myPosition;
+
+        public delegate List<AEnemy> FocusDelegate(List<AEnemy> enemiesList, Vector3Int position, int range);
+        public FocusDelegate focusType;
+
+        public void Start()
+        {
+            _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
+            Debug.Log("Start del padre: " + _myPosition);
+        }
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)
         public abstract void OnRhythmHit(); // The callback when the user taps correctly, not callback of this type if not correct

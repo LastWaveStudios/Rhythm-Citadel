@@ -1,3 +1,4 @@
+using Gameplay.Enemies;
 using Gameplay.World;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -38,5 +39,10 @@ public class EnemieManager : MonoBehaviour
         UnityEngine.GameObject instantiatedEnemy = Instantiate(enemyToSpawn, spawnPoint, Quaternion.identity);
         _enemiesList.Add(instantiatedEnemy);
 
+    }
+
+    public List<GameObject> getEnemiesList()
+    {
+        return _enemiesList;
     }
 }
