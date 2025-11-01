@@ -27,8 +27,6 @@ namespace Gameplay.Enemies
         public int GetDistanceToObjective()
         {
             int pathTilesCount = WorldManager.Instance.GetTileCount(_path);
-            Debug.Log(pathTilesCount);
-            Debug.Log(_index);
             return pathTilesCount-_index;
         }
     }

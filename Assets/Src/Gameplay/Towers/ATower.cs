@@ -24,7 +24,6 @@ namespace Gameplay.Towers
         public void Start()
         {
             _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
-            Debug.Log("Start del padre: " + _myPosition);
         }
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)

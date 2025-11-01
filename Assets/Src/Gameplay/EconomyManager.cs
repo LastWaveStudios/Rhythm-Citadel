@@ -74,7 +74,7 @@ namespace Gameplay
             existingTowers.Add(spawnPosition, instantiatedTower);
 
             // TODO: Select the group base on something right now hardcoded for alpha test
-            //TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
+            TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Gameplay
         {
             existingTowers.TryGetValue(destroyPosition, out UnityEngine.GameObject towerToDestroy);
             // TODO: Select the group base on something right now hardcoded for alpha test
-            //if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
+            if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
             Destroy(towerToDestroy);
             existingTowers.Remove(destroyPosition);
 
