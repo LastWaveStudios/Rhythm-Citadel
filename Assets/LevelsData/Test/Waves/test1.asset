@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: TestWave01
-  m_EditorClassIdentifier: Assembly-CSharp:Gameplay.Waves:Wave
-  bucketsToSpawn:
+  m_Script: {fileID: 11500000, guid: 9b66f7242e5838e4e9b81e3b3b32b08a, type: 3}
+  m_Name: test1
+  m_EditorClassIdentifier: 
+  _bucketsToSpawn:
+  - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
+    numberOfEnemies: 3
+    SixteenthOfSpawn: 5
+    idSpawnpoint: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 4
   - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
     numberOfEnemies: 1
-    SixteenthOfSpawn: 6
+    SixteenthOfSpawn: 21
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 0
-  - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
-    numberOfEnemies: 2
-    SixteenthOfSpawn: 12
-    idSpawnpoint: 0
-    spawnDelayBetweenEnemiesOnSixteenths: 2

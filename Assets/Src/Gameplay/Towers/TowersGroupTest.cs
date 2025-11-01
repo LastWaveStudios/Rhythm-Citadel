@@ -1,6 +1,7 @@
 using UnityEngine;
 using Gameplay.RhythmSystem;
 using System.Collections.Generic;
+using Gameplay.Waves;
 
 namespace Gameplay.Towers
 {
@@ -26,8 +27,8 @@ namespace Gameplay.Towers
                 isAdded = true;
 
                 RhythmManager.Instance.UseMeasure(_pattern.signature, BPM);
-                RhythmManager.Instance.ResetCounts();
-                RhythmManager.Instance.StartRhythm();
+                WaveManager.Instance.InitNextWave();
+                WaveManager.Instance.StartWave();
             }
         }
     }
