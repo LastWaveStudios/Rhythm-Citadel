@@ -46,11 +46,7 @@ namespace Gameplay.Towers.SpecificTowers
 
             if (isEnabled) sprite.color = Color.white;
         }
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            base.Start();
-        }
+
     }
 
 }

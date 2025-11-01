@@ -1,5 +1,4 @@
 using Gameplay.Enemies;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +8,31 @@ namespace Gameplay.Towers
     {
         public static List<AEnemy> FirstEnemy(List<AEnemy> enemiesList, Vector3Int startingPos, int range)
         {
+            float minDistanceToObjective = Mathf.Infinity;
+            AEnemy chosenEnemy = null;
+            foreach (AEnemy enemy in enemiesList)
+            {
+                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                if (IsInRange(distanceToEnemy, range))
+                {
+                    int distanceToObjective = enemy.GetDistanceToObjective();
+                    if (minDistanceToObjective > distanceToObjective) 
+                    {
+                        minDistanceToObjective = distanceToObjective;
+                        chosenEnemy = enemy;
+                    }
+                }
+            }
+            return new List<AEnemy> { chosenEnemy };
+        }
+
+        public static List<AEnemy> ClosestEnemy(List<AEnemy> enemiesList, Vector3Int startingPos, int range)
+        {
             float closestEnemyRange = Mathf.Infinity;
             AEnemy closestEnemy = null;
             foreach (AEnemy enemy in enemiesList)
             {
-                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile()); 
+                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
                 if (IsInRange(distanceToEnemy, range) && closestEnemyRange > distanceToEnemy)
                 {
                     closestEnemy = enemy;
@@ -27,7 +46,7 @@ namespace Gameplay.Towers
         public static List<AEnemy> AreaAttack(List<AEnemy> enemiesList, Vector3Int startingPos, int range)
         {
             List<AEnemy> enemiesInRange = new List<AEnemy>();
-            foreach(AEnemy enemy in enemiesList)
+            foreach (AEnemy enemy in enemiesList)
             {
                 int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
                 if (IsInRange(distanceToEnemy, range))

@@ -38,11 +38,23 @@ public class EnemieManager : MonoBehaviour
 
         UnityEngine.GameObject instantiatedEnemy = Instantiate(enemyToSpawn, spawnPoint, Quaternion.identity);
         _enemiesList.Add(instantiatedEnemy);
+        AEnemy tmp = instantiatedEnemy.GetComponent<AEnemy>();
+        Debug.Log(tmp.GetDistanceToObjective());
 
     }
 
     public List<GameObject> getEnemiesList()
     {
         return _enemiesList;
+    }
+
+    public List<AEnemy> GetEnemiesList()
+    {
+        List<AEnemy> tmp = new List<AEnemy>();
+        foreach (GameObject game in _enemiesList)
+        {
+            tmp.Add(game.GetComponent<AEnemy>());
+        }
+        return tmp;
     }
 }

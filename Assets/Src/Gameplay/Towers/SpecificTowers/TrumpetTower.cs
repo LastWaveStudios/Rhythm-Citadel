@@ -1,10 +1,11 @@
-using Gameplay.Towers;
-using UnityEngine;
+using Gameplay.Enemies;
+using System.Collections.Generic;
 
 namespace Gameplay.Towers.SpecificTowers
 {
     public class TrumpetTower : ATower
     {
+        private List<AEnemy> enemies;
         public override void Disable()
         {
             throw new System.NotImplementedException();
@@ -21,10 +22,11 @@ namespace Gameplay.Towers.SpecificTowers
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        new void Start()
         {
             base.Start();
             focusType = FocusStrategies.FirstEnemy;
+            _range = 5;
         }
 
         // Update is called once per frame

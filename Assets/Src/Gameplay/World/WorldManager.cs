@@ -12,7 +12,6 @@ namespace Gameplay.World
         [SerializeField] private List<GameObject> _pathObjects;
         [SerializeField] private Tilemap _tilemap;
         private List<Path> _paths;
-        private List<TileBase> _tilesWithEnemies;
 
         //Initialize the Direction array array
         void Start()
@@ -63,6 +62,11 @@ namespace Gameplay.World
                 spawnPointsList.Add(pathObject.GetSpawnPoint());
             }
             return spawnPointsList;
+        }
+
+        public int GetTileCount(int pathID)
+        {
+            return _paths[pathID].GetTileCount();
         }
     }
 }

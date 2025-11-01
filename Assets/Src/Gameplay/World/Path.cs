@@ -51,6 +51,11 @@ namespace Gameplay.World
             return _tileList;
         }
 
+        public int GetTileCount()
+        {
+            return _tileList.Count;
+        }
+
         public Vector3Int GetTile(int index)
         {
             if (index < _tileList.Count - 1)

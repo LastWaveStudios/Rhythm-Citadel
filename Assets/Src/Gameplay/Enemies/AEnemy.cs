@@ -23,6 +23,14 @@ namespace Gameplay.Enemies
         {
             return WorldManager.Instance.GetTile(_path, _index);
         }
+    
+        public int GetDistanceToObjective()
+        {
+            int pathTilesCount = WorldManager.Instance.GetTileCount(_path);
+            Debug.Log(pathTilesCount);
+            Debug.Log(_index);
+            return pathTilesCount-_index;
+        }
     }
 }
 
