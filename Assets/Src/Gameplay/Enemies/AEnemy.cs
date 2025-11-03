@@ -15,7 +15,10 @@ namespace Gameplay.Enemies
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
 
-        public void Attack() { }
+        public void Attack() {
+            Debug.Log("En metodo atacar");
+            Dancer.Instance.TakeDamage(_damage);
+        }
         public void TakeDamage() { }
         protected abstract void OnRhythmUpdate();
 

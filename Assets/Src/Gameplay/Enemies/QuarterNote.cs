@@ -14,6 +14,7 @@ namespace Gameplay.Enemies
         void Start()
         {
             RhythmManager.Instance.onQuarter += OnRhythmUpdate;
+            _damage = 10;
         }
 
         protected override void OnRhythmUpdate()
@@ -29,6 +30,8 @@ namespace Gameplay.Enemies
             Vector3Int finalTile = new Vector3Int(0, 0, 1);
             if (nextTile == finalTile)
             {
+                Debug.Log("En ultimo tile");
+                Attack();
                 Destroy(gameObject);
                 yield break;
             }
