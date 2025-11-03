@@ -14,6 +14,14 @@ namespace Gameplay.Enemies
         [SerializeField]protected int _damageType;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
+        protected bool _isActive = false; // If is death is not active
+
+        public void SetActive(bool isActive) { _isActive = isActive; }
+        public void Init(int path)
+        {
+            _path = path;
+            _index = 0;
+        }
 
         public void Attack() { }
         public void TakeDamage() { }
