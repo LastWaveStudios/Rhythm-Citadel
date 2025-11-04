@@ -51,7 +51,7 @@ namespace Gameplay.Enemies
                 //transform.position = Vector3.Lerp(originPos, targetPos, EaseInBack(t / _moveTime));
 
                 float T;
-                if (easingFunction == null) T = 0.0f;
+                if (easingFunction == null) T = t / _moveTime;
                 else T = easingFunction(t / _moveTime);
                 transform.position = originPos * (1 - T) + targetPos * T;
                 t += Time.deltaTime;
