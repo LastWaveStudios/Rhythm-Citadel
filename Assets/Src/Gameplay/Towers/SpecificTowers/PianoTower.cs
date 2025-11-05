@@ -46,6 +46,8 @@ namespace Gameplay.Towers.SpecificTowers
 
             if (isEnabled) sprite.color = Color.white;
         }
+
     }
+
 }
 
