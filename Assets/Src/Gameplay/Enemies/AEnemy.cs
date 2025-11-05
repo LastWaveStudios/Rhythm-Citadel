@@ -32,11 +32,12 @@ namespace Gameplay.Enemies
         {
             return WorldManager.Instance.GetTile(_path, _index);
         }
-    
+
         public int GetDistanceToObjective()
         {
             int pathTilesCount = WorldManager.Instance.GetTileCount(_path);
-            return pathTilesCount-_index;
+            return pathTilesCount - _index;
+        }
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
