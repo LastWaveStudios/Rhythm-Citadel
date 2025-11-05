@@ -72,6 +72,7 @@ namespace Gameplay
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
             existingTowers.Add(spawnPosition, instantiatedTower);
+
             // TODO: Select the group base on something right now hardcoded for alpha test
             TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
         }

@@ -28,6 +28,15 @@ namespace Gameplay.Enemies
         public void TakeDamage() { }
         protected abstract void OnRhythmUpdate();
 
+        public Vector3Int GetTile()
+        {
+            return WorldManager.Instance.GetTile(_path, _index);
+        }
+    
+        public int GetDistanceToObjective()
+        {
+            int pathTilesCount = WorldManager.Instance.GetTileCount(_path);
+            return pathTilesCount-_index;
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
