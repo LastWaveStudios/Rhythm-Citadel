@@ -23,9 +23,9 @@ namespace Gameplay.RhythmSystem
         #endregion
 
         #region CountBeats
-        private int _measureCount;
-        private int _sixteenthCount;
-        private int _sixteenthCountGlobal;
+        public int MeasureCount {get; private set;}
+        public int SixteenthCount {get; private set;}
+        public int SixteenthCountGlobal { get; private set; }
         #endregion
 
         #region TimesForBeats
@@ -47,9 +47,9 @@ namespace Gameplay.RhythmSystem
 
         public void ResetCounts()
         {
-            _measureCount = -1;
-            _sixteenthCount = -1;
-            _sixteenthCountGlobal = -1;
+            MeasureCount = -1;
+            SixteenthCount = -1;
+            SixteenthCountGlobal = -1;
         }
 
 
@@ -63,13 +63,13 @@ namespace Gameplay.RhythmSystem
             {
                 _lastSixteenth = AudioSettings.dspTime - (_timeSinceLastSixteenth - _timesOfNotes.Sixteenth) / 1000; // again to seconds
                 _timeSinceLastSixteenth = 0.0;
-                _sixteenthCount = (_sixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
-                _sixteenthCountGlobal++;
+                SixteenthCount = (SixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
+                SixteenthCountGlobal++;
 
-                if (_sixteenthCount == 0)
+                if (SixteenthCount == 0)
                 {
                     Debug.Log("-------------------------------------------");
-                    _measureCount++;
+                    MeasureCount++;
                 }
 
                 // Callback for Sixteenth
@@ -77,25 +77,25 @@ namespace Gameplay.RhythmSystem
                 onSixteenth.Invoke();
 
                 // check others callback by count
-                if (_sixteenthCountGlobal % 2 == 0)
+                if (SixteenthCountGlobal % 2 == 0)
                 {
                     // Callback for Eighth
                     Debug.Log("Eighth");
                     onEighth.Invoke();
                 }
-                if (_sixteenthCountGlobal % 4 == 0)
+                if (SixteenthCountGlobal % 4 == 0)
                 {
                     // Callback for Quarter
                     //Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
-                if (_sixteenthCountGlobal % 8 == 0)
+                if (SixteenthCountGlobal % 8 == 0)
                 {
                     // Callback for Half
                     //Debug.Log("Half");
                     onHalf.Invoke();
                 }
-                if (_sixteenthCountGlobal % 16 == 0)
+                if (SixteenthCountGlobal % 16 == 0)
                 {
                     // Callback for Whole
                     //Debug.Log("Whole");
@@ -108,25 +108,25 @@ namespace Gameplay.RhythmSystem
         {
             double timeSinceStart = (AudioSettings.dspTime - _startTime) * 1000.0;
 
-            double timeOfLastMeasureSinceStart = _measureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            double timeOfLastMeasureSinceStart = MeasureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
             
-            if (_sixteenthCount == 0 && indexOfSixteenthOnMeasure == signature.maxSixteenthsOnOneMeasure - 1)
+            if (SixteenthCount == 0 && indexOfSixteenthOnMeasure == signature.maxSixteenthsOnOneMeasure - 1)
             {
-                Debug.Log($"TIME: 1 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+                Debug.Log($"TIME: 1 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                 $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
                 return (Math.Abs(timeOfLastMeasureSinceStart - timeSinceStart) <= maxOffset) ? true : false;
             }
 
-            if (_sixteenthCount == signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
+            if (SixteenthCount == signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
             {
                 double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
-                Debug.Log($"TIME: 2 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+                Debug.Log($"TIME: 2 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
                 return (Math.Abs(timeOfTargetSinceStartSpecialCase - timeSinceStart) <= maxOffset) ? true : false;
             }
 
             double timeOfTargetSinceStart = timeOfLastMeasureSinceStart + indexOfSixteenthOnMeasure * _timesOfNotes.Sixteenth;
-            Debug.Log($"TIME: 3 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+            Debug.Log($"TIME: 3 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                 $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStart - timeSinceStart}");
             return (Math.Abs(timeOfTargetSinceStart - timeSinceStart) <= maxOffset) ? true : false;
         }
