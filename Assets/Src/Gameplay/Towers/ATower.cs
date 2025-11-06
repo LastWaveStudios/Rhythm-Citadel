@@ -1,5 +1,6 @@
 using Gameplay.Enemies;
 using Gameplay.World;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,12 +16,29 @@ namespace Gameplay.Towers
         [SerializeField]protected int _range;  //Nº de tiles de alcance
         [SerializeField]protected float _damage;
         [SerializeField]protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
-
+        [SerializeField]protected int _price = 0;
         protected Vector3Int _myPosition;
 
-        public delegate List<AEnemy> FocusDelegate(List<AEnemy> enemiesList, Vector3Int position, int range);
-        public FocusDelegate focusType;
+        public Func<List<AEnemy>, Vector3Int, int, List<AEnemy>> focusType;
 
+        public int GetPrice()
+        {
+            return _price;
+        }
+        
+        // BALANCEAR EL SELLING PRICE
+        public int GetSellingPrice()
+        {
+            return (int)Mathf.Round((float)(_price * 0.7));
+        }
+
+        public void Improve()
+        {
+            // TO DO
+            // DEBERIA AUMENTAR UNA STAT O ALGO ASI, 
+            // DEBERIA AUMENTAR EL PRECIO - PORQUE ES LO QUE CUESTA LA MEJORA
+            // A LO MEJOR UNA VARIABLE QUE GUARDE EL NIVEL
+        }
         public void Start()
         {
             _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
