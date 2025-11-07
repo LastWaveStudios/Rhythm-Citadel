@@ -7,7 +7,7 @@ namespace Audio
     public class AudioManager : Utilities.Singleton<AudioManager>
     {
         #region VolumeControl
-        [SerializeField] private AudioMixer audioControl;
+        public AudioMixer audioControl;
 
         private float _masterVol = 0.5f;
         private float _musicVol = 0.5f;
