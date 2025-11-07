@@ -1,5 +1,6 @@
 using Gameplay.Towers;
 using Gameplay.Waves;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -34,10 +35,13 @@ namespace Gameplay
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private TileBase _buildableTile;
         [SerializeField] private TileBase _unBuildableTile;
+        [SerializeField] private GameObject _buildingMenu;
+        [SerializeField] private GameObject _updateMenu;
+
+        [SerializeField] private int _vinyl = 0;
 
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
         private Vector3Int? _selectedTilePosition = null;
-        [SerializeField] private int _vinyl = 0;
 
         #region ClickMethods 
 
@@ -51,6 +55,14 @@ namespace Gameplay
 
         void InputHandler()
         {
+            if (_selectedTilePosition != null) 
+            {
+                _selectedTilePosition = null;
+                _buildingMenu.SetActive(false);
+                _updateMenu.SetActive(false);
+                return;
+            }
+
             TileBase selectedTile = null;
             GetPositionClicked();
             if (_selectedTilePosition != null)
@@ -59,18 +71,11 @@ namespace Gameplay
             //Vector3Int clickedCellPosition = GetPositionClicked();
 
             if (selectedTile == _buildableTile)
-            {
-                // INVOCAR MENU DE CONSTRUCCION
-
-            }
+                _buildingMenu.SetActive(true);
             else if (selectedTile == _unBuildableTile)
-            {
-                // INVOCAR MENU DE TORRE
-            }
+                _updateMenu.SetActive(true);
             else
-            {
                 Debug.Log("Otro tile)");
-            }
 
         }
 
@@ -110,8 +115,9 @@ namespace Gameplay
             return sellingPrice;
         }
 
-        void UpdateTower(GameObject towerToImprove)
+        public void UpdateTower()
         {
+            _existingTowers.TryGetValue(_selectedTilePosition.Value, out UnityEngine.GameObject towerToImprove);
             ATower script = towerToImprove.GetComponent<ATower>();
             int towerPrice = script.GetPrice();
             if (CanBuy(towerPrice))
@@ -145,7 +151,7 @@ namespace Gameplay
         {
             _vinyl += vinly;
         }
-        void TryBuyTower(GameObject towerToBuy)
+        public void TryBuyTower(GameObject towerToBuy)
         {
             ATower script = towerToBuy.GetComponent<ATower>();
             int towerPrice = script.GetPrice();
@@ -157,7 +163,7 @@ namespace Gameplay
             }
             else Debug.Log("Eres pobre, no te la permites");       
         }
-        void SellTower()
+        public void SellTower()
         {
             _vinyl += DestroyTower(_selectedTilePosition.Value);
             ChangeTile( _selectedTilePosition.Value);
