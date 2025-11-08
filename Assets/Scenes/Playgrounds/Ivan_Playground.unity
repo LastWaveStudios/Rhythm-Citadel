@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 393781161}
   - component: {fileID: 393781162}
   - component: {fileID: 393781164}
+  - component: {fileID: 393781165}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -590,6 +591,19 @@ MonoBehaviour:
   tower: {fileID: 6165689353771874679, guid: ab568fd7b25525d4d814fc74c17a8a80, type: 3}
   buildableTile: {fileID: 11400000, guid: 1476ad4ae9c90fb44bac05662a263c99, type: 2}
   unBuildableTile: {fileID: 11400000, guid: 5aeee46219f1d92488b4d4e9f9499272, type: 2}
+--- !u!114 &393781165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393781156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19ae152c259127449b44b01496c0cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
 --- !u!1 &1137102952
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: a58e70ed20ad5aa47bd9f66921a87ffd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4043680231111349393
+    second: "SpritesIdleBailarinaDa\xF1ada2_0"
+  - first:
+      213: -9078353813474110846
+    second: "SpritesIdleBailarinaDa\xF1ada2_1"
+  - first:
+      213: 1889958563252032533
+    second: "SpritesIdleBailarinaDa\xF1ada2_2"
+  - first:
+      213: -1636672149075359454
+    second: "SpritesIdleBailarinaDa\xF1ada2_3"
+  - first:
+      213: -1259527302516356857
+    second: "SpritesIdleBailarinaDa\xF1ada2_4"
+  - first:
+      213: -8799195820205738067
+    second: "SpritesIdleBailarinaDa\xF1ada2_5"
+  - first:
+      213: -5699900659282310967
+    second: "SpritesIdleBailarinaDa\xF1ada2_6"
+  - first:
+      213: 7206835476165224885
+    second: "SpritesIdleBailarinaDa\xF1ada2_7"
+  - first:
+      213: -8898676054297027914
+    second: "SpritesIdleBailarinaDa\xF1ada2_8"
+  - first:
+      213: -3406927940825984342
+    second: "SpritesIdleBailarinaDa\xF1ada2_9"
+  - first:
+      213: 6189931995942708984
+    second: "SpritesIdleBailarinaDa\xF1ada2_10"
+  - first:
+      213: 4769518250766710968
+    second: "SpritesIdleBailarinaDa\xF1ada2_11"
+  - first:
+      213: 6324842648829029922
+    second: "SpritesIdleBailarinaDa\xF1ada2_12"
+  - first:
+      213: 5577581476456949036
+    second: "SpritesIdleBailarinaDa\xF1ada2_13"
+  - first:
+      213: 1146873588536617654
+    second: "SpritesIdleBailarinaDa\xF1ada2_14"
+  - first:
+      213: -8031659233652873039
+    second: "SpritesIdleBailarinaDa\xF1ada2_15"
+  - first:
+      213: 2848888515239550786
+    second: "SpritesIdleBailarinaDa\xF1ada2_16"
+  - first:
+      213: 4417618021971278658
+    second: "SpritesIdleBailarinaDa\xF1ada2_17"
+  - first:
+      213: -2352393001095234331
+    second: "SpritesIdleBailarinaDa\xF1ada2_18"
+  - first:
+      213: 443302887809414751
+    second: "SpritesIdleBailarinaDa\xF1ada2_19"
+  - first:
+      213: -5067826666157619033
+    second: "SpritesIdleBailarinaDa\xF1ada2_20"
+  - first:
+      213: -3504296606367153589
+    second: "SpritesIdleBailarinaDa\xF1ada2_21"
+  - first:
+      213: -3647007673185799278
+    second: "SpritesIdleBailarinaDa\xF1ada2_22"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_0"
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 198
+        width: 358
+        height: 859
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19459a0feb90e1830800000000000000
+      internalID: 4043680231111349393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_1"
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 198
+        width: 470
+        height: 839
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282109a4e45330280800000000000000
+      internalID: -9078353813474110846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_2"
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1025
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51458d2cc4b7a3a10800000000000000
+      internalID: 1889958563252032533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_3"
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 198
+        width: 460
+        height: 831
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22986941a5f5949e0800000000000000
+      internalID: -1636672149075359454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_4"
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 979
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7094b947792458ee0800000000000000
+      internalID: -1259527302516356857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_5"
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 980
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7f88b850af2e580800000000000000
+      internalID: -8799195820205738067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_6"
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 978
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8867cbc82e5e0b0800000000000000
+      internalID: -5699900659282310967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_7"
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 972
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b9e28f9ea2d30460800000000000000
+      internalID: 7206835476165224885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_8"
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 198
+        width: 386
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bad95c964d818480800000000000000
+      internalID: -8898676054297027914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_9"
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 668
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2d6b7a61928b0d0800000000000000
+      internalID: -3406927940825984342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_10"
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 654
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f66df9ca5e07e550800000000000000
+      internalID: 6189931995942708984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_11"
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 221
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b831be349bb03240800000000000000
+      internalID: 4769518250766710968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_12"
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 221
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ee1bfe0ea56c750800000000000000
+      internalID: 6324842648829029922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_13"
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 182
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25e3023dcc876d40800000000000000
+      internalID: 5577581476456949036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_14"
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 192
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6baa00fc3738aef00800000000000000
+      internalID: 1146873588536617654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_15"
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 183
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b862250b70d98090800000000000000
+      internalID: -8031659233652873039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_16"
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 192
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f1b83b209498720800000000000000
+      internalID: 2848888515239550786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_17"
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 182
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b36f87f288e4d30800000000000000
+      internalID: 4417618021971278658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_18"
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 192
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec7a9d670f9a5fd0800000000000000
+      internalID: -2352393001095234331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_19"
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 183
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56f8c3b0ade62600800000000000000
+      internalID: 443302887809414751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_20"
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 192
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a84c646f767ba9b0800000000000000
+      internalID: -5067826666157619033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_21"
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 128
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4201e59dcc3e5fc0800000000000000
+      internalID: -3504296606367153589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "SpritesIdleBailarinaDa\xF1ada2_22"
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 128
+        width: 6
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293f2aa08d9336dc0800000000000000
+      internalID: -3647007673185799278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "SpritesIdleBailarinaDa\xF1ada2_0": 4043680231111349393
+      "SpritesIdleBailarinaDa\xF1ada2_1": -9078353813474110846
+      "SpritesIdleBailarinaDa\xF1ada2_10": 6189931995942708984
+      "SpritesIdleBailarinaDa\xF1ada2_11": 4769518250766710968
+      "SpritesIdleBailarinaDa\xF1ada2_12": 6324842648829029922
+      "SpritesIdleBailarinaDa\xF1ada2_13": 5577581476456949036
+      "SpritesIdleBailarinaDa\xF1ada2_14": 1146873588536617654
+      "SpritesIdleBailarinaDa\xF1ada2_15": -8031659233652873039
+      "SpritesIdleBailarinaDa\xF1ada2_16": 2848888515239550786
+      "SpritesIdleBailarinaDa\xF1ada2_17": 4417618021971278658
+      "SpritesIdleBailarinaDa\xF1ada2_18": -2352393001095234331
+      "SpritesIdleBailarinaDa\xF1ada2_19": 443302887809414751
+      "SpritesIdleBailarinaDa\xF1ada2_2": 1889958563252032533
+      "SpritesIdleBailarinaDa\xF1ada2_20": -5067826666157619033
+      "SpritesIdleBailarinaDa\xF1ada2_21": -3504296606367153589
+      "SpritesIdleBailarinaDa\xF1ada2_22": -3647007673185799278
+      "SpritesIdleBailarinaDa\xF1ada2_3": -1636672149075359454
+      "SpritesIdleBailarinaDa\xF1ada2_4": -1259527302516356857
+      "SpritesIdleBailarinaDa\xF1ada2_5": -8799195820205738067
+      "SpritesIdleBailarinaDa\xF1ada2_6": -5699900659282310967
+      "SpritesIdleBailarinaDa\xF1ada2_7": 7206835476165224885
+      "SpritesIdleBailarinaDa\xF1ada2_8": -8898676054297027914
+      "SpritesIdleBailarinaDa\xF1ada2_9": -3406927940825984342
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

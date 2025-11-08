@@ -70,6 +70,11 @@ namespace Gameplay.Waves
             return _currentWaveEnemies[index];
         }
 
+        public List<AEnemy> GetEnemiesList()
+        {
+            return _currentWaveEnemies;
+        }
+
         public void StartWave()
         {
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;

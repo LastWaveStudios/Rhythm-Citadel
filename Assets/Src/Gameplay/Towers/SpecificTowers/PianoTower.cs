@@ -41,7 +41,7 @@ namespace Gameplay.Towers.SpecificTowers
         private IEnumerator Shoot()
         {
             float t = 0.0f;
-            List<AEnemy> enemies = _enemieManager.GetEnemiesList();
+            List<AEnemy> enemies = _waveManager.GetEnemiesList();
             if (enemies ==null || enemies.Count == 0)
             {
                 yield return null;

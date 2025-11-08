@@ -1,5 +1,6 @@
 using Gameplay.Enemies;
 using Gameplay.World;
+using Gameplay.Waves;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities.ObjectPool;
@@ -17,7 +18,8 @@ namespace Gameplay.Towers
         [SerializeField]protected float _damage;
         [SerializeField]protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
         protected IPoolManager _poolManager;
-        protected EnemieManager _enemieManager;
+        //protected EnemieManager _enemieManager;
+        protected WaveManager _waveManager;
 
         protected Vector3Int _myPosition;
 
@@ -36,7 +38,7 @@ namespace Gameplay.Towers
             {
                 Debug.Log("SI se encontro el PoolManager");
             }
-            _enemieManager = FindAnyObjectByType<EnemieManager>();
+            _waveManager = FindAnyObjectByType<WaveManager>();
             if (_poolManager == null)   //BORRAR AL TERMINAR
             {
                 Debug.Log("No se encontro el ENEMIEManager"); //Se encuentra siempre el poolManager, asi q bien
