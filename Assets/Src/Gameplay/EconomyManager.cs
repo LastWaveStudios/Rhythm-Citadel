@@ -1,6 +1,9 @@
 using Gameplay.Towers;
+using Gameplay.Waves;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
 namespace Gameplay
@@ -9,17 +12,39 @@ namespace Gameplay
 
     public class EconomyManager : MonoBehaviour
     {
+        #region Singleton pattern without live between scenes
+        public static EconomyManager Instance { get; private set; }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Debug.LogError("Economy Manager already created");
+                Destroy(this.gameObject);
+                return;
+            }
+        }
+
+        #endregion
+
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
         [SerializeField] private Tilemap _tilemap;
-        private Dictionary<Vector3Int, UnityEngine.GameObject> existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
+        [SerializeField] private TileBase _buildableTile;
+        [SerializeField] private TileBase _unBuildableTile;
+        [SerializeField] private GameObject _buildingMenu;
+        [SerializeField] private GameObject _updateMenu;
 
-        #region Gestión de clicks - Todo esto es borrable, esta para que funcione temporalmente
+        [SerializeField] private int _vinyl = 0;
 
-        [SerializeField] private GameObject tower;
-        [SerializeField] private TileBase buildableTile;
-        [SerializeField] private TileBase unBuildableTile;
+        private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
+        private Vector3Int? _selectedTilePosition = null;
 
-        // Update is called once per frame
+        #region ClickMethods 
+
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -28,39 +53,36 @@ namespace Gameplay
             }
         }
 
-        // FUNCIONA CON LA CÁMARA CENITAL
-        Vector3Int GetPositionClicked()
-        {
-            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            clickedPosition.z = 0;
-
-            return _tilemap.WorldToCell(clickedPosition);
-        }
-
         void InputHandler()
         {
-            Vector3Int clickedCellPosition = GetPositionClicked();
-            TileBase selectedTile = _tilemap.GetTile(clickedCellPosition);
+            if (_selectedTilePosition != null) 
+            {
+                _selectedTilePosition = null;
+                _buildingMenu.SetActive(false);
+                _updateMenu.SetActive(false);
+                return;
+            }
 
-            if (selectedTile == buildableTile)
-            {
-                SpawnTower(clickedCellPosition, tower);
-                _tilemap.SetTile(clickedCellPosition, unBuildableTile);
-            }
-            else if (selectedTile == unBuildableTile)
-            {
-                DestroyTower(clickedCellPosition);
-                _tilemap.SetTile(clickedCellPosition, buildableTile);
-            }
+            TileBase selectedTile = null;
+            GetPositionClicked();
+            if (_selectedTilePosition != null)
+                selectedTile = _tilemap.GetTile(_selectedTilePosition.Value);
+
+            //Vector3Int clickedCellPosition = GetPositionClicked();
+
+            if (selectedTile == _buildableTile)
+                _buildingMenu.SetActive(true);
+            else if (selectedTile == _unBuildableTile)
+                _updateMenu.SetActive(true);
             else
-            {
                 Debug.Log("Otro tile)");
-            }
 
         }
 
         #endregion
 
+        #region Tower methods
+        
         /// <summary>
         /// Instancia una torre en el tile que se le pase
         /// </summary>
@@ -71,7 +93,7 @@ namespace Gameplay
             Vector3 offset = new Vector3(0, _tilemap.cellSize.y / 2, 0);
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
-            existingTowers.Add(spawnPosition, instantiatedTower);
+            _existingTowers.Add(spawnPosition, instantiatedTower);
 
             // TODO: Select the group base on something right now hardcoded for alpha test
             TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
@@ -81,15 +103,81 @@ namespace Gameplay
         /// Destruye la torre del tile que se le pase
         /// </summary>
         /// <param name="destroyPosition">Coordenadas del tile</param>
-        void DestroyTower(Vector3Int destroyPosition)
+        int DestroyTower(Vector3Int destroyPosition)
         {
-            existingTowers.TryGetValue(destroyPosition, out UnityEngine.GameObject towerToDestroy);
+            _existingTowers.TryGetValue(destroyPosition, out UnityEngine.GameObject towerToDestroy);
             // TODO: Select the group base on something right now hardcoded for alpha test
             if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
+            int sellingPrice = towerToDestroy.GetComponent<ATower>().GetSellingPrice();
             Destroy(towerToDestroy);
-            existingTowers.Remove(destroyPosition);
+            _existingTowers.Remove(destroyPosition);
 
+            return sellingPrice;
         }
 
+        public void UpdateTower()
+        {
+            _existingTowers.TryGetValue(_selectedTilePosition.Value, out UnityEngine.GameObject towerToImprove);
+            ATower script = towerToImprove.GetComponent<ATower>();
+            int towerPrice = script.GetPrice();
+            if (CanBuy(towerPrice))
+            {
+                script.Improve();
+            }
+        }
+        #endregion
+
+        #region Tile methods
+        void ChangeTile(Vector3Int clickedCellPosition)
+        {
+            if (_tilemap.GetTile(clickedCellPosition) == _unBuildableTile)
+                _tilemap.SetTile(clickedCellPosition, _buildableTile);
+            else 
+                _tilemap.SetTile(clickedCellPosition, _unBuildableTile);
+        }
+
+        void GetPositionClicked() // FUNCIONA CON LA CÁMARA CENITAL
+        {
+            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            clickedPosition.z = 0;
+
+            _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
+        }
+        
+        #endregion
+        
+        #region Economy methods
+        void AddVinly(int vinly)
+        {
+            _vinyl += vinly;
+        }
+        public void TryBuyTower(GameObject towerToBuy)
+        {
+            ATower script = towerToBuy.GetComponent<ATower>();
+            int towerPrice = script.GetPrice();
+            if (CanBuy(towerPrice))
+            {
+                SpendVinly(towerPrice);
+                SpawnTower(_selectedTilePosition.Value, towerToBuy);
+                ChangeTile(_selectedTilePosition.Value);
+            }
+            else Debug.Log("Eres pobre, no te la permites");       
+        }
+        public void SellTower()
+        {
+            _vinyl += DestroyTower(_selectedTilePosition.Value);
+            ChangeTile( _selectedTilePosition.Value);
+
+        }
+        bool CanBuy(int price)
+        {
+            return price <= _vinyl;
+        }
+        void SpendVinly(int price)
+        {
+            _vinyl -= price;
+        }
+
+        #endregion
     }
 }
