@@ -13,6 +13,8 @@ namespace Gameplay.Enemies
         [SerializeField]protected float _moveTime = 0.5f;
         [SerializeField]protected int _damage;
         [SerializeField]protected int _damageType;
+
+        protected int _vinlyDrop = 0;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
         protected bool _isActive = false; // If is death is not active
@@ -26,6 +28,11 @@ namespace Gameplay.Enemies
 
         public void Attack() { }
         public void TakeDamage() { }
+
+        public int GetDrop()
+        {
+            return _vinlyDrop;
+        }
         protected abstract void OnRhythmUpdate();
 
         public Vector3Int GetTile()
