@@ -7,19 +7,13 @@ using UnityEngine.Tilemaps;
 
 namespace Gameplay.Enemies
 {
-    public abstract class AEnemy: MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
     public abstract class AEnemy : MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
     {
-        [SerializeField]protected int _health;
-        [SerializeField]protected float _moveTime = 0.5f;
-        [SerializeField]protected int _damage;
-        [SerializeField]protected int _damageType;
         [SerializeField] protected int _health;
         [SerializeField] protected float _moveTime = 0.5f;
         [SerializeField] protected int _damage;
         [SerializeField] protected int _damageType;
 
-        protected int _vinlyDrop = 0;
         protected int _vinylDrop = 0;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
@@ -41,7 +35,6 @@ namespace Gameplay.Enemies
 
         public int GetDrop()
         {
-            return _vinlyDrop;
             return _vinylDrop;
         }
         protected abstract void OnRhythmUpdate();
@@ -89,11 +82,14 @@ namespace Gameplay.Enemies
             transform.position = targetPos;   // Fix for center final positions
         }
 
+<<<<<<< HEAD
          
+=======
         protected void InvokeDeath()
         {
             GameplayManager.Instance.onEnemyDeath.Invoke(_vinylDrop);
         }
+>>>>>>> WaveStartup
     }
 }
 
