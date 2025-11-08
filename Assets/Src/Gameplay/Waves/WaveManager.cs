@@ -9,6 +9,8 @@ namespace Gameplay.Waves
     {
         #region Singleton pattern without live between scenes
         public static WaveManager Instance { get; private set; }
+        [SerializeField] public RhythmPattern _pattern;
+        [SerializeField] public int BPM = 120;
 
         private void Awake()
         {

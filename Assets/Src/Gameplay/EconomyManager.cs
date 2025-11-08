@@ -13,11 +13,13 @@ namespace Gameplay
         [SerializeField] private Tilemap _tilemap;
         private Dictionary<Vector3Int, UnityEngine.GameObject> existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
 
-        #region Gestión de clicks - Todo esto es borrable, esta para que funcione temporalmente
+        #region Gestiï¿½n de clicks - Todo esto es borrable, esta para que funcione temporalmente
 
         [SerializeField] private GameObject tower;
         [SerializeField] private TileBase buildableTile;
         [SerializeField] private TileBase unBuildableTile;
+
+        public 
 
         // Update is called once per frame
         void Update()
@@ -28,7 +30,7 @@ namespace Gameplay
             }
         }
 
-        // FUNCIONA CON LA CÁMARA CENITAL
+        // FUNCIONA CON LA Cï¿½MARA CENITAL
         Vector3Int GetPositionClicked()
         {
             Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

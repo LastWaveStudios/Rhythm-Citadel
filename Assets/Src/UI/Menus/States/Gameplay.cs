@@ -1,4 +1,5 @@
 
+using Gameplay.RhythmSystem;
 using Gameplay.Waves;
 using UI.Menus.Navigation;
 using UnityEditor;
@@ -15,6 +16,7 @@ namespace UI.Menus.States
             switch (option)
             {
                 case EMenuButton.StartWave:
+                    RhythmManager.Instance.UseMeasure(WaveManager.Instance._pattern.signature, WaveManager.Instance.BPM);
                     WaveManager.Instance.InitNextWave();
                     WaveManager.Instance.StartWave();
                     break;
