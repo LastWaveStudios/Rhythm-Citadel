@@ -17,7 +17,7 @@ namespace UI.Menus.States
             switch (option)
             {
                 case EMenuButton.StartWave:
-                    EconomyManager.Instance.SetRhythmState();
+                    GameplayManager.Instance.SetRhythmState();
                     RhythmManager.Instance.UseMeasure(WaveManager.Instance._pattern.signature, WaveManager.Instance.BPM);
                     WaveManager.Instance.InitNextWave();
                     WaveManager.Instance.StartWave();

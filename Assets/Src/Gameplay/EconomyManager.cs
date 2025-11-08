@@ -42,7 +42,6 @@ namespace Gameplay
         [SerializeField] private TileBase _unBuildableTile;
         [SerializeField] private GameObject _buildingMenu;
         [SerializeField] private GameObject _updateMenu;
-        private String _State = "BuildState";
         [SerializeField] private int _vinyl = 0;
 
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
@@ -176,21 +175,11 @@ namespace Gameplay
         }
         bool CanBuy(int price)
         {
-            return price <= _vinyl && _State=="BuildState";
+            return price <= _vinyl && GameplayManager.Instance.InBuildState();
         }
         void SpendVinyl(int price)
         {
             _vinyl -= price;
-        }
-
-        public void SetBuildState()
-        {
-            this._State = "BuildState";
-        }
-
-        public void SetRhythmState()
-        {
-            this._State = "RhythmState";
         }
 
         #endregion
