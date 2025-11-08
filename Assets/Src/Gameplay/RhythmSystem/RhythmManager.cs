@@ -15,6 +15,7 @@ namespace Gameplay.RhythmSystem
         // The delegates are like that for avoid the check if unbound
         // If one enemy moves in wholes but the signature is not x / x and is y / x with y < x,
         // the whole callback won't be called, the same is true by the others similar cases in small top signatures
+        public Action onMeasure = delegate { };
         public Action onWhole = delegate { };
         public Action onHalf = delegate { };
         public Action onQuarter = delegate { };
@@ -70,6 +71,7 @@ namespace Gameplay.RhythmSystem
                 {
                     Debug.Log("-------------------------------------------");
                     MeasureCount++;
+                    onMeasure.Invoke(); // Important do the callback after the count increase for the logic of GetNextMeasureTime
                 }
 
                 // Callback for Sixteenth
@@ -80,13 +82,13 @@ namespace Gameplay.RhythmSystem
                 if (SixteenthCountGlobal % 2 == 0)
                 {
                     // Callback for Eighth
-                    Debug.Log("Eighth");
+                    //Debug.Log("Eighth");
                     onEighth.Invoke();
                 }
                 if (SixteenthCountGlobal % 4 == 0)
                 {
                     // Callback for Quarter
-                    //Debug.Log("Quarter");
+                    Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
                 if (SixteenthCountGlobal % 8 == 0)
@@ -102,6 +104,16 @@ namespace Gameplay.RhythmSystem
                     onWhole.Invoke();
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets the AudioSetting time for the next measure in the AudioSettings timeline (seconds)
+        /// </summary>
+        public double GetNextMeasureTime()
+        {
+            double timePassedSinceLastMeasure = _timeSinceLastSixteenth + SixteenthCount * _timesOfNotes.Sixteenth;
+            double timeOfOneMeasure = signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            return ((AudioSettings.dspTime * 1000.0) + (timeOfOneMeasure - timePassedSinceLastMeasure)) / 1000.0;
         }
 
         public bool IsInTime(Note note, uint indexOfSixteenthOnMeasure, double maxOffset)
