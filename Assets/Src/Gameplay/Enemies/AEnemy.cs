@@ -14,9 +14,11 @@ namespace Gameplay.Enemies
         [SerializeField]protected int _damageType;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
+        protected Bullets _bullets;
 
         public void Attack() {
             Debug.Log("En metodo atacar");
+
             Dancer.Instance.TakeDamage(_damage);
         }
         public void TakeDamage() { }
@@ -32,6 +34,8 @@ namespace Gameplay.Enemies
             int pathTilesCount = WorldManager.Instance.GetTileCount(_path);
             return pathTilesCount-_index;
         }
+
+         
     }
 }
 

@@ -2,6 +2,7 @@ using Gameplay.Enemies;
 using Gameplay.World;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.ObjectPool;
 
 namespace Gameplay.Towers
 {
@@ -28,6 +29,21 @@ namespace Gameplay.Towers
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)
         public abstract void OnRhythmHit(); // The callback when the user taps correctly, not callback of this type if not correct
+
+        private void Attack(Transform enemigo)   //call it when the user taps correctly
+        {
+            //El enemigo recibe daño
+            GameObject bulletGO = PoolManager.Get(typeof(Bullets)).gameObject;
+            Bullets bullet = bulletGO.GetComponent<Bullets>();
+
+            // origen: la posición actual de la torreta (o su firePoint)
+            Vector3 origen = transform.position;
+
+            // destino: posición del enemigo
+            Vector3 destino = enemigo.position;
+
+            bullet.Shot(origen, destino, 0.25f, PoolManager);
+        }
     }
 
 }
