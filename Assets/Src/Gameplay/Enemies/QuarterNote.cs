@@ -1,5 +1,6 @@
 using Gameplay.Enemies;
 using Gameplay.RhythmSystem;
+using Gameplay.Waves;
 using Gameplay.World;
 using System.Collections;
 using Unity.Mathematics.Geometry;
@@ -13,7 +14,9 @@ namespace Gameplay.Enemies
     {
         void Start()
         {
+            _vinylDrop = 3;
             RhythmManager.Instance.onQuarter += OnRhythmUpdate;
+            _damage = 10;
         }
 
         protected override void OnRhythmUpdate()
@@ -33,6 +36,7 @@ namespace Gameplay.Enemies
         private void OnDestroy()
         {
             RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
+            InvokeDeath();
         }
     } 
 }

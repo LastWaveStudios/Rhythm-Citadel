@@ -3,13 +3,14 @@
 ## **Rhythm Citadel**
 
 
-**v1.0.0**
+**v2.0.0**
 
-![Logo](./Imagenes_ReadMe/logo.png)
+![LogoJuego](./Imagenes_ReadMe/logoJuego.png)
+
+![Cartel](./Imagenes_ReadMe/Cartel.png)
 
 
-
-**The Last Wave Studios:**
+**The Last Wave Studios:**  
 
 - **Arturo Carretero Aguado**
 - **Ángela Fernández Hernández**
@@ -17,6 +18,8 @@
 - **Iván García García**
 - **George Picu Hordoan**
 - **Unai Retes Corada**
+
+  ![Logo](./Imagenes_ReadMe/logo.png)
   
 # Índice
 
@@ -25,9 +28,9 @@
 - [Índice de Referencias](IDR)
 
 ## 1. [Introducción](#introducción)
-   - 1.1 [Descripción breve del concepto](#descripción-breve-del-concepto)
-   - 1.2 [Descripción breve de la historia y personajes](#descripción-breve-de-la-historia-y-personajes)
-   - 1.3 [Propósito, público objetivo y plataformas](#propósito-público-objetivo-y-plataformas)
+   - 1.1. [Descripción breve del concepto](#descripción-breve-del-concepto)
+   - 1.2. [Descripción breve de la historia y personajes](#descripción-breve-de-la-historia-y-personajes)
+   - 1.3. [Propósito, público objetivo y plataformas](#propósito-público-objetivo-y-plataformas)
 
 ## 2. [Monetización](#monetización)
 - 2.1. [Tipo de modelo de monetización](#tipo-de-modelo-de-monetización)
@@ -35,6 +38,8 @@
 
 ## 3. [Planificación y Costes](#planificación-y-costes)
 - 3.1. [El equipo humano](#el-equipo-humano)
+  - 3.1.1. [Fase ALPHA](#fase-alpha)
+  - 3.1.2. [Fase Beta](fase-beta)
 - 3.2. [Estimación temporal del desarrollo](#estimación-temporal-del-desarrollo)
 
 ## 4. [Mecánicas y Elementos de Juego](#mecánicas-y-elementos-de-juego)
@@ -43,11 +48,14 @@
 - 4.3. [Controles](#controles)
 - 4.4. [Niveles y misiones](#niveles-y-misiones)
 - 4.5. [Enemigos](#enemigos)
+  - 4.5.1. [Básicos](#básicos)
+  - 4.5.2. [Élite](#élite)
+  - 4.5.3. [Jefes](#jefes)
 - 4.6. [Torretas](#torretas)
-- 4.7 [Economía](#economía)
+- 4.7. [Economía](#economía)
 - 4.8. [Bailarina](#bailarina)
 - 4.9. [Diagramas de clases](#diagramas-de-clases)
-- 4.10. [Diagrama de flujo](#diagrama-de-flujo) 
+- 4.10. [Diagrama de flujo de partida](#diagrama-de-flujo-de-partida) 
 
 ## 5. [Trasfondo](#trasfondo)
 - 5.1. [Descripción detallada de la historia y la trama](#descripción-detallada-de-la-historia-y-la-trama)
@@ -61,7 +69,8 @@
   - 6.2.2. [Enemigos](#enemigos-1)
   - 6.2.3. [Bailarina](#bailarina-1)
   - 6.2.4. [Niveles](#niveles)
-  - 6.2.5. [Interfaces](#interfaces)
+  - 6.2.5. [Botones](#botones)
+  - 6.2.6. [Interfaces](#interfaces)
 - 6.3 [Escenarios](#escenarios) 
 
 ## 7. [Audio](#audio)
@@ -73,17 +82,23 @@
 - 8.2. [Diagrama de flujo](#diagrama-de-flujo)
 
 ## 9. [Hoja de ruta del desarrollo](#hoja-de-ruta-del-desarrollo)
-- 9.1. [Hitos para la alpha](#hitos-para-la-alpha)
+- 9.1. [Hitos para la Alpha](#hitos-para-la-alpha)
   - 9.1.1. [Hito 1: Sistema de ritmo implementado](#hito-1-sistema-de-ritmo-implementado)
   - 9.1.2. [Hito 2: Movimiento de enemigos](#hito-2-movimiento-de-enemigos)
   - 9.1.3. [Hito 3: Spawn de torretas](#hito-3-spawn-de-torretas)
   - 9.1.4. [Hito 4: Desarrollo del WorldManager](#hito-4-desarrollo-del-worldmanager)
   - 9.1.5. [Hito 5: Diseño de personajes](#hito-5-diseño-de-personajes)
-- 9.2. [Fecha de lanzamiento](#fecha-de-lanzamiento)
+- 9.2. [Hitos para la Beta](#hitos-para-la-beta)
+  - 9.2.1. [Hito 6: ejemplo](hito-6-ejemplo)
+- 9.3. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
 ## 10. [PostMortem](#postmortem)
-- 10.1 [Lecciones aprendidas individual](#lecciones-aprendidas-individual)
-- 10.2 [Trabajo grupal](#trabajo-grupal)
+- 10.1. [ALPHA](#alpha)
+  - 10.1.1. [Lecciones aprendidas individual](#lecciones-aprendidas-individual)
+  - 10.1.2. [Trabajo grupal](#trabajo-grupal)
+- 10.2. [BETA](#beta)
+  - 10.2.1 [Lecciones aprendidas individual](#lecciones-aprendidas-individual)
+  - 10.2.2 [Trabajo grupal](#trabajo-grupal)
 
 ## **Índice de Referencias**
 
@@ -156,7 +171,7 @@ Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargable
 
    # **Planificación y Costes**
 1.  ## **El equipo humano**
-**Fase ALPHA**
+  1. **Fase ALPHA**
 
 Para empezar a planificar el videojuego, se hizo una reunión para decidir el género del videojuego al igual que su temática. Una vez decidido esto, se empezaron a detallar las mecánicas del videojuego, al igual que se empezaron a idear los primeros enemigos y las primeras torretas.
 
@@ -191,7 +206,24 @@ Por otra parte, se empezó a detallar cómo sería el flujo del videojuego, tant
   - Música
   - Efectos de sonido
 
+  2. **Fase BETA**
+El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integración de todos los componentes del juego. El objetivo fue construir una versión completamente jugable y estable que representará la visión final del videojuego.
+
+- **Arte:**
+  - Interaces finales
+  - Arte promocional
+  - Flyer
+  - Animaciones
+ 
+- **Programación:**
+  - Daño visual
+
+- **Audio:**
+  - Audio
+
 2. ## **Estimación temporal del desarrollo**
+
+///////////////Rehacer tabla////////////////////////
 
 | Área | Tarea | Duración (d) | Comienzo | Fin |
 |------|-------|-------------|----------|-----|
@@ -365,7 +397,7 @@ Diagrama de clases - Entidades. En este primer diagrama se muestra una visión g
 ![ObjectPool](./Imagenes_ReadMe/ObjectPool.png)  
 *Figura 2: Object Pool* 
 
-10. ## **Diagrama de Flujo**
+10. ## **Diagrama de Flujo de Partida**
 Se ha creado un diagrama de flujo que muestra cómo debería funcionar una partida para tener una visión más cercana al resultado final esperado.  
 
 <a id="figura-3"></a>
@@ -392,7 +424,7 @@ Rhythm Citadel tendrá una estética cartoon inspirada en el estilo Steampunk, c
 Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, algo común en el estilo Steampunk escogido.
 
 2. ## **Apartado visual**
-1. ## **Torretas**
+1.  ## **Torretas**
 <a id="figura-4"></a>
 ![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
 *Figura 4: Torreta Piano*  
@@ -417,11 +449,19 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 <a id="figura-9"></a>
 ![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
 *Figura 9: Enemigo Blanca*  
-      
+
 <a id="figura-10"></a>
 ![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
 *Figura 10: Enemigo Corchea*  
       
+<a id="figura-10"></a>
+![CorcheasRotas](./Imagenes_ReadMe/CorcheasRotas.png)  
+*Figura 10: Enemigo Corcheas Rotas*  
+
+<a id="figura-10"></a>
+![CorcheaLlorando](./Imagenes_ReadMe/CorcheaLlorando.png)  
+*Figura 10: Enemigo Corchea Llorando*  
+
 <a id="figura-11"></a>
 ![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
 *Figura 11: Enemigo Redonda*     
@@ -429,17 +469,39 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 <a id="figura-12"></a>
 ![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
 *Figura 12: Enemigo Silencio*  
+
+<a id="figura-10"></a>
+![KeyframesSilenciodeNegra](./Imagenes_ReadMe/SilencioVolando.png)  
+*Figura 10: Keyframes Silencio de Negra*  
       
 <a id="figura-13"></a>
 ![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
 *Figura 13: Enemigo Clave de Sol*
    
-3. ## **Bailarina**
+3.  ## **Bailarina**
 <a id="figura-14"></a>
-![Bailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
-*Figura 14: Bailarina*
+![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
+*Figura 14: Keyframes Bailarina*
+
+<a id="figura-14"></a>
+![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
+*Figura 14: Keyframes Bailarina Levemente Dañada*
+
+<a id="figura-14"></a>
+![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
+*Figura 14: Keyframes Bailarina Moderadamente Dañada*
+
+<a id="figura-14"></a>
+![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
+*Figura 14: Keyframes Bailarina Gravemente Dañada*
+
+<a id="figura-14"></a>
+![BailarinaInicio](./Imagenes_ReadMe/BailarinaInicio.png)  
+*Figura 14: Keyframes Bailarina Inicio*
+
+
    
-4.   ## **Niveles**
+4.  ## **Niveles**
 <a id="figura-15"></a>
 ![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
 *Figura 15: Tutorial*  
@@ -455,9 +517,20 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 <a id="figura-18"></a>
 ![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
 *Figura 18: Nivel 3*  
-   
 
-1. ## **Interfaces**
+5.  ##**Botones**
+
+
+![Boton1](./Imagenes_ReadMe/Boton1.png)  
+
+![Boton2](./Imagenes_ReadMe/Boton2.png)  
+
+![Boton3](./Imagenes_ReadMe/Boton3.png)  
+
+![Boton4](./Imagenes_ReadMe/Boton4.png)  
+*Figura 18: Botones*  
+
+6.  ## **Interfaces**
 Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría son menús, pero durante la partida se mostrará la cantidad de vinilos que tendrá el jugador y una ayuda visual para facilitar seguir el ritmo de las torres. Para indicar la cantidad de vida que le queda a la bailarina se dispone de un indicador en la parte superior de la pantalla, pero se plantea el uso de otro tipo de indicador, como el estado de la propia bailarina que se vaya destruyendo para indicar la vida restante.
 
 <a id="figura-19"></a>
@@ -469,9 +542,40 @@ Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría so
 *Figura 20: Interfaz de Partida*   
    
    
-1. ## **Escenarios**
+3. ## **Escenarios**
 El juego se ambienta dentro de una caja musical, donde destacarán las piezas mecánicas que la hacen funcionar en su interior.
 Se observará desde una vista militar donde se verá un tablero por donde se dará todo el gameplay. En el tablero habrán tiles para identificar las zonas donde se podrá poner las torretas, así como el raíl por donde pasan los enemigos. 
+
+<a id="figura-20"></a>
+![Tileset](./Imagenes_ReadMe/Tileset.jpeg)  
+*Figura 20: Tileset*   
+
+<table style="border: none;">
+  <tr>
+    <td align="center" style="border: none;">
+      <img src="./Imagenes_ReadMe/Decoracion1.png" width="150">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./Imagenes_ReadMe/Decoracion2.png" width="150">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./Imagenes_ReadMe/Decoracion3.png" width="150">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./Imagenes_ReadMe/Decoracion4.png" width="150">
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./Imagenes_ReadMe/Decoracion5.png" width="150">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" align="center" style="border: none;">
+      <em>Figura 20: Decoraciones</em>
+    </td>
+  </tr>
+</table>
+
+
 
   # **Audio**
 El audio va a ser un elemento esencial del proyecto, por tanto se le va a dedicar bastante tiempo y esfuerzo. 
@@ -508,11 +612,17 @@ Interfaz:
 General:
 
 - Durante la fase de combate sonará un mecanismo de engranajes (pertenecientes a la caja musical).
+
+
  # **Interfaz**
 1. ## **Diseños básicos de los menús**
 Las diferentes pantallas planteadas son las siguientes:
 - Menú inicial: Es la primera pantalla que se ve y la que permite acceder al resto de pantallas.
   
+<a id="figura-21"></a>
+![BocetoMenuInicial](./Imagenes_ReadMe/BocetoInterfazMenuInicial.jpeg)  
+*Figura 21: Boceto Interfaz Menu Inicial*
+
 <a id="figura-21"></a>
 ![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.jpeg)  
 *Figura 21: Interfaz Menu Inicial*
@@ -520,16 +630,29 @@ Las diferentes pantallas planteadas son las siguientes:
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
   
 <a id="figura-22"></a>
+![BocetoInterfazSelectorDificultad](./Imagenes_ReadMe/BocetoInterfazSelectorDificultad.jpeg)  
+*Figura 22: Boceto Interfaz Selector de Dificultad*
+
+<a id="figura-22"></a>
 ![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.jpeg)  
 *Figura 22: Interfaz Selector de Dificultad*
   
 - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
     
 <a id="figura-23"></a>
+![BocetoInterfazTutorial](./Imagenes_ReadMe/BocetoInterfazTutorial.jpeg)  
+*Figura 23: Boceto Interfaz Tutorial*
+
+<a id="figura-23"></a>
 ![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
 *Figura 23: Interfaz Tutorial*
 
+
 - Créditos: Es una pantalla donde aparecen los nombres de los integrantes del grupo y sus funciones.
+
+<a id="figura-24"></a>
+![BocetoInterfazCréditos](./Imagenes_ReadMe/BocetoInterfazCréditos.jpeg)  
+*Figura 24: Boceto Interfaz Créditos*
 
 <a id="figura-24"></a>
 ![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.jpeg)  
@@ -538,10 +661,19 @@ Las diferentes pantallas planteadas son las siguientes:
 - Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.
   
 <a id="figura-25"></a>
+![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
+*Figura 25: Boceto Interfaz Pausa*  
+
+<a id="figura-25"></a>
 ![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.jpeg)  
 *Figura 25: Interfaz Pausa*  
       
+      
 -Opciones: Se incorporará un menú de opciones que permite ajustar el volumen del juego.
+
+<a id="figura-26"></a>
+![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
+*Figura 26: Boceto Interfaz Opciones*
 
 <a id="figura-26"></a>
 ![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.jpeg)  
@@ -549,6 +681,10 @@ Las diferentes pantallas planteadas son las siguientes:
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
+<a id="figura-27"></a>
+![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
+*Figura 27: Boceto Pantalla Victoria o Derrota*
+
 <a id="figura-27"></a>
 ![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.jpeg)  
 *Figura 27: Pantalla Victoria o Derrota*
@@ -559,7 +695,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 28: Diagrama de Interfaces*
 
   # **Hoja de ruta del desarrollo**
-## **Hitos para la alpha:**
+## **Hitos para la ALPHA:**
 1. ### **Hito 1: Sistema de ritmo implementado**
 El sistema de ritmo es funcional, sigue la lógica establecida y ha sido implementado con las torretas. 
 
@@ -575,36 +711,81 @@ Se ha desarrollado un gestor para administrar los diferentes posibles caminos qu
 5. ### **Hito 5: Diseño de personajes**
 Se tienen los diseños o sprites de las torres, los enemigos y la bailarina.
 
-2. ## **Fecha de lanzamiento**
+## **Hitos para la BETA**
+1. ### **Hito 6: prueba**
+Texto
+
+2.
+
+## **Fecha de lanzamiento**
 Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubre del 2025.
 
-# Post-Mortem
+# **Post-Mortem**
 
-1. ## Lecciones aprendidas individual
-   1. ### Claudia Alejandra Fernández Torrejón  
-      - **Cosas que se han hecho bien**: Se ha empezado a avanzar con el apartado visual ni bien se determinó el concepto del juego. Además de conseguir acabar con el apartado de enemigos, torretas e incluso realización de una animación de la bailarina. El desarrollo del juego en general se ha dado de forma fluida, debido a la buena distribución de trabajo entre los miembros. Donde todos cumplieron con el trabajo asignado así como las deadlines impuestas por el propio equipo.    
-      - **Cosas que se pueden mejorar**: Aunque las tareas que me fueron asignadas eran principalmente de arte, podría haberme involucrado más en la parte de programación tratando de comprender mejor cómo se programaron las mecánicas y el juego en general.     
-   
-   2. ### Iván García García  
-      - **Cosas que se han hecho bien**: Se ha comenzado a desarrollar el proyecto desde el inicio, en la mayoría de apartados, tanto documentación como arte, audio (pensado) y programación. Ha habido una comunicación decente por parte de todos, con mucho trabajo durante las clases (no en explicaciones) en los que estábamos todos, pero aportando más en lo que cada uno se especializa y/o se le da mejor  
-      - **Cosas que se pueden mejorar**: Quizás en cuanto al diseño técnico de las mecánicas los UML deberían haber sido un poco más estrictos, puesto que ha habido bastantes cambios, en ciertas mecánicas.      
-   
-   3. ### George Picu Hordoan     
-      - **Cosas que se han hecho bien**: Tomar la iniciativa y organizar reuniones. Preparar las reuniones ha sido fácil y durante creo que se ha aprovechado muy bien el tiempo. También me parece que se ha avanzado bien en la práctica.  
-      - **Cosas que se pueden mejorar**: A la hora de organizar el proyecto, me parece que me ha faltado claridad o por donde empezar a planificar cosas. No es que no se haya hecho, pero hubo que volver sobre lo mismo o tardamos más de lo que me hubiera gustado en tener claro lo que hay que hacer. 
-   
-   4. ### Unai Retes Corada  
-      - **Cosas que se han hecho bien**: Se ha hecho una buena división de las tareas que se tenían que ir haciendo a lo largo del proyecto, al igual que se han respetado las fechas propuestas para tener ciertos apartados completados. Cada miembro del grupo ha trabajado correctamente y no han habido quejas sobre la parte del proyecto que tenía que desarrollar cada miembro.  
-      - **Cosas que se pueden mejorar**: Que haya más participación de todos los miembros del grupo a la hora de dar ideas para hacer el videojuego y también durante las reuniones. Se tardó mucho en empezar a hacer la programación del videojuego. También a la hora de la programación ha habido algunos pequeños fallos de comunicación que han provocado que ciertas tareas consuman más tiempo de lo necesario.   
-   
-   5. ### Ángela Fernández Hernández  
-      - **Cosas que se han hecho bien**: Dividir el trabajo en pequeñas tareas usando la herramienta Trello, facilitando así el avance del proyecto. Además, la división fue exitosa ya que permitió posteriormente a la persona que lo unió que esta tarea fuese relativamente sencilla.    
-      - **Cosas que se pueden mejorar**: Organizarme mejor para ser más constante realizando las tareas, teniendo en cuenta el tiempo que me lleva investigar sobre ciertas cosas que no controlo.  
-   
-   6. ### Arturo Carretero Aguado  
-      - **Cosas que se han hecho bien**: La división de tareas mediante el tablero de Trello, el progreso constante del equipo como conjunto y la comunicación entre miembros.  
-      - **Cosas que se pueden mejorar**: Me parece que ha faltado claridad en las especificaciones de algunas tareas y la metodología general a seguir para el formato/encapsulación general de los archivos a la hora de programar.   
+## **ALPHA**
 
-2. ## Trabajo Grupal
-   - **Cosas que se han hecho bien**: Desde un primer momento se han organizando reuniones para plantear el concepto del juego y, posteriormente, la división de tareas. Por otra parte, cabe destacar que el grupo ha avanzado a buen ritmo.
-   - **Cosas que se pueden mejorar**: En cuanto a los aspectos que se pueden mejorar de cara a las siguientes fases del proyecto, se considera que ha faltado claridad a la hora de planificar ciertas tareas, dejando en ocasiones poco claro lo que se tenía que hacer o cómo llevarlo a cabo.
+### Lecciones aprendidas individuales
+
+1. #### Claudia Alejandra Fernández Torrejón  
+   - **Cosas que se han hecho bien**: Se ha empezado a avanzar con el apartado visual ni bien se determinó el concepto del juego. Además de conseguir acabar con el apartado de enemigos, torretas e incluso realización de una animación de la bailarina. El desarrollo del juego en general se ha dado de forma fluida, debido a la buena distribución de trabajo entre los miembros. Donde todos cumplieron con el trabajo asignado así como las *deadlines* impuestas por el propio equipo.  
+   - **Cosas que se pueden mejorar**: Aunque las tareas que me fueron asignadas eran principalmente de arte, podría haberme involucrado más en la parte de programación tratando de comprender mejor cómo se programaron las mecánicas y el juego en general.  
+
+2. #### Iván García García  
+   - **Cosas que se han hecho bien**: Se ha comenzado a desarrollar el proyecto desde el inicio, en la mayoría de apartados, tanto documentación como arte, audio (pensado) y programación. Ha habido una comunicación decente por parte de todos, con mucho trabajo durante las clases (no en explicaciones) en los que estábamos todos, pero aportando más en lo que cada uno se especializa y/o se le da mejor.  
+   - **Cosas que se pueden mejorar**: Quizás en cuanto al diseño técnico de las mecánicas los UML deberían haber sido un poco más estrictos, puesto que ha habido bastantes cambios en ciertas mecánicas.  
+
+3. #### George Picu Hordoan  
+   - **Cosas que se han hecho bien**: Tomar la iniciativa y organizar reuniones. Preparar las reuniones ha sido fácil y creo que se ha aprovechado muy bien el tiempo. También me parece que se ha avanzado bien en la práctica.  
+   - **Cosas que se pueden mejorar**: A la hora de organizar el proyecto, me parece que me ha faltado claridad sobre por dónde empezar a planificar cosas. No es que no se haya hecho, pero hubo que volver sobre lo mismo o tardamos más de lo que me hubiera gustado en tener claro lo que había que hacer.  
+
+4. #### Unai Retes Corada  
+   - **Cosas que se han hecho bien**: Se ha hecho una buena división de las tareas que se tenían que ir haciendo a lo largo del proyecto, al igual que se han respetado las fechas propuestas para tener ciertos apartados completados. Cada miembro del grupo ha trabajado correctamente y no ha habido quejas sobre la parte del proyecto que tenía que desarrollar cada miembro.  
+   - **Cosas que se pueden mejorar**: Que haya más participación de todos los miembros del grupo a la hora de dar ideas para hacer el videojuego y también durante las reuniones. Se tardó mucho en empezar a hacer la programación del videojuego. También ha habido algunos pequeños fallos de comunicación que han provocado que ciertas tareas consuman más tiempo de lo necesario.  
+
+5. #### Ángela Fernández Hernández  
+   - **Cosas que se han hecho bien**: Dividir el trabajo en pequeñas tareas usando la herramienta Trello, facilitando así el avance del proyecto. Además, la división fue exitosa ya que permitió posteriormente a la persona que lo unió que esta tarea fuese relativamente sencilla.  
+   - **Cosas que se pueden mejorar**: Organizarme mejor para ser más constante realizando las tareas, teniendo en cuenta el tiempo que me lleva investigar sobre ciertas cosas que no controlo.  
+
+6. #### Arturo Carretero Aguado  
+   - **Cosas que se han hecho bien**: La división de tareas mediante el tablero de Trello, el progreso constante del equipo como conjunto y la comunicación entre miembros.  
+   - **Cosas que se pueden mejorar**: Me parece que ha faltado claridad en las especificaciones de algunas tareas y la metodología general a seguir para el formato/encapsulación general de los archivos a la hora de programar.  
+
+
+
+### Trabajo grupal  
+- **Cosas que se han hecho bien:**  Desde un primer momento se han organizando reuniones para plantear el concepto del juego y, posteriormente, la división de tareas. Por otra parte, cabe destacar que el grupo ha avanzado a buen ritmo.
+- **Cosas que se pueden mejorar:** En cuanto a los aspectos que se pueden mejorar de cara a las siguientes fases del proyecto, se considera que ha faltado claridad a la hora de planificar ciertas tareas, dejando en ocasiones poco claro lo que se tenía que hacer o cómo llevarlo a cabo.
+
+
+## **BETA**
+
+### Lecciones aprendidas individuales
+
+1. #### Claudia Alejandra Fernández Torrejón  
+   - **Cosas que se han hecho bien**:
+   - **Cosas que se pueden mejorar**:
+
+2. #### Iván García García  
+   - **Cosas que se han hecho bien**:
+   - **Cosas que se pueden mejorar**:
+
+3. #### George Picu Hordoan  
+   - **Cosas que se han hecho bien** 
+   - **Cosas que se pueden mejorar**
+
+4. #### Unai Retes Corada  
+   - **Cosas que se han hecho bien**:
+   - **Cosas que se pueden mejorar**:
+
+5. #### Ángela Fernández Hernández  
+   - **Cosas que se han hecho bien**:
+   - **Cosas que se pueden mejorar**:
+
+6. #### Arturo Carretero Aguado  
+   - **Cosas que se han hecho bien**: 
+   - **Cosas que se pueden mejorar**:
+
+
+### Trabajo grupal  
+- **Cosas que se han hecho bien:**
+- **Cosas que se pueden mejorar:**

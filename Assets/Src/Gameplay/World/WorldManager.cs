@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Gameplay.Enemies;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,7 +14,6 @@ namespace Gameplay.World
         [SerializeField] private List<GameObject> _pathObjects;
         [SerializeField] private Tilemap _tilemap;
         private List<Path> _paths;
-        private List<TileBase> _tilesWithEnemies;
 
         //Initialize the Direction array array
         void Start()
@@ -29,6 +30,11 @@ namespace Gameplay.World
         public Vector3Int GetNextTile(int pathID, int currentIndex)
         {
             return _paths[pathID].GetTile(currentIndex + 1);
+        }
+
+        public Vector3Int GetTile(int pathID, int index)
+        {
+            return _paths[pathID].GetTile(index);
         }
 
         public Vector3 GetCellCenterWorld(Vector3Int CellCoordinates)
@@ -49,10 +55,6 @@ namespace Gameplay.World
             }
 
         }
-        void UpdateEnemiesOnPath(Path path)
-        {
-
-        }
 
         public List<Vector3Int> GetSpawnPoints()
         {
@@ -62,6 +64,11 @@ namespace Gameplay.World
                 spawnPointsList.Add(pathObject.GetSpawnPoint());
             }
             return spawnPointsList;
+        }
+
+        public int GetTileCount(int pathID)
+        {
+            return _paths[pathID].GetTileCount();
         }
     }
 }
