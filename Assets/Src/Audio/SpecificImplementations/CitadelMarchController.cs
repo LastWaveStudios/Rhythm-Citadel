@@ -1,33 +1,23 @@
-using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace Audio.SpecificImplementations
 {
-    public class CitadelMarchController : MonoBehaviour
+    public class CitadelMarchController : AModularMusicController
     {
-        [SerializeField] private List<AudioClipRhythm> _clipsRhythms;
-        private int _currentClipRhythm = 0;
+        private int _part = -1;
 
-        void Start()
+
+        // TODO: Do the logic of the song changes
+        protected override int[] InitClips()
         {
-            for (int i = 0; i < _clipsRhythms.Count; ++i)
-            {
-                AudioClipRhythm clipRhythm = _clipsRhythms[i];
-                clipRhythm.audioSource = gameObject.AddComponent<AudioSource>();
-                clipRhythm.audioSource.loop = false;
-                clipRhythm.audioSource.spatialBlend = 0.0f;
-                clipRhythm.audioSource.outputAudioMixerGroup = AudioManager.Instance.audioControl.FindMatchingGroups("Music")[0];
-                Debug.Log(clipRhythm.audioSource.outputAudioMixerGroup.name);
-                clipRhythm.audioSource.clip = clipRhythm.audioClip;
-                _clipsRhythms[i] = clipRhythm;
-            }
+            return new int[] { 0 };
         }
 
-        public void Play()
+        protected override int[] SelectNextClips(int[] songPartThatWillEnd)
         {
-            _currentClipRhythm = 0;
-            _clipsRhythms[_currentClipRhythm].audioSource.Play();
+            _part = (_part + 1) % (_clipsRhythms.Count - 3);
+            return new int[] { _part, (_part % 2 == 0)? _clipsRhythms.Count - 1 : _clipsRhythms.Count - 3 };
         }
     }
 }
-

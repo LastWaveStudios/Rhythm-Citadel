@@ -355,21 +355,29 @@ MonoBehaviour:
   _towers: []
   _pattern:
     signature:
-      top: 3
-      bottom: 8
-      beatNoteDuration: 8
-      maxSixteenthsOnOneMeasure: 6
+      top: 4
+      bottom: 4
+      beatNoteDuration: 4
+      maxSixteenthsOnOneMeasure: 16
     patternNotes:
     - duration: 4
       isDottedNote: 0
       isSilence: 0
       durationInSixteenths: 4
-    - duration: 8
+    - duration: 4
       isDottedNote: 0
       isSilence: 0
-      durationInSixteenths: 2
-    spaceInSixteenths: 6
-  BPM: 120
+      durationInSixteenths: 4
+    - duration: 4
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 4
+    - duration: 4
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 4
+    spaceInSixteenths: 16
+  BPM: 123
 --- !u!4 &168700805
 Transform:
   m_ObjectHideFlags: 0
@@ -645,27 +653,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 550875927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cecac6e1c6d86742ac829badeca1fec, type: 3}
+  m_Script: {fileID: 11500000, guid: cc34641f758ae6643a7f2c133457626f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _clipsRhythms:
-  - audioSource: {fileID: 0}
+  - audioSources: []
+    audioSourceIndex: 0
     audioClip: {fileID: 8300000, guid: 94afb34d2063a2449ae7e6cef82e6177, type: 3}
-    signature:
-      top: 4
-      bottom: 4
-      beatNoteDuration: 4
-      maxSixteenthsOnOneMeasure: 16
-    BPM: 120
     measuresDuration: 8
-  - audioSource: {fileID: 0}
+  - audioSources: []
+    audioSourceIndex: 0
     audioClip: {fileID: 8300000, guid: 60fa8ab9842e96c478ea538ee6ac0c46, type: 3}
-    signature:
-      top: 4
-      bottom: 4
-      beatNoteDuration: 4
-      maxSixteenthsOnOneMeasure: 16
-    BPM: 120
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 29b5060bbccbf804585b452e78827d0e, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 84c6ead20731cf348874bc85688c0a8c, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: e0fe1e54c30f00647af0b8d0dc19baf6, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 036b99dab81ca6f4da50c0826f933ad0, type: 3}
     measuresDuration: 8
 --- !u!1 &1137102952
 GameObject:

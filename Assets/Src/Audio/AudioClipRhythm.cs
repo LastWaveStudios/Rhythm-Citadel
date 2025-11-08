@@ -4,21 +4,24 @@ using Gameplay.RhythmSystem;
 namespace Audio
 {
     [System.Serializable]
-    public struct AudioClipRhythm
+    public class AudioClipRhythm
     {
-        [HideInInspector] public AudioSource audioSource;
+        [HideInInspector] public AudioSource[] audioSources = new AudioSource[2];
+        [HideInInspector] public int audioSourceIndex = 0;
         public AudioClip audioClip;
-        public Signature signature;
-        public int BPM;
         public int measuresDuration;
 
-        public AudioClipRhythm(AudioSource audioSource, AudioClip audioClip, Signature signature, int BPM, int measuresDuration)
+        public AudioClipRhythm(AudioClip audioClip, int measuresDuration)
         {
-            this.audioSource = audioSource;
+            this.audioSources = new AudioSource[2];
+            this.audioSourceIndex = 0;
             this.audioClip = audioClip;
-            this.signature = signature;
-            this.BPM = BPM;
             this.measuresDuration = measuresDuration;
+        }
+
+        public void SwitchAudioSource()
+        {
+            audioSourceIndex = 1 - audioSourceIndex;
         }
     }
 }
