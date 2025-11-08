@@ -29,6 +29,11 @@ namespace Gameplay
             }
         }
 
+        private void Start()
+        {
+            GameplayManager.Instance.onEnemyDeath += AddVinyl;
+        }
+
         #endregion
 
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
@@ -37,7 +42,7 @@ namespace Gameplay
         [SerializeField] private TileBase _unBuildableTile;
         [SerializeField] private GameObject _buildingMenu;
         [SerializeField] private GameObject _updateMenu;
-
+        private String _State = "BuildState";
         [SerializeField] private int _vinyl = 0;
 
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
@@ -55,7 +60,7 @@ namespace Gameplay
 
         void InputHandler()
         {
-            if (_selectedTilePosition != null) 
+            if (_selectedTilePosition != null)
             {
                 _selectedTilePosition = null;
                 _buildingMenu.SetActive(false);
@@ -82,7 +87,7 @@ namespace Gameplay
         #endregion
 
         #region Tower methods
-        
+
         /// <summary>
         /// Instancia una torre en el tile que se le pase
         /// </summary>
@@ -132,24 +137,24 @@ namespace Gameplay
         {
             if (_tilemap.GetTile(clickedCellPosition) == _unBuildableTile)
                 _tilemap.SetTile(clickedCellPosition, _buildableTile);
-            else 
+            else
                 _tilemap.SetTile(clickedCellPosition, _unBuildableTile);
         }
 
-        void GetPositionClicked() // FUNCIONA CON LA CÁMARA CENITAL
+        void GetPositionClicked() // FUNCIONA CON LA Cï¿½MARA CENITAL
         {
             Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickedPosition.z = 0;
 
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
         }
-        
+
         #endregion
-        
+
         #region Economy methods
-        void AddVinly(int vinly)
+        void AddVinyl(int vinyl)
         {
-            _vinyl += vinly;
+            _vinyl += vinyl;
         }
         public void TryBuyTower(GameObject towerToBuy)
         {
@@ -157,25 +162,35 @@ namespace Gameplay
             int towerPrice = script.GetPrice();
             if (CanBuy(towerPrice))
             {
-                SpendVinly(towerPrice);
+                SpendVinyl(towerPrice);
                 SpawnTower(_selectedTilePosition.Value, towerToBuy);
                 ChangeTile(_selectedTilePosition.Value);
             }
-            else Debug.Log("Eres pobre, no te la permites");       
+            else Debug.Log("Eres pobre, no te la permites");
         }
         public void SellTower()
         {
             _vinyl += DestroyTower(_selectedTilePosition.Value);
-            ChangeTile( _selectedTilePosition.Value);
+            ChangeTile(_selectedTilePosition.Value);
 
         }
         bool CanBuy(int price)
         {
-            return price <= _vinyl;
+            return price <= _vinyl && _State=="BuildState";
         }
-        void SpendVinly(int price)
+        void SpendVinyl(int price)
         {
             _vinyl -= price;
+        }
+
+        public void SetBuildState()
+        {
+            this._State = "BuildState";
+        }
+
+        public void SetRhythmState()
+        {
+            this._State = "RhythmState";
         }
 
         #endregion

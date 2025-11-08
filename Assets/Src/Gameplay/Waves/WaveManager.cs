@@ -11,6 +11,7 @@ namespace Gameplay.Waves
         public static WaveManager Instance { get; private set; }
         [SerializeField] public RhythmPattern _pattern;
         [SerializeField] public int BPM = 120;
+        private int _activeEnemies = 0;
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace Gameplay.Waves
         private void Start()
         {
             _currentWaveEnemies = new List<AEnemy>();
+            GameplayManager.Instance.onEnemyDeath += EnemyDied;
         }
 
         public bool InitNextWave()
@@ -52,6 +54,8 @@ namespace Gameplay.Waves
             _waves[CurrentWave].Init();
             _currentWaveEnemies.Clear();
             _currentWaveEnemies.Capacity = _waves[CurrentWave].enemiesToSpawn.Count;
+
+            _activeEnemies = _currentWaveEnemies.Capacity; //Count how many have to die
 
             foreach (EnemyToSpawnData enemyData in _waves[CurrentWave].enemiesToSpawn)
             {
@@ -90,8 +94,17 @@ namespace Gameplay.Waves
             }
             if (LastEnemySpawnedInCurrentWave == _currentWaveEnemies.Count - 1)
             {
-                RhythmManager.Instance.onSixteenth -= OnSixteenth; 
+                RhythmManager.Instance.onSixteenth -= OnSixteenth;
                 // Must wait to all the enemies death for change the phase and for start preparing the nextWave, but at least do not have more calls for nothing
+            }
+        }
+
+        public void EnemyDied(int unused)
+        {
+            _activeEnemies = _activeEnemies - 1;
+            if (_activeEnemies <= 0)
+            {
+                RhythmManager.Instance.EndRhythm();
             }
         }
     }
