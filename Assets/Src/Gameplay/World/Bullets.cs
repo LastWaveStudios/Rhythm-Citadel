@@ -25,16 +25,18 @@ public class Bullets : MonoBehaviour, IPoolableObject
 
     public void Shot(Vector3 from, Vector3 to, float dur, IPoolManager pool)
     {
+        Debug.Log("Estamos en el metodo SHOT DE LA BALA");
         transform.position = from;
         if (_movement != null)
         {
             StopCoroutine(_movement);
-            _movement = StartCoroutine(BulletMovement(to, dur, pool));
         }
+        _movement = StartCoroutine(BulletMovement(to, dur, pool));
     }
 
     private IEnumerator BulletMovement(Vector3 target, float dur, IPoolManager pool)
     {
+        Debug.Log("Estamos en la corutina");
         Vector3 start = transform.position;
         float time = 0f;
         while (time < 1f)

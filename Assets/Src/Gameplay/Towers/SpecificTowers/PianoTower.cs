@@ -34,6 +34,9 @@ namespace Gameplay.Towers.SpecificTowers
         {
             float t = 0.0f;
 
+            VisualAttack();
+            //LLAMAR A FUNCION DE HACERSE DAÑO DE LOS ENEMIGOS
+            //DEJAMOS ESTO POR AHORA PARA SABER CUANDO SI SE DEBE DISPARAR Y SI ESTA SUCEDIENDO
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
             sprite.color = Color.green;
