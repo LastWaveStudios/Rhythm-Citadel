@@ -142,6 +142,9 @@ namespace Gameplay.RhythmSystem
         public void EndRhythm()
         {
             _isPlaying = false;
+            GameplayManager.Instance.SetBuildState();
+            GameObject.Find("StartWaveButton").transform.localScale = new Vector3(1, 1, 1);
+            
         }
     }
 }
