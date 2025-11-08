@@ -51,7 +51,16 @@ public class EnemieManager : MonoBehaviour
         List<AEnemy> tmp = new List<AEnemy>();
         foreach (GameObject game in _enemiesList)
         {
-            tmp.Add(game.GetComponent<AEnemy>());
+            if (game != null)
+            {
+                tmp.Add(game.GetComponent<AEnemy>());
+            }
+            else
+            {
+                Debug.Log("EL ENEMIGO DE LA LISTA ES NULO");
+            }
+            
+            
         }
         return tmp;
     }

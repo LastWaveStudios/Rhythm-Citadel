@@ -1,3 +1,4 @@
+using Gameplay.Enemies;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -23,7 +24,7 @@ public class Bullets : MonoBehaviour, IPoolableObject
         }
     }
 
-    public void Shot(Vector3 from, Vector3 to, float dur, IPoolManager pool)
+    public void Shot(Vector3 from, AEnemy enemy, float dur, IPoolManager pool)
     {
         Debug.Log("Estamos en el metodo SHOT DE LA BALA");
         transform.position = from;
@@ -31,18 +32,19 @@ public class Bullets : MonoBehaviour, IPoolableObject
         {
             StopCoroutine(_movement);
         }
-        _movement = StartCoroutine(BulletMovement(to, dur, pool));
+        _movement = StartCoroutine(BulletMovement(enemy, dur, pool));
     }
 
-    private IEnumerator BulletMovement(Vector3 target, float dur, IPoolManager pool)
+    private IEnumerator BulletMovement(AEnemy enemy, float dur, IPoolManager pool)
     {
         Debug.Log("Estamos en la corutina");
         Vector3 start = transform.position;
         float time = 0f;
         while (time < 1f)
         {
+            Vector3 position= enemy.transform.position;
             time+= Time.deltaTime/Mathf.Max(0.0001f, dur);
-            transform.position = Vector3.Lerp(start, target, time);
+            transform.position = Vector3.Lerp(start, position, time);
             yield return null;
         }
         pool.Release(this);
