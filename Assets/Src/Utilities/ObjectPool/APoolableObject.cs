@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 namespace Utilities.ObjectPool
-{
+{/*
     public abstract class APoolableObject : IPoolableObject
     {
         private bool _isActive;
@@ -14,5 +14,5 @@ namespace Utilities.ObjectPool
         {
             throw new NotImplementedException();
         }
-    }
+    }*/
 }

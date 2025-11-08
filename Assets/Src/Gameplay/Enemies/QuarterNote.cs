@@ -14,6 +14,7 @@ namespace Gameplay.Enemies
         void Start()
         {
             RhythmManager.Instance.onQuarter += OnRhythmUpdate;
+            _damage = 10;
         }
 
         protected override void OnRhythmUpdate()

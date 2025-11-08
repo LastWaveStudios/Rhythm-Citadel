@@ -24,7 +24,11 @@ namespace Gameplay.Enemies
             _index = 0;
         }
 
-        public void Attack() { }
+        public void Attack() {
+            Debug.Log("En metodo atacar");
+
+            Dancer.Instance.TakeDamage(_damage);
+        }
         public void TakeDamage() { }
         protected abstract void OnRhythmUpdate();
 
@@ -70,6 +74,8 @@ namespace Gameplay.Enemies
 
             transform.position = targetPos;   // Fix for center final positions
         }
+
+         
     }
 }
 
