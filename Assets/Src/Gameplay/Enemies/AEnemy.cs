@@ -82,14 +82,10 @@ namespace Gameplay.Enemies
             transform.position = targetPos;   // Fix for center final positions
         }
 
-<<<<<<< HEAD
-         
-=======
         protected void InvokeDeath()
         {
             GameplayManager.Instance.onEnemyDeath.Invoke(_vinylDrop);
         }
->>>>>>> WaveStartup
     }
 }
 
