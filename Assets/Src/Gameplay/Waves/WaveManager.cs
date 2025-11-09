@@ -109,7 +109,7 @@ namespace Gameplay.Waves
             _activeEnemies = _activeEnemies - 1;
             if (_activeEnemies <= 0)
             {
-                RhythmManager.Instance.EndRhythm();
+                //RhythmManager.Instance.EndRhythm();
             }
         }
     }
