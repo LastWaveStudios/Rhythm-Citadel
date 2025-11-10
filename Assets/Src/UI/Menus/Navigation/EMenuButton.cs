@@ -12,6 +12,7 @@ namespace UI.Menus.Navigation
 		Pause,
 		Resume,
 		ReturnToMainMenu,
+		StartWave,
 		Exit
 	}
 }

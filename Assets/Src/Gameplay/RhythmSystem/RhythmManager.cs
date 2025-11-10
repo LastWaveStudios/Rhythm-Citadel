@@ -15,6 +15,8 @@ namespace Gameplay.RhythmSystem
         // The delegates are like that for avoid the check if unbound
         // If one enemy moves in wholes but the signature is not x / x and is y / x with y < x,
         // the whole callback won't be called, the same is true by the others similar cases in small top signatures
+        public Action<bool> onBeat = delegate { }; // The param is true if is the first beat of the measure and false otherwise
+        public Action onMeasure = delegate { };
         public Action onWhole = delegate { };
         public Action onHalf = delegate { };
         public Action onQuarter = delegate { };
@@ -23,8 +25,9 @@ namespace Gameplay.RhythmSystem
         #endregion
 
         #region CountBeats
-        private int _measureCount;
-        private int _sixteenthCount;
+        public int MeasureCount {get; private set;}
+        public int SixteenthCount {get; private set;}
+        public int SixteenthCountGlobal { get; private set; }
         #endregion
 
         #region TimesForBeats
@@ -46,8 +49,9 @@ namespace Gameplay.RhythmSystem
 
         public void ResetCounts()
         {
-            _measureCount = -1;
-            _sixteenthCount = -1;
+            MeasureCount = -1;
+            SixteenthCount = -1;
+            SixteenthCountGlobal = -1;
         }
 
 
@@ -61,12 +65,20 @@ namespace Gameplay.RhythmSystem
             {
                 _lastSixteenth = AudioSettings.dspTime - (_timeSinceLastSixteenth - _timesOfNotes.Sixteenth) / 1000; // again to seconds
                 _timeSinceLastSixteenth = 0.0;
-                _sixteenthCount = (_sixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
+                SixteenthCount = (SixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
+                SixteenthCountGlobal++;
 
-                if (_sixteenthCount == 0)
+                if (SixteenthCount == 0)
                 {
                     Debug.Log("-------------------------------------------");
-                    _measureCount++;
+                    MeasureCount++;
+                    onMeasure.Invoke(); // Important do the callback after the count increase for the logic of GetNextMeasureTime
+                }
+
+                // The bottom is the same as (int)signature.beatNoteDuration, are the number of sixteenths that have the beat
+                if (SixteenthCount % signature.bottom == 0)
+                {
+                    onBeat.Invoke(SixteenthCount == 0);
                 }
 
                 // Callback for Sixteenth
@@ -74,25 +86,25 @@ namespace Gameplay.RhythmSystem
                 onSixteenth.Invoke();
 
                 // check others callback by count
-                if (_sixteenthCount % 2 == 0)
+                if (SixteenthCountGlobal % 2 == 0)
                 {
                     // Callback for Eighth
                     //Debug.Log("Eighth");
                     onEighth.Invoke();
                 }
-                if (_sixteenthCount % 4 == 0)
+                if (SixteenthCountGlobal % 4 == 0)
                 {
                     // Callback for Quarter
                     Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
-                if (_sixteenthCount % 8 == 0)
+                if (SixteenthCountGlobal % 8 == 0)
                 {
                     // Callback for Half
                     //Debug.Log("Half");
                     onHalf.Invoke();
                 }
-                if (_sixteenthCount % 16 == 0)
+                if (SixteenthCountGlobal % 16 == 0)
                 {
                     // Callback for Whole
                     //Debug.Log("Whole");
@@ -101,22 +113,39 @@ namespace Gameplay.RhythmSystem
             }
         }
 
+        /// <summary>
+        /// Gets the AudioSetting time for the next measure in the AudioSettings timeline (seconds)
+        /// </summary>
+        public double GetNextMeasureTime()
+        {
+            double timePassedSinceLastMeasure = _timeSinceLastSixteenth + SixteenthCount * _timesOfNotes.Sixteenth;
+            double timeOfOneMeasure = signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            return ((AudioSettings.dspTime * 1000.0) + (timeOfOneMeasure - timePassedSinceLastMeasure)) / 1000.0;
+        }
+
         public bool IsInTime(Note note, uint indexOfSixteenthOnMeasure, double maxOffset)
         {
             double timeSinceStart = (AudioSettings.dspTime - _startTime) * 1000.0;
 
-            // Note that the test is doing before the first hit of a measure can also be correct so 1 special case for that
-            double timeOfLastMeasureSinceStart = _measureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
-
-            if (indexOfSixteenthOnMeasure == 0 && _sixteenthCount == signature.maxSixteenthsOnOneMeasure)
+            double timeOfLastMeasureSinceStart = MeasureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            
+            if (SixteenthCount == 0 && indexOfSixteenthOnMeasure == signature.maxSixteenthsOnOneMeasure - 1)
             {
-                Debug.Log($"TIME: 1 -> rawOffsetTime: " +
-                    $"{(timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure - 1 * _timesOfNotes.Sixteenth) - timeSinceStart}");
-                return (Math.Abs((timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth) - timeSinceStart) <= maxOffset) ? true : false;
+                Debug.Log($"TIME: 1 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
+                return (Math.Abs(timeOfLastMeasureSinceStart - timeSinceStart) <= maxOffset) ? true : false;
+            }
+
+            if (SixteenthCount == signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
+            {
+                double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+                Debug.Log($"TIME: 2 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+               $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
+                return (Math.Abs(timeOfTargetSinceStartSpecialCase - timeSinceStart) <= maxOffset) ? true : false;
             }
 
             double timeOfTargetSinceStart = timeOfLastMeasureSinceStart + indexOfSixteenthOnMeasure * _timesOfNotes.Sixteenth;
-            Debug.Log($"TIME: 2 -> SixteenthCount: {_sixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+            Debug.Log($"TIME: 3 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                 $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStart - timeSinceStart}");
             return (Math.Abs(timeOfTargetSinceStart - timeSinceStart) <= maxOffset) ? true : false;
         }
@@ -132,6 +161,9 @@ namespace Gameplay.RhythmSystem
         public void EndRhythm()
         {
             _isPlaying = false;
+            GameplayManager.Instance.SetBuildState();
+            GameObject.Find("StartWaveButton").transform.localScale = new Vector3(1, 1, 1);
+            
         }
     }
 }

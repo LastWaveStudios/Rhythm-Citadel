@@ -5,7 +5,11 @@ namespace Utilities.ObjectPool
 {
     public interface IPoolableObject
     {
-        bool IsActive();
+        bool IsActive
+        {
+                get;
+                set;
+        }
         void Reset();
     }
 }

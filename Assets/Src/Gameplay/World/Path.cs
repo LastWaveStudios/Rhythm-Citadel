@@ -15,8 +15,10 @@ namespace Gameplay.World
     /// </summary>
     public class Path
     {
-        private List<TileBase> _tileList = new List<TileBase>();
+        public int TilesCount { get { return _tileList.Count; } }
 
+        private List<Vector3Int> _tileList = new List<Vector3Int>();
+        private Vector3Int _spawnPoint;
         public Path(GameObject pathToLook) // por ahora esta como par�metro, si usamos el singelton tendr� que cogerlo directamente
         {
             Tilemap tilemap = WorldManager.FindAnyObjectByType<Tilemap>();
@@ -33,21 +35,42 @@ namespace Gameplay.World
 
                 for (int i = 0; i < maxTile; i++)
                 {
-                    _tileList.Add(tilemap.GetTile(startingCell + movementDirection * i));
-                    //tileList.Add(startingCell + movementDirection * i);
-                    Debug.Log(startingCell + movementDirection * i);
+                    //_tileList.Add(tilemap.GetTile(startingCell + movementDirection * i));
+                    _tileList.Add(startingCell + movementDirection * i);
+                   // Debug.Log(startingCell + movementDirection * i);
+                }
+                if (go.tag == "SpawnPoint")
+                {
+                    _spawnPoint = startingCell;
                 }
             }
         }
 
-        public List<TileBase> GetTileList()
+        public List<Vector3Int> GetTileList()
         {
             return _tileList;
         }
 
-        public TileBase GetTile(int index)
+        public int GetTileCount()
         {
-            return _tileList[index];
+            return _tileList.Count;
+        }
+
+        public Vector3Int GetTile(int index)
+        {
+            if (index < _tileList.Count - 1)
+            {
+                return _tileList[index];
+            }
+            else
+            {
+                Vector3Int _null= new Vector3Int(0,0,1);
+                return _null;
+            }
+        }
+        public Vector3Int GetSpawnPoint()
+        {
+            return _spawnPoint;
         }
     }
 }

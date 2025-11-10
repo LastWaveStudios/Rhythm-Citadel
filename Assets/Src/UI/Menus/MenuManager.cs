@@ -13,7 +13,7 @@ namespace UI.Menus
         private void Start()
         {
             _previousState = null;
-            SetState(new Main());
+            SetState(new States.Gameplay());
         }
 
         public void SetState(IMenuState newState)

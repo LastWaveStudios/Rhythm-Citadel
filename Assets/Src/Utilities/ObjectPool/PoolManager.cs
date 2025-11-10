@@ -2,11 +2,19 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Gameplay.World;
 namespace Utilities.ObjectPool
 {
-    public class PoolManager: IPoolManager
+    public class PoolManager: MonoBehaviour, IPoolManager
     {
         private Dictionary<System.Type, IObjectPool> _pools = new();
+        [SerializeField] private Bullets bulletPrefab;
+
+        void Awake()
+        {
+            var bulletPool = new MBPool<Bullets>(bulletPrefab, 20, transform);
+            RegisterPool(typeof(Bullets), bulletPool);
+        }
 
         public void Release(IPoolableObject obj)
         {
