@@ -10,31 +10,12 @@ namespace Gameplay
 {
 
 
-    public class EconomyManager : MonoBehaviour
+    public class EconomyManager : Utilities.Subsystem<EconomyManager>
     {
-        #region Singleton pattern without live between scenes
-        public static EconomyManager Instance { get; private set; }
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Debug.LogError("Economy Manager already created");
-                Destroy(this.gameObject);
-                return;
-            }
-        }
-
         private void Start()
         {
             GameplayManager.Instance.onEnemyDeath += AddVinyl;
         }
-
-        #endregion
 
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
         [SerializeField] private Tilemap _tilemap;

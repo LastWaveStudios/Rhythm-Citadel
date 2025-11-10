@@ -11,6 +11,7 @@ namespace Gameplay.Towers
         [SerializeField] List<TestTower> _towers;
         [SerializeField] private RhythmPattern _pattern;
         [SerializeField] private int BPM = 120;
+        [SerializeField] private GameObject _visualHelpPrefab; // just for test
 
         private bool isAdded = false;
 
@@ -27,6 +28,7 @@ namespace Gameplay.Towers
                 isAdded = true;
 
                 RhythmManager.Instance.UseMeasure(_pattern.signature, BPM);
+                GameObject.Instantiate(_visualHelpPrefab, GameObject.FindWithTag("Canvas").transform);
                 WaveManager.Instance.InitNextWave();
                 WaveManager.Instance.StartWave();
             }

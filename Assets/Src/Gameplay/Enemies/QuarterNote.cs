@@ -21,16 +21,7 @@ namespace Gameplay.Enemies
 
         protected override void OnRhythmUpdate()
         {
-            StartCoroutine(MoveToNextTile(_moveTime, EaseInBack));
-        }
-
-        // Taken from https://easings.net/#easeInBack 
-        private float EaseInBack(float t)
-        {
-            const float c1 = 1.70158f;
-            const float c3 = c1 + 1.0f;
-
-            return c3 * t * t * t - c1 * t * t;
+            StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
         }
 
         private void OnDestroy()

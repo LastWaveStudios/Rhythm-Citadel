@@ -7,7 +7,7 @@ public enum GameplayState
     Rhythm
 }
 
-public class GameplayManager : Utilities.Singleton<GameplayManager>
+public class GameplayManager : Utilities.Subsystem<GameplayManager>
 {
     #region Callbacks
     public Action<int> onEnemyDeath = delegate { };

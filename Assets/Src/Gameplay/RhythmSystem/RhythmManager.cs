@@ -15,6 +15,7 @@ namespace Gameplay.RhythmSystem
         // The delegates are like that for avoid the check if unbound
         // If one enemy moves in wholes but the signature is not x / x and is y / x with y < x,
         // the whole callback won't be called, the same is true by the others similar cases in small top signatures
+        public Action<bool> onBeat = delegate { }; // The param is true if is the first beat of the measure and false otherwise
         public Action onMeasure = delegate { };
         public Action onWhole = delegate { };
         public Action onHalf = delegate { };
@@ -72,6 +73,12 @@ namespace Gameplay.RhythmSystem
                     Debug.Log("-------------------------------------------");
                     MeasureCount++;
                     onMeasure.Invoke(); // Important do the callback after the count increase for the logic of GetNextMeasureTime
+                }
+
+                // The bottom is the same as (int)signature.beatNoteDuration, are the number of sixteenths that have the beat
+                if (SixteenthCount % signature.bottom == 0)
+                {
+                    onBeat.Invoke(SixteenthCount == 0);
                 }
 
                 // Callback for Sixteenth

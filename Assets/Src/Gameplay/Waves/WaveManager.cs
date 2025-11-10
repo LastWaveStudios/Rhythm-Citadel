@@ -5,28 +5,11 @@ using UnityEngine;
 
 namespace Gameplay.Waves
 {
-    public class WaveManager : MonoBehaviour
+    public class WaveManager : Utilities.Subsystem<WaveManager>
     {
-        #region Singleton pattern without live between scenes
-        public static WaveManager Instance { get; private set; }
         [SerializeField] public RhythmPattern _pattern;
         [SerializeField] public int BPM = 120;
         private int _activeEnemies = 0;
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Debug.LogError("Must have just one instance of WaveManager at the same time on the same scene");
-                Destroy(this.gameObject);
-                return;
-            }
-        }
-        #endregion
 
         [SerializeField] private List<Wave> _waves;
         private List<AEnemy> _currentWaveEnemies;
@@ -109,7 +92,7 @@ namespace Gameplay.Waves
             _activeEnemies = _activeEnemies - 1;
             if (_activeEnemies <= 0)
             {
-                RhythmManager.Instance.EndRhythm();
+                //RhythmManager.Instance.EndRhythm();
             }
         }
     }
