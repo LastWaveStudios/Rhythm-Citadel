@@ -39,7 +39,7 @@
 ## 3. [Planificación y Costes](#planificación-y-costes)
 - 3.1. [El equipo humano](#el-equipo-humano)
   - 3.1.1. [Fase ALPHA](#fase-alpha)
-  - 3.1.2. [Fase Beta](fase-beta)
+  - 3.1.2. [Fase Beta](#fase-beta)
 - 3.2. [Estimación temporal del desarrollo](#estimación-temporal-del-desarrollo)
 
 ## 4. [Mecánicas y Elementos de Juego](#mecánicas-y-elementos-de-juego)
@@ -63,15 +63,15 @@
 - 5.3. [Entornos y lugares](#entornos-y-lugares)
 
 ## 6. [Arte](#arte)
-- 6.1. [Estética general del juego](#estética-general-del-juego)
-- 6.2. [Apartado visual](#apartado-visual)
-  - 6.2.1. [Torretas](#torretas-1)
-  - 6.2.2. [Enemigos](#enemigos-1)
-  - 6.2.3. [Bailarina](#bailarina-1)
+- 6.1. [Estética general del juego](#1-estética-general-del-juego)
+- 6.2. [Apartado visual](#2-apartado-visual)
+  - 6.2.1. [Torretas](#torretas)
+  - 6.2.2. [Enemigos](#enemigos)
+  - 6.2.3. [Bailarina](#bailarina)
   - 6.2.4. [Niveles](#niveles)
   - 6.2.5. [Botones](#botones)
   - 6.2.6. [Interfaces](#interfaces)
-- 6.3 [Escenarios](#escenarios) 
+- 6.3. [Escenarios](#3-escenarios)
 
 ## 7. [Audio](#audio)
 - 7.1. [Música](#música)
@@ -94,10 +94,10 @@
 
 ## 10. [PostMortem](#postmortem)
 - 10.1. [ALPHA](#alpha)
-  - 10.1.1. [Lecciones aprendidas individual](#lecciones-aprendidas-individual)
+  - 10.1.1. [Lecciones aprendidas individuales](#lecciones-aprendidas-individuales)
   - 10.1.2. [Trabajo grupal](#trabajo-grupal)
 - 10.2. [BETA](#beta)
-  - 10.2.1 [Lecciones aprendidas individual](#lecciones-aprendidas-individual)
+  - 10.2.1 [Lecciones aprendidas individuales](#lecciones-aprendidas-individuales)
   - 10.2.2 [Trabajo grupal](#trabajo-grupal)
 
 ## **Índice de Referencias**
@@ -112,24 +112,42 @@
 - [Figura 8: Enemigo Negra](#figura-8)
 - [Figura 9: Enemigo Blanca](#figura-9)
 - [Figura 10: Enemigo Corchea](#figura-10)
-- [Figura 11: Enemigo Redonda](#figura-11)
-- [Figura 12: Enemigo Silencio](#figura-12)
-- [Figura 13: Enemigo Clave de Sol](#figura-13)
-- [Figura 14: Bailarina](#figura-14)
-- [Figura 15: Tutorial](#figura-15)
-- [Figura 16: Nivel 1](#figura-16)
-- [Figura 17: Nivel 2](#figura-17)
-- [Figura 18: Nivel 3](#figura-18)
-- [Figura 19: Interfaces](#figura-19)
-- [Figura 20: Interfaz de Partida](#figura-20)
-- [Figura 21: Interfaz Menú Inicial](#figura-21)
-- [Figura 22: Interfaz Selector de Dificultad](#figura-22)
-- [Figura 23: Interfaz Tutorial](#figura-23)
-- [Figura 24: Interfaz Créditos](#figura-24)
-- [Figura 25: Interfaz Pausa](#figura-25)
-- [Figura 26: Interfaz Opciones](#figura-26)
-- [Figura 27: Pantalla Victoria o Derrota](#figura-27)
-- [Figura 28: Diagrama de Interfaces](#figura-28)
+- [Figura 11: Enemigo CorcheaRota](#figura-11)
+- [Figura 12: Enemigo Keyframes Corchea Llorando](#figura-12)
+- [Figura 13: Enemigo Redonda](#figura-13)
+- [Figura 14: Enemigo Silencio](#figura-14)
+- [Figura 15: Enemigo Keyframes Silencio de Negra](#figura-15)
+- [Figura 16: Enemigo Clave de Sol](#figura-16)
+- [Figura 17: Keyframes Bailarina](#figura-17)
+- [Figura 18: Keyframes Bailarina levemente herida](#figura-18)
+- [Figura 19: Keyframes Bailarina moderadamente herida](#figura-19)
+- [Figura 20: Keyframes Bailarina gravemente herida](#figura-20)
+- [Figura 21: Keyframes Bailarina Menú Inicial](#figura-21)
+- [Figura 22: Tutorial](#figura-22)
+- [Figura 23: Nivel 1](#figura-23)
+- [Figura 24: Nivel 2](#figura-24)
+- [Figura 25: Nivel 3](#figura-25)
+- [Figura 26: Botones Menú Inicial](#figura-26)
+- [Figura 27: Interfaces](#figura-27)
+- [Figura 28: Tileset](#figura-28)
+- [Figura 29: Decoraciones](#figura-29)
+- [Figura 30: Boceto Interfaz Menú Inicial](#figura-30)
+- [Figura 31: Interfaz Menú Inicial](#figura-31)
+- [Figura 32: Boceto Interfaz Selector de Dificultad](#figura-32)
+- [Figura 33: Interfaz Selector de Dificultad](#figura-33)
+- [Figura 34: Boceto Interfaz Tutorial](#figura-34)
+- [Figura 35: Interfaz Tutorial](#figura-35)
+- [Figura 36: Boceto Interfaz Créditos](#figura-36)
+- [Figura 37: Interfaz Créditos](#figura-37)
+- [Figura 38: Boceto Interfaz Partida](#figura-38)
+- [Figura 39: Interfaz Partida](#figura-39)
+- [Figura 40: Boceto Interfaz Pausa](#figura-40)
+- [Figura 41: Interfaz Pausa](#figura-41)
+- [Figura 42: Boceto Interfaz Opciones](#figura-42)
+- [Figura 43: Interfaz Opciones](#figura-43)
+- [Figura 44: Boceto Pantalla Victoria o Derrota](#figura-44)
+- [Figura 45: Pantalla Victoria o Derrota](#figura-45)
+- [Figura 46: Diagrama de Interfaces](#figura-46)
 
 
  # **Introducción**
@@ -171,7 +189,7 @@ Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargable
 
    # **Planificación y Costes**
 1.  ## **El equipo humano**
-  1. **Fase ALPHA**
+    1. ### **Fase ALPHA**
 
 Para empezar a planificar el videojuego, se hizo una reunión para decidir el género del videojuego al igual que su temática. Una vez decidido esto, se empezaron a detallar las mecánicas del videojuego, al igual que se empezaron a idear los primeros enemigos y las primeras torretas.
 
@@ -206,7 +224,7 @@ Por otra parte, se empezó a detallar cómo sería el flujo del videojuego, tant
   - Música
   - Efectos de sonido
 
-  2. **Fase BETA**
+  2. ### **Fase BETA**
 El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integración de todos los componentes del juego. El objetivo fue construir una versión completamente jugable y estable que representará la visión final del videojuego.
 
 - **Arte:**
@@ -216,10 +234,12 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
   - Animaciones
  
 - **Programación:**
-  - Daño visual
+  - Patrón de daño
+  - Eleccion de torreta
+  - Spawn de diversos enemigos
 
 - **Audio:**
-  - Audio
+  - ???
 
 2. ## **Estimación temporal del desarrollo**
 
@@ -418,13 +438,14 @@ Notas: son el enemigo básico del juego. Marcharán en varias hordas, compuestas
 
 3. ## **Entornos y lugares**
 Toda la historia transcurre dentro de la caja de música, pero en diferentes lugares de esta. Aunque el ambiente será siempre el mismo, el camino que recorran las notas variará según en la zona de la caja de música en la que se encuentren, aunque todos los caminos llevan al mismo sitio: a la bailarina. 
-  # **Arte**
-1. ## **Estética general del juego**
+
+# **Arte**
+## 1. **Estética general del juego**
 Rhythm Citadel tendrá una estética cartoon inspirada en el estilo Steampunk, con una paleta de colores mayoritariamente marrones y dorados, además del uso de otros colores para personalizar las torretas, jefes finales y la bailarina. 
 Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, algo común en el estilo Steampunk escogido.
 
-2. ## **Apartado visual**
-1.  ## **Torretas**
+## 2. **Apartado visual**
+  1. ###  **Torretas**
 <a id="figura-4"></a>
 ![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
 *Figura 4: Torreta Piano*  
@@ -441,7 +462,7 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 ![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
 *Figura 7: Torreta Violín*   
    
-2.  ## **Enemigos**
+  2. ###  **Enemigos**
 <a id="figura-8"></a>
 ![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
 *Figura 8: Enemigo Negra*  
@@ -454,73 +475,72 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 ![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
 *Figura 10: Enemigo Corchea*  
       
-<a id="figura-10"></a>
-![CorcheasRotas](./Imagenes_ReadMe/CorcheasRotas.png)  
-*Figura 10: Enemigo Corcheas Rotas*  
-
-<a id="figura-10"></a>
-![CorcheaLlorando](./Imagenes_ReadMe/CorcheaLlorando.png)  
-*Figura 10: Enemigo Corchea Llorando*  
-
 <a id="figura-11"></a>
-![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
-*Figura 11: Enemigo Redonda*     
-      
+![CorcheasRotas](./Imagenes_ReadMe/CorcheasRotas.png)  
+*Figura 11: Enemigo Corcheas Rotas*  
+
 <a id="figura-12"></a>
-![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
-*Figura 12: Enemigo Silencio*  
+![CorcheaLlorando](./Imagenes_ReadMe/CorcheaLlorando.png)  
+*Figura 12: Enemigo Corchea Llorando*  
 
-<a id="figura-10"></a>
-![KeyframesSilenciodeNegra](./Imagenes_ReadMe/SilencioVolando.png)  
-*Figura 10: Keyframes Silencio de Negra*  
-      
 <a id="figura-13"></a>
-![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
-*Figura 13: Enemigo Clave de Sol*
-   
-3.  ## **Bailarina**
+![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
+*Figura 13: Enemigo Redonda*     
+      
 <a id="figura-14"></a>
-![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
-*Figura 14: Keyframes Bailarina*
+![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
+*Figura 14: Enemigo Silencio*  
 
-<a id="figura-14"></a>
-![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
-*Figura 14: Keyframes Bailarina Levemente Dañada*
-
-<a id="figura-14"></a>
-![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
-*Figura 14: Keyframes Bailarina Moderadamente Dañada*
-
-<a id="figura-14"></a>
-![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
-*Figura 14: Keyframes Bailarina Gravemente Dañada*
-
-<a id="figura-14"></a>
-![BailarinaInicio](./Imagenes_ReadMe/BailarinaInicio.png)  
-*Figura 14: Keyframes Bailarina Inicio*
-
-
-   
-4.  ## **Niveles**
 <a id="figura-15"></a>
-![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
-*Figura 15: Tutorial*  
+![KeyframesSilenciodeNegra](./Imagenes_ReadMe/SilencioVolando.png)  
+*Figura 15: Keyframes Silencio de Negra*  
       
 <a id="figura-16"></a>
-![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
-*Figura 16: Nivel 1*     
-      
+![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
+*Figura 16: Enemigo Clave de Sol*
+   
+  3. ###  **Bailarina**
 <a id="figura-17"></a>
-![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
-*Figura 17: Nivel 2*     
-      
+![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
+*Figura 17: Keyframes Bailarina*
+
 <a id="figura-18"></a>
+![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
+*Figura 18: Keyframes Bailarina Levemente Dañada*
+
+<a id="figura-19"></a>
+![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
+*Figura 19: Keyframes Bailarina Moderadamente Dañada*
+
+<a id="figura-20"></a>
+![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
+*Figura 20: Keyframes Bailarina Gravemente Dañada*
+
+<a id="figura-21"></a>
+![BailarinaInicio](./Imagenes_ReadMe/BailarinaInicio.png)  
+*Figura 21: Keyframes Bailarina Inicio*
+
+
+   
+  4. ###  **Niveles**
+<a id="figura-22"></a>
+![Tutorial](./Imagenes_ReadMe/InterfazNivelTutorial.png)  
+*Figura 22: Tutorial*  
+      
+<a id="figura-23"></a>
+![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
+*Figura 23: Nivel 1*     
+      
+<a id="figura-24"></a>
+![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
+*Figura 24: Nivel 2*     
+      
+<a id="figura-25"></a>
 ![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
-*Figura 18: Nivel 3*  
+*Figura 25: Nivel 3*  
 
-5.  ##**Botones**
-
-
+  5. ###  **Botones**
+<a id="figura-26"></a>
 ![Boton1](./Imagenes_ReadMe/Boton1.png)  
 
 ![Boton2](./Imagenes_ReadMe/Boton2.png)  
@@ -528,28 +548,24 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 ![Boton3](./Imagenes_ReadMe/Boton3.png)  
 
 ![Boton4](./Imagenes_ReadMe/Boton4.png)  
-*Figura 18: Botones*  
+*Figura 26: Botones Menú Inicial*  
 
-6.  ## **Interfaces**
+  6. ###  **Interfaces**
 Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría son menús, pero durante la partida se mostrará la cantidad de vinilos que tendrá el jugador y una ayuda visual para facilitar seguir el ritmo de las torres. Para indicar la cantidad de vida que le queda a la bailarina se dispone de un indicador en la parte superior de la pantalla, pero se plantea el uso de otro tipo de indicador, como el estado de la propia bailarina que se vaya destruyendo para indicar la vida restante.
 
-<a id="figura-19"></a>
+<a id="figura-27"></a>
 ![Interfaces](./Imagenes_ReadMe/Interfaces.png)  
-*Figura 19: Interfaces*
-
-<a id="figura-20"></a>
-![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.jpeg)  
-*Figura 20: Interfaz de Partida*   
+*Figura 27: Interfaces*   
    
-   
-3. ## **Escenarios**
+## 3. **Escenarios**
 El juego se ambienta dentro de una caja musical, donde destacarán las piezas mecánicas que la hacen funcionar en su interior.
 Se observará desde una vista militar donde se verá un tablero por donde se dará todo el gameplay. En el tablero habrán tiles para identificar las zonas donde se podrá poner las torretas, así como el raíl por donde pasan los enemigos. 
 
-<a id="figura-20"></a>
+<a id="figura-28"></a>
 ![Tileset](./Imagenes_ReadMe/Tileset.jpeg)  
-*Figura 20: Tileset*   
+*Figura 28: Tileset*   
 
+<a id="figura-29"></a>
 <table style="border: none;">
   <tr>
     <td align="center" style="border: none;">
@@ -570,7 +586,7 @@ Se observará desde una vista militar donde se verá un tablero por donde se dar
   </tr>
   <tr>
     <td colspan="5" align="center" style="border: none;">
-      <em>Figura 20: Decoraciones</em>
+      <em>Figura 29: Decoraciones</em>
     </td>
   </tr>
 </table>
@@ -619,80 +635,89 @@ General:
 Las diferentes pantallas planteadas son las siguientes:
 - Menú inicial: Es la primera pantalla que se ve y la que permite acceder al resto de pantallas.
   
-<a id="figura-21"></a>
+<a id="figura-30"></a>
 ![BocetoMenuInicial](./Imagenes_ReadMe/BocetoInterfazMenuInicial.jpeg)  
-*Figura 21: Boceto Interfaz Menu Inicial*
+*Figura 30: Boceto Interfaz Menú Inicial*
 
-<a id="figura-21"></a>
+<a id="figura-31"></a>
 ![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.jpeg)  
-*Figura 21: Interfaz Menu Inicial*
+*Figura 31: Interfaz Menú Inicial*
   
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
   
-<a id="figura-22"></a>
+<a id="figura-32"></a>
 ![BocetoInterfazSelectorDificultad](./Imagenes_ReadMe/BocetoInterfazSelectorDificultad.jpeg)  
-*Figura 22: Boceto Interfaz Selector de Dificultad*
+*Figura 32: Boceto Interfaz Selector de Dificultad*
 
-<a id="figura-22"></a>
+<a id="figura-33"></a>
 ![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.jpeg)  
-*Figura 22: Interfaz Selector de Dificultad*
+*Figura 33: Interfaz Selector de Dificultad*
   
 - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
     
-<a id="figura-23"></a>
+<a id="figura-34"></a>
 ![BocetoInterfazTutorial](./Imagenes_ReadMe/BocetoInterfazTutorial.jpeg)  
-*Figura 23: Boceto Interfaz Tutorial*
+*Figura 34: Boceto Interfaz Tutorial*
 
-<a id="figura-23"></a>
+<a id="figura-35"></a>
 ![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
-*Figura 23: Interfaz Tutorial*
+*Figura 35: Interfaz Tutorial*
 
 
 - Créditos: Es una pantalla donde aparecen los nombres de los integrantes del grupo y sus funciones.
 
-<a id="figura-24"></a>
+<a id="figura-36"></a>
 ![BocetoInterfazCréditos](./Imagenes_ReadMe/BocetoInterfazCréditos.jpeg)  
-*Figura 24: Boceto Interfaz Créditos*
+*Figura 36: Boceto Interfaz Créditos*
 
-<a id="figura-24"></a>
+<a id="figura-37"></a>
 ![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.jpeg)  
-*Figura 24: Interfaz Créditos*
+*Figura 37: Interfaz Créditos*
 
-- Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.
+- Partida: Es la pantalla más importante del juego, donde se jugarán las partidas.
+<a id="figura-38"></a>
+![BocetoInterfazPartida](./Imagenes_ReadMe/BocetoInterfazPartida.jpeg)  
+*Figura 38: Boceto Interfaz Partida*
+
+<a id="figura-39"></a>
+![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.jpeg)  
+*Figura 39: Interfaz Patrida*
+
+- Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.  
   
-<a id="figura-25"></a>
+<a id="figura-40"></a>
 ![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
-*Figura 25: Boceto Interfaz Pausa*  
+*Figura 40: Boceto Interfaz Pausa*  
 
-<a id="figura-25"></a>
+<a id="figura-41"></a>
 ![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.jpeg)  
-*Figura 25: Interfaz Pausa*  
+*Figura 41: Interfaz Pausa*  
       
       
 -Opciones: Se incorporará un menú de opciones que permite ajustar el volumen del juego.
 
-<a id="figura-26"></a>
+<a id="figura-42"></a>
 ![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
-*Figura 26: Boceto Interfaz Opciones*
+*Figura 42: Boceto Interfaz Opciones*
 
-<a id="figura-26"></a>
+<a id="figura-43"></a>
 ![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.jpeg)  
-*Figura 26: Interfaz Opciones*
+*Figura 43: Interfaz Opciones*
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
-<a id="figura-27"></a>
+<a id="figura-44"></a>
 ![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
-*Figura 27: Boceto Pantalla Victoria o Derrota*
+*Figura 44: Boceto Pantalla Victoria o Derrota*
 
-<a id="figura-27"></a>
+<a id="figura-45"></a>
 ![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.jpeg)  
-*Figura 27: Pantalla Victoria o Derrota*
+*Figura 45: Pantalla Victoria o Derrota*
 
 1. ## **Diagrama de flujo**
-<a id="figura-28"></a>
-![DiagramaFlujo](./Imagenes_ReadMe/DiagramaInterfaces.png)  
-*Figura 28: Diagrama de Interfaces*
+<a id="figura-46"></a>
+![DiagramaInterfaces](./Imagenes_ReadMe/DiagramaInterfaces.png)  
+*Figura 46: Diagrama de Interfaces*
 
   # **Hoja de ruta del desarrollo**
 ## **Hitos para la ALPHA:**
@@ -715,7 +740,7 @@ Se tienen los diseños o sprites de las torres, los enemigos y la bailarina.
 1. ### **Hito 6: prueba**
 Texto
 
-2.
+2. 
 
 ## **Fecha de lanzamiento**
 Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubre del 2025.
