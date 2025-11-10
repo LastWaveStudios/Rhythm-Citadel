@@ -5,16 +5,9 @@ using UnityEngine;
 using Gameplay.World;
 namespace Utilities.ObjectPool
 {
-    public class PoolManager: MonoBehaviour, IPoolManager
+    public class PoolManager : IPoolManager
     {
         private Dictionary<System.Type, IObjectPool> _pools = new();
-        [SerializeField] private Bullets bulletPrefab;
-
-        void Awake()
-        {
-            var bulletPool = new MBPool<Bullets>(bulletPrefab, 20, transform);
-            RegisterPool(typeof(Bullets), bulletPool);
-        }
 
         public void Release(IPoolableObject obj)
         {
@@ -46,6 +39,16 @@ namespace Utilities.ObjectPool
             }
 
             _pools[type] = pool;
+        }
+
+        public void RegisterPool<T>(IObjectPool pool) where T : IPoolableObject
+        {
+            RegisterPool(typeof(T), pool);
+        }
+        
+        public T Get<T>() where T : IPoolableObject
+        {
+            return (T)Get(typeof(T));
         }
         
     }

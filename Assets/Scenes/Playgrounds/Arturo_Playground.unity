@@ -279,6 +279,7 @@ MonoBehaviour:
       durationInSixteenths: 2
     spaceInSixteenths: 6
   BPM: 120
+  _visualHelpPrefab: {fileID: 0}
 --- !u!4 &168700805
 Transform:
   m_ObjectHideFlags: 0
@@ -527,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55f3bc2347461a4c9991c5e980d0de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
 --- !u!1 &848198685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6739077137439040826, guid: 4079568cc56d75743b828cd6ec5bd7c4, type: 3}

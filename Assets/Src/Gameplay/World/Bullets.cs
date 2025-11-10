@@ -4,25 +4,31 @@ using UnityEngine;
 using UnityEngine.U2D;
 using Utilities.ObjectPool;
 
-public class Bullets : MonoBehaviour, IPoolableObject
+public class Bullets : APoolableObject
 {
     private Coroutine _movement;
+
+    /**
     public bool IsActive
     {
         get => gameObject.activeSelf;
         set => gameObject.SetActive(value);
     }
-    
-    public void Reset()
+    /**/ 
+    //Just use IsActive from APoolableObject it's a public method
+
+    /**/
+    public override void Reset()
     {
         //Resetear valores
-        IsActive = false;
         if (_movement != null)
         {
             StopCoroutine(_movement);
             _movement = null;
         }
+        GameplayManager.Instance.poolManager.Release(this);
     }
+    /**/
 
     public void Shot(Vector3 from, AEnemy enemy, float dur, IPoolManager pool)
     {

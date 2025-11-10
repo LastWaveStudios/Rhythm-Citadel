@@ -48,7 +48,7 @@ namespace Gameplay.Towers
         public void Start()
         {
             _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
-            _poolManager=FindAnyObjectByType<PoolManager>();
+            //_poolManager=FindAnyObjectByType<PoolManager>();
             if (_poolManager == null)   //BORRAR AL TERMINAR
             {
                 Debug.Log("No se encontro el PoolManager"); //Se encuentra siempre el poolManager, asi q bien

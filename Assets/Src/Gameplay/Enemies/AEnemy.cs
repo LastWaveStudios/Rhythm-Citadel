@@ -3,11 +3,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Utilities.ObjectPool;
 
 
 namespace Gameplay.Enemies
 {
-    public abstract class AEnemy : MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
+    public abstract class AEnemy : APoolableObject  //Para poder probarlo he quitado que sea una clase abstracta
     {
         [SerializeField] protected int _health;
         [SerializeField] protected float _moveTime = 0.5f;
@@ -17,9 +18,9 @@ namespace Gameplay.Enemies
         protected int _vinylDrop = 0;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
-        protected bool _isActive = false; // If is death is not active
+        protected bool _isDead = false; // If is death is not active
 
-        public void SetActive(bool isActive) { _isActive = isActive; }
+        public void SetActive(bool isDead) { _isDead = isDead; }
         public void Init(int path)
         {
             _path = path;

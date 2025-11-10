@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem.XR.Haptics;
+using Utilities.ObjectPool;
 public enum GameplayState
 {
     Build,
@@ -18,9 +19,18 @@ public class GameplayManager : Utilities.Subsystem<GameplayManager>
 
     private GameplayState _currentstate;
 
+    [SerializeField]
+    public Bullets bulletPrefab;
+
+    public PoolManager poolManager = new PoolManager();
+
     private void Start()
     {
         _currentstate = GameplayState.Build;
+        poolManager.RegisterPool<Bullets>(new ObjectPool<Bullets>(bulletPrefab, transform));
+        poolManager.Get<Bullets>();
+        poolManager.Get<Bullets>();
+        poolManager.Get<Bullets>();
     }
 
     #endregion
