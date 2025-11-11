@@ -12,11 +12,9 @@ namespace Gameplay.Enemies
 {
     public class QuarterNote : AEnemy
     {
-        void Start()
+        protected override void SubscribeToRhythm()
         {
-            _vinylDrop = 3;
-            RhythmManager.Instance.onQuarter += OnRhythmUpdate;
-            _damage = 10;
+           _rhythmManager.onQuarter += OnRhythmUpdate;
         }
 
         protected override void OnRhythmUpdate()
@@ -24,10 +22,11 @@ namespace Gameplay.Enemies
             StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
         }
 
-        private void OnDestroy()
+        protected override void Death()
         {
-            RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
-            InvokeDeath();
+            _rhythmManager.onQuarter -= OnRhythmUpdate;
+            onDeath.Invoke(this);
+            gameObject.SetActive(false);
         }
     } 
 }

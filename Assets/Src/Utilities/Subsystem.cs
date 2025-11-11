@@ -15,7 +15,7 @@ namespace Utilities
             }
             else
             {
-                Debug.LogError("Must have just one instance of this subsytem");
+                Debug.LogError($"Must have just one instance of this subsytem: {Instance.name}");
                 Destroy(this.gameObject);
                 return;
             }

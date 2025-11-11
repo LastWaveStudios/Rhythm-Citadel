@@ -2,6 +2,7 @@ using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Audio
 {
@@ -15,6 +16,8 @@ namespace Audio
 
         protected bool _changeOnNextMeasure = false;
         protected int _currentMeasure = 0;
+
+        private RhythmManager _rhythmManager;
         
         void Start()
         {
@@ -35,7 +38,18 @@ namespace Audio
 
             _currentClipsRhythms = InitClips();
 
-            RhythmManager.Instance.onMeasure += OnMeasure;
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+        }
+
+        private void Init()
+        {
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("AModularMusicController::Init: The RhythmManager was null");
+                return;
+            }
+            _rhythmManager.onMeasure += OnMeasure;
         }
 
         /// <summary>
@@ -70,18 +84,9 @@ namespace Audio
                 {
                     _clipsRhythms[_nextClipsRhythms[i]].SwitchAudioSource();
                     Debug.Log($"{_nextClipsRhythms[i]} : Next index of music = {_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex}");
-                    _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(RhythmManager.Instance.GetNextMeasureTime());
+                    _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(_rhythmManager.GetNextMeasureTime());
                 }
             }
-
-            // if (_currentMeasure == _clipsRhythms[_currentClipRhythm].measuresDuration) // next measure the clip ends so schedule the next clip for that next measure
-            // {
-            //     _changeOnNextMeasure = true;
-            //     _nextClipRhythm = SelectNextClip(_currentClipRhythm);
-            //     _clipsRhythms[_nextClipRhythm].SwitchAudioSource();
-            //     Debug.Log($"{_nextClipRhythm} : Next index of music = {_clipsRhythms[_nextClipRhythm].audioSourceIndex}");
-            //     _clipsRhythms[_nextClipRhythm].audioSources[_clipsRhythms[_nextClipRhythm].audioSourceIndex].PlayScheduled(RhythmManager.Instance.GetNextMeasureTime());
-            // }
         }
         
         
@@ -102,11 +107,55 @@ namespace Audio
         protected abstract int[] SelectNextClips(int[] songPartThatWillEnd);
 
         /// <summary>
-        /// Virtual just in case, first play to do (TODO)
+        /// Virtual just in case, first play to do (start immediate, normally must be called at the same time that the RhythmManager
         /// </summary>
-        public virtual void Play()
+        public virtual void StartPlay()
         {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                _clipsRhythms[_currentClipsRhythms[i]].audioSources[_clipsRhythms[_currentClipsRhythms[i]].audioSourceIndex].Play();
+            }
+        }
 
+        public virtual void EndPlay()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].Stop();
+                }
+            }
+        }
+
+        public virtual void Pause()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].Pause();
+                }
+            }
+        }
+
+        public virtual void Resume()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].UnPause();
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_rhythmManager != null)
+            {
+                _rhythmManager.onMeasure -= OnMeasure;
+            }
         }
     }
 }

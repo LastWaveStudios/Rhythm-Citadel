@@ -1,14 +1,16 @@
 using Gameplay.Enemies;
 using Gameplay.RhythmSystem;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.Waves
 {
-    public class WaveManager : Utilities.Subsystem<WaveManager>
+    public class WaveManager : Utilities.ServiceLocator.AService
     {
-        [SerializeField] public RhythmPattern _pattern;
-        [SerializeField] public int BPM = 120;
+        public Action<int> onEnemyDeath = delegate { };
+
         private int _activeEnemies = 0;
 
         [SerializeField] private List<Wave> _waves;
@@ -16,15 +18,21 @@ namespace Gameplay.Waves
 
         public int CurrentWave { get; private set; } = -1;
         public int LastEnemySpawnedInCurrentWave { get; private set; } = -1;
+        public bool AllEnemiesDeadInCurrentWave { get; private set; } = false;
+        private int _numberOfEnemiesDeadInCurrentWave = 0;
 
-        private void Start()
+        private RhythmManager _rhythmManager;
+
+        public override void Init()
         {
             _currentWaveEnemies = new List<AEnemy>();
-            GameplayManager.Instance.onEnemyDeath += EnemyDied;
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
         }
 
         public bool InitNextWave()
         {
+            _numberOfEnemiesDeadInCurrentWave = 0;
+            AllEnemiesDeadInCurrentWave = false;
             CurrentWave++;
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return false;
 
@@ -45,11 +53,22 @@ namespace Gameplay.Waves
                 AEnemy enemy = GameObject.Instantiate(enemyData.enemyPrefab).GetComponent<AEnemy>();
                 enemy.Init(enemyData.idSpawnpoint); // Same as path
                 enemy.gameObject.SetActive(false);
+                enemy.onDeath += OnEnemyDead;
                 _currentWaveEnemies.Add(enemy);
             }
             LastEnemySpawnedInCurrentWave = -1;
 
             return true;
+        }
+
+        private void OnEnemyDead(AEnemy enemy)
+        {
+            _numberOfEnemiesDeadInCurrentWave++;
+            if (_numberOfEnemiesDeadInCurrentWave == _currentWaveEnemies.Count)
+            {
+                AllEnemiesDeadInCurrentWave = true;
+            }
+            onEnemyDeath.Invoke(enemy.GetDrop());
         }
 
         public AEnemy GetEnemy(int index)
@@ -68,31 +87,20 @@ namespace Gameplay.Waves
         {
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;
 
-            RhythmManager.Instance.onSixteenth += OnSixteenth;
-            RhythmManager.Instance.StartRhythm();
+            _rhythmManager.onSixteenth += OnSixteenth;
         }
 
         private void OnSixteenth()
         {
             while (LastEnemySpawnedInCurrentWave < _currentWaveEnemies.Count && LastEnemySpawnedInCurrentWave + 1 < _currentWaveEnemies.Count &&
-                _waves[CurrentWave].enemiesToSpawn[LastEnemySpawnedInCurrentWave + 1].SixteenthOfSpawn == RhythmManager.Instance.SixteenthCountGlobal)
+                _waves[CurrentWave].enemiesToSpawn[LastEnemySpawnedInCurrentWave + 1].SixteenthOfSpawn == _rhythmManager.SixteenthCountGlobal)
             {
                 _currentWaveEnemies[++LastEnemySpawnedInCurrentWave].gameObject.SetActive(true);
                 Debug.Log($"Active the {LastEnemySpawnedInCurrentWave} enemy");
             }
             if (LastEnemySpawnedInCurrentWave == _currentWaveEnemies.Count - 1)
             {
-                RhythmManager.Instance.onSixteenth -= OnSixteenth;
-                // Must wait to all the enemies death for change the phase and for start preparing the nextWave, but at least do not have more calls for nothing
-            }
-        }
-
-        public void EnemyDied(int unused)
-        {
-            _activeEnemies = _activeEnemies - 1;
-            if (_activeEnemies <= 0)
-            {
-                //RhythmManager.Instance.EndRhythm();
+                _rhythmManager.onSixteenth -= OnSixteenth;
             }
         }
     }

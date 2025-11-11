@@ -1,5 +1,6 @@
 using Gameplay.RhythmSystem;
 using System.Collections.Generic;
+using Utilities.ServiceLocator;
 
 
 namespace Gameplay.Towers
@@ -23,6 +24,8 @@ namespace Gameplay.Towers
         private int _indexOfNoteInPattern;
         private double _maxOffset;
 
+        private RhythmManager _rhythmManager;
+
         public TowersGroup(RhythmPattern pattern, double timeOfDisable, double maxOffset)
         {
             _pattern = pattern;
@@ -31,6 +34,8 @@ namespace Gameplay.Towers
             this.timeOfDisable = timeOfDisable;
             isEnabled = true;
             _maxOffset = maxOffset;
+
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
         }
 
         public TowersGroup(double timeOfDisable, double maxOffset)
@@ -46,6 +51,13 @@ namespace Gameplay.Towers
             this.timeOfDisable = timeOfDisable;
             isEnabled = true;
             _maxOffset = maxOffset;
+
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+        }
+
+        private void Init()
+        {
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
         }
 
         public void AddTower(ATower tower)
@@ -65,10 +77,10 @@ namespace Gameplay.Towers
         {
             if (!isEnabled) return CheckRhythmStatus.SkipActions;
             if (_towers.Count == 0) return CheckRhythmStatus.SkipActions;
-
+            
             _indexOfNoteInPattern = (_indexOfNoteInPattern + 1) % _pattern.patternNotes.Count;
-
-            if (RhythmManager.Instance.IsInTime(_pattern.patternNotes[_indexOfNoteInPattern], _pattern.GetIndexOfSixteenthOnMeasure(_indexOfNoteInPattern), _maxOffset))
+            
+            if (_rhythmManager.IsInTime(_pattern.patternNotes[_indexOfNoteInPattern], _pattern.GetIndexOfSixteenthOnMeasure(_indexOfNoteInPattern), _maxOffset))
             {
                 UnityEngine.Debug.Log("Tapped GOOD");
                 foreach (ATower tower in _towers)
@@ -77,7 +89,7 @@ namespace Gameplay.Towers
                 }
                 return CheckRhythmStatus.Good;
             }
-
+            
             UnityEngine.Debug.Log("Tapped BAD");
             _indexOfNoteInPattern = -1;
             return CheckRhythmStatus.Bad;

@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 namespace Gameplay.Towers
 {
-    public class TowersManager : Utilities.Singleton<TowersManager>
+    public class TowersManager : Utilities.ServiceLocator.AService
     {
         // used like a dictionary by keys 0-5 id of input group
         private List<TowersGroup> _towersGroups;
@@ -15,8 +15,7 @@ namespace Gameplay.Towers
         [SerializeField] private const int NUMBER_OF_GROUPS = 6;
         [SerializeField] private const double DEFAULT_MAX_OFFSET = 200;
         [SerializeField] private const double DEFAULT_TIME_OF_DISABLE = 5000;
-
-        public void Start()
+        public override void Init()
         {
             _towersGroups = new List<TowersGroup>();
             _towersGroups.Capacity = NUMBER_OF_GROUPS;

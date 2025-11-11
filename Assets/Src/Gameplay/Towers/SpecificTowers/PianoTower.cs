@@ -34,7 +34,21 @@ namespace Gameplay.Towers.SpecificTowers
 
         public override void OnRhythmHit()
         {
-            StartCoroutine(Shoot());
+            //StartCoroutine(Shoot());
+            StartCoroutine(TestThing());
+        }
+
+        private IEnumerator TestThing()
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+
+            float t = 0.0f;
+            while (t < 0.25f)
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
 
         // TODO: Change to actual shoot, just for alpha test
