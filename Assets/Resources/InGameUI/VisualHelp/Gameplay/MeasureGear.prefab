@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49381e5cda32d8d4b9b770479d919523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gearToRotate: {fileID: 3834003460190064971}
 --- !u!1 &3117609473714389415
 GameObject:
   m_ObjectHideFlags: 0

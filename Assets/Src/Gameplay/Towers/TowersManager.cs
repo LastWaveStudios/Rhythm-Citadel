@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 namespace Gameplay.Towers
 {
-    public class TowersManager : Utilities.Singleton<TowersManager>
+    public class TowersManager : Utilities.Subsystem<TowersManager>
     {
         // used like a dictionary by keys 0-5 id of input group
         private List<TowersGroup> _towersGroups;

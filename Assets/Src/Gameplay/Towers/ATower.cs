@@ -14,7 +14,7 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        [SerializeField]protected int _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
+        [SerializeField]protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
         [SerializeField]protected int _range;  //N� de tiles de alcance
         [SerializeField]protected float _damage;
         [SerializeField]protected double _timeForProjectile = 0.1; // Time of projectile to reach the target

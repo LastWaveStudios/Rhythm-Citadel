@@ -8,13 +8,11 @@ using UnityEngine.Tilemaps;
 
 namespace Gameplay
 {
-
-
     public class EconomyManager : Utilities.Subsystem<EconomyManager>
     {
         private void Start()
         {
-            GameplayManager.Instance.onEnemyDeath += AddVinyl;
+            WaveManager.Instance.onEnemyDeath += AddVinyl;
         }
 
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
@@ -152,17 +150,20 @@ namespace Gameplay
         {
             _vinyl += DestroyTower(_selectedTilePosition.Value);
             ChangeTile(_selectedTilePosition.Value);
-
         }
         bool CanBuy(int price)
         {
-            return price <= _vinyl && GameplayManager.Instance.InBuildState();
+            return price <= _vinyl;
         }
         void SpendVinyl(int price)
         {
             _vinyl -= price;
         }
-
         #endregion
+
+        private void OnDestroy()
+        {
+            WaveManager.Instance.onEnemyDeath -= AddVinyl;
+        }
     }
 }

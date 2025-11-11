@@ -11,13 +11,14 @@ namespace Gameplay.Enemies
     {
         [SerializeField] protected int _health;
         [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected int _damage;
-        [SerializeField] protected int _damageType;
+        [SerializeField] protected int _damage = 0;
+        [SerializeField] protected DamageType _damageType;
+        [SerializeField] protected int _vinylDrop = 0;
 
-        protected int _vinylDrop = 0;
         protected int _path = 0;    //Valor del path al que accede
         protected int _index = 0;   //Numero del tile actual
         protected bool _isActive = false; // If is death is not active
+        protected Action<AEnemy> onDeath = delegate {  }; 
 
         public void SetActive(bool isActive) { _isActive = isActive; }
         public void Init(int path)
@@ -38,6 +39,11 @@ namespace Gameplay.Enemies
             return _vinylDrop;
         }
         protected abstract void OnRhythmUpdate();
+
+        /// <summary>
+        /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
+        /// </summary>
+        protected abstract void Death();
 
         public Vector3Int GetTile()
         {
@@ -80,11 +86,6 @@ namespace Gameplay.Enemies
             }
 
             transform.position = targetPos;   // Fix for center final positions
-        }
-
-        protected void InvokeDeath()
-        {
-            GameplayManager.Instance.onEnemyDeath.Invoke(_vinylDrop);
         }
     }
 }

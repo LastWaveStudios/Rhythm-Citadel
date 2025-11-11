@@ -73,15 +73,6 @@ namespace Audio
                     _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(RhythmManager.Instance.GetNextMeasureTime());
                 }
             }
-
-            // if (_currentMeasure == _clipsRhythms[_currentClipRhythm].measuresDuration) // next measure the clip ends so schedule the next clip for that next measure
-            // {
-            //     _changeOnNextMeasure = true;
-            //     _nextClipRhythm = SelectNextClip(_currentClipRhythm);
-            //     _clipsRhythms[_nextClipRhythm].SwitchAudioSource();
-            //     Debug.Log($"{_nextClipRhythm} : Next index of music = {_clipsRhythms[_nextClipRhythm].audioSourceIndex}");
-            //     _clipsRhythms[_nextClipRhythm].audioSources[_clipsRhythms[_nextClipRhythm].audioSourceIndex].PlayScheduled(RhythmManager.Instance.GetNextMeasureTime());
-            // }
         }
         
         
@@ -102,11 +93,47 @@ namespace Audio
         protected abstract int[] SelectNextClips(int[] songPartThatWillEnd);
 
         /// <summary>
-        /// Virtual just in case, first play to do (TODO)
+        /// Virtual just in case, first play to do (start immediate, normally must be called at the same time that the RhythmManager
         /// </summary>
-        public virtual void Play()
+        public virtual void StartPlay()
         {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                _clipsRhythms[_currentClipsRhythms[i]].audioSources[_clipsRhythms[_currentClipsRhythms[i]].audioSourceIndex].Play();
+            }
+        }
 
+        public virtual void EndPlay()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].Stop();
+                }
+            }
+        }
+
+        public virtual void Pause()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].Pause();
+                }
+            }
+        }
+
+        public virtual void Resume()
+        {
+            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            {
+                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                {
+                    _clipsRhythms[i].audioSources[j].UnPause();
+                }
+            }
         }
     }
 }

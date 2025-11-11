@@ -1,5 +1,6 @@
 using Gameplay.Enemies;
 using Gameplay.RhythmSystem;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ namespace Gameplay.Waves
 {
     public class WaveManager : Utilities.Subsystem<WaveManager>
     {
-        [SerializeField] public RhythmPattern _pattern;
-        [SerializeField] public int BPM = 120;
+        public Action<int> onEnemyDeath = delegate { };
+
         private int _activeEnemies = 0;
 
         [SerializeField] private List<Wave> _waves;
@@ -17,10 +18,10 @@ namespace Gameplay.Waves
         public int CurrentWave { get; private set; } = -1;
         public int LastEnemySpawnedInCurrentWave { get; private set; } = -1;
 
+
         private void Start()
         {
             _currentWaveEnemies = new List<AEnemy>();
-            GameplayManager.Instance.onEnemyDeath += EnemyDied;
         }
 
         public bool InitNextWave()
@@ -69,7 +70,6 @@ namespace Gameplay.Waves
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;
 
             RhythmManager.Instance.onSixteenth += OnSixteenth;
-            RhythmManager.Instance.StartRhythm();
         }
 
         private void OnSixteenth()
@@ -83,16 +83,6 @@ namespace Gameplay.Waves
             if (LastEnemySpawnedInCurrentWave == _currentWaveEnemies.Count - 1)
             {
                 RhythmManager.Instance.onSixteenth -= OnSixteenth;
-                // Must wait to all the enemies death for change the phase and for start preparing the nextWave, but at least do not have more calls for nothing
-            }
-        }
-
-        public void EnemyDied(int unused)
-        {
-            _activeEnemies = _activeEnemies - 1;
-            if (_activeEnemies <= 0)
-            {
-                //RhythmManager.Instance.EndRhythm();
             }
         }
     }

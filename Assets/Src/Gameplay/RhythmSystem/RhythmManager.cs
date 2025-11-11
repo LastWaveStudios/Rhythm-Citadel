@@ -3,11 +3,13 @@ using UnityEngine;
 
 namespace Gameplay.RhythmSystem
 {
-    public class RhythmManager : Utilities.Singleton<RhythmManager>
+    public class RhythmManager : Utilities.Subsystem<RhythmManager>
     {
         #region MusicUnits
-        public Signature signature { get; private set; }
-        public int BPM { get; private set; }
+        [SerializeField] private Signature _signature;
+        [SerializeField] private int _BPM;
+        public Signature Signature { get { return _signature; } }
+        public int BPM { get { return _BPM; } }
         #endregion
 
         #region Callbacks
@@ -37,14 +39,17 @@ namespace Gameplay.RhythmSystem
         private double _startTime;
         #endregion
 
+        #region Pause variables
         private bool _isPlaying = false;
+        private double _timeSinceLastSixteenthWhenPaused = 0.0;
+        #endregion
 
-        public void UseMeasure(Signature signatureToUse, int BPMToUse)
+        private void Start()
         {
-            signature = signatureToUse;
-            BPM = BPMToUse;
-
-            _timesOfNotes = new TimesForBPMAndSignature(signature, BPM);
+            GameplayManager.Instance.onFightStateStart += StartRhythm;
+            GameplayManager.Instance.onFightStateEnd += EndRhythm; // TODO: Change this to have the clean on the visual help and audio
+            GameplayManager.Instance.onPause += OnPause;
+            GameplayManager.Instance.onResume += OnResume;
         }
 
         public void ResetCounts()
@@ -65,7 +70,7 @@ namespace Gameplay.RhythmSystem
             {
                 _lastSixteenth = AudioSettings.dspTime - (_timeSinceLastSixteenth - _timesOfNotes.Sixteenth) / 1000; // again to seconds
                 _timeSinceLastSixteenth = 0.0;
-                SixteenthCount = (SixteenthCount + 1) % (int)signature.maxSixteenthsOnOneMeasure;
+                SixteenthCount = (SixteenthCount + 1) % (int)Signature.maxSixteenthsOnOneMeasure;
                 SixteenthCountGlobal++;
 
                 if (SixteenthCount == 0)
@@ -76,7 +81,7 @@ namespace Gameplay.RhythmSystem
                 }
 
                 // The bottom is the same as (int)signature.beatNoteDuration, are the number of sixteenths that have the beat
-                if (SixteenthCount % signature.bottom == 0)
+                if (SixteenthCount % Signature.bottom == 0)
                 {
                     onBeat.Invoke(SixteenthCount == 0);
                 }
@@ -119,7 +124,7 @@ namespace Gameplay.RhythmSystem
         public double GetNextMeasureTime()
         {
             double timePassedSinceLastMeasure = _timeSinceLastSixteenth + SixteenthCount * _timesOfNotes.Sixteenth;
-            double timeOfOneMeasure = signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            double timeOfOneMeasure = Signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
             return ((AudioSettings.dspTime * 1000.0) + (timeOfOneMeasure - timePassedSinceLastMeasure)) / 1000.0;
         }
 
@@ -127,18 +132,18 @@ namespace Gameplay.RhythmSystem
         {
             double timeSinceStart = (AudioSettings.dspTime - _startTime) * 1000.0;
 
-            double timeOfLastMeasureSinceStart = MeasureCount * signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+            double timeOfLastMeasureSinceStart = MeasureCount * Signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
             
-            if (SixteenthCount == 0 && indexOfSixteenthOnMeasure == signature.maxSixteenthsOnOneMeasure - 1)
+            if (SixteenthCount == 0 && indexOfSixteenthOnMeasure == Signature.maxSixteenthsOnOneMeasure - 1)
             {
                 Debug.Log($"TIME: 1 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                 $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
                 return (Math.Abs(timeOfLastMeasureSinceStart - timeSinceStart) <= maxOffset) ? true : false;
             }
 
-            if (SixteenthCount == signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
+            if (SixteenthCount == Signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
             {
-                double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
+                double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + Signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
                 Debug.Log($"TIME: 2 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
                 return (Math.Abs(timeOfTargetSinceStartSpecialCase - timeSinceStart) <= maxOffset) ? true : false;
@@ -152,18 +157,47 @@ namespace Gameplay.RhythmSystem
 
         public void StartRhythm()
         {
+            _timesOfNotes = new TimesForBPMAndSignature(Signature, BPM);
             _isPlaying = true;
             _lastSixteenth = AudioSettings.dspTime - (_timesOfNotes.Sixteenth / 1000); // Pass to seconds again
             _startTime = AudioSettings.dspTime;
             ResetCounts();
         }
 
+        public void Pause()
+        {
+            if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
+
+            _isPlaying = false;
+            _timeSinceLastSixteenthWhenPaused = AudioSettings.dspTime - _lastSixteenth;
+        }
+
+        public void Resume()
+        {
+            if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
+
+            _isPlaying = true;
+            _lastSixteenth = AudioSettings.dspTime - _timeSinceLastSixteenthWhenPaused;
+        }
+
+
+        private void OnResume(GameplayState state)
+        {
+            if (state == GameplayState.Build) return;
+
+            Resume();
+        }
+
+        private void OnPause(GameplayState state)
+        {
+            if (state == GameplayState.Build) return;
+
+            Pause();
+        }
+
         public void EndRhythm()
         {
             _isPlaying = false;
-            GameplayManager.Instance.SetBuildState();
-            GameObject.Find("StartWaveButton").transform.localScale = new Vector3(1, 1, 1);
-            
         }
     }
 }

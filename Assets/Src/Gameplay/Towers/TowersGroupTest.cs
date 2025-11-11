@@ -26,11 +26,6 @@ namespace Gameplay.Towers
                 }
 
                 isAdded = true;
-
-                RhythmManager.Instance.UseMeasure(_pattern.signature, BPM);
-                GameObject.Instantiate(_visualHelpPrefab, GameObject.FindWithTag("Canvas").transform);
-                WaveManager.Instance.InitNextWave();
-                WaveManager.Instance.StartWave();
             }
         }
     }
