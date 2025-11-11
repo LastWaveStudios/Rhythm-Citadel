@@ -9,7 +9,7 @@ using Utilities.ServiceLocator;
 
 namespace Gameplay.Enemies
 {
-    public abstract class AEnemy : MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
+    public abstract class AEnemy : APoolableObject  //Para poder probarlo he quitado que sea una clase abstracta
     {
         [SerializeField] protected int _health;
         [SerializeField] protected float _moveTime = 0.5f;
