@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 20db753ff52a60d4f9ae2c44c3cf56f3
+guid: e35a1225b7d05464f8ab688abad3623a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3434121250917235243
-    second: trompetas_0
+      213: 8516539726539772556
+    second: Pulso2Sombra_0
+  - first:
+      213: 7722250747746200264
+    second: Pulso2Sombra_1
+  - first:
+      213: -979144927478391990
+    second: Pulso2Sombra_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,40 +115,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trompetas_0
+      name: Pulso2Sombra_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 2
-        width: 330
-        height: 382
-      alignment: 9
-      pivot: {x: 0.34814587, y: 0.013742925}
+        x: 39
+        y: 82
+        width: 56
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d54573caec8750d0800000000000000
-      internalID: -3434121250917235243
+      spriteID: c82d7eb32c3d03670800000000000000
+      internalID: 8516539726539772556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pulso2Sombra_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 29
+        width: 74
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca28ed0422fa2b60800000000000000
+      internalID: 7722250747746200264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pulso2Sombra_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 62
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b560e40e06962f0800000000000000
+      internalID: -979144927478391990
       vertices: []
       indices: 
       edges: []
@@ -151,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c3a6e3a2716abc440a34275d88f518dc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trompetas_0: -3434121250917235243
+      Pulso2Sombra_0: 8516539726539772556
+      Pulso2Sombra_1: 7722250747746200264
+      Pulso2Sombra_2: -979144927478391990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

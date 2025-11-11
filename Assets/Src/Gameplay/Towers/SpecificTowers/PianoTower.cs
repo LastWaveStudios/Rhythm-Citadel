@@ -16,8 +16,25 @@ namespace Gameplay.Towers.SpecificTowers
         {
             base.Start();
             focusType = FocusStrategies.FirstEnemy; //Solo dice que metodo va a usar al atacar. Guarda referencia al metodo
-            _range = 5;
+            _cost = 110; //Coste que variara con las mejoras
+            _damageType = DamageType.Hybrid;    //Tipo de ataque (instrumento)
+            _attackType = AttackType.Individual;    //Ataque en area o individual
+            _damage = 0; //Quiero ponerle un random que elija entre dos valores
+            _range = 1;  //Tiles de alcance
         }
+        private SpriteRenderer spriteRenderer;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void LateUpdate()
+    {
+        // Cuanto más abajo (Y menor), más arriba en el render
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+    }
+
         public override void Disable()
         {
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -54,7 +71,7 @@ namespace Gameplay.Towers.SpecificTowers
             AEnemy enemy = objectives[0];
 
             VisualAttack(enemy);
-            //LLAMAR A FUNCION DE HACERSE DA�O DE LOS ENEMIGOS
+            //LLAMAR A FUNCION DE HACERSE DA�O DE LOS ENEMIGOS
             //DEJAMOS ESTO POR AHORA PARA SABER CUANDO SI SE DEBE DISPARAR Y SI ESTA SUCEDIENDO
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
