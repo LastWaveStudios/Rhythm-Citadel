@@ -3,10 +3,11 @@ using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.Waves
 {
-    public class WaveManager : Utilities.Subsystem<WaveManager>
+    public class WaveManager : Utilities.ServiceLocator.AService
     {
         public Action<int> onEnemyDeath = delegate { };
 
@@ -17,15 +18,21 @@ namespace Gameplay.Waves
 
         public int CurrentWave { get; private set; } = -1;
         public int LastEnemySpawnedInCurrentWave { get; private set; } = -1;
+        public bool AllEnemiesDeadInCurrentWave { get; private set; } = false;
+        private int _numberOfEnemiesDeadInCurrentWave = 0;
 
+        private RhythmManager _rhythmManager;
 
-        private void Start()
+        public override void Init()
         {
             _currentWaveEnemies = new List<AEnemy>();
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
         }
 
         public bool InitNextWave()
         {
+            _numberOfEnemiesDeadInCurrentWave = 0;
+            AllEnemiesDeadInCurrentWave = false;
             CurrentWave++;
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return false;
 
@@ -46,11 +53,22 @@ namespace Gameplay.Waves
                 AEnemy enemy = GameObject.Instantiate(enemyData.enemyPrefab).GetComponent<AEnemy>();
                 enemy.Init(enemyData.idSpawnpoint); // Same as path
                 enemy.gameObject.SetActive(false);
+                enemy.onDeath += OnEnemyDead;
                 _currentWaveEnemies.Add(enemy);
             }
             LastEnemySpawnedInCurrentWave = -1;
 
             return true;
+        }
+
+        private void OnEnemyDead(AEnemy enemy)
+        {
+            _numberOfEnemiesDeadInCurrentWave++;
+            if (_numberOfEnemiesDeadInCurrentWave == _currentWaveEnemies.Count)
+            {
+                AllEnemiesDeadInCurrentWave = true;
+            }
+            onEnemyDeath.Invoke(enemy.GetDrop());
         }
 
         public AEnemy GetEnemy(int index)
@@ -69,20 +87,20 @@ namespace Gameplay.Waves
         {
             if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;
 
-            RhythmManager.Instance.onSixteenth += OnSixteenth;
+            _rhythmManager.onSixteenth += OnSixteenth;
         }
 
         private void OnSixteenth()
         {
             while (LastEnemySpawnedInCurrentWave < _currentWaveEnemies.Count && LastEnemySpawnedInCurrentWave + 1 < _currentWaveEnemies.Count &&
-                _waves[CurrentWave].enemiesToSpawn[LastEnemySpawnedInCurrentWave + 1].SixteenthOfSpawn == RhythmManager.Instance.SixteenthCountGlobal)
+                _waves[CurrentWave].enemiesToSpawn[LastEnemySpawnedInCurrentWave + 1].SixteenthOfSpawn == _rhythmManager.SixteenthCountGlobal)
             {
                 _currentWaveEnemies[++LastEnemySpawnedInCurrentWave].gameObject.SetActive(true);
                 Debug.Log($"Active the {LastEnemySpawnedInCurrentWave} enemy");
             }
             if (LastEnemySpawnedInCurrentWave == _currentWaveEnemies.Count - 1)
             {
-                RhythmManager.Instance.onSixteenth -= OnSixteenth;
+                _rhythmManager.onSixteenth -= OnSixteenth;
             }
         }
     }

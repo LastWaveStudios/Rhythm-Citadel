@@ -1,6 +1,8 @@
 using Gameplay.RhythmSystem;
+using Gameplay.Waves;
 using System;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 
 namespace Gameplay
@@ -12,15 +14,10 @@ namespace Gameplay
         Fight
     }
 
-    public class GameplayManager : Utilities.Subsystem<GameplayManager>
+    public class GameplayManager : Utilities.ServiceLocator.AService
     {
         [SerializeField] private GameplayState _currentState = GameplayState.Build;
         public GameplayState Currentstate { get { return _currentState; } }
-
-        #region Init
-        public bool IsInitialice { get; private set; } = false;
-        public Action onInitialize = delegate { };
-        #endregion
 
         #region events
         public Action onFightStateStart = delegate { };
@@ -30,26 +27,45 @@ namespace Gameplay
         public Action<GameplayState> onPause = delegate { };
         public Action<GameplayState> onResume = delegate { };
         #endregion
-        private void Start()
+
+        private WaveManager _waveManager;
+
+        public override void Init()
         {
-            switch(this.Currentstate)
+            _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
+            if ( _waveManager == null )
+            {
+                Debug.LogError("GameplayManager::Init: The WaveManager is null");
+                return;
+            }
+            _waveManager.onEnemyDeath += OnEnemyDeath;
+
+            switch (this.Currentstate)
             {
                 case GameplayState.Build:
                     BuildAction();
                     break;
                 case GameplayState.Fight:
+                    _waveManager.InitNextWave();
                     FightAction();
                     break;
             }
-            IsInitialice = true;
         }
 
-        public void OnEnable()
+        private void OnEnemyDeath(int vinyls)
+        {
+            if (_waveManager.AllEnemiesDeadInCurrentWave)
+            {
+                ChangeBuildState();
+            }
+        }
+
+        public void Resume()
         {
             onResume.Invoke(Currentstate);
         }
 
-        public void OnDisable()
+        public void Pause()
         {
             onPause.Invoke(Currentstate);
         }
@@ -67,6 +83,9 @@ namespace Gameplay
         {
             onBuildStateStart.Invoke();
             onFightStateEnd.Invoke();
+
+            _waveManager.InitNextWave();
+
             // TODO: Activate the InputMap
 
         }
@@ -81,11 +100,15 @@ namespace Gameplay
         }
         private void FightAction()
         {
+            _waveManager.StartWave();
+
             onFightStateStart.Invoke();
             onBuildStateEnd.Invoke();
             // TODO: Activate the map of Fight
 
         }
+
+        
     }
 }
 

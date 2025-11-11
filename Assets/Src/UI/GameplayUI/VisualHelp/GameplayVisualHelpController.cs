@@ -2,6 +2,7 @@ using Gameplay;
 using Gameplay.RhythmSystem;
 using Unity.VisualScripting;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 
 namespace UI.GameplayUI.VisualHelp
@@ -26,37 +27,38 @@ namespace UI.GameplayUI.VisualHelp
 
         private Vector3[] _targetsPositions;
 
+        private RhythmManager _rhythmManager;
 
-        private void Start()
+        public void Start()
         {
-            if (GameplayManager.Instance.IsInitialice && GameplayManager.Instance.Currentstate == GameplayState.Fight)
-            {
-                Init();
-            }
-
-            GameplayManager.Instance.onFightStateStart += Init;
-            GameplayManager.Instance.onFightStateEnd += Disable;
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
         }
-
         public void Init()
         {
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if ( _rhythmManager == null )
+            {
+                Debug.LogError("GameplayVisualHelpController::Init: The RhythmManager is null");
+                return;
+            }
+
             gameObject.SetActive(true);
-            uint beatsOnOneMeasure = RhythmManager.Instance.Signature.top;
+            uint beatsOnOneMeasure = _rhythmManager.Signature.top;
             _targetsPositions = new Vector3[beatsOnOneMeasure + 1];
             Vector3 step = (_gear.transform.position - _spawnTransform.position) / (beatsOnOneMeasure);
-
+            
             for (int i = 0; i <= beatsOnOneMeasure; ++i)
             {
                 _targetsPositions[i] = _spawnTransform.position + (step * i);
             }
 
-            RhythmManager.Instance.onBeat += OnBeat;
+            _rhythmManager.onBeat += OnBeat;
         }
 
         public void Disable()
         {
             gameObject.SetActive(false);
-            RhythmManager.Instance.onBeat -= OnBeat;
+            //RhythmManager.Instance.onBeat -= OnBeat;
         }
 
         private void OnBeat(bool isMeasureBeat)
@@ -79,7 +81,7 @@ namespace UI.GameplayUI.VisualHelp
                 Debug.LogError($"GameplayVisualHelpController::GenerateGear The Gear spawned {prefab}, has not BeatGearController component");
                 return;
             }
-            beatGearController.Init(_targetsPositions, _moveTime, _rotateCantity * _rotateScale, Utilities.EasingFunctions.EaseOutQuart);
+            beatGearController.Init(_targetsPositions, _moveTime, _rotateCantity * _rotateScale, _rhythmManager, Utilities.EasingFunctions.EaseOutQuart);
             beatGearController.Go();
         }
     }

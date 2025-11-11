@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities.ObjectPool;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.Towers
 {
@@ -24,6 +25,10 @@ namespace Gameplay.Towers
 
         [SerializeField]protected int _price = 0;
         protected Vector3Int _myPosition;
+
+        #region Services references
+        protected WorldManager _worldManager;
+        #endregion
 
         public Func<List<AEnemy>, Vector3Int, int, List<AEnemy>> focusType;
 
@@ -47,8 +52,20 @@ namespace Gameplay.Towers
         }
         public void Start()
         {
-            _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
-            _poolManager=FindAnyObjectByType<PoolManager>();
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+        }
+
+        private void Init()
+        {
+            _worldManager = ServiceLocatorSubsystem.Instance.GetService<WorldManager>();
+            if (_worldManager == null )
+            {
+                Debug.LogError("ATower::Init: The world manager is null");
+                return;
+            }
+
+            _myPosition = _worldManager.GetCellFromWorldPos(transform.position);
+            _poolManager = FindAnyObjectByType<PoolManager>();
             if (_poolManager == null)   //BORRAR AL TERMINAR
             {
                 Debug.Log("No se encontro el PoolManager"); //Se encuentra siempre el poolManager, asi q bien
@@ -67,6 +84,7 @@ namespace Gameplay.Towers
                 Debug.Log("SI se encontro el ENEMIEManager");
             }
         }
+
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)
         public abstract void OnRhythmHit(); // The callback when the user taps correctly, not callback of this type if not correct

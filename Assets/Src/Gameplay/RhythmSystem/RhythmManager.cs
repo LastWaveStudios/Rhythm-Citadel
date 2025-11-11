@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.RhythmSystem
 {
-    public class RhythmManager : Utilities.Subsystem<RhythmManager>
+    public class RhythmManager : Utilities.ServiceLocator.AService
     {
         #region MusicUnits
         [SerializeField] private Signature _signature;
@@ -44,12 +45,19 @@ namespace Gameplay.RhythmSystem
         private double _timeSinceLastSixteenthWhenPaused = 0.0;
         #endregion
 
-        private void Start()
+        #region Services references
+        private GameplayManager _gameplayManager;
+        #endregion
+
+        public override void Init()
         {
-            GameplayManager.Instance.onFightStateStart += StartRhythm;
-            GameplayManager.Instance.onFightStateEnd += EndRhythm; // TODO: Change this to have the clean on the visual help and audio
-            GameplayManager.Instance.onPause += OnPause;
-            GameplayManager.Instance.onResume += OnResume;
+            _timesOfNotes = new TimesForBPMAndSignature(Signature, BPM);
+
+            _gameplayManager = ServiceLocatorSubsystem.Instance.GetService<GameplayManager>();
+            _gameplayManager.onFightStateStart += StartRhythm;
+            _gameplayManager.onFightStateEnd += EndRhythm;
+            _gameplayManager.onPause += OnPause;
+            _gameplayManager.onResume += OnResume;
         }
 
         public void ResetCounts()
@@ -157,7 +165,6 @@ namespace Gameplay.RhythmSystem
 
         public void StartRhythm()
         {
-            _timesOfNotes = new TimesForBPMAndSignature(Signature, BPM);
             _isPlaying = true;
             _lastSixteenth = AudioSettings.dspTime - (_timesOfNotes.Sixteenth / 1000); // Pass to seconds again
             _startTime = AudioSettings.dspTime;
@@ -166,7 +173,7 @@ namespace Gameplay.RhythmSystem
 
         public void Pause()
         {
-            if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
+            //if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
 
             _isPlaying = false;
             _timeSinceLastSixteenthWhenPaused = AudioSettings.dspTime - _lastSixteenth;
@@ -174,7 +181,7 @@ namespace Gameplay.RhythmSystem
 
         public void Resume()
         {
-            if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
+            //if (GameplayManager.Instance.Currentstate == GameplayState.Build) return;
 
             _isPlaying = true;
             _lastSixteenth = AudioSettings.dspTime - _timeSinceLastSixteenthWhenPaused;

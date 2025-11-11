@@ -5,16 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
+using Utilities.ServiceLocator;
 
 namespace Gameplay
 {
-    public class EconomyManager : Utilities.Subsystem<EconomyManager>
+    public class EconomyManager : Utilities.ServiceLocator.AService
     {
-        private void Start()
-        {
-            WaveManager.Instance.onEnemyDeath += AddVinyl;
-        }
-
         // Referencia al tilemap donde van a aparecer las torres, se puede asignar por editor o en el start
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private TileBase _buildableTile;
@@ -25,6 +21,19 @@ namespace Gameplay
 
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
         private Vector3Int? _selectedTilePosition = null;
+
+        #region Services references
+        private WaveManager _waveManager;
+        private TowersManager _towersManager;
+        #endregion
+
+        public override void Init()
+        {
+            _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
+            _waveManager.onEnemyDeath += AddVinyl;
+
+            _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
+        }
 
         #region ClickMethods 
 
@@ -79,7 +88,7 @@ namespace Gameplay
             _existingTowers.Add(spawnPosition, instantiatedTower);
 
             // TODO: Select the group base on something right now hardcoded for alpha test
-            TowersManager.Instance.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
+            _towersManager.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
         }
 
         /// <summary>
@@ -90,7 +99,7 @@ namespace Gameplay
         {
             _existingTowers.TryGetValue(destroyPosition, out UnityEngine.GameObject towerToDestroy);
             // TODO: Select the group base on something right now hardcoded for alpha test
-            if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
+            //if (towerToDestroy != null) TowersManager.Instance.RemoveTower(towerToDestroy.GetComponent<ATower>(), 4);
             int sellingPrice = towerToDestroy.GetComponent<ATower>().GetSellingPrice();
             Destroy(towerToDestroy);
             _existingTowers.Remove(destroyPosition);
@@ -163,7 +172,7 @@ namespace Gameplay
 
         private void OnDestroy()
         {
-            WaveManager.Instance.onEnemyDeath -= AddVinyl;
+            _waveManager.onEnemyDeath -= AddVinyl;
         }
     }
 }

@@ -2,6 +2,7 @@ using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Audio
 {
@@ -15,6 +16,8 @@ namespace Audio
 
         protected bool _changeOnNextMeasure = false;
         protected int _currentMeasure = 0;
+
+        private RhythmManager _rhythmManager;
         
         void Start()
         {
@@ -35,7 +38,18 @@ namespace Audio
 
             _currentClipsRhythms = InitClips();
 
-            RhythmManager.Instance.onMeasure += OnMeasure;
+            ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+        }
+
+        private void Init()
+        {
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("AModularMusicController::Init: The RhythmManager was null");
+                return;
+            }
+            _rhythmManager.onMeasure += OnMeasure;
         }
 
         /// <summary>
@@ -70,7 +84,7 @@ namespace Audio
                 {
                     _clipsRhythms[_nextClipsRhythms[i]].SwitchAudioSource();
                     Debug.Log($"{_nextClipsRhythms[i]} : Next index of music = {_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex}");
-                    _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(RhythmManager.Instance.GetNextMeasureTime());
+                    _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(_rhythmManager.GetNextMeasureTime());
                 }
             }
         }
@@ -133,6 +147,14 @@ namespace Audio
                 {
                     _clipsRhythms[i].audioSources[j].UnPause();
                 }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (_rhythmManager != null)
+            {
+                _rhythmManager.onMeasure -= OnMeasure;
             }
         }
     }

@@ -16,7 +16,9 @@ namespace UI.GameplayUI.VisualHelp
         private float _rotateCantity = 0.25f;
         private Func<float, float> _easingFunction;
 
-        public void Init(Vector3[] targetsPositions, float moveTime, float rotateCantity, Func<float, float> easingFunction = null)
+        private RhythmManager _rhythmManager;
+
+        public void Init(Vector3[] targetsPositions, float moveTime, float rotateCantity, RhythmManager rhythmManager, Func<float, float> easingFunction = null)
         {
             _targetsPositions = targetsPositions;
             _index = 0;
@@ -25,11 +27,12 @@ namespace UI.GameplayUI.VisualHelp
             _rotateCantity = rotateCantity;
             _easingFunction = easingFunction;
             gameObject.SetActive(false);
+            _rhythmManager = rhythmManager;
         }
 
         public void Go()
         {
-            RhythmManager.Instance.onBeat += OnBeat;
+            _rhythmManager.onBeat += OnBeat;
             gameObject.SetActive(true);
         }
 
@@ -68,7 +71,7 @@ namespace UI.GameplayUI.VisualHelp
 
         private void OnDestroy()
         {
-            RhythmManager.Instance.onBeat -= OnBeat;
+            _rhythmManager.onBeat -= OnBeat;
         }
     }
 }

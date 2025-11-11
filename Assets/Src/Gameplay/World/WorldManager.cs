@@ -8,23 +8,17 @@ using UnityEngine.Tilemaps;
 
 namespace Gameplay.World
 {
-    public class WorldManager : Utilities.Singleton<WorldManager>
+    public class WorldManager : Utilities.ServiceLocator.AService
     {
 
         [SerializeField] private List<GameObject> _pathObjects;
         [SerializeField] private Tilemap _tilemap;
         private List<Path> _paths;
 
-        //Initialize the Direction array array
-        void Start()
+        public override void Init()
         {
             _paths = new List<Path>();
             InitPaths();
-        }
-
-        void Update()
-        {
-
         }
 
         public Vector3Int GetNextTile(int pathID, int currentIndex)

@@ -1,6 +1,8 @@
 using Gameplay;
+using System;
 using TMPro;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 public class BaseButton : MonoBehaviour
 {
@@ -11,9 +13,24 @@ public class BaseButton : MonoBehaviour
     public string name;
     public TextMeshProUGUI text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private EconomyManager _economyManager;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
+
+        ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+    }
+
+    private void Init()
+    {
+        _economyManager = ServiceLocatorSubsystem.Instance.GetService<EconomyManager>();
+        if (_economyManager == null)
+        {
+            Debug.LogError("BaseButton::Init: The EconomyManager is null");
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -25,7 +42,7 @@ public class BaseButton : MonoBehaviour
     public void BuildTower()
     {
         Debug.Log("Selected");
-        EconomyManager.Instance.TryBuyTower(_towerToInstance);
+        _economyManager.TryBuyTower(_towerToInstance);
     }
 
     public void HoverEnter()
@@ -42,11 +59,11 @@ public class BaseButton : MonoBehaviour
 
     public void UpdateTower()
     {
-        EconomyManager.Instance.UpdateTower();
+        _economyManager.UpdateTower();
     }
 
     public void SellTower()
     {
-        EconomyManager.Instance.SellTower();
+        _economyManager.SellTower();
     }
 }

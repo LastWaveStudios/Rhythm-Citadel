@@ -12,9 +12,9 @@ namespace Gameplay.Enemies
 {
     public class QuarterNote : AEnemy
     {
-        void OnEnable()
+        protected override void SubscribeToRhythm()
         {
-            RhythmManager.Instance.onQuarter += OnRhythmUpdate;
+           _rhythmManager.onQuarter += OnRhythmUpdate;
         }
 
         protected override void OnRhythmUpdate()
@@ -24,8 +24,9 @@ namespace Gameplay.Enemies
 
         protected override void Death()
         {
-            RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
+            _rhythmManager.onQuarter -= OnRhythmUpdate;
             onDeath.Invoke(this);
+            gameObject.SetActive(false);
         }
     } 
 }
