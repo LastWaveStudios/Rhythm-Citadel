@@ -10,17 +10,17 @@ using UnityEngine.Tilemaps;
 
 namespace Gameplay.Enemies
 {
-    public class QuarterNote : AEnemy
+    public class TrebleClef : AEnemy
     {
         void Start()
         {
-            RhythmManager.Instance.onQuarter += OnRhythmUpdate;
-            _health=16;
-            _damageType= DamageType.Melee;
-            _damage=2;
+            RhythmManager.Instance.onWhole += OnRhythmUpdate;   //CHANGE
+            _health = 7000;
+            _damageType = DamageType.Melee;
+            _damage = 200;
             _moveTime = 0.5f;
-            _resistance = Resistance.None;
-            _vinylDrop = 3;
+            _resistance = Resistance.Hybrid;
+            _vinylDrop = 200;
         }
 
         protected override void OnRhythmUpdate()
