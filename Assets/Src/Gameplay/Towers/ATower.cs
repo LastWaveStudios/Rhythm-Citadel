@@ -17,8 +17,8 @@ namespace Gameplay.Towers
         protected int _level;
         protected int _cost;
         protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
-        protected AttackType _attackType;
-        protected int _damage;
+        protected int _minDamage;
+        protected int _MaxDamage;
         protected int _range;  //N� de tiles de alcance
         
         //MULTIPICADOR DE PRECIO COMO CONSTANTE
@@ -97,12 +97,5 @@ namespace Gameplay.Towers
         String,
         Percussion,
         Hybrid
-    }
-
-    public enum AttackType
-    {
-        Individual = 0,
-        Area = 1
-
     }
 }

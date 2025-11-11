@@ -11,29 +11,29 @@ namespace Gameplay.Towers.SpecificTowers
 
         // TODO: Just for alpha test
         private bool isEnabled = true;
+        private SpriteRenderer spriteRenderer;
+
+        void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         new void Start()
         {
             base.Start();
-            focusType = FocusStrategies.FirstEnemy; //Solo dice que metodo va a usar al atacar. Guarda referencia al metodo
+            focusType = FocusStrategies.FirstEnemy; 
             _cost = 110; //Coste que variara con las mejoras
             _damageType = DamageType.Hybrid;    //Tipo de ataque (instrumento)
-            _attackType = AttackType.Individual;    //Ataque en area o individual
-            _damage = 0; //Quiero ponerle un random que elija entre dos valores
+            _minDamage = 6;
+            _MaxDamage = 11;
             _range = 1;  //Tiles de alcance
         }
-        private SpriteRenderer spriteRenderer;
 
-    void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    void LateUpdate()
-    {
-        // Cuanto más abajo (Y menor), más arriba en el render
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-    }
+        void LateUpdate()
+        {
+            //Cuanto más abajo, más arriba en el render
+            spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+        }
 
         public override void Disable()
         {
