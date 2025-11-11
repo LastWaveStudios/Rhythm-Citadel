@@ -40,14 +40,8 @@ namespace Gameplay
 
         void InputHandler()
         {
-            if (_selectedTilePosition != null)
-            {
-                _selectedTilePosition = null;
-                _buildingMenu.SetActive(false);
-                _updateMenu.SetActive(false);
-                return;
-            }
-
+            if (_selectedTilePosition != null) return;
+            
             TileBase selectedTile = null;
             GetPositionClicked();
             if (_selectedTilePosition != null)
@@ -64,6 +58,16 @@ namespace Gameplay
 
         }
 
+        public void CloseMenu()
+        {
+            if (_selectedTilePosition != null)
+            {
+                _selectedTilePosition = null;
+                _buildingMenu.SetActive(false);
+                _updateMenu.SetActive(false);
+                return;
+            }
+        }
         #endregion
 
         #region Tower methods
@@ -75,6 +79,7 @@ namespace Gameplay
         /// <param name="towerToSpawn"> Prefab de la torre a spawnear</param>
         void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
         {
+            Debug.Log("Comprando");
             Vector3 offset = new Vector3(0, _tilemap.cellSize.y / 2, 0);
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
@@ -138,6 +143,7 @@ namespace Gameplay
         }
         public void TryBuyTower(GameObject towerToBuy)
         {
+            Debug.Log("Intentando comprar");
             ATower script = towerToBuy.GetComponent<ATower>();
             int towerPrice = script.GetPrice();
             if (CanBuy(towerPrice))
@@ -156,7 +162,7 @@ namespace Gameplay
         }
         bool CanBuy(int price)
         {
-            return price <= _vinyl && GameplayManager.Instance.InBuildState();
+            return price <= _vinyl;
         }
         void SpendVinyl(int price)
         {
