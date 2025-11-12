@@ -12,15 +12,16 @@ namespace Gameplay.Enemies
 {
     public abstract class AEnemy : MonoBehaviour
     {
-        [SerializeField] protected int _health;
-        [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected int _damage = 0;
-        [SerializeField] protected DamageType _damageType;
-        [SerializeField] protected int _vinylDrop = 0;
+        protected int _health;
+        protected DamageType _damageType;   //Melee, Range, Contact
+        protected int _damage;
+        protected float _moveTime = 0.5f;
+        protected Resistance _resistance;   //None, String, Percussion or Hybrid
+        protected int _vinylDrop = 0;
 
-        protected int _path = 0;    //Valor del path al que accede
-        protected int _index = 0;   //Numero del tile actual
-        protected bool _isAlive = true; // If is Not spawned is Alive
+        protected int _path = 0;    
+        protected int _index = 0;   //Current Tile
+        protected bool _isActive = false; // If is death is not active
         public Action<AEnemy> onDeath = delegate {  };
 
         protected WorldManager _worldManager;
@@ -49,6 +50,7 @@ namespace Gameplay.Enemies
         }
 
         protected abstract void SubscribeToRhythm();
+
 
         public void Init(int path)
         {
@@ -118,6 +120,21 @@ namespace Gameplay.Enemies
             transform.position = targetPos;   // Fix for center final positions
             yield return null;
         }
+    }
+
+    public enum DamageType
+    {
+        Melee,
+        Range,
+        Contact
+    }
+
+    public enum Resistance
+    {
+        None,
+        String,
+        Percussion,
+        Hybrid
     }
 }
 

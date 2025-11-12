@@ -15,6 +15,13 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
            _rhythmManager.onQuarter += OnRhythmUpdate;
+
+            _health=16;
+            _damageType= DamageType.Melee;
+            _damage=2;
+            _moveTime = 0.5f;
+            _resistance = Resistance.None;
+            _vinylDrop = 3;
         }
 
         protected override void OnRhythmUpdate()

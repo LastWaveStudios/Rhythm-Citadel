@@ -8,16 +8,31 @@ namespace Gameplay.Towers.SpecificTowers
 {
     public class PianoTower : ATower
     {
-
-        // TODO: Just for alpha test
         private bool isEnabled = true;
+        private SpriteRenderer spriteRenderer; //Prevent towers from overlapping incorrectly
+
+        void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         new void Start()
         {
             base.Start();
-            focusType = FocusStrategies.FirstEnemy; //Solo dice que metodo va a usar al atacar. Guarda referencia al metodo
-            _range = 5;
+            focusType = FocusStrategies.FirstEnemy; 
+            _cost = 110; 
+            _damageType = DamageType.Hybrid;    
+            _minDamage = 6;
+            _MaxDamage = 11;
+            _range = 1;  
         }
+
+        void LateUpdate()
+        {
+            //Lower is, higher appear
+            spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
+        }
+
         public override void Disable()
         {
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -68,7 +83,7 @@ namespace Gameplay.Towers.SpecificTowers
             AEnemy enemy = objectives[0];
 
             VisualAttack(enemy);
-            //LLAMAR A FUNCION DE HACERSE DAÑO DE LOS ENEMIGOS
+            //LLAMAR A FUNCION DE HACERSE DAï¿½O DE LOS ENEMIGOS
             //DEJAMOS ESTO POR AHORA PARA SABER CUANDO SI SE DEBE DISPARAR Y SI ESTA SUCEDIENDO
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 

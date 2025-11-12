@@ -15,13 +15,16 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component
-        [SerializeField] protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
-        [SerializeField] protected int _range;  //N� de tiles de alcance
-        [SerializeField] protected float _damage;
+        protected int _level;
+        protected int _cost;
+        protected DamageType _damageType; // String, Percussion, Hybrid
+        protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
+        protected int _MaxDamage;
+        protected int _range;
+        [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component  
+        
         [SerializeField] protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
         protected IPoolManager _poolManager;
-        //protected EnemieManager _enemieManager;
         protected WaveManager _waveManager;
 
         [SerializeField]protected int _price = 0;
@@ -37,7 +40,7 @@ namespace Gameplay.Towers
         {
             return _price;
         }
-        
+
         // BALANCEAR EL SELLING PRICE
         public int GetSellingPrice()
         {
@@ -72,17 +75,21 @@ namespace Gameplay.Towers
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
         public abstract void Enable(); // call it when Enable the tower (just for sound and animations)
         public abstract void OnRhythmHit(); // The callback when the user taps correctly, not callback of this type if not correct
-        
+
         public void VisualAttack(AEnemy enemy)   //call it when the user taps correctly
         {
             Debug.Log("Estamos en VISUAL ATACK");
             Bullet bullet =_poolManager.Get<Bullet>();
 
             Vector3 from = transform.position;
-            //Vector3 to = enemy.transform.position; 
-            //Vector3 to = new Vector3(5f, 3f, 0f); solo para comprogbar que se dispara
             bullet.Shot(from, enemy, 5f, _poolManager);
         }
     }
 
+    public enum DamageType
+    {
+        String,
+        Percussion,
+        Hybrid
+    }
 }
