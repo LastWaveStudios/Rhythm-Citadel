@@ -3,6 +3,7 @@ using Gameplay.Waves;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 
@@ -24,6 +25,7 @@ namespace Gameplay
         [SerializeField] private GameObject _buildingMenu;
         [SerializeField] private GameObject _updateMenu;
         [SerializeField] private int _vinyl = 0;
+        private int _countExitMenu = 0;
 
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
         private Vector3Int? _selectedTilePosition = null;
@@ -40,14 +42,19 @@ namespace Gameplay
 
         void InputHandler()
         {
-            if (_selectedTilePosition != null) return;
-            
+            if (_selectedTilePosition != null)
+            {
+                if (_countExitMenu >= 1) CloseMenu();
+                else _countExitMenu++;
+
+                return;
+
+            }
+
             TileBase selectedTile = null;
             GetPositionClicked();
             if (_selectedTilePosition != null)
                 selectedTile = _tilemap.GetTile(_selectedTilePosition.Value);
-
-            //Vector3Int clickedCellPosition = GetPositionClicked();
 
             if (selectedTile == _buildableTile)
                 _buildingMenu.SetActive(true);
@@ -60,13 +67,12 @@ namespace Gameplay
 
         public void CloseMenu()
         {
-            if (_selectedTilePosition != null)
-            {
-                _selectedTilePosition = null;
-                _buildingMenu.SetActive(false);
-                _updateMenu.SetActive(false);
-                return;
-            }
+            _countExitMenu = 0;
+            _selectedTilePosition = null;
+            _buildingMenu.SetActive(false);
+            _updateMenu.SetActive(false);
+            return;
+
         }
         #endregion
 

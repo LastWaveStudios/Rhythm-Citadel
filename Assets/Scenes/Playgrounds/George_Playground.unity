@@ -3778,6 +3778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 3696585038086601728, guid: b219755872068b2459d41901e58388b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7095850005101002307, guid: b219755872068b2459d41901e58388b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
