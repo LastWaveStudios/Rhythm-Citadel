@@ -7,7 +7,7 @@ namespace Utilities.ObjectPool
 {
     public class PoolManager : MonoBehaviour, IPoolManager
     {
-        private Dictionary<System.Type, IObjectPool> _pools = new();
+        private Dictionary<System.Type, IObjectPool> _pools = new Dictionary<Type, IObjectPool>();
 
         public void Release(IPoolableObject obj)
         {
