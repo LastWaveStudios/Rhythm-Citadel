@@ -26,7 +26,7 @@ public class Bullets : APoolableObject
             StopCoroutine(_movement);
             _movement = null;
         }
-        GameplayManager.Instance.poolManager.Release(this);
+        //GameplayManager.Instance.poolManager.Release(this);
     }
     /**/
 

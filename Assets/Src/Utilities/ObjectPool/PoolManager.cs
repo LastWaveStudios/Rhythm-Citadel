@@ -5,7 +5,7 @@ using UnityEngine;
 using Gameplay.World;
 namespace Utilities.ObjectPool
 {
-    public class PoolManager : IPoolManager
+    public class PoolManager : MonoBehaviour, IPoolManager
     {
         private Dictionary<System.Type, IObjectPool> _pools = new();
 
