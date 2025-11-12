@@ -12,8 +12,9 @@ namespace Gameplay.Enemies
 {
     public class TrebleClef : AEnemy
     {
-        void Start()
+        new void Start()
         {
+            base.Start();
             _health = 7000;
             _damageType = DamageType.Melee;
             _damage = 200;
@@ -24,7 +25,7 @@ namespace Gameplay.Enemies
 
         protected override void SubscribeToRhythm()
         {
-            _rhythmManager.onQuarter += OnRhythmUpdate; //CHANGE
+            _rhythmManager.onMeasure += OnRhythmUpdate; //CHANGE
         }
 
         protected override void OnRhythmUpdate()

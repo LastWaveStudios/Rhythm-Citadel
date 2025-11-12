@@ -28,7 +28,7 @@ namespace Gameplay.Enemies
         protected RhythmManager _rhythmManager;
 
 
-        private void Start()
+        public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
         }

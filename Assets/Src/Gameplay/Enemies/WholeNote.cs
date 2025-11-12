@@ -12,8 +12,9 @@ namespace Gameplay.Enemies
 {
     public class WholerNote : AEnemy
     {
-        void Start()
+        new void Start()
         {
+            base.Start();
             _health = 200;
             _damageType = DamageType.Contact;
             _damage = 50;

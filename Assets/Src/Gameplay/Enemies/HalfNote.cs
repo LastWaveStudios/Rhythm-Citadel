@@ -12,8 +12,9 @@ namespace Gameplay.Enemies
 {
     public class HalfNote : AEnemy
     {
-        void Start()
+        new void Start()
         {
+            base.Start();
             _health = 64;
             _damageType = DamageType.Melee;
             _damage = 6;

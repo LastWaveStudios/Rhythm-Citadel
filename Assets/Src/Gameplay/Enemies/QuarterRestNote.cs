@@ -19,6 +19,7 @@ namespace Gameplay.Enemies
         }
         new void Start()
         {
+            base.Start();
             _health = 50;
             _damageType = DamageType.Range;
             _damage = 10;

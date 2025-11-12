@@ -15,10 +15,11 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
             _rhythmManager.onQuarter += OnRhythmUpdate;
+            
         }
-
         new void Start()
         {
+            base.Start();
             _health = 16;
             _damageType = DamageType.Melee;
             _damage = 2;
@@ -34,11 +35,10 @@ namespace Gameplay.Enemies
 
         protected override void Death()
         {
-            _isActive = false;
             _rhythmManager.onQuarter -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);
         }
-    } 
+    }
 }
 

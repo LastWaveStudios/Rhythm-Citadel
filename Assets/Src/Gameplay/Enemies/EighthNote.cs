@@ -12,8 +12,9 @@ namespace Gameplay.Enemies
 {
     public class EighthNote : AEnemy
     {
-        void Start()
+        new void Start()
         {
+            base.Start();
             _health = 70;
             _damageType = DamageType.Melee;
             _damage = 18;
