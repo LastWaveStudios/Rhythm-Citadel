@@ -14,13 +14,17 @@ namespace Gameplay.Enemies
     {
         void Start()
         {
-            RhythmManager.Instance.onEighth += OnRhythmUpdate;
             _health = 70;
             _damageType = DamageType.Melee;
             _damage = 18;
             _moveTime = 0.5f;
             _resistance = Resistance.String;
             _vinylDrop = 12;
+        }
+
+        protected override void SubscribeToRhythm()
+        {
+            _rhythmManager.onEighth += OnRhythmUpdate;
         }
 
         protected override void OnRhythmUpdate()
@@ -37,10 +41,12 @@ namespace Gameplay.Enemies
             return c3 * t * t * t - c1 * t * t;
         }
 
-        private void OnDestroy()
+        protected override void Death()
         {
-            RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
-            InvokeDeath();
+            _isActive = false;
+            _rhythmManager.onQuarter -= OnRhythmUpdate;
+            onDeath.Invoke(this);
+            gameObject.SetActive(false);
         }
     } 
 }

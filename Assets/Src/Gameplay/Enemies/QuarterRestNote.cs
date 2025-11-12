@@ -12,9 +12,13 @@ namespace Gameplay.Enemies
 {
     public class QuarterRestNote : AEnemy
     {
-        void Start()
+        //void Start()
+        protected override void SubscribeToRhythm()
         {
-            RhythmManager.Instance.onQuarter += OnRhythmUpdate;
+            _rhythmManager.onQuarter += OnRhythmUpdate;
+        }
+        new void Start()
+        {
             _health = 50;
             _damageType = DamageType.Range;
             _damage = 10;
@@ -37,10 +41,12 @@ namespace Gameplay.Enemies
             return c3 * t * t * t - c1 * t * t;
         }
 
-        private void OnDestroy()
+        protected override void Death()
         {
-            RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
-            InvokeDeath();
+            _isActive = false;
+            _rhythmManager.onQuarter -= OnRhythmUpdate;
+            onDeath.Invoke(this);
+            gameObject.SetActive(false);
         }
     } 
 }

@@ -14,13 +14,17 @@ namespace Gameplay.Enemies
     {
         void Start()
         {
-            RhythmManager.Instance.onWhole += OnRhythmUpdate;
             _health = 200;
             _damageType = DamageType.Contact;
             _damage = 50;
             _moveTime = 0.5f;
             _resistance = Resistance.Percussion;
             _vinylDrop = 70;
+        }
+
+        protected override void SubscribeToRhythm()
+        {
+            _rhythmManager.onWhole += OnRhythmUpdate;
         }
 
         protected override void OnRhythmUpdate()
@@ -37,10 +41,12 @@ namespace Gameplay.Enemies
             return c3 * t * t * t - c1 * t * t;
         }
 
-        private void OnDestroy()
+        protected override void Death()
         {
-            RhythmManager.Instance.onQuarter -= OnRhythmUpdate;
-            InvokeDeath();
+            _isActive = false;
+            _rhythmManager.onQuarter -= OnRhythmUpdate;
+            onDeath.Invoke(this);
+            gameObject.SetActive(false);
         }
     } 
 }
