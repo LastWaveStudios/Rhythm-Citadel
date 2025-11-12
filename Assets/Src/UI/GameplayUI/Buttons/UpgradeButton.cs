@@ -6,7 +6,7 @@ public class UpgradeButton : AButton
 {
     public override void OnPointerClick(PointerEventData eventData)
     {
-        EconomyManager.Instance.UpdateTower();
-        EconomyManager.Instance.CloseMenu();
+        _economyManager.UpdateTower();
+        _economyManager.CloseMenu();
     }
 }

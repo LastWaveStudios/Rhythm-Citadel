@@ -7,8 +7,8 @@ public class BuildingButton : AButton
     [SerializeField] private GameObject _towerToBuild;
     public override void OnPointerClick(PointerEventData eventData)
     {
-        EconomyManager.Instance.TryBuyTower(_towerToBuild);
-        EconomyManager.Instance.CloseMenu();
+        _economyManager.TryBuyTower(_towerToBuild);
+        _economyManager.CloseMenu();
     }
 
 }

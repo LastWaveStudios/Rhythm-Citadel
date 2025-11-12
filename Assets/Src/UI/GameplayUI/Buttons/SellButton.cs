@@ -6,8 +6,8 @@ public class SellButton : AButton
 {
     public override void OnPointerClick(PointerEventData eventData)
     {
-        EconomyManager.Instance.SellTower();
-        EconomyManager.Instance.CloseMenu();
+        _economyManager.SellTower();
+        _economyManager.CloseMenu();
     }
 
 }
