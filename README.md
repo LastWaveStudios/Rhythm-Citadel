@@ -141,13 +141,14 @@
 - [Figura 37: Interfaz Créditos](#figura-37)
 - [Figura 38: Boceto Interfaz Partida](#figura-38)
 - [Figura 39: Interfaz Partida](#figura-39)
-- [Figura 40: Boceto Interfaz Pausa](#figura-40)
-- [Figura 41: Interfaz Pausa](#figura-41)
-- [Figura 42: Boceto Interfaz Opciones](#figura-42)
-- [Figura 43: Interfaz Opciones](#figura-43)
-- [Figura 44: Boceto Pantalla Victoria o Derrota](#figura-44)
-- [Figura 45: Pantalla Victoria o Derrota](#figura-45)
-- [Figura 46: Diagrama de Interfaces](#figura-46)
+- [Figura 40: Interfaz Patrón Rítmico](#figura-40)
+- [Figura 41: Boceto Interfaz Pausa](#figura-41)
+- [Figura 42: Interfaz Pausa](#figura-42)
+- [Figura 43: Boceto Interfaz Opciones](#figura-43)
+- [Figura 44: Interfaz Opciones](#figura-44)
+- [Figura 45: Boceto Pantalla Victoria o Derrota](#figura-45)
+- [Figura 46: Pantalla Victoria o Derrota](#figura-46)
+- [Figura 47: Diagrama de Interfaces](#figura-47)
 
 
  # **Introducción**
@@ -640,7 +641,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 30: Boceto Interfaz Menú Inicial*
 
 <a id="figura-31"></a>
-![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.jpeg)  
+![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.png)  
 *Figura 31: Interfaz Menú Inicial*
   
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
@@ -650,7 +651,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 32: Boceto Interfaz Selector de Dificultad*
 
 <a id="figura-33"></a>
-![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.jpeg)  
+![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.png)  
 *Figura 33: Interfaz Selector de Dificultad*
   
 - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
@@ -660,7 +661,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 34: Boceto Interfaz Tutorial*
 
 <a id="figura-35"></a>
-![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
+![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.png)  
 *Figura 35: Interfaz Tutorial*
 
 
@@ -671,7 +672,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 36: Boceto Interfaz Créditos*
 
 <a id="figura-37"></a>
-![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.jpeg)  
+![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.png)  
 *Figura 37: Interfaz Créditos*
 
 - Partida: Es la pantalla más importante del juego, donde se jugarán las partidas.
@@ -680,44 +681,50 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 38: Boceto Interfaz Partida*
 
 <a id="figura-39"></a>
-![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.jpeg)  
-*Figura 39: Interfaz Patrida*
+![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.png)  
+*Figura 39: Interfaz Partida*
+
+- Patrones rítmicos: Esta pantalla será accesible durante la fase de construcción. En esta interfaz veremos el patrón rítmico que siguen las torretas para poder atacar.
+
+<a id="figura-40"></a>
+![InterfazPatron](./Imagenes_ReadMe/InterfazPatron.png)  
+*Figura 40: Interfaz Patrón Rítmico*  
 
 - Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.  
   
-<a id="figura-40"></a>
-![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
-*Figura 40: Boceto Interfaz Pausa*  
-
 <a id="figura-41"></a>
-![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.jpeg)  
-*Figura 41: Interfaz Pausa*  
+![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
+*Figura 41: Boceto Interfaz Pausa*  
+
+<a id="figura-42"></a>
+![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.png)  
+*Figura 42: Interfaz Pausa*  
       
       
 -Opciones: Se incorporará un menú de opciones que permite ajustar el volumen del juego.
 
-<a id="figura-42"></a>
-![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
-*Figura 42: Boceto Interfaz Opciones*
-
 <a id="figura-43"></a>
-![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.jpeg)  
-*Figura 43: Interfaz Opciones*
+![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
+*Figura 43: Boceto Interfaz Opciones*
+
+<a id="figura-44"></a>
+![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.png)  
+*Figura 44: Interfaz Opciones*
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
-<a id="figura-44"></a>
-![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
-*Figura 44: Boceto Pantalla Victoria o Derrota*
-
 <a id="figura-45"></a>
-![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.jpeg)  
-*Figura 45: Pantalla Victoria o Derrota*
+![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
+*Figura 45: Boceto Pantalla Victoria o Derrota*
+
+<a id="figura-46"></a>
+![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.png)  
+*Figura 46: Pantalla Victoria o Derrota*
 
 1. ## **Diagrama de flujo**
-<a id="figura-46"></a>
+<a id="figura-47"></a>
 ![DiagramaInterfaces](./Imagenes_ReadMe/DiagramaInterfaces.png)  
-*Figura 46: Diagrama de Interfaces*
+*Figura 47: Diagrama de Interfaces*
 
   # **Hoja de ruta del desarrollo**
 ## **Hitos para la ALPHA:**
