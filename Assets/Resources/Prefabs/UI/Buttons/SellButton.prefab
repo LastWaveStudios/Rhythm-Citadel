@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 6164186489315418789}
   - component: {fileID: 517388586826184293}
   - component: {fileID: 1148028748057589257}
+  - component: {fileID: 4479627582326870088}
   m_Layer: 5
   m_Name: Gear
   m_TagString: Untagged
@@ -231,6 +232,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sell
   text: {fileID: 0}
+--- !u!95 &4479627582326870088
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201343102026380169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea5fa65bbb2ba964aa4a1c0edc420db3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7190912783786039737
 GameObject:
   m_ObjectHideFlags: 0
