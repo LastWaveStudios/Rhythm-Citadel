@@ -60,7 +60,7 @@ namespace Gameplay.Towers.SpecificTowers
             {
                 yield return null;
             }
-            List<AEnemy> objectives = focusType(enemies, _myPosition, _range);
+            List<AEnemy> objectives = focusType(enemies, _positionInWorldCell, _range);
             if (objectives == null || objectives.Count == 0)
             {
                 yield return null;

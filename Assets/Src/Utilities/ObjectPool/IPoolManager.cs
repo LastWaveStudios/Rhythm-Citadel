@@ -6,13 +6,13 @@ namespace Utilities.ObjectPool
     {
         //Use: PoolManager.Release(obj) where obj implements APoolableObject
         public void Release(IPoolableObject obj);
-        
-        //Use: Get(typeof(Type)) where Type is of a type that implements APoolableObject or IPoolableObject
-        public IPoolableObject Get(System.Type objectType);
 
-        //Use: poolManager.RegisterPool(typeof(Type), new ObjectPool<Type>()) 
+        // Use: Get<Type>() and the return value is the object
+        public T Get<T>() where T : IPoolableObject;
+
+        // Use poolManager.ResgisterPool<Type>(new ObjectPool<Type>())
         //where Type is of a type that implements APoolableObject or IPoolableObject
-        public void RegisterPool(System.Type type, IObjectPool pool);
+        public void RegisterPool<T>(IObjectPool pool) where T : IPoolableObject;
     }
 
 }

@@ -15,16 +15,17 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        [SerializeField]protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
-        [SerializeField]protected int _range;  //N� de tiles de alcance
-        [SerializeField]protected float _damage;
-        [SerializeField]protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
+        [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component
+        [SerializeField] protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
+        [SerializeField] protected int _range;  //N� de tiles de alcance
+        [SerializeField] protected float _damage;
+        [SerializeField] protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
         protected IPoolManager _poolManager;
         //protected EnemieManager _enemieManager;
         protected WaveManager _waveManager;
 
         [SerializeField]protected int _price = 0;
-        protected Vector3Int _myPosition;
+        protected Vector3Int _positionInWorldCell;
 
         #region Services references
         protected WorldManager _worldManager;
@@ -64,26 +65,8 @@ namespace Gameplay.Towers
                 return;
             }
 
-            _myPosition = _worldManager.GetCellFromWorldPos(transform.position);
-            _poolManager = FindAnyObjectByType<PoolManager>();
-
-            if (_poolManager == null)   //BORRAR AL TERMINAR
-            {
-                Debug.Log("No se encontro el PoolManager"); //Se encuentra siempre el poolManager, asi q bien
-            }
-            else
-            {
-                Debug.Log("SI se encontro el PoolManager");
-            }
-            _waveManager = FindAnyObjectByType<WaveManager>();
-            if (_poolManager == null)   //BORRAR AL TERMINAR
-            {
-                Debug.Log("No se encontro el ENEMIEManager"); //Se encuentra siempre el poolManager, asi q bien
-            }
-            else
-            {
-                Debug.Log("SI se encontro el ENEMIEManager");
-            }
+            _poolManager = new PoolManager();
+            _poolManager.RegisterPool<Bullet>(new ObjectPool<Bullet>(_bulletPrefab.GetComponent<Bullet>()));
         }
 
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
@@ -93,8 +76,7 @@ namespace Gameplay.Towers
         public void VisualAttack(AEnemy enemy)   //call it when the user taps correctly
         {
             Debug.Log("Estamos en VISUAL ATACK");
-            var pool =_poolManager.Get(typeof(Bullets));    //Devuelve IPoolableObjects
-            Bullets bullet =(Bullets)pool;
+            Bullet bullet =_poolManager.Get<Bullet>();
 
             Vector3 from = transform.position;
             //Vector3 to = enemy.transform.position; 

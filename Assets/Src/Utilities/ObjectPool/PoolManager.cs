@@ -18,7 +18,7 @@ namespace Utilities.ObjectPool
                 Debug.LogError($"No registered pool for object type {objectType.Name}");
         }
 
-        public IPoolableObject Get(System.Type objectType)
+        private IPoolableObject Get(System.Type objectType)
         {
             if (_pools.TryGetValue(objectType, out var pool))
             {
@@ -29,7 +29,7 @@ namespace Utilities.ObjectPool
         }
 
         //To register -> poolManager.RegisterPool(typeof(Type), new ObjectPool<Type>());
-        public void RegisterPool(System.Type type, IObjectPool pool)
+        private void RegisterPool(System.Type type, IObjectPool pool)
         {
             if (!typeof(IPoolableObject).IsAssignableFrom(type))
             {

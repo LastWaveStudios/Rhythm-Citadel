@@ -58,7 +58,7 @@ namespace UI.GameplayUI.VisualHelp
         public void Disable()
         {
             gameObject.SetActive(false);
-            //RhythmManager.Instance.onBeat -= OnBeat;
+            //_rhythmManager.onBeat -= OnBeat;
         }
 
         private void OnBeat(bool isMeasureBeat)
