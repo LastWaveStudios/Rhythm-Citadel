@@ -5,7 +5,7 @@ namespace Gameplay.Towers.SpecificTowers
 {
     public class ViolinTower : ATower
     {
-        private SpriteRenderer spriteRenderer;
+        private SpriteRenderer spriteRenderer; //Prevent towers from overlapping incorrectly
 
         void Awake()
         {
@@ -16,17 +16,17 @@ namespace Gameplay.Towers.SpecificTowers
         {
             base.Start();
             focusType = FocusStrategies.FirstEnemy;
-            _cost = 70; //Coste que variara con las mejoras
-            _damageType = DamageType.String;    //Tipo de ataque (instrumento)
+            _cost = 70; 
+            _damageType = DamageType.String;    
             _minDamage=4;
             _MaxDamage=6;
-            _range = 2;  //Tiles de alcance
+            _range = 2;  
 
         }
         
         void LateUpdate()
         {
-            //Cuanto más abajo, más arriba en el render
+            //Lower is, higher appear
             spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
 

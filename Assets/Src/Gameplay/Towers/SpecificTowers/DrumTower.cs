@@ -5,7 +5,7 @@ namespace Gameplay.Towers.SpecificTowers
     public class DrumTower : ATower
     {
 
-        private SpriteRenderer spriteRenderer;  //Necesario para que las torretas no se superpongan de mala manera
+        private SpriteRenderer spriteRenderer;  //Prevent towers from overlapping incorrectly
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -14,16 +14,16 @@ namespace Gameplay.Towers.SpecificTowers
         {
             base.Start();
             focusType = FocusStrategies.AreaAttack;
-            _cost = 130; //Coste que variara con las mejoras
-            _damageType = DamageType.Percussion;    //Tipo de ataque (instrumento)
-            _minDamage = 8; //Se divide en dos porque el daño seera un numero aleatorio entre estos dos
+            _cost = 130; 
+            _damageType = DamageType.Percussion;    
+            _minDamage = 8; 
             _MaxDamage = 15;
-            _range = 2;  //Tiles de alcance
+            _range = 2;  
         }
 
         void LateUpdate()
         {
-            //Cuanto más abajo, más arriba en el render
+            //Lower is, higher appear
             spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
 

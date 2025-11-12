@@ -16,17 +16,13 @@ namespace Gameplay.Towers
     {
         protected int _level;
         protected int _cost;
-        protected DamageType _damageType; // TODO: Change for enum with the actual DamageType, or even for one value that can contains partial damageTypes
-        protected int _minDamage;
+        protected DamageType _damageType; // String, Percussion, Hybrid
+        protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
         protected int _MaxDamage;
-        protected int _range;  //N� de tiles de alcance
+        protected int _range;  
         
-        //MULTIPICADOR DE PRECIO COMO CONSTANTE
-
-         
         [SerializeField] protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
         protected IPoolManager _poolManager;
-        //protected EnemieManager _enemieManager;
         protected WaveManager _waveManager;
 
         [SerializeField] protected int _price = 0;
@@ -56,23 +52,7 @@ namespace Gameplay.Towers
         {
             _myPosition = WorldManager.Instance.GetCellFromWorldPos(transform.position);
             _poolManager = FindAnyObjectByType<PoolManager>();
-            if (_poolManager == null)   //BORRAR AL TERMINAR
-            {
-                Debug.Log("No se encontro el PoolManager"); //Se encuentra siempre el poolManager, asi q bien
-            }
-            else
-            {
-                Debug.Log("SI se encontro el PoolManager");
-            }
             _waveManager = FindAnyObjectByType<WaveManager>();
-            if (_poolManager == null)   //BORRAR AL TERMINAR
-            {
-                Debug.Log("No se encontro el ENEMIEManager"); //Se encuentra siempre el poolManager, asi q bien
-            }
-            else
-            {
-                Debug.Log("SI se encontro el ENEMIEManager");
-            }
             _level = 1;
         }
         public abstract void Disable(); // call it when disable the tower (just for sound and animations)
@@ -82,12 +62,10 @@ namespace Gameplay.Towers
         public void VisualAttack(AEnemy enemy)   //call it when the user taps correctly
         {
             Debug.Log("Estamos en VISUAL ATACK");
-            var pool = _poolManager.Get(typeof(Bullets));    //Devuelve IPoolableObjects
+            var pool = _poolManager.Get(typeof(Bullets));    
             Bullets bullet = (Bullets)pool;
 
             Vector3 from = transform.position;
-            //Vector3 to = enemy.transform.position; 
-            //Vector3 to = new Vector3(5f, 3f, 0f); solo para comprogbar que se dispara
             bullet.Shot(from, enemy, 5f, _poolManager);
         }
     }

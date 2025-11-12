@@ -10,14 +10,14 @@ namespace Gameplay.Enemies
     public abstract class AEnemy : MonoBehaviour  //Para poder probarlo he quitado que sea una clase abstracta
     {
         protected int _health;
-        protected DamageType _damageType;
+        protected DamageType _damageType;   //Melee, Range, Contact
         protected int _damage;
         protected float _moveTime = 0.5f;
-        protected Resistance _resistance;
+        protected Resistance _resistance;   //None, String, Percussion or Hybrid
         protected int _vinylDrop = 0;
 
-        protected int _path = 0;    //Valor del path al que accede
-        protected int _index = 0;   //Numero del tile actual
+        protected int _path = 0;    
+        protected int _index = 0;   //Current Tile
         protected bool _isActive = false; // If is death is not active
 
         public void SetActive(bool isActive) { _isActive = isActive; }

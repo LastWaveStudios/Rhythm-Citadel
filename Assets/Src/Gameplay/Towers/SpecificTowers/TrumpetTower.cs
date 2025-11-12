@@ -7,7 +7,7 @@ namespace Gameplay.Towers.SpecificTowers
     public class TrumpetTower : ATower
     {
         private List<AEnemy> enemies;
-        private SpriteRenderer spriteRenderer;
+        private SpriteRenderer spriteRenderer; //Prevent towers from overlapping incorrectly
 
         void Awake()
         {
@@ -18,16 +18,16 @@ namespace Gameplay.Towers.SpecificTowers
         {
             base.Start();
             focusType = FocusStrategies.FirstEnemy;
-            _cost = 95; //Coste que variara con las mejoras
-            _damageType = DamageType.Percussion;    //Tipo de ataque (instrumento)
+            _cost = 95; 
+            _damageType = DamageType.Percussion;    
             _minDamage = 9;
             _MaxDamage = 17;
-            _range = 1;  //Tiles de alcance
+            _range = 1;  
         }
 
         void LateUpdate()
         {
-            //Cuanto más abajo, más arriba en el render
+            //Lower is, higher appear
             spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
 
