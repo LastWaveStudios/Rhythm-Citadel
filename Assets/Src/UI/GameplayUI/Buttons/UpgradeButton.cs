@@ -1,12 +1,15 @@
 using Gameplay;
 using UnityEngine;
-
 using UnityEngine.EventSystems;
-public class UpgradeButton : AButton
+
+namespace UI.GameplayUI.Buttons
 {
-    public override void OnPointerClick(PointerEventData eventData)
+    public class UpgradeButton : AButton
     {
-        _economyManager.UpdateTower();
-        _economyManager.CloseMenu();
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            _economyManager.UpdateTower();
+            _economyManager.CloseMenu();
+        }
     }
 }

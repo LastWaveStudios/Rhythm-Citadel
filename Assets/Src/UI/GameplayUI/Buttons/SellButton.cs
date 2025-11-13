@@ -2,12 +2,15 @@ using Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SellButton : AButton
+namespace UI.GameplayUI.Buttons
 {
-    public override void OnPointerClick(PointerEventData eventData)
+    public class SellButton : AButton
     {
-        _economyManager.SellTower();
-        _economyManager.CloseMenu();
-    }
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            _economyManager.SellTower();
+            _economyManager.CloseMenu();
+        }
 
+    }
 }

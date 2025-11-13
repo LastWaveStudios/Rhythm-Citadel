@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 using Utilities.ServiceLocator;
 
-namespace Gameplay
+namespace Gameplay.World
 {
     public class EconomyManager : Utilities.ServiceLocator.AService
     {

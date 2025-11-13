@@ -2,13 +2,16 @@ using Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BuildingButton : AButton
+namespace UI.GameplayUI.Buttons
 {
-    [SerializeField] private GameObject _towerToBuild;
-    public override void OnPointerClick(PointerEventData eventData)
+    public class BuildingButton : AButton
     {
-        _economyManager.TryBuyTower(_towerToBuild);
-        _economyManager.CloseMenu();
-    }
+        [SerializeField] private GameObject _towerToBuild;
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            _economyManager.TryBuyTower(_towerToBuild);
+            _economyManager.CloseMenu();
+        }
 
-}
+    }
+}   

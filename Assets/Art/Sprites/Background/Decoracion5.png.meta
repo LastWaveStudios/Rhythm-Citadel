@@ -120,8 +120,8 @@ TextureImporter:
         y: 5
         width: 128
         height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,11 +134,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Decoracion5_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 3
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a622b580cefbc0448a201c673ee80a60
+      internalID: -694203675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a5e410236bfbb5e4b9f65b4573c2b9dd
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Decoracion5_0: -7543058089816307047
+      Decoracion5_1: -694203675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
