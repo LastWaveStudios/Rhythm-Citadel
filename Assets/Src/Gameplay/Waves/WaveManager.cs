@@ -67,6 +67,7 @@ namespace Gameplay.Waves
             if (_numberOfEnemiesDeadInCurrentWave == _currentWaveEnemies.Count)
             {
                 AllEnemiesDeadInCurrentWave = true;
+   
             }
             onEnemyDeath.Invoke(enemy.GetDrop());
         }

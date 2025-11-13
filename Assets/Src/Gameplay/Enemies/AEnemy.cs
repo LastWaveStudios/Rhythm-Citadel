@@ -12,12 +12,12 @@ namespace Gameplay.Enemies
 {
     public abstract class AEnemy : MonoBehaviour
     {
-        protected int _health;
-        protected DamageType _damageType;   //Melee, Range, Contact
-        protected int _damage;
-        protected float _moveTime = 0.5f;
-        protected Resistance _resistance;   //None, String, Percussion or Hybrid
-        protected int _vinylDrop = 0;
+        [SerializeField] protected int _health;
+        [SerializeField] protected DamageType _damageType;   //Melee, Range, Contact
+        [SerializeField] protected int _damage;
+        [SerializeField] protected float _moveTime = 0.5f;
+        [SerializeField] protected Resistance _resistance;   //None, String, Percussion or Hybrid
+        [SerializeField] protected int _vinylDrop = 0;
 
         protected int _path = 0;    
         protected int _index = 0;   //Current Tile
@@ -94,10 +94,11 @@ namespace Gameplay.Enemies
             Vector3Int nextTile = _worldManager.GetNextTile(_path, _index);
             _index++;
             
-            // TODO: Change the finalTile value that is not the last tile of the path xd
-            Vector3Int finalTile = new Vector3Int(0, 0, 1);
+            // Cambiar para q sea el WorldManager del q coja el utimo Tile. Ya he creado la variable ahora relacionemosla
+            Vector3Int finalTile = _worldManager.GetLastTile(_path);
             if (nextTile == finalTile)
             {
+                Debug.Log("Estamos en el Tile final");
                 Death();
                 yield break;
             }
