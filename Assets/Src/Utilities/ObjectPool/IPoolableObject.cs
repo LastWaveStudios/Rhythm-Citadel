@@ -1,5 +1,3 @@
-using UnityEditor.PackageManager.Requests;
-using UnityEngine;
 
 namespace Utilities.ObjectPool
 {

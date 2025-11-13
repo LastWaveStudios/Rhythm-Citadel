@@ -22,6 +22,11 @@ namespace Audio
             audioControl.SetFloat("Master", ConvertToLogValue(_masterVol));
             audioControl.SetFloat("Music", ConvertToLogValue(_musicVol));
             audioControl.SetFloat("SFX", ConvertToLogValue(_SFXVol));
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.loop = false;
+            _audioSource.playOnAwake = false;
+            _audioSource.spatialBlend = 0.0f;
+            _audioSource.outputAudioMixerGroup = audioControl.FindMatchingGroups("SFX")[0];
         }
 
         public void SetVolume(AudioChannel channel, float value)
@@ -65,6 +70,24 @@ namespace Audio
         private float ConvertToLogValue(float value)
         {
             return Mathf.Log10(value) * 20;
+        }
+        #endregion
+
+        #region PlayUtilitiesForSmallSFX
+        AudioSource _audioSource;
+        /// <summary>
+        /// Play the sound on the SFX Channel
+        /// </summary>
+        /// <param name="clipToPlay">The audioClip to play</param>
+        /// <param name="scale">The Scale of the volume default 1 that is equal to the SFX volume channel</param>
+        public void PlayOneShot2D(AudioClip clipToPlay, float scale = 1.0f)
+        {
+            if (clipToPlay == null)
+            {
+                Debug.LogError("AudioManager::PlayOneShot: The audioClip is null");
+                return;
+            }
+            _audioSource.PlayOneShot(clipToPlay, scale);
         }
         #endregion
     }

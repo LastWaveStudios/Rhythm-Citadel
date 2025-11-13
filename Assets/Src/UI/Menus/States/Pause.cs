@@ -23,7 +23,8 @@ namespace UI.Menus.States
                     MenuManager.Instance.SetState(new Tutorial());
                     break;
                 case EMenuButton.ReturnToMainMenu:
-                    MenuManager.Instance.SetState(new Main());
+                    //TODO: Change to the name of MainMenuScene
+                    MenuManager.Instance.ChangeSceneAndState("Ivan_PLaygroundMenu", new Main());
                     break;
                 default:
                     Debug.LogError($"Main::OnMenuNavigation ERROR_UNKNOWN_OPTION: {option}");

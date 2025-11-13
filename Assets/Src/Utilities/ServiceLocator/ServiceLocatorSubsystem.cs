@@ -25,6 +25,7 @@ namespace Utilities.ServiceLocator
             }
             IsInitialize = true;
             onInitialize.Invoke();
+            onInitialize = null;
         }
 
         /// <summary>

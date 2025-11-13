@@ -206,6 +206,14 @@ namespace Gameplay.RhythmSystem
         {
             _isPlaying = false;
         }
+
+        private void OnDestroy()
+        {
+            _gameplayManager.onFightStateStart -= StartRhythm;
+            _gameplayManager.onFightStateEnd -= EndRhythm;
+            _gameplayManager.onPause -= OnPause;
+            _gameplayManager.onResume -= OnResume;
+        }
     }
 }
 
