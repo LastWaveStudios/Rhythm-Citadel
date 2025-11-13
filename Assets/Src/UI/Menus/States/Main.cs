@@ -13,7 +13,8 @@ namespace UI.Menus.States
             switch (option)
             {
                 case EMenuButton.Play:
-                    MenuManager.Instance.SetState(new LevelSelector());
+                    //TODO: Change to the name of Level selector (for beta the actual level)
+                    MenuManager.Instance.ChangeSceneAndState("Ivan_Playground", new Gameplay());
                     break;
                 case EMenuButton.Options:
                     MenuManager.Instance.SetState(new Options());

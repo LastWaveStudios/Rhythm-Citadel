@@ -1,5 +1,6 @@
 using UnityEngine;
 using UI.Menus.States;
+using UnityEngine.SceneManagement;
 
 
 namespace UI.Menus
@@ -10,11 +11,12 @@ namespace UI.Menus
         private IMenuState _currentState;
         private IMenuState _previousState;
 
+        private IMenuState _nextStateWhenChangingScene;
+
         private void Start()
         {
             _previousState = null;
-            // TODO: Main Menu
-            SetState(new States.Gameplay());
+            SetState(new States.Main());
         }
 
         public void SetState(IMenuState newState)
@@ -35,6 +37,20 @@ namespace UI.Menus
         public void Update()
         {
             _currentState?.Update(Time.deltaTime);
+        }
+
+        public void ChangeSceneAndState(string sceneName, IMenuState stateToChangeWhenLoaded)
+        {
+            _nextStateWhenChangingScene = stateToChangeWhenLoaded;
+            SceneManager.sceneLoaded += OnSceneChange;
+            SceneManager.LoadScene(sceneName);
+        }
+
+        private void OnSceneChange(Scene scene,  LoadSceneMode mode)
+        {
+            SetState(_nextStateWhenChangingScene);
+            _nextStateWhenChangingScene = null;
+            SceneManager.sceneLoaded -= OnSceneChange;
         }
     }
 }

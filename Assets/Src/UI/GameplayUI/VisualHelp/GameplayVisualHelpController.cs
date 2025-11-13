@@ -1,5 +1,6 @@
 using Gameplay;
 using Gameplay.RhythmSystem;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using Utilities.ServiceLocator;
@@ -15,6 +16,7 @@ namespace UI.GameplayUI.VisualHelp
 
         [Header("Objects")]
         [SerializeField] private GameObject _gearsContainer;
+        [SerializeField] private GameObject _bigGearGameObject;
 
         [Header("Transforms")]
         [SerializeField] private Transform _gear;
@@ -58,11 +60,12 @@ namespace UI.GameplayUI.VisualHelp
         public void Disable()
         {
             gameObject.SetActive(false);
-            //RhythmManager.Instance.onBeat -= OnBeat;
+            //_rhythmManager.onBeat -= OnBeat;
         }
 
         private void OnBeat(bool isMeasureBeat)
         {
+            StartCoroutine(RotateBigGear());
             if (isMeasureBeat)
             {
                 GenerateGear(_measureGearPrefab);
@@ -83,6 +86,24 @@ namespace UI.GameplayUI.VisualHelp
             }
             beatGearController.Init(_targetsPositions, _moveTime, _rotateCantity * _rotateScale, _rhythmManager, Utilities.EasingFunctions.EaseOutQuart);
             beatGearController.Go();
+        }
+
+        private IEnumerator RotateBigGear()
+        {
+            Quaternion originRot = _bigGearGameObject.transform.rotation;
+            Quaternion targetRot = originRot * Quaternion.Euler(0f, 0f, _rotateCantity);
+            float startZ = originRot.eulerAngles.z;
+            float endZ = targetRot.eulerAngles.z;
+
+            float t = 0;
+            while (t <= _moveTime)
+            {
+                float currentZ = Mathf.LerpAngle(startZ, endZ, t / _moveTime);
+                t += Time.deltaTime;
+                _bigGearGameObject.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, currentZ);
+                yield return null;
+            }
+            _bigGearGameObject.GetComponent<RectTransform>().localEulerAngles = new Vector3(0f, 0f, endZ);
         }
     }
 }

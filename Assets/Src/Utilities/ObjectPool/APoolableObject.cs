@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Utilities.ObjectPool
@@ -10,9 +9,6 @@ namespace Utilities.ObjectPool
         {
             return _isActive;
         }
-        public virtual void Reset()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Reset();
     }
 }
