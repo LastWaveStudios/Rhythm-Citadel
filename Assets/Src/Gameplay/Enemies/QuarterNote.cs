@@ -17,16 +17,6 @@ namespace Gameplay.Enemies
             _rhythmManager.onQuarter += OnRhythmUpdate;
             
         }
-        new void Start()
-        {
-            base.Start();
-            _health = 16;
-            _damageType = DamageType.Melee;
-            _damage = 2;
-            _moveTime = 0.5f;
-            _resistance = Resistance.None;
-            _vinylDrop = 3;
-        }
 
         protected override void OnRhythmUpdate()
         {
@@ -35,6 +25,7 @@ namespace Gameplay.Enemies
 
         protected override void Death()
         {
+            _isActive = false;
             _rhythmManager.onQuarter -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);
