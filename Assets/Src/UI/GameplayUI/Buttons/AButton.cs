@@ -25,6 +25,7 @@ public abstract class AButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
         }
+        else Debug.Log("Encontramos el economy manager");
     }
 
     public abstract void OnPointerClick(PointerEventData eventData);
