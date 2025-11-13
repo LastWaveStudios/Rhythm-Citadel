@@ -27,6 +27,7 @@ namespace UI.Menus.States
 
         public virtual void Exit()
         {
+            if (_menu == null) return;
             _menu.GetComponentInChildren<MenuOptionsGroup>().onMenuNavigation -= OnMenuNavigation;
             GameObject.Destroy(_menu);
         }
