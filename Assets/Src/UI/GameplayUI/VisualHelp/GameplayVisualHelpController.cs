@@ -1,5 +1,6 @@
 using Gameplay;
 using Gameplay.RhythmSystem;
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,6 +30,8 @@ namespace UI.GameplayUI.VisualHelp
 
         private Vector3[] _targetsPositions;
 
+        private bool _mustSpawnGears = true;
+
         private RhythmManager _rhythmManager;
 
         public void Start()
@@ -55,6 +58,19 @@ namespace UI.GameplayUI.VisualHelp
             }
 
             _rhythmManager.onBeat += OnBeat;
+            _rhythmManager.onFinishRhythmNextMeasure += OnFinishRhythmNextMeasure;
+            _rhythmManager.onEndRhythm += OnRhythmEnd;
+        }
+
+        private void OnRhythmEnd()
+        {
+            // Let the value start for the reactivation of the manager in the next wave
+            _mustSpawnGears = true;
+        }
+
+        private void OnFinishRhythmNextMeasure()
+        {
+            _mustSpawnGears = false;
         }
 
         public void Disable()
@@ -66,6 +82,9 @@ namespace UI.GameplayUI.VisualHelp
         private void OnBeat(bool isMeasureBeat)
         {
             StartCoroutine(RotateBigGear());
+
+            if (!_mustSpawnGears) return;
+
             if (isMeasureBeat)
             {
                 GenerateGear(_measureGearPrefab);
