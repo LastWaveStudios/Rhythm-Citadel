@@ -1,10 +1,12 @@
 using Gameplay.Enemies;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 using Utilities.ObjectPool;
 
-namespace Gameplay.World {
+namespace Gameplay.World
+{
     public class Bullet : APoolableObject
     {
         /**
@@ -23,12 +25,12 @@ namespace Gameplay.World {
         }
         /**/
 
-        public void Shot(Vector3 from, AEnemy enemy, float dur, IPoolManager pool)
+        public void Shot(Vector3 from, List<AEnemy> enemy, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
             Debug.Log("Bullets::Shot: Reached");
             transform.position = from;
 
-            StartCoroutine(BulletMovement(enemy, dur, pool));
+            StartCoroutine(BulletMovement(enemy, dur, pool, damageType, damage));
         }
 
         /// <summary>
@@ -38,9 +40,10 @@ namespace Gameplay.World {
         /// <param name="dur"> must be > 0 </param>
         /// <param name="pool"></param>
         /// <returns></returns>
-        private IEnumerator BulletMovement(AEnemy enemy, float dur, IPoolManager pool)
+        private IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
             Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
+            AEnemy enemy = enemyList[0];
             Vector3 start = transform.position;
             float time = 0f;
             while (time < dur)
@@ -51,7 +54,12 @@ namespace Gameplay.World {
                 yield return null;
             }
             pool.Release(this);
+            DamageEnemies(enemyList, damageType, damage);
         }
 
+        private void DamageEnemies(List<AEnemy> enemyList, DamageType damageType, int damage)
+        {
+            foreach (AEnemy enemy in enemyList) enemy.TakeDamage(damageType, damage);
+        }
     }
 }

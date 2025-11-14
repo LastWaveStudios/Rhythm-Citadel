@@ -12,11 +12,13 @@ namespace Gameplay.Enemies
 {
     public abstract class AEnemy : MonoBehaviour
     {
+        [SerializeField] const float RESISTANCE_MULTIPLAYER = 0.5f;
+
         [SerializeField] protected int _health;
-        [SerializeField] protected DamageType _damageType;   //Melee, Range, Contact
+        [SerializeField] protected EnemyDamageType _damageType;   //Melee, Range, Contact
         [SerializeField] protected int _damage;
         [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected Resistance _resistance;   //None, String, Percussion or Hybrid
+        [SerializeField] protected DamageType _resistance;   //None, String, Percussion or Hybrid
         [SerializeField] protected int _vinylDrop = 0;
 
         protected int _path = 0;    
@@ -28,6 +30,7 @@ namespace Gameplay.Enemies
         protected RhythmManager _rhythmManager;
 
 
+        #region Starting methods
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
@@ -51,30 +54,19 @@ namespace Gameplay.Enemies
 
         protected abstract void SubscribeToRhythm();
 
-
         public void Init(int path)
         {
             _path = path;
             _index = 0;
         }
+        #endregion
 
-        public void Attack() {
-            Debug.Log("En metodo atacar");
-
-            Dancer.Instance.TakeDamage(_damage);
-        }
-        public void TakeDamage() { }
+        #region Getters and setters
 
         public int GetDrop()
         {
             return _vinylDrop;
         }
-        protected abstract void OnRhythmUpdate();
-
-        /// <summary>
-        /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
-        /// </summary>
-        protected abstract void Death();
 
         public Vector3Int GetTile()
         {
@@ -86,6 +78,31 @@ namespace Gameplay.Enemies
             int pathTilesCount = _worldManager.GetTileCount(_path);
             return pathTilesCount - _index;
         }
+        #endregion
+
+        #region Other methods
+        public void Attack() {
+            Debug.Log("En metodo atacar");
+
+            Dancer.Instance.TakeDamage(_damage);
+        }
+        public void TakeDamage(DamageType type, int damageToTake) 
+        {
+            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
+            else _health -= damageToTake;
+        }
+        #endregion
+
+        #region Abstract Methods
+        protected abstract void OnRhythmUpdate();
+
+        /// <summary>
+        /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
+        /// </summary>
+        protected abstract void Death();
+
+        #endregion
+
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
@@ -131,19 +148,12 @@ namespace Gameplay.Enemies
         }
     }
 
-    public enum DamageType
+    public enum EnemyDamageType
     {
         Melee,
         Range,
         Contact
     }
 
-    public enum Resistance
-    {
-        None,
-        String,
-        Percussion,
-        Hybrid
-    }
 }
 

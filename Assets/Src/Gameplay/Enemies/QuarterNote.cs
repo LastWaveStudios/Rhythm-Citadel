@@ -15,7 +15,6 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
             _rhythmManager.onQuarter += OnRhythmUpdate;
-            
         }
 
         protected override void OnRhythmUpdate()

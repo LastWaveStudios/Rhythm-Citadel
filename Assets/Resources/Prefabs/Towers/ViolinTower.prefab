@@ -105,6 +105,6 @@ MonoBehaviour:
   _minDamage: 4
   _MaxDamage: 6
   _range: 2
-  _bulletPrefab: {fileID: 0}
+  _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
   _price: 70
   _timeForProjectile: 0.1
