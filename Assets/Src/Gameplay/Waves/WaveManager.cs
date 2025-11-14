@@ -2,6 +2,8 @@ using Gameplay.Enemies;
 using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
+using UI.Menus;
+using UI.Menus.States;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,11 +26,13 @@ namespace Gameplay.Waves
         private int _numberOfEnemiesDeadInCurrentWave = 0;
 
         private RhythmManager _rhythmManager;
+        private GameplayManager _gameplayManager;
 
         public override void Init()
         {
             _currentWaveEnemies = new List<AEnemy>();
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            _gameplayManager = ServiceLocatorSubsystem.Instance.GetService<GameplayManager>();
         }
 
         public bool InitNextWave()
@@ -36,7 +40,11 @@ namespace Gameplay.Waves
             _numberOfEnemiesDeadInCurrentWave = 0;
             AllEnemiesDeadInCurrentWave = false;
             CurrentWave++;
-            if (CurrentWave < 0 || CurrentWave >= _waves.Count) return false;
+            if (CurrentWave < 0 || CurrentWave >= _waves.Count)
+            {
+                _gameplayManager.Victory();
+                return false;
+            }
 
             if (CurrentWave - 1 >= 0)
             {
@@ -88,11 +96,9 @@ namespace Gameplay.Waves
 
         public void StartWave()
         {
-            if (CurrentWave < 0 || CurrentWave >= _waves.Count)
-                Victory();
-                //Here
+            if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;
 
-                _rhythmManager.onSixteenth += OnSixteenth;
+            _rhythmManager.onSixteenth += OnSixteenth;
         }
 
         private void OnSixteenth()
@@ -107,11 +113,6 @@ namespace Gameplay.Waves
             {
                 _rhythmManager.onSixteenth -= OnSixteenth;
             }
-        }
-
-        private void Victory()
-        {
-            SceneManager.LoadScene("MainMenuScene");
         }
     }
 }

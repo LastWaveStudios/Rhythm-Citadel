@@ -1,6 +1,8 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
 using System;
+using UI.Menus;
+using UI.Menus.States;
 using UnityEngine;
 using Utilities.ServiceLocator;
 
@@ -38,7 +40,7 @@ namespace Gameplay
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
-            if ( _waveManager == null )
+            if (_waveManager == null)
             {
                 Debug.LogError("GameplayManager::Init: The WaveManager is null");
                 return;
@@ -68,7 +70,7 @@ namespace Gameplay
         // TODO: Destroy this method -> Just for test purpose
         private void Update()
         {
-            if ( Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 ChangeFightState();
             }
@@ -152,6 +154,20 @@ namespace Gameplay
         private void OnRhythmEnd()
         {
             ChangeBuildState();
+        }
+
+        public void Victory()
+        {
+
+            MenuManager.Instance.ChangeSceneAndState("Ivan_PLaygroundMenu", new Main());
+
+        }
+        
+        public void Defeat()
+        {
+
+            MenuManager.Instance.ChangeSceneAndState("Ivan_PLaygroundMenu", new Main());
+                
         }
     }
 }
