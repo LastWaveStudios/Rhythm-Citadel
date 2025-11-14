@@ -21,7 +21,7 @@ namespace Gameplay.Enemies
 
         protected int _path = 0;    
         protected int _index = 0;   //Current Tile
-        protected bool _isActive = false; // If is death is not active
+        protected bool _isAlive = false; // If is death is not active
         public Action<AEnemy> onDeath = delegate {  };
 
         protected WorldManager _worldManager;

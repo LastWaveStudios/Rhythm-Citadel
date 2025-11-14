@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMode: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -116,12 +116,12 @@ TextureImporter:
       name: BotonMenuPausa_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 85
-        width: 477
-        height: 144
+        x: 117
+        y: 91
+        width: 475
+        height: 137
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a7eb979e1a03c184fa3b2ddf79d23e65
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +149,20 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       BotonMenuPausa_0: -619530107427339586
+      BotonMenuPausa_1: -850809605
+      BotonMenuPausa_10: -42441025
+      BotonMenuPausa_11: 27116910
+      BotonMenuPausa_12: 118845459
+      BotonMenuPausa_13: 1423314697
+      BotonMenuPausa_14: -699336631
+      BotonMenuPausa_2: 1023061539
+      BotonMenuPausa_3: -1395246074
+      BotonMenuPausa_4: 868361870
+      BotonMenuPausa_5: 1341256450
+      BotonMenuPausa_6: -222369213
+      BotonMenuPausa_7: -1747513597
+      BotonMenuPausa_8: -2102369890
+      BotonMenuPausa_9: 1935104738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

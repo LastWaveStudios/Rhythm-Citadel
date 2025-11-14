@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class BuildingUI : MonoBehaviour
+namespace UI.GameplayUI
 {
-    // AQUI TENDRIA QUE IR LOGICA DE LAS ANIMACIONES
+    public class BuildingUI : MonoBehaviour
+    {
+        // AQUI TENDRIA QUE IR LOGICA DE LAS ANIMACIONES
+    }
 }

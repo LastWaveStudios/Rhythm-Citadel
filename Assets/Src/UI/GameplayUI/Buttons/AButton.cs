@@ -1,43 +1,48 @@
 using Gameplay;
+using Gameplay.World;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utilities.ServiceLocator;
 
-public abstract class AButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+namespace UI.GameplayUI.Buttons
 {
-    public string name;
-    public TextMeshProUGUI text;
-    private Animator _animator;
-
-    protected EconomyManager _economyManager;
-
-    void Start()
+    public abstract class AButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        _animator = GetComponent<Animator>();
-        ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
-    }
+        public string name;
+        public TextMeshProUGUI text;
+        private Animator _animator;
 
-    private void TakeReferences()
-    {
-        _economyManager = ServiceLocatorSubsystem.Instance.GetService<EconomyManager>();
-        if (_economyManager == null)
+        protected EconomyManager _economyManager;
+
+        void Start()
         {
-            Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
+            _animator = GetComponent<Animator>();
+            ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
         }
-    }
 
-    public abstract void OnPointerClick(PointerEventData eventData);
+        private void TakeReferences()
+        {
+            _economyManager = ServiceLocatorSubsystem.Instance.GetService<EconomyManager>();
+            if (_economyManager == null)
+            {
+                Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
+            }
+            else Debug.Log("Encontramos el economy manager");
+        }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        _animator.SetBool("hover", true);
-        text.text = name;
-    }
+        public abstract void OnPointerClick(PointerEventData eventData);
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        _animator.SetBool("hover", false);
-        text.text = "";
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _animator.SetBool("hover", true);
+            text.text = name;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _animator.SetBool("hover", false);
+            text.text = "";
+        }
     }
 }
