@@ -25,7 +25,7 @@ namespace Gameplay.Enemies
         protected override void Death()
         {
             _isAlive = false;
-            _rhythmManager.onQuarter -= OnRhythmUpdate;
+            _rhythmManager.onHalf -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);
         }

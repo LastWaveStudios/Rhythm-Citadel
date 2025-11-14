@@ -104,5 +104,5 @@ MonoBehaviour:
   _damageType: 1
   _damage: 10
   _moveTime: 0.5
-  _resistance: 1
+  _resistance: 2
   _vinylDrop: 16
