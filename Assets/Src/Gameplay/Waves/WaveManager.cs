@@ -2,7 +2,9 @@ using Gameplay.Enemies;
 using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities.ServiceLocator;
 
 namespace Gameplay.Waves
@@ -67,7 +69,7 @@ namespace Gameplay.Waves
             if (_numberOfEnemiesDeadInCurrentWave == _currentWaveEnemies.Count)
             {
                 AllEnemiesDeadInCurrentWave = true;
-   
+
             }
             onEnemyDeath.Invoke(enemy.GetDrop());
         }
@@ -86,9 +88,11 @@ namespace Gameplay.Waves
 
         public void StartWave()
         {
-            if (CurrentWave < 0 || CurrentWave >= _waves.Count) return;
+            if (CurrentWave < 0 || CurrentWave >= _waves.Count)
+                Victory();
+                //Here
 
-            _rhythmManager.onSixteenth += OnSixteenth;
+                _rhythmManager.onSixteenth += OnSixteenth;
         }
 
         private void OnSixteenth()
@@ -103,6 +107,11 @@ namespace Gameplay.Waves
             {
                 _rhythmManager.onSixteenth -= OnSixteenth;
             }
+        }
+
+        private void Victory()
+        {
+            SceneManager.LoadScene("MainMenuScene");
         }
     }
 }
