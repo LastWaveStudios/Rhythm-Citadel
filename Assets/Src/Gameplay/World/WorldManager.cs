@@ -64,7 +64,13 @@ namespace Gameplay.World
         {
             return _paths[pathID].GetTileCount();
         }
+
+        public Vector3 GetTileSize()
+        {
+            return _tilemap.layoutGrid.cellSize;
+        }
     }
+    
 }
 
 
