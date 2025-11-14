@@ -1,6 +1,7 @@
 using UnityEngine;
 using Gameplay.RhythmSystem;
 using Utilities.ServiceLocator;
+using System;
 
 namespace Audio.SpecificImplementations
 {
@@ -9,6 +10,9 @@ namespace Audio.SpecificImplementations
         [SerializeField] private AudioClip _beatClip;
         [SerializeField] private AudioClip _measureBeatClip;
         private AudioSource _source;
+
+        private int _measureCount = -1;
+        private const int MEASURES_TO_SKIP = 1;
 
         private RhythmManager _rhythmManager;
 
@@ -33,10 +37,24 @@ namespace Audio.SpecificImplementations
             _source.outputAudioMixerGroup = AudioManager.Instance.audioControl.FindMatchingGroups("SFX")[0];
 
             _rhythmManager.onBeat += OnBeat;
+            _rhythmManager.onEndRhythm += OnRhythmEnd;
+        }
+
+        private void OnRhythmEnd()
+        {
+            _measureCount = -1;
         }
 
         private void OnBeat(bool isMeasure)
         {
+            #region Skip the first measures beats
+            if (isMeasure) _measureCount++;
+            if (_measureCount < MEASURES_TO_SKIP)
+            {
+                return;
+            }
+            #endregion
+
             if (isMeasure)
             {
                 _source.PlayOneShot(_measureBeatClip);
@@ -51,6 +69,7 @@ namespace Audio.SpecificImplementations
             if (_rhythmManager != null )
             {
                 _rhythmManager.onBeat -= OnBeat;
+                _rhythmManager.onEndRhythm -= OnRhythmEnd;
             }
         }
     }
