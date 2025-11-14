@@ -100,7 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b9d100a19b47745b94770df22b6a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _level: 1
   _damageType: 0
-  _range: 0
-  _damage: 0
-  _timeForProjectile: 0
+  _minDamage: 4
+  _MaxDamage: 6
+  _range: 2
+  _bulletPrefab: {fileID: 0}
+  _price: 70
+  _timeForProjectile: 0.1

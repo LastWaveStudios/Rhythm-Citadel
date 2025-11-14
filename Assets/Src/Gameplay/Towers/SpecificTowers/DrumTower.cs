@@ -9,12 +9,12 @@ namespace Gameplay.Towers.SpecificTowers
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            focusType = FocusStrategies.AreaAttack;
         }
         new void Start()
         {
             base.Start();
             focusType = FocusStrategies.AreaAttack;
-            _cost = 130; 
             _damageType = DamageType.Percussion;    
             _minDamage = 8; 
             _MaxDamage = 15;

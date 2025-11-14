@@ -14,13 +14,12 @@ namespace Gameplay.Towers.SpecificTowers
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            focusType = FocusStrategies.FirstEnemy;
         }
 
         new void Start()
         {
             base.Start();
-            focusType = FocusStrategies.FirstEnemy; 
-            _cost = 110; 
             _damageType = DamageType.Hybrid;    
             _minDamage = 6;
             _MaxDamage = 11;

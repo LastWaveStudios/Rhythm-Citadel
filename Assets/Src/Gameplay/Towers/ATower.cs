@@ -15,19 +15,19 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        protected int _level;
-        protected int _cost;
-        protected DamageType _damageType; // String, Percussion, Hybrid
-        protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
-        protected int _MaxDamage;
-        protected int _range;
+        [SerializeField] protected int _level;
+        [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
+        [SerializeField] protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
+        [SerializeField] protected int _MaxDamage;
+        [SerializeField] protected int _range;
         [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component  
-        
+        [SerializeField] protected int _price;
+
         [SerializeField] protected double _timeForProjectile = 0.1; // Time of projectile to reach the target
         protected IPoolManager _poolManager;
         protected WaveManager _waveManager;
 
-        [SerializeField]protected int _price = 0;
+        
         protected Vector3Int _positionInWorldCell;
 
         #region Services references
