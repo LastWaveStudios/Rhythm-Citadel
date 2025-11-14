@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e695d3fe42d0c5f48aa63c45d727f662
+guid: 020da47c448695243a49a4ba2accd2bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -619530107427339586
-    second: BotonMenuPausa_0
+      213: 6680050650163475411
+    second: Titulo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BotonMenuPausa_0
+      name: Titulo_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 91
-        width: 475
-        height: 137
+        x: 0
+        y: 16
+        width: 1030
+        height: 494
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb2422356acf667f0800000000000000
-      internalID: -619530107427339586
+      spriteID: 3d37c948cae44bc50800000000000000
+      internalID: 6680050650163475411
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a7eb979e1a03c184fa3b2ddf79d23e65
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,21 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BotonMenuPausa_0: -619530107427339586
-      BotonMenuPausa_1: -850809605
-      BotonMenuPausa_10: -42441025
-      BotonMenuPausa_11: 27116910
-      BotonMenuPausa_12: 118845459
-      BotonMenuPausa_13: 1423314697
-      BotonMenuPausa_14: -699336631
-      BotonMenuPausa_2: 1023061539
-      BotonMenuPausa_3: -1395246074
-      BotonMenuPausa_4: 868361870
-      BotonMenuPausa_5: 1341256450
-      BotonMenuPausa_6: -222369213
-      BotonMenuPausa_7: -1747513597
-      BotonMenuPausa_8: -2102369890
-      BotonMenuPausa_9: 1935104738
+      Titulo_0: 6680050650163475411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
