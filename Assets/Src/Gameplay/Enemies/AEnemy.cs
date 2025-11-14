@@ -105,6 +105,14 @@ namespace Gameplay.Enemies
             
             Vector3 originPos = transform.position;
             Vector3 targetPos = _worldManager.GetCellCenterWorld(nextTile);
+
+            Vector3 tileSize = _worldManager.GetTileSize();
+            //Offset for enemy stacking
+            float offsetFactor = 0.3f; 
+            targetPos += new Vector3(UnityEngine.Random.Range(-tileSize.x * offsetFactor, tileSize.x * offsetFactor),
+                                     UnityEngine.Random.Range(-tileSize.y * offsetFactor, tileSize.y * offsetFactor),
+                                     0f);
+
             float t = 0.0f;
             while (t <= _moveTime)
             {
