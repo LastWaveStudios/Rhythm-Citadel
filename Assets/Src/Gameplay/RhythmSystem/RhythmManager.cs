@@ -25,6 +25,10 @@ namespace Gameplay.RhythmSystem
         public Action onQuarter = delegate { };
         public Action onEighth = delegate { };
         public Action onSixteenth = delegate { };
+
+        public Action onRhythmStart = delegate { };
+        public Action onFinishRhythmNextMeasure = delegate { };
+        public Action onEndRhythm = delegate { };
         #endregion
 
         #region CountBeats
@@ -43,6 +47,11 @@ namespace Gameplay.RhythmSystem
         #region Pause variables
         private bool _isPlaying = false;
         private double _timeSinceLastSixteenthWhenPaused = 0.0;
+
+        private int _beatCountSinceStopRequest = 0;
+        private bool _isFinishRequest = false;
+        private int _beatsUntilStop = 0;
+        private int _sixteenthsOnOneBeat = 0;
         #endregion
 
         #region Services references
@@ -55,10 +64,12 @@ namespace Gameplay.RhythmSystem
 
             _gameplayManager = ServiceLocatorSubsystem.Instance.GetService<GameplayManager>();
             _gameplayManager.onFightStateStart += StartRhythm;
-            _gameplayManager.onFightStateEnd += EndRhythm;
+            _gameplayManager.onFinishRhythmStateStart += FinishRhythmNextFullMeasure;
             _gameplayManager.onPause += OnPause;
             _gameplayManager.onResume += OnResume;
         }
+
+        
 
         public void ResetCounts()
         {
@@ -88,10 +99,18 @@ namespace Gameplay.RhythmSystem
                     onMeasure.Invoke(); // Important do the callback after the count increase for the logic of GetNextMeasureTime
                 }
 
-                // The bottom is the same as (int)signature.beatNoteDuration, are the number of sixteenths that have the beat
-                if (SixteenthCount % Signature.bottom == 0)
+                
+                if (SixteenthCount % _sixteenthsOnOneBeat == 0)
                 {
                     onBeat.Invoke(SixteenthCount == 0);
+                    if (_isFinishRequest)
+                    {
+                        _beatCountSinceStopRequest++;
+                        if (_beatCountSinceStopRequest == _beatsUntilStop)
+                        {
+                            EndRhythm();
+                        }
+                    }
                 }
 
                 // Callback for Sixteenth
@@ -166,9 +185,27 @@ namespace Gameplay.RhythmSystem
         public void StartRhythm()
         {
             _isPlaying = true;
+            _isFinishRequest = false;
+            _sixteenthsOnOneBeat = 16 / (int)Signature.bottom;
             _lastSixteenth = AudioSettings.dspTime - (_timesOfNotes.Sixteenth / 1000); // Pass to seconds again
             _startTime = AudioSettings.dspTime;
             ResetCounts();
+
+            onRhythmStart.Invoke();
+        }
+
+        private void FinishRhythmNextFullMeasure()
+        {
+            // TODO: Stop the manager in the next measure + this or this if this measure don't give any sixteenth
+            _beatsUntilStop = (int)Signature.top;
+            if (SixteenthCount > 0)
+            {
+                _beatsUntilStop += (int)Signature.top - (SixteenthCount / _sixteenthsOnOneBeat);
+            }
+            _beatCountSinceStopRequest = 0;
+            _isFinishRequest = true;
+
+            onFinishRhythmNextMeasure.Invoke();
         }
 
         public void Pause()
@@ -187,7 +224,6 @@ namespace Gameplay.RhythmSystem
             _lastSixteenth = AudioSettings.dspTime - _timeSinceLastSixteenthWhenPaused;
         }
 
-
         private void OnResume(GameplayState state)
         {
             if (state == GameplayState.Build) return;
@@ -205,6 +241,7 @@ namespace Gameplay.RhythmSystem
         public void EndRhythm()
         {
             _isPlaying = false;
+            onEndRhythm.Invoke();
         }
 
         private void OnDestroy()

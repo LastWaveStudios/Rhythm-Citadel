@@ -1,3 +1,4 @@
+using Gameplay;
 using Gameplay.RhythmSystem;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Audio
         protected int _currentMeasure = 0;
 
         private RhythmManager _rhythmManager;
+        private GameplayManager _gameplayManager;
         
         void Start()
         {
@@ -46,10 +48,21 @@ namespace Audio
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
             if (_rhythmManager == null)
             {
-                Debug.LogError("AModularMusicController::Init: The RhythmManager was null");
+                Debug.LogError("AModularMusicController::Init: The RhythmManager is null");
                 return;
             }
+            _rhythmManager.onRhythmStart += StartPlay; // For the order of initializations this first callback is lost if starts on fightMode
             _rhythmManager.onMeasure += OnMeasure;
+            _rhythmManager.onEndRhythm += EndPlay;
+
+            _gameplayManager = ServiceLocatorSubsystem.Instance.GetService<GameplayManager>();
+            if ( _gameplayManager == null)
+            {
+                Debug.LogError("AModularMusicController::Init: The GameplayManager is null");
+                return;
+            }
+            _gameplayManager.onPause += Pause;
+            _gameplayManager.onResume += Resume;
         }
 
         /// <summary>
@@ -119,31 +132,35 @@ namespace Audio
 
         public virtual void EndPlay()
         {
-            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            for (int i = 0; i < _clipsRhythms.Count; ++i)
             {
-                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                for (int j = 0; j < _clipsRhythms[i].audioSources.Length; ++j)
                 {
                     _clipsRhythms[i].audioSources[j].Stop();
                 }
             }
         }
 
-        public virtual void Pause()
+        public virtual void Pause(GameplayState state)
         {
-            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            if (state != GameplayState.Fight && state != GameplayState.FinishRhythm) return;
+
+            for (int i = 0; i < _clipsRhythms.Count; ++i)
             {
-                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                for (int j = 0; j < _clipsRhythms[i].audioSources.Length; ++j)
                 {
                     _clipsRhythms[i].audioSources[j].Pause();
                 }
             }
         }
 
-        public virtual void Resume()
+        public virtual void Resume(GameplayState state)
         {
-            for (int i = 0; i < _currentClipsRhythms.Length; ++i)
+            if (state != GameplayState.Fight && state != GameplayState.FinishRhythm) return;
+
+            for (int i = 0; i < _clipsRhythms.Count; ++i)
             {
-                for (int j = 0; j < _clipsRhythms.Count; ++j)
+                for (int j = 0; j < _clipsRhythms[i].audioSources.Length; ++j)
                 {
                     _clipsRhythms[i].audioSources[j].UnPause();
                 }

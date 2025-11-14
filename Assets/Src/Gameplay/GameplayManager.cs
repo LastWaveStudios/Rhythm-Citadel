@@ -12,7 +12,8 @@ namespace Gameplay
     {
         None = 0,
         Build,
-        Fight
+        Fight,
+        FinishRhythm
     }
 
     public class GameplayManager : Utilities.ServiceLocator.AService
@@ -23,6 +24,8 @@ namespace Gameplay
         #region events
         public Action onFightStateStart = delegate { };
         public Action onFightStateEnd = delegate { };
+        public Action onFinishRhythmStateStart = delegate { };
+        public Action onFinishRhythmStateEnd = delegate { };
         public Action onBuildStateStart = delegate { };
         public Action onBuildStateEnd = delegate { };
         public Action<GameplayState> onPause = delegate { };
@@ -30,6 +33,7 @@ namespace Gameplay
         #endregion
 
         private WaveManager _waveManager;
+        private RhythmManager _rhythmManager;
 
         public override void Init()
         {
@@ -40,6 +44,14 @@ namespace Gameplay
                 return;
             }
             _waveManager.onEnemyDeath += OnEnemyDeath;
+
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("GameplayManager::Init: The RhythmManager is null");
+                return;
+            }
+            _rhythmManager.onEndRhythm += OnRhythmEnd;
 
             switch (this.Currentstate)
             {
@@ -53,11 +65,21 @@ namespace Gameplay
             }
         }
 
+        // TODO: Destroy this method -> Just for test purpose
+        private void Update()
+        {
+            if ( Input.GetKeyDown(KeyCode.L))
+            {
+                ChangeFightState();
+            }
+        }
+
+
         private void OnEnemyDeath(int vinyls)
         {
             if (_waveManager.AllEnemiesDeadInCurrentWave)
             {
-                ChangeBuildState();
+                ChangeFinishRhythmState();
             }
         }
 
@@ -84,8 +106,8 @@ namespace Gameplay
 
         private void BuildAction()
         {
+            onFinishRhythmStateEnd.Invoke();
             onBuildStateStart.Invoke();
-            onFightStateEnd.Invoke();
 
             _waveManager.InitNextWave();
 
@@ -93,6 +115,7 @@ namespace Gameplay
 
         }
 
+        // Must be called by the user with the button, so this GameplayManager must subscribe to that button
         private void ChangeFightState()
         {
             if (Currentstate == GameplayState.Fight) return;
@@ -105,13 +128,31 @@ namespace Gameplay
         {
             _waveManager.StartWave();
 
-            onFightStateStart.Invoke();
             onBuildStateEnd.Invoke();
+            onFightStateStart.Invoke();
             // TODO: Activate the map of Fight
 
         }
 
-        
+        private void ChangeFinishRhythmState()
+        {
+            if (Currentstate == GameplayState.FinishRhythm) return;
+
+            _currentState = GameplayState.FinishRhythm;
+
+            FinishRhythmAction();
+        }
+
+        private void FinishRhythmAction()
+        {
+            onFightStateEnd.Invoke();
+            onFinishRhythmStateStart.Invoke();
+        }
+
+        private void OnRhythmEnd()
+        {
+            ChangeBuildState();
+        }
     }
 }
 
