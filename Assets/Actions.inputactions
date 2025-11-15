@@ -3,7 +3,7 @@
     "name": "Actions",
     "maps": [
         {
-            "name": "Towers",
+            "name": "Battle",
             "id": "707c7d1a-898a-4c5d-8825-ea626f23c67d",
             "actions": [
                 {
@@ -125,6 +125,54 @@
                     "processors": "",
                     "groups": "",
                     "action": "Group 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Build",
+            "id": "2f917fac-4c86-4da3-9ba1-5b7a37942e23",
+            "actions": [
+                {
+                    "name": "PlaceTower",
+                    "type": "Button",
+                    "id": "fe651688-5f4d-48d5-88d3-a2a906750749",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeToBattlePhase",
+                    "type": "Button",
+                    "id": "82a3b466-2782-45af-8657-ab0e9be6301d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ba7c5c51-b330-4bcc-9e74-14fe63224015",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaceTower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da592a1d-b48a-48fb-a8cb-852bcca88c6e",
+                    "path": "<Keyboard>/#(L)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeToBattlePhase",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

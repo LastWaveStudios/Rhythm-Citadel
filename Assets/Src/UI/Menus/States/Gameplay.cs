@@ -55,14 +55,14 @@ namespace UI.Menus.States
 
             _gameplayManager.Pause();
         }
-
+        
         public void Update(float deltaTime)
         {
             // TODO: Change to input system if we finally use it
-            if (Input.GetKeyDown(KeyCode.Escape))
+            /*if (Input.GetKeyDown(KeyCode.Escape))
             {
                 MenuManager.Instance.SetState(new Pause());
-            }
+            }*/
         }
     }
 }

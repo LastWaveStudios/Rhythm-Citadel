@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace GameInput
+namespace Input
 {
     /// <summary>
     /// Provides programmatic access to <see cref="InputActionAsset" />, <see cref="InputActionMap" />, <see cref="InputAction" /> and <see cref="InputControlScheme" /> instances defined in asset "Assets/Actions.inputactions".
@@ -91,7 +91,7 @@ namespace GameInput
     ""name"": ""Actions"",
     ""maps"": [
         {
-            ""name"": ""Towers"",
+            ""name"": ""Battle"",
             ""id"": ""707c7d1a-898a-4c5d-8825-ea626f23c67d"",
             ""actions"": [
                 {
@@ -217,6 +217,54 @@ namespace GameInput
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Build"",
+            ""id"": ""2f917fac-4c86-4da3-9ba1-5b7a37942e23"",
+            ""actions"": [
+                {
+                    ""name"": ""PlaceTower"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe651688-5f4d-48d5-88d3-a2a906750749"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeToBattlePhase"",
+                    ""type"": ""Button"",
+                    ""id"": ""82a3b466-2782-45af-8657-ab0e9be6301d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ba7c5c51-b330-4bcc-9e74-14fe63224015"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da592a1d-b48a-48fb-a8cb-852bcca88c6e"",
+                    ""path"": ""<Keyboard>/#(L)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeToBattlePhase"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -233,19 +281,24 @@ namespace GameInput
         }
     ]
 }");
-            // Towers
-            m_Towers = asset.FindActionMap("Towers", throwIfNotFound: true);
-            m_Towers_Group1 = m_Towers.FindAction("Group 1", throwIfNotFound: true);
-            m_Towers_Group2 = m_Towers.FindAction("Group 2", throwIfNotFound: true);
-            m_Towers_Group3 = m_Towers.FindAction("Group 3", throwIfNotFound: true);
-            m_Towers_Group4 = m_Towers.FindAction("Group 4", throwIfNotFound: true);
-            m_Towers_Group5 = m_Towers.FindAction("Group 5", throwIfNotFound: true);
-            m_Towers_Group6 = m_Towers.FindAction("Group 6", throwIfNotFound: true);
+            // Battle
+            m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
+            m_Battle_Group1 = m_Battle.FindAction("Group 1", throwIfNotFound: true);
+            m_Battle_Group2 = m_Battle.FindAction("Group 2", throwIfNotFound: true);
+            m_Battle_Group3 = m_Battle.FindAction("Group 3", throwIfNotFound: true);
+            m_Battle_Group4 = m_Battle.FindAction("Group 4", throwIfNotFound: true);
+            m_Battle_Group5 = m_Battle.FindAction("Group 5", throwIfNotFound: true);
+            m_Battle_Group6 = m_Battle.FindAction("Group 6", throwIfNotFound: true);
+            // Build
+            m_Build = asset.FindActionMap("Build", throwIfNotFound: true);
+            m_Build_PlaceTower = m_Build.FindAction("PlaceTower", throwIfNotFound: true);
+            m_Build_ChangeToBattlePhase = m_Build.FindAction("ChangeToBattlePhase", throwIfNotFound: true);
         }
 
         ~@Actions()
         {
-            UnityEngine.Debug.Assert(!m_Towers.enabled, "This will cause a leak and performance issues, Actions.Towers.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Battle.enabled, "This will cause a leak and performance issues, Actions.Battle.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Build.enabled, "This will cause a leak and performance issues, Actions.Build.Disable() has not been called.");
         }
 
         /// <summary>
@@ -318,54 +371,54 @@ namespace GameInput
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // Towers
-        private readonly InputActionMap m_Towers;
-        private List<ITowersActions> m_TowersActionsCallbackInterfaces = new List<ITowersActions>();
-        private readonly InputAction m_Towers_Group1;
-        private readonly InputAction m_Towers_Group2;
-        private readonly InputAction m_Towers_Group3;
-        private readonly InputAction m_Towers_Group4;
-        private readonly InputAction m_Towers_Group5;
-        private readonly InputAction m_Towers_Group6;
+        // Battle
+        private readonly InputActionMap m_Battle;
+        private List<IBattleActions> m_BattleActionsCallbackInterfaces = new List<IBattleActions>();
+        private readonly InputAction m_Battle_Group1;
+        private readonly InputAction m_Battle_Group2;
+        private readonly InputAction m_Battle_Group3;
+        private readonly InputAction m_Battle_Group4;
+        private readonly InputAction m_Battle_Group5;
+        private readonly InputAction m_Battle_Group6;
         /// <summary>
-        /// Provides access to input actions defined in input action map "Towers".
+        /// Provides access to input actions defined in input action map "Battle".
         /// </summary>
-        public struct TowersActions
+        public struct BattleActions
         {
             private @Actions m_Wrapper;
 
             /// <summary>
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
-            public TowersActions(@Actions wrapper) { m_Wrapper = wrapper; }
+            public BattleActions(@Actions wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group1".
+            /// Provides access to the underlying input action "Battle/Group1".
             /// </summary>
-            public InputAction @Group1 => m_Wrapper.m_Towers_Group1;
+            public InputAction @Group1 => m_Wrapper.m_Battle_Group1;
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group2".
+            /// Provides access to the underlying input action "Battle/Group2".
             /// </summary>
-            public InputAction @Group2 => m_Wrapper.m_Towers_Group2;
+            public InputAction @Group2 => m_Wrapper.m_Battle_Group2;
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group3".
+            /// Provides access to the underlying input action "Battle/Group3".
             /// </summary>
-            public InputAction @Group3 => m_Wrapper.m_Towers_Group3;
+            public InputAction @Group3 => m_Wrapper.m_Battle_Group3;
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group4".
+            /// Provides access to the underlying input action "Battle/Group4".
             /// </summary>
-            public InputAction @Group4 => m_Wrapper.m_Towers_Group4;
+            public InputAction @Group4 => m_Wrapper.m_Battle_Group4;
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group5".
+            /// Provides access to the underlying input action "Battle/Group5".
             /// </summary>
-            public InputAction @Group5 => m_Wrapper.m_Towers_Group5;
+            public InputAction @Group5 => m_Wrapper.m_Battle_Group5;
             /// <summary>
-            /// Provides access to the underlying input action "Towers/Group6".
+            /// Provides access to the underlying input action "Battle/Group6".
             /// </summary>
-            public InputAction @Group6 => m_Wrapper.m_Towers_Group6;
+            public InputAction @Group6 => m_Wrapper.m_Battle_Group6;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_Towers; }
+            public InputActionMap Get() { return m_Wrapper.m_Battle; }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
             public void Enable() { Get().Enable(); }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -373,9 +426,9 @@ namespace GameInput
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
             public bool enabled => Get().enabled;
             /// <summary>
-            /// Implicitly converts an <see ref="TowersActions" /> to an <see ref="InputActionMap" /> instance.
+            /// Implicitly converts an <see ref="BattleActions" /> to an <see ref="InputActionMap" /> instance.
             /// </summary>
-            public static implicit operator InputActionMap(TowersActions set) { return set.Get(); }
+            public static implicit operator InputActionMap(BattleActions set) { return set.Get(); }
             /// <summary>
             /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
             /// </summary>
@@ -383,11 +436,11 @@ namespace GameInput
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
             /// </remarks>
-            /// <seealso cref="TowersActions" />
-            public void AddCallbacks(ITowersActions instance)
+            /// <seealso cref="BattleActions" />
+            public void AddCallbacks(IBattleActions instance)
             {
-                if (instance == null || m_Wrapper.m_TowersActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_TowersActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_BattleActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BattleActionsCallbackInterfaces.Add(instance);
                 @Group1.started += instance.OnGroup1;
                 @Group1.performed += instance.OnGroup1;
                 @Group1.canceled += instance.OnGroup1;
@@ -414,8 +467,8 @@ namespace GameInput
             /// <remarks>
             /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
             /// </remarks>
-            /// <seealso cref="TowersActions" />
-            private void UnregisterCallbacks(ITowersActions instance)
+            /// <seealso cref="BattleActions" />
+            private void UnregisterCallbacks(IBattleActions instance)
             {
                 @Group1.started -= instance.OnGroup1;
                 @Group1.performed -= instance.OnGroup1;
@@ -438,12 +491,12 @@ namespace GameInput
             }
 
             /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="TowersActions.UnregisterCallbacks(ITowersActions)" />.
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BattleActions.UnregisterCallbacks(IBattleActions)" />.
             /// </summary>
-            /// <seealso cref="TowersActions.UnregisterCallbacks(ITowersActions)" />
-            public void RemoveCallbacks(ITowersActions instance)
+            /// <seealso cref="BattleActions.UnregisterCallbacks(IBattleActions)" />
+            public void RemoveCallbacks(IBattleActions instance)
             {
-                if (m_Wrapper.m_TowersActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_BattleActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
@@ -453,21 +506,128 @@ namespace GameInput
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
             /// </remarks>
-            /// <seealso cref="TowersActions.AddCallbacks(ITowersActions)" />
-            /// <seealso cref="TowersActions.RemoveCallbacks(ITowersActions)" />
-            /// <seealso cref="TowersActions.UnregisterCallbacks(ITowersActions)" />
-            public void SetCallbacks(ITowersActions instance)
+            /// <seealso cref="BattleActions.AddCallbacks(IBattleActions)" />
+            /// <seealso cref="BattleActions.RemoveCallbacks(IBattleActions)" />
+            /// <seealso cref="BattleActions.UnregisterCallbacks(IBattleActions)" />
+            public void SetCallbacks(IBattleActions instance)
             {
-                foreach (var item in m_Wrapper.m_TowersActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_BattleActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_TowersActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_BattleActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
         /// <summary>
-        /// Provides a new <see cref="TowersActions" /> instance referencing this action map.
+        /// Provides a new <see cref="BattleActions" /> instance referencing this action map.
         /// </summary>
-        public TowersActions @Towers => new TowersActions(this);
+        public BattleActions @Battle => new BattleActions(this);
+
+        // Build
+        private readonly InputActionMap m_Build;
+        private List<IBuildActions> m_BuildActionsCallbackInterfaces = new List<IBuildActions>();
+        private readonly InputAction m_Build_PlaceTower;
+        private readonly InputAction m_Build_ChangeToBattlePhase;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "Build".
+        /// </summary>
+        public struct BuildActions
+        {
+            private @Actions m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public BuildActions(@Actions wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Build/PlaceTower".
+            /// </summary>
+            public InputAction @PlaceTower => m_Wrapper.m_Build_PlaceTower;
+            /// <summary>
+            /// Provides access to the underlying input action "Build/ChangeToBattlePhase".
+            /// </summary>
+            public InputAction @ChangeToBattlePhase => m_Wrapper.m_Build_ChangeToBattlePhase;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_Build; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="BuildActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(BuildActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="BuildActions" />
+            public void AddCallbacks(IBuildActions instance)
+            {
+                if (instance == null || m_Wrapper.m_BuildActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BuildActionsCallbackInterfaces.Add(instance);
+                @PlaceTower.started += instance.OnPlaceTower;
+                @PlaceTower.performed += instance.OnPlaceTower;
+                @PlaceTower.canceled += instance.OnPlaceTower;
+                @ChangeToBattlePhase.started += instance.OnChangeToBattlePhase;
+                @ChangeToBattlePhase.performed += instance.OnChangeToBattlePhase;
+                @ChangeToBattlePhase.canceled += instance.OnChangeToBattlePhase;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="BuildActions" />
+            private void UnregisterCallbacks(IBuildActions instance)
+            {
+                @PlaceTower.started -= instance.OnPlaceTower;
+                @PlaceTower.performed -= instance.OnPlaceTower;
+                @PlaceTower.canceled -= instance.OnPlaceTower;
+                @ChangeToBattlePhase.started -= instance.OnChangeToBattlePhase;
+                @ChangeToBattlePhase.performed -= instance.OnChangeToBattlePhase;
+                @ChangeToBattlePhase.canceled -= instance.OnChangeToBattlePhase;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BuildActions.UnregisterCallbacks(IBuildActions)" />.
+            /// </summary>
+            /// <seealso cref="BuildActions.UnregisterCallbacks(IBuildActions)" />
+            public void RemoveCallbacks(IBuildActions instance)
+            {
+                if (m_Wrapper.m_BuildActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="BuildActions.AddCallbacks(IBuildActions)" />
+            /// <seealso cref="BuildActions.RemoveCallbacks(IBuildActions)" />
+            /// <seealso cref="BuildActions.UnregisterCallbacks(IBuildActions)" />
+            public void SetCallbacks(IBuildActions instance)
+            {
+                foreach (var item in m_Wrapper.m_BuildActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_BuildActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="BuildActions" /> instance referencing this action map.
+        /// </summary>
+        public BuildActions @Build => new BuildActions(this);
         private int m_KeyboardSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -482,11 +642,11 @@ namespace GameInput
             }
         }
         /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Towers" which allows adding and removing callbacks.
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Battle" which allows adding and removing callbacks.
         /// </summary>
-        /// <seealso cref="TowersActions.AddCallbacks(ITowersActions)" />
-        /// <seealso cref="TowersActions.RemoveCallbacks(ITowersActions)" />
-        public interface ITowersActions
+        /// <seealso cref="BattleActions.AddCallbacks(IBattleActions)" />
+        /// <seealso cref="BattleActions.RemoveCallbacks(IBattleActions)" />
+        public interface IBattleActions
         {
             /// <summary>
             /// Method invoked when associated input action "Group 1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -530,6 +690,28 @@ namespace GameInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnGroup6(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Build" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="BuildActions.AddCallbacks(IBuildActions)" />
+        /// <seealso cref="BuildActions.RemoveCallbacks(IBuildActions)" />
+        public interface IBuildActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "PlaceTower" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPlaceTower(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ChangeToBattlePhase" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnChangeToBattlePhase(InputAction.CallbackContext context);
         }
     }
 }

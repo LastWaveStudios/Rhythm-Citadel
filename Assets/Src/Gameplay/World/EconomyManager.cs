@@ -1,9 +1,11 @@
 using Gameplay.Towers;
 using Gameplay.Waves;
+using Input;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 using Utilities.ServiceLocator;
@@ -39,16 +41,9 @@ namespace Gameplay.World
 
         #region ClickMethods 
 
-        void Update()
+        public void InputHandler()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                InputHandler();
-            }
-        }
-
-        void InputHandler()
-        {
+            Debug.Log("Se ejecuta el Economy Manager");
             if (_selectedTilePosition != null)
             {
                 if (_countExitMenu >= 1) CloseMenu();
@@ -139,9 +134,9 @@ namespace Gameplay.World
                 _tilemap.SetTile(clickedCellPosition, _unBuildableTile);
         }
 
-        void GetPositionClicked() // FUNCIONA CON LA C�MARA CENITAL
+        void GetPositionClicked() // FUNCIONA CON LA CAMARA CENITAL
         {
-            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             clickedPosition.z = 0;
 
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);

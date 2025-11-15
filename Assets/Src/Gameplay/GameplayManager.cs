@@ -65,15 +65,6 @@ namespace Gameplay
             }
         }
 
-        // TODO: Destroy this method -> Just for test purpose
-        private void Update()
-        {
-            if ( Input.GetKeyDown(KeyCode.L))
-            {
-                ChangeFightState();
-            }
-        }
-
 
         private void OnEnemyDeath(int vinyls)
         {

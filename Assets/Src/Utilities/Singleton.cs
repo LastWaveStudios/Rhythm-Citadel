@@ -7,8 +7,9 @@ namespace Utilities
     {
         public static T Instance { get; private set; }
 
-        private void Awake()
+        protected void Awake()
         {
+            Debug.Log("Singleton Awake ejecutado");
             if (Instance == null)
             {
                 Instance = this as T;

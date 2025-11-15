@@ -24,7 +24,7 @@ namespace Gameplay.Towers
                 _towersGroups.Add(new TowersGroup(DEFAULT_TIME_OF_DISABLE, DEFAULT_MAX_OFFSET));
             }
 
-            GameInput.InputReader.Instance.onTapGroup += OnTapGroup;
+            Input.InputReader.Instance.onTapGroup += OnTapGroup;
         }
 
         private void OnTapGroup(int groupIndex)

@@ -197,7 +197,7 @@ TilemapRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.34500003, y: 0.69000006, z: 0}
+  m_ChunkCullingBounds: {x: 0.34500003, y: 1.2850001, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -4833,6 +4833,8 @@ GameObject:
   - component: {fileID: 879635093}
   - component: {fileID: 879635092}
   - component: {fileID: 879635091}
+  - component: {fileID: 879635100}
+  - component: {fileID: 879635099}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -4898,7 +4900,7 @@ MonoBehaviour:
   _unBuildableTile: {fileID: 11400000, guid: 43e6caaf30a017b4a8860cc5898093b5, type: 2}
   _buildingMenu: {fileID: 668664598}
   _updateMenu: {fileID: 668664597}
-  _vinyl: 0
+  _vinyl: 500
 --- !u!114 &879635095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,6 +4966,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879635099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879635090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae5e7546fed05f479c7693b5c3d4ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &879635100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879635090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7262e4541bc3b4bae7b8a46d47efff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _economyManager: {fileID: 879635094}
+  _phaseManager: {fileID: 879635099}
 --- !u!1 &1345272969
 GameObject:
   m_ObjectHideFlags: 0
