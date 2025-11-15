@@ -114,7 +114,7 @@ namespace Gameplay.Waves
 
         public bool nextWaveExists()
         {
-            if (CurrentWave < 0 || CurrentWave >= _waves.Count)
+            if (CurrentWave < 0 || CurrentWave >= _waves.Count - 1)
                 return true;
             else
                 return false;

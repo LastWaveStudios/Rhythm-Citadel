@@ -51,12 +51,13 @@ namespace Gameplay.Enemies
                 Debug.LogError("AEnemy::TakeReferences: The RhythmManager was null");
             }
             SubscribeToRhythm();
-            
+            /**
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
-            if (_rhythmManager == null)
+            if (_dancer == null)
             {
                 Debug.LogError("AEnemy::TakeReferences: The Dancer was null");
             }
+            /**/
         }
 
         protected abstract void SubscribeToRhythm();

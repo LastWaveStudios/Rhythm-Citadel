@@ -58,6 +58,7 @@ namespace Gameplay
 
             _rhythmManager.onEndRhythm += OnRhythmEnd;
 
+            /**
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
             if (_dancer == null)
             {
@@ -66,6 +67,7 @@ namespace Gameplay
             }
 
             _dancer.onDancerDeath += Defeat;
+            /**/
 
             switch (this.Currentstate)
             {
@@ -165,6 +167,7 @@ namespace Gameplay
 
         private void OnRhythmEnd()
         {
+            Debug.Log("hi");
             if (_waveManager.nextWaveExists())
             {
                 Victory();
@@ -175,14 +178,14 @@ namespace Gameplay
         public void Victory()
         {
 
-            MenuManager.Instance.ChangeSceneAndState("Ivan_PLaygroundMenu", new Main());
+            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
 
         }
         
         public void Defeat()
         {
 
-            MenuManager.Instance.ChangeSceneAndState("Ivan_PLaygroundMenu", new Main());
+            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
                 
         }
     }
