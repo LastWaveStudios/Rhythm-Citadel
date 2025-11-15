@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6448567924000657682}
+  - component: {fileID: 8430609499255230000}
   m_Layer: 5
   m_Name: BigGear
   m_TagString: Untagged
@@ -37,6 +38,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 207, y: 190}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &8430609499255230000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76700530712378058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241618f99c7d0bf408d5a113df334135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderController: {fileID: 4445325334420185035}
+  _bigGear: {fileID: 7381064010980499249}
+  _middelGear: {fileID: 6020463234434440063}
+  _smallGear: {fileID: 288268882336392604}
 --- !u!1 &119018931573870997
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +138,7 @@ GameObject:
   - component: {fileID: 1620392734372381837}
   - component: {fileID: 3939639008745735009}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,6 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8295961612380186989}
+  - component: {fileID: 5432710965931044284}
   m_Layer: 5
   m_Name: BigGear
   m_TagString: Untagged
@@ -221,6 +239,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 207, y: 190}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &5432710965931044284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314976912271796997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241618f99c7d0bf408d5a113df334135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderController: {fileID: 3419243732375162300}
+  _bigGear: {fileID: 882541785420695890}
+  _middelGear: {fileID: 2598957523901962951}
+  _smallGear: {fileID: 1882781976572029927}
 --- !u!1 &384921094153971684
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +291,7 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0, y: 1.5}
+  m_Pivot: {x: 0, y: 1.1}
 --- !u!222 &7407765067378328878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -861,7 +895,7 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0, y: 1.5}
+  m_Pivot: {x: 0, y: 1.1}
 --- !u!222 &4804253945127475994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1270,7 +1304,7 @@ GameObject:
   - component: {fileID: 6023061894049309991}
   - component: {fileID: 6151266585137791904}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,7 +1379,7 @@ GameObject:
   - component: {fileID: 417054192749919227}
   - component: {fileID: 561198078050036920}
   m_Layer: 5
-  m_Name: Handle
+  m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619139472975039559}
   m_Layer: 5
-  m_Name: Gear
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2184,7 +2218,7 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0, y: 1.5}
+  m_Pivot: {x: 0, y: 1.1}
 --- !u!222 &2328888691933101810
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2435,7 +2469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5331721028461313369}
   m_Layer: 5
-  m_Name: Gear
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2471,6 +2505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5207476808523891336}
+  - component: {fileID: 8291745444216616720}
   m_Layer: 5
   m_Name: BigGear
   m_TagString: Untagged
@@ -2499,6 +2534,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 207, y: 190}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &8291745444216616720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747081969897792702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241618f99c7d0bf408d5a113df334135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderController: {fileID: 5335468969815428499}
+  _bigGear: {fileID: 7404357569289841928}
+  _middelGear: {fileID: 8593119513294320925}
+  _smallGear: {fileID: 2121998985827873741}
 --- !u!1 &5752571825697431643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,7 +3539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5199242303839597116}
   m_Layer: 5
-  m_Name: Gear
+  m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
