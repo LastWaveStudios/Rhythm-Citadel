@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de2f52a92e98a104097d17218b26f36c
+guid: 7f301a80246c24c4b8a7f9a4d3c49e42
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -118,6 +118,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -127,10 +140,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 642
+        width: 640
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +160,12 @@ TextureImporter:
       name: DerrotaBotonLeftHover_1
       rect:
         serializedVersion: 2
-        x: 654
+        x: 640
         y: 0
-        width: 612
+        width: 640
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +182,12 @@ TextureImporter:
       name: DerrotaBotonLeftHover_2
       rect:
         serializedVersion: 2
-        x: 1278
+        x: 1279
         y: 0
-        width: 630
+        width: 640
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +204,12 @@ TextureImporter:
       name: DerrotaBotonLeftHover_3
       rect:
         serializedVersion: 2
-        x: 1929
+        x: 1918
         y: 0
-        width: 618
+        width: 640
         height: 222
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: df2cf9c6e2a04214696cd20317f0c377
     internalID: 0
     vertices: []
     indices: 

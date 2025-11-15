@@ -1,7 +1,9 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
-using Input;
+using Gameplay.World;
 using System;
+using UI.Menus;
+using UI.Menus.States;
 using UnityEngine;
 using Utilities.ServiceLocator;
 
@@ -35,11 +37,12 @@ namespace Gameplay
 
         private WaveManager _waveManager;
         private RhythmManager _rhythmManager;
+        private Dancer _dancer;
 
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
-            if ( _waveManager == null )
+            if (_waveManager == null)
             {
                 Debug.LogError("GameplayManager::Init: The WaveManager is null");
                 return;
@@ -52,11 +55,23 @@ namespace Gameplay
                 Debug.LogError("GameplayManager::Init: The RhythmManager is null");
                 return;
             }
+
             _rhythmManager.onEndRhythm += OnRhythmEnd;
+
+            /**
+            _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
+            if (_dancer == null)
+            {
+                Debug.LogError("GameplayManager::Init: Dancer is null");
+                return;
+            }
+
+            _dancer.onDancerDeath += Defeat;
+            /**/
 
             switch (this.Currentstate)
             {
-                case GameplayState.Build: 
+                case GameplayState.Build:
                     BuildAction();
                     break;
                 case GameplayState.Fight:
@@ -65,6 +80,16 @@ namespace Gameplay
                     break;
             }
         }
+
+        // TODO: Destroy this method -> Just for test purpose
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                ChangeFightState();
+            }
+        }
+
 
         private void OnEnemyDeath(int vinyls)
         {
@@ -99,16 +124,15 @@ namespace Gameplay
         {
             onFinishRhythmStateEnd.Invoke();
             onBuildStateStart.Invoke();
-            
 
             _waveManager.InitNextWave();
 
-            InputReader.Instance.EnableBuildActions(); 
+            // TODO: Activate the InputMap
 
         }
 
         // Must be called by the user with the button, so this GameplayManager must subscribe to that button
-        public void ChangeFightState()
+        private void ChangeFightState()
         {
             if (Currentstate == GameplayState.Fight) return;
 
@@ -122,7 +146,7 @@ namespace Gameplay
 
             onBuildStateEnd.Invoke();
             onFightStateStart.Invoke();
-            InputReader.Instance.EnableBattleActions();
+            // TODO: Activate the map of Fight
 
         }
 
@@ -143,7 +167,26 @@ namespace Gameplay
 
         private void OnRhythmEnd()
         {
+            Debug.Log("hi");
+            if (_waveManager.nextWaveExists())
+            {
+                Victory();
+            }
             ChangeBuildState();
+        }
+
+        public void Victory()
+        {
+
+            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
+
+        }
+        
+        public void Defeat()
+        {
+
+            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
+                
         }
     }
 }

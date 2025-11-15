@@ -1,41 +1,17 @@
+using System;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.World
 {
-    public class Dancer : MonoBehaviour
+    public class Dancer : Utilities.ServiceLocator.AService
     {
         private float _health = 100;
-        public static Dancer Instance { get; private set; }
-        private SpriteRenderer _spriteRender;
-        [SerializeField] private Sprite[] _sprites;
+        public Action onDancerDeath;
 
-        private void Awake()
+        public override void Init()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-            _spriteRender = GetComponent<SpriteRenderer>();
-        }
-
-        public void Update()
-        {
-            if (_health < 25)
-            {
-                _spriteRender.sprite = _sprites[0];
-            }
-            else if (_health < 50)
-            {
-                _spriteRender.sprite = _sprites[1];
-            }
-            else if (_health < 75)
-            {
-                _spriteRender.sprite = _sprites[2];
-            }
+            
         }
 
         public void TakeDamage(float damage)
@@ -44,9 +20,11 @@ namespace Gameplay.World
             Debug.Log("La vida actual es " + _health);
         }
 
-        public bool CheckDeath()
+        public void CheckDeath()
         {
-            return _health <= 0;
+            if (_health <= 0)
+                onDancerDeath.Invoke();
+
         }
     }
 }
