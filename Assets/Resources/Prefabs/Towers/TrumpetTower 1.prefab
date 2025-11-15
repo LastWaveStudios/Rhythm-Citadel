@@ -101,7 +101,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 1
-  _damageType: 1
+  _groupId: 4
+  _pattern:
+    signature:
+      top: 4
+      bottom: 4
+      beatNoteDuration: 4
+      maxSixteenthsOnOneMeasure: 16
+    patternNotes:
+    - duration: 2
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 8
+    - duration: 2
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 8
+    spaceInSixteenths: 0
+  _damageType: 4
   _minDamage: 9
   _MaxDamage: 17
   _range: 1

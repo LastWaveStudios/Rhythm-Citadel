@@ -7,6 +7,7 @@ using UnityEngine;
 using Utilities.ObjectPool;
 using Utilities.ServiceLocator;
 using System.Collections;
+using Gameplay.RhythmSystem;
 
 namespace Gameplay.Towers
 {
@@ -20,6 +21,8 @@ namespace Gameplay.Towers
         [SerializeField] const int MAX_LEVEL = 2;
 
         [SerializeField] protected int _level;
+        [SerializeField] protected int _groupId;
+        [SerializeField] protected RhythmPattern _pattern;
         [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
         [SerializeField] protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
         [SerializeField] protected int _MaxDamage;
@@ -81,6 +84,11 @@ namespace Gameplay.Towers
         {
             return _level == MAX_LEVEL;
         }
+
+        public int GetGroup()
+        {
+            return _groupId;
+        }
         #endregion
 
         #region Other methods
@@ -99,7 +107,6 @@ namespace Gameplay.Towers
         public virtual void OnRhythmHit() // The callback when the user taps correctly, not callback of this type if not correct
         {
             Attack();
-            StartCoroutine(TestThing());
         }
         public void Attack()   //call it when the user taps correctly
         {

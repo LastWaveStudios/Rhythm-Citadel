@@ -93,8 +93,8 @@ namespace Gameplay.World
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
             _existingTowers.Add(spawnPosition, instantiatedTower);
 
-            // TODO: Select the group base on something right now hardcoded for alpha test
-            _towersManager.AddTower(instantiatedTower.GetComponent<ATower>(), 4);
+            ATower aTower = instantiatedTower.GetComponent<ATower>();
+            _towersManager.AddTower(aTower, aTower.GetGroup());
         }
 
         /// <summary>
