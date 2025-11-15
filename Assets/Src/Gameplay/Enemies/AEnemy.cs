@@ -117,6 +117,7 @@ namespace Gameplay.Enemies
             {
                 Debug.Log("Estamos en el Tile final");
                 Death();
+
                 yield break;
             }
             
