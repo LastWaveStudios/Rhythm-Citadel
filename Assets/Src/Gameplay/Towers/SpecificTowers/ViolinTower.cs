@@ -12,17 +12,6 @@ namespace Gameplay.Towers.SpecificTowers
             spriteRenderer = GetComponent<SpriteRenderer>();
             focusType = FocusStrategies.FirstEnemy;
         }
-
-        new void Start()
-        {
-            base.Start();
-             
-            _damageType = DamageType.String;    
-            _minDamage=4;
-            _MaxDamage=6;
-            _range = 2;  
-
-        }
         
         void LateUpdate()
         {
@@ -30,26 +19,6 @@ namespace Gameplay.Towers.SpecificTowers
             spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
         }
 
-        public override void Disable()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Enable()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void OnRhythmHit()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
 

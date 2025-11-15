@@ -6,7 +6,6 @@ namespace Gameplay.Towers.SpecificTowers
 {
     public class TrumpetTower : ATower
     {
-        private List<AEnemy> enemies;
         private SpriteRenderer spriteRenderer; //Prevent towers from overlapping incorrectly
 
         void Awake()
@@ -15,41 +14,10 @@ namespace Gameplay.Towers.SpecificTowers
             focusType = FocusStrategies.FirstEnemy;
         }
 
-        new void Start()
-        {
-            base.Start();
-            
-            _damageType = DamageType.Percussion;    
-            _minDamage = 9;
-            _MaxDamage = 17;
-            _range = 1;  
-        }
-
         void LateUpdate()
         {
             //Lower is, higher appear
             spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-        }
-
-        public override void Disable()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Enable()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void OnRhythmHit()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

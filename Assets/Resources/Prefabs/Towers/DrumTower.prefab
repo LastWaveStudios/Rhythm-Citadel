@@ -101,10 +101,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 1
-  _damageType: 1
+  _groupId: 0
+  _pattern:
+    signature:
+      top: 4
+      bottom: 4
+      beatNoteDuration: 4
+      maxSixteenthsOnOneMeasure: 16
+    patternNotes:
+    - duration: 8
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 2
+    - duration: 8
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 2
+    - duration: 4
+      isDottedNote: 0
+      isSilence: 1
+      durationInSixteenths: 4
+    - duration: 4
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 4
+    - duration: 8
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 2
+    - duration: 8
+      isDottedNote: 0
+      isSilence: 0
+      durationInSixteenths: 2
+    spaceInSixteenths: 0
+  _damageType: 2
   _minDamage: 8
   _MaxDamage: 15
   _range: 2
-  _bulletPrefab: {fileID: 0}
+  _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
   _price: 130
   _timeForProjectile: 0.1
