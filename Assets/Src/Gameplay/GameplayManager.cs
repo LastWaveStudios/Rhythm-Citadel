@@ -84,7 +84,7 @@ namespace Gameplay
         // TODO: Destroy this method -> Just for test purpose
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.L))
             {
                 ChangeFightState();
             }
@@ -132,7 +132,7 @@ namespace Gameplay
         }
 
         // Must be called by the user with the button, so this GameplayManager must subscribe to that button
-        private void ChangeFightState()
+        public void ChangeFightState()
         {
             if (Currentstate == GameplayState.Fight) return;
 
