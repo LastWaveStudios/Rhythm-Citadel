@@ -1,5 +1,6 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
+using Gameplay.World;
 using System;
 using UI.Menus;
 using UI.Menus.States;
@@ -36,6 +37,7 @@ namespace Gameplay
 
         private WaveManager _waveManager;
         private RhythmManager _rhythmManager;
+        private Dancer _dancer;
 
         public override void Init()
         {
@@ -53,7 +55,17 @@ namespace Gameplay
                 Debug.LogError("GameplayManager::Init: The RhythmManager is null");
                 return;
             }
+
             _rhythmManager.onEndRhythm += OnRhythmEnd;
+
+            _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
+            if (_dancer == null)
+            {
+                Debug.LogError("GameplayManager::Init: Dancer is null");
+                return;
+            }
+
+            _dancer.onDancerDeath += Defeat;
 
             switch (this.Currentstate)
             {
@@ -153,6 +165,10 @@ namespace Gameplay
 
         private void OnRhythmEnd()
         {
+            if (_waveManager.nextWaveExists())
+            {
+                Victory();
+            }
             ChangeBuildState();
         }
 
