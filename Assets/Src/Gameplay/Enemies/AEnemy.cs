@@ -20,10 +20,12 @@ namespace Gameplay.Enemies
         [SerializeField] protected float _moveTime = 0.5f;
         [SerializeField] protected DamageType _resistance;   //None, String, Percussion or Hybrid
         [SerializeField] protected int _vinylDrop = 0;
+        [SerializeField] protected int _preparationBeats = 4;   // Beats that the enemy needs to prepare to move. Some enemies may change this value
 
         protected int _path = 0;    
         protected int _index = 0;   //Current Tile
         protected bool _isAlive = false; // If is death is not active
+        protected int _currentPreparation = 0;
         public Action<AEnemy> onDeath = delegate {  };
 
         protected WorldManager _worldManager;
@@ -86,6 +88,11 @@ namespace Gameplay.Enemies
             int pathTilesCount = _worldManager.GetTileCount(_path);
             return pathTilesCount - _index;
         }
+
+        public bool isPrepared()
+        {
+            return (_currentPreparation >= _preparationBeats);
+        }
         #endregion
 
         #region Other methods
@@ -98,11 +105,20 @@ namespace Gameplay.Enemies
         {
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
+            if (_health <= 0 && this.isActiveAndEnabled) Death();
         }
         #endregion
 
         #region Abstract Methods
-        protected abstract void OnRhythmUpdate();
+        protected virtual void OnRhythmUpdate()
+        {
+            if (isPrepared())
+            {
+                _currentPreparation = 0;
+                StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
+            }
+            else _currentPreparation ++;
+        }
 
         /// <summary>
         /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
@@ -111,6 +127,7 @@ namespace Gameplay.Enemies
 
         #endregion
 
+        #region Corutines
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
@@ -156,6 +173,7 @@ namespace Gameplay.Enemies
             yield return null;
         }
     }
+    #endregion
 
     public enum EnemyDamageType
     {

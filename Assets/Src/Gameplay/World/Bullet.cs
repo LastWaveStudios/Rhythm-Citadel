@@ -1,6 +1,7 @@
 using Gameplay.Enemies;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.U2D;
 using Utilities.ObjectPool;
@@ -42,15 +43,22 @@ namespace Gameplay.World
         /// <returns></returns>
         private IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
-            Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
+
+            //Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
+
             AEnemy enemy = enemyList[0];
             Vector3 start = transform.position;
+            Vector3 end = enemy.transform.position;
+
+            Vector2 dir = end - start;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
             float time = 0f;
             while (time < dur)
             {
-                Vector3 position = enemy.transform.position;
                 time += Time.deltaTime;
-                transform.position = Vector3.Lerp(start, position, time / dur); // It is better to give a dur limited for not to be 0 or negative, but honestly pass that to this is be retard so ...
+                transform.position = Vector3.Lerp(start, end, time / dur); // It is better to give a dur limited for not to be 0 or negative, but honestly pass that to this is be retard so ...
                 yield return null;
             }
             pool.Release(this);

@@ -64,7 +64,7 @@ namespace Gameplay.World
             }
             else
             {
-                Vector3Int _null= new Vector3Int(0,0,1);
+                Vector3Int _null = new Vector3Int(0,0,1);
                 return _null;
             }
         }

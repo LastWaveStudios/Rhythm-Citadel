@@ -127,7 +127,7 @@ namespace Gameplay.RhythmSystem
                 if (SixteenthCountGlobal % 4 == 0)
                 {
                     // Callback for Quarter
-                    Debug.Log("Quarter");
+                    //Debug.Log("Quarter");
                     onQuarter.Invoke();
                 }
                 if (SixteenthCountGlobal % 8 == 0)
@@ -177,8 +177,8 @@ namespace Gameplay.RhythmSystem
             }
 
             double timeOfTargetSinceStart = timeOfLastMeasureSinceStart + indexOfSixteenthOnMeasure * _timesOfNotes.Sixteenth;
-            Debug.Log($"TIME: 3 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
-                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStart - timeSinceStart}");
+            //Debug.Log($"TIME: 3 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+            //    $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStart - timeSinceStart}");
             return (Math.Abs(timeOfTargetSinceStart - timeSinceStart) <= maxOffset) ? true : false;
         }
 

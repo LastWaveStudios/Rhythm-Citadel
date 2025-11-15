@@ -56,7 +56,12 @@ namespace Gameplay.Towers
                 Debug.LogError("ATower::Init: The world manager is null");
                 return;
             }
-
+            _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
+            if (_waveManager == null)
+            {
+                Debug.LogError("ATower::Init: The world manager is null");
+                return;
+            }
             _poolManager = new PoolManager();
             _poolManager.RegisterPool<Bullet>(new ObjectPool<Bullet>(_bulletPrefab.GetComponent<Bullet>()));
         }
@@ -89,6 +94,11 @@ namespace Gameplay.Towers
         {
             return _groupId;
         }
+        
+        public void SetTile(Vector3Int tile)
+        {
+            _positionInWorldCell = tile;
+        }
         #endregion
 
         #region Other methods
@@ -114,7 +124,7 @@ namespace Gameplay.Towers
             if (enemies == null || enemies.Count == 0) return;
 
             List<AEnemy> objectives = focusType(enemies, _positionInWorldCell, _range);
-            if (objectives == null || objectives.Count == 0) return;
+            if (objectives == null || objectives.Count == 0 || objectives[0] == null) return;
 
             Bullet bullet = _poolManager.Get<Bullet>();
 

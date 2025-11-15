@@ -12,14 +12,17 @@ namespace Gameplay.Towers
             AEnemy chosenEnemy = null;
             foreach (AEnemy enemy in enemiesList)
             {
-                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
-                if (IsInRange(distanceToEnemy, range))
+                if (enemy.isActiveAndEnabled)
                 {
-                    int distanceToObjective = enemy.GetDistanceToObjective();
-                    if (minDistanceToObjective > distanceToObjective) 
+                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    if (IsInRange(distanceToEnemy, range))
                     {
-                        minDistanceToObjective = distanceToObjective;
-                        chosenEnemy = enemy;
+                        int distanceToObjective = enemy.GetDistanceToObjective();
+                        if (minDistanceToObjective > distanceToObjective)
+                        {
+                            minDistanceToObjective = distanceToObjective;
+                            chosenEnemy = enemy;
+                        }
                     }
                 }
             }
@@ -32,11 +35,14 @@ namespace Gameplay.Towers
             AEnemy closestEnemy = null;
             foreach (AEnemy enemy in enemiesList)
             {
-                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
-                if (IsInRange(distanceToEnemy, range) && closestEnemyRange > distanceToEnemy)
+                if (enemy.isActiveAndEnabled)
                 {
-                    closestEnemy = enemy;
-                    closestEnemyRange = distanceToEnemy;
+                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    if (IsInRange(distanceToEnemy, range) && closestEnemyRange > distanceToEnemy)
+                    {
+                        closestEnemy = enemy;
+                        closestEnemyRange = distanceToEnemy;
+                    }
                 }
             }
 
@@ -48,10 +54,13 @@ namespace Gameplay.Towers
             List<AEnemy> enemiesInRange = new List<AEnemy>();
             foreach (AEnemy enemy in enemiesList)
             {
-                int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
-                if (IsInRange(distanceToEnemy, range))
+                if (enemy.isActiveAndEnabled)
                 {
-                    enemiesInRange.Add(enemy);
+                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    if (IsInRange(distanceToEnemy, range))
+                    {
+                        enemiesInRange.Add(enemy);
+                    }
                 }
             }
             return enemiesInRange;
