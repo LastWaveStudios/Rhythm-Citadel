@@ -1,9 +1,10 @@
-using UnityEngine;
 using Gameplay.RhythmSystem;
-using System.Collections.Generic;
 using Gameplay.Waves;
-using Utilities.ServiceLocator;
 using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.Towers
 {
@@ -25,7 +26,7 @@ namespace Gameplay.Towers
         {
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
         }
-
+        /*
         private void Update()
         {
             if (!isAdded && Input.GetKeyDown(KeyCode.A))
@@ -34,6 +35,6 @@ namespace Gameplay.Towers
 
                 isAdded = true;
             }
-        }
+        }*/
     }
 }

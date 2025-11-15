@@ -1,6 +1,9 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
+using Gameplay.World;
 using System;
+using UI.Menus;
+using UI.Menus.States;
 using UnityEngine;
 using Utilities.ServiceLocator;
 
@@ -34,11 +37,12 @@ namespace Gameplay
 
         private WaveManager _waveManager;
         private RhythmManager _rhythmManager;
+        private Dancer _dancer;
 
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
-            if ( _waveManager == null )
+            if (_waveManager == null)
             {
                 Debug.LogError("GameplayManager::Init: The WaveManager is null");
                 return;
@@ -51,7 +55,19 @@ namespace Gameplay
                 Debug.LogError("GameplayManager::Init: The RhythmManager is null");
                 return;
             }
+
             _rhythmManager.onEndRhythm += OnRhythmEnd;
+
+            /**
+            _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
+            if (_dancer == null)
+            {
+                Debug.LogError("GameplayManager::Init: Dancer is null");
+                return;
+            }
+
+            _dancer.onDancerDeath += Defeat;
+            /**/
 
             switch (this.Currentstate)
             {
@@ -68,7 +84,7 @@ namespace Gameplay
         // TODO: Destroy this method -> Just for test purpose
         private void Update()
         {
-            if ( Input.GetKeyDown(KeyCode.L))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.L))
             {
                 ChangeFightState();
             }
@@ -116,7 +132,7 @@ namespace Gameplay
         }
 
         // Must be called by the user with the button, so this GameplayManager must subscribe to that button
-        private void ChangeFightState()
+        public void ChangeFightState()
         {
             if (Currentstate == GameplayState.Fight) return;
 
@@ -151,7 +167,26 @@ namespace Gameplay
 
         private void OnRhythmEnd()
         {
+            Debug.Log("hi");
+            if (_waveManager.nextWaveExists())
+            {
+                Victory();
+            }
             ChangeBuildState();
+        }
+
+        public void Victory()
+        {
+
+            MenuManager.Instance.SetState(new UI.Menus.States.Victory());
+
+        }
+        
+        public void Defeat()
+        {
+
+            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
+                
         }
     }
 }

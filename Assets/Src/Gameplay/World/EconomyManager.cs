@@ -1,10 +1,12 @@
 using Gameplay.Towers;
 using Gameplay.Waves;
+using Input;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
 using Utilities.ServiceLocator;
@@ -47,15 +49,7 @@ namespace Gameplay.World
         }
         #region ClickMethods 
 
-        void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                InputHandler();
-            }
-        }
-
-        void InputHandler()
+        public void InputHandler()
         {
             if (_selectedTilePosition != null)
             {
@@ -147,9 +141,9 @@ namespace Gameplay.World
                 _tilemap.SetTile(clickedCellPosition, _unBuildableTile);
         }
 
-        void GetPositionClicked() // FUNCIONA CON LA C�MARA CENITAL
+        void GetPositionClicked() // FUNCIONA CON LA CAMARA CENITAL
         {
-            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             clickedPosition.z = 0;
 
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);

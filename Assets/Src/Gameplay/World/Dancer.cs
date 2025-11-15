@@ -1,22 +1,17 @@
+using System;
 using UnityEngine;
+using Utilities.ServiceLocator;
 
 namespace Gameplay.World
 {
-    public class Dancer : MonoBehaviour
+    public class Dancer : Utilities.ServiceLocator.AService
     {
         private float _health = 100;
-        public static Dancer Instance { get; private set; }
+        public Action onDancerDeath;
 
-        private void Awake()
+        public override void Init()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            
         }
 
         public void TakeDamage(float damage)
@@ -25,9 +20,11 @@ namespace Gameplay.World
             Debug.Log("La vida actual es " + _health);
         }
 
-        public bool CheckDeath()
+        public void CheckDeath()
         {
-            return _health <= 0;
+            if (_health <= 0)
+                onDancerDeath.Invoke();
+
         }
     }
 }

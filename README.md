@@ -147,8 +147,9 @@
 - [Figura 43: Boceto Interfaz Opciones](#figura-43)
 - [Figura 44: Interfaz Opciones](#figura-44)
 - [Figura 45: Boceto Pantalla Victoria o Derrota](#figura-45)
-- [Figura 46: Pantalla Victoria o Derrota](#figura-46)
-- [Figura 47: Diagrama de Interfaces](#figura-47)
+- [Figura 46: Pantalla Victoria](#figura-46)
+- [Figura 47: Pantalla Derrota](#figura-47)
+- [Figura 48: Diagrama de Interfaces](#figura-48)
 
 
  # **Introducción**
@@ -240,7 +241,7 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
   - Spawn de diversos enemigos
 
 - **Audio:**
-  - ???
+  - Ritmo de Partida
 
 2. ## **Estimación temporal del desarrollo**
 
@@ -406,7 +407,7 @@ El objetivo de los enemigos es destruir a la bailarina, por lo que el jugador de
 
 9. ## **Diagramas de Clases**
 - Estos diagramas son una primera aproximación de cómo deberá estar organizado el código. 
-Diagrama de clases - Entidades. En este primer diagrama se muestra una visión general de las entidades que habrá y parte de su interacción. Habrá que tener en cuenta que AEnemy y ATower son clases abstractas de las cuales cada enemigo específico y cada torre específica heredarán un comportamiento básico.
+Diagrama de clases - Entidades. En este primer diagrama se muestra una visión general de las entidades que habrá y parte de su interacción. Habrá que tener en cuenta que AEnemy y ATower son clases abstractas de las cuales cada enemigo específico y cada torre específica heredarán un comportamiento básico.  
 
 <a id="figura-1"></a>
 ![DragramaClases](./Imagenes_ReadMe/DiagramaClases.png)  
@@ -453,7 +454,7 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
       
 <a id="figura-5"></a>
 ![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
-*Figura 5: Torreta Tambor*
+*Figura 5: Torreta Tambor*  
       
 <a id="figura-6"></a>
 ![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
@@ -486,7 +487,7 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 
 <a id="figura-13"></a>
 ![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
-*Figura 13: Enemigo Redonda*     
+*Figura 13: Enemigo Redonda*  
       
 <a id="figura-14"></a>
 ![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
@@ -498,28 +499,29 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
       
 <a id="figura-16"></a>
 ![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
-*Figura 16: Enemigo Clave de Sol*
+*Figura 16: Enemigo Clave de Sol*  
    
   3. ###  **Bailarina**
 <a id="figura-17"></a>
-![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.jpeg)  
-*Figura 17: Keyframes Bailarina*
+![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.png)  
+*Figura 17: Keyframes Bailarina*  
 
 <a id="figura-18"></a>
 ![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
-*Figura 18: Keyframes Bailarina Levemente Dañada*
+*Figura 18: Keyframes Bailarina Levemente Dañada*  
 
 <a id="figura-19"></a>
 ![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
-*Figura 19: Keyframes Bailarina Moderadamente Dañada*
+*Figura 19: Keyframes Bailarina Moderadamente Dañada*  
 
 <a id="figura-20"></a>
 ![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
-*Figura 20: Keyframes Bailarina Gravemente Dañada*
-
+*Figura 20: Keyframes Bailarina Gravemente Dañada*  
+  
+    
 <a id="figura-21"></a>
 ![BailarinaInicio](./Imagenes_ReadMe/BailarinaInicio.png)  
-*Figura 21: Keyframes Bailarina Inicio*
+*Figura 21: Keyframes Bailarina Inicio*  
 
 
    
@@ -530,7 +532,7 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
       
 <a id="figura-23"></a>
 ![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
-*Figura 23: Nivel 1*     
+*Figura 23: Nivel 1*  
       
 <a id="figura-24"></a>
 ![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
@@ -590,7 +592,7 @@ Se observará desde una vista militar donde se verá un tablero por donde se dar
       <em>Figura 29: Decoraciones</em>
     </td>
   </tr>
-</table>
+</table>  
 
 
 
@@ -638,63 +640,63 @@ Las diferentes pantallas planteadas son las siguientes:
   
 <a id="figura-30"></a>
 ![BocetoMenuInicial](./Imagenes_ReadMe/BocetoInterfazMenuInicial.jpeg)  
-*Figura 30: Boceto Interfaz Menú Inicial*
+*Figura 30: Boceto Interfaz Menú Inicial*  
 
 <a id="figura-31"></a>
 ![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.png)  
-*Figura 31: Interfaz Menú Inicial*
+*Figura 31: Interfaz Menú Inicial*  
   
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
   
 <a id="figura-32"></a>
 ![BocetoInterfazSelectorDificultad](./Imagenes_ReadMe/BocetoInterfazSelectorDificultad.jpeg)  
-*Figura 32: Boceto Interfaz Selector de Dificultad*
+*Figura 32: Boceto Interfaz Selector de Dificultad*  
 
 <a id="figura-33"></a>
 ![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.png)  
-*Figura 33: Interfaz Selector de Dificultad*
+*Figura 33: Interfaz Selector de Dificultad*  
   
 - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
     
 <a id="figura-34"></a>
 ![BocetoInterfazTutorial](./Imagenes_ReadMe/BocetoInterfazTutorial.jpeg)  
-*Figura 34: Boceto Interfaz Tutorial*
+*Figura 34: Boceto Interfaz Tutorial*  
 
 <a id="figura-35"></a>
 ![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.png)  
-*Figura 35: Interfaz Tutorial*
+*Figura 35: Interfaz Tutorial*  
 
 
 - Créditos: Es una pantalla donde aparecen los nombres de los integrantes del grupo y sus funciones.
 
 <a id="figura-36"></a>
 ![BocetoInterfazCréditos](./Imagenes_ReadMe/BocetoInterfazCréditos.jpeg)  
-*Figura 36: Boceto Interfaz Créditos*
+*Figura 36: Boceto Interfaz Créditos*  
 
 <a id="figura-37"></a>
 ![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.png)  
-*Figura 37: Interfaz Créditos*
+*Figura 37: Interfaz Créditos*  
 
 - Partida: Es la pantalla más importante del juego, donde se jugarán las partidas.
 <a id="figura-38"></a>
 ![BocetoInterfazPartida](./Imagenes_ReadMe/BocetoInterfazPartida.jpeg)  
-*Figura 38: Boceto Interfaz Partida*
+*Figura 38: Boceto Interfaz Partida*  
 
 <a id="figura-39"></a>
 ![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.png)  
-*Figura 39: Interfaz Partida*
+*Figura 39: Interfaz Partida*  
 
 - Patrones rítmicos: Esta pantalla será accesible durante la fase de construcción. En esta interfaz veremos el patrón rítmico que siguen las torretas para poder atacar.
 
 <a id="figura-40"></a>
 ![InterfazPatron](./Imagenes_ReadMe/InterfazPatron.png)  
-*Figura 40: Interfaz Patrón Rítmico*  
+*Figura 40: Interfaz Patrón Rítmico*    
 
 - Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.  
   
 <a id="figura-41"></a>
 ![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
-*Figura 41: Boceto Interfaz Pausa*  
+*Figura 41: Boceto Interfaz Pausa*    
 
 <a id="figura-42"></a>
 ![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.png)  
@@ -705,26 +707,30 @@ Las diferentes pantallas planteadas son las siguientes:
 
 <a id="figura-43"></a>
 ![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
-*Figura 43: Boceto Interfaz Opciones*
+*Figura 43: Boceto Interfaz Opciones*  
 
 <a id="figura-44"></a>
 ![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.png)  
-*Figura 44: Interfaz Opciones*
+*Figura 44: Interfaz Opciones*  
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
 <a id="figura-45"></a>
 ![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
-*Figura 45: Boceto Pantalla Victoria o Derrota*
+*Figura 45: Boceto Pantalla Victoria o Derrota*  
 
 <a id="figura-46"></a>
-![InterfazFinal](./Imagenes_ReadMe/InterfazFinal.png)  
-*Figura 46: Pantalla Victoria o Derrota*
+![InterfazFinalVV](./Imagenes_ReadMe/InterfazFinalVV.png)  
+*Figura 46: Pantalla Victoria*  
+
+<a id="figura-47"></a>
+![InterfazFinalDD](./Imagenes_ReadMe/InterfazFinalDD.png)  
+*Figura 47: Pantalla Derrota*  
 
 1. ## **Diagrama de flujo**
-<a id="figura-47"></a>
+<a id="figura-48"></a>
 ![DiagramaInterfaces](./Imagenes_ReadMe/DiagramaInterfaces.png)  
-*Figura 47: Diagrama de Interfaces*
+*Figura 48: Diagrama de Interfaces*  
 
   # **Hoja de ruta del desarrollo**
 ## **Hitos para la ALPHA:**
