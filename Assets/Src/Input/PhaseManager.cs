@@ -4,22 +4,16 @@ namespace Input
 {
     public class PhaseManager : MonoBehaviour
     {
-        private PlayerInput inputs;
         public Phase current { get; set; } = Phase.Build;
-
-        /* private void Awake()
-         {
-             Set
-         }*/
         public void SetPhase(Phase phase)
         {
             switch (phase)
             {
                 case Phase.Build:
-                    inputs.SwitchCurrentActionMap("Build");
+                    InputReader.Instance.EnableBuildActions();
                     break;
                 case Phase.Battle:
-                    inputs.SwitchCurrentActionMap("Battle");
+                    InputReader.Instance.EnableBattleActions();
                     break;
             }
             Debug.Log("Cambiar de fase");

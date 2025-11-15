@@ -1,5 +1,6 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
+using Input;
 using System;
 using UnityEngine;
 using Utilities.ServiceLocator;
@@ -37,6 +38,7 @@ namespace Gameplay
 
         public override void Init()
         {
+            Debug.Log("Init del GamplayManager");
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
             if ( _waveManager == null )
             {
@@ -55,7 +57,7 @@ namespace Gameplay
 
             switch (this.Currentstate)
             {
-                case GameplayState.Build:
+                case GameplayState.Build: 
                     BuildAction();
                     break;
                 case GameplayState.Fight:
@@ -64,7 +66,6 @@ namespace Gameplay
                     break;
             }
         }
-
 
         private void OnEnemyDeath(int vinyls)
         {
@@ -99,10 +100,11 @@ namespace Gameplay
         {
             onFinishRhythmStateEnd.Invoke();
             onBuildStateStart.Invoke();
+            
 
             _waveManager.InitNextWave();
 
-            // TODO: Activate the InputMap
+            InputReader.Instance.EnableBuildActions();  //ESTO SI ESTA BIEN
 
         }
 
@@ -115,13 +117,13 @@ namespace Gameplay
 
             FightAction();
         }
-        private void FightAction()
+        public void FightAction()
         {
             _waveManager.StartWave();
 
             onBuildStateEnd.Invoke();
             onFightStateStart.Invoke();
-            // TODO: Activate the map of Fight
+            InputReader.Instance.EnableBattleActions();
 
         }
 

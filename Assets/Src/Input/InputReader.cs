@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Gameplay.World;
+using Gameplay;
 
 namespace Input
 {
@@ -14,7 +15,7 @@ namespace Input
         #region TowersMap
         public Action<int> onTapGroup = delegate { };
         [SerializeField] private EconomyManager _economyManager;
-        [SerializeField] private PhaseManager _phaseManager;
+        [SerializeField] private GameplayManager _gameplayManager;
         #endregion
         private void Awake()
         {
@@ -22,6 +23,7 @@ namespace Input
             Debug.Log("InputReader Awake ejecutado");
             _actions = new Actions();
             //Si no funcionan los botones habilitar aqui
+            EnableBuildActions();
         }
 
         #region EnablersAndDisablers
@@ -37,7 +39,7 @@ namespace Input
             _actions.Battle.SetCallbacks(this);
             _actions.Build.SetCallbacks(this);
 
-            EnableBuildActions();
+            //
          }
 
         private void OnDisable()
@@ -55,6 +57,7 @@ namespace Input
 
         public void EnableBattleActions()
         {
+            Debug.Log("Acciones battle habilitadas");
             _actions.Battle.Enable();
             _actions.Build.Disable();
         }
@@ -63,12 +66,12 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            Debug.Log("Accion poner torre");
             if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) _phaseManager.SetPhase(Phase.Battle);
+            Debug.Log("Accion cambiar fase");
+            if (context.phase == InputActionPhase.Started) _gameplayManager.FightAction();
         }
 
         #region TowersMap
