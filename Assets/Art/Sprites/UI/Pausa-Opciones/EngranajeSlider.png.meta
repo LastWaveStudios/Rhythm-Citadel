@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 97b551c62e494da439fc35ff3dddadc7
+guid: 9445107abb66fc744a47b037468641a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7226405695312399860
-    second: Pausa_0
+      213: 1603161877270084287
+    second: EngranajeSlider_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pausa_0
+      name: EngranajeSlider_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 20
-        width: 134
-        height: 134
+        x: 68
+        y: 58
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fd84f751b9594460800000000000000
-      internalID: 7226405695312399860
+      spriteID: fbab124cb339f3610800000000000000
+      internalID: 1603161877270084287
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 48a603b04f46fb249b5002beab977545
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pausa_0: 7226405695312399860
+      EngranajeSlider_0: 1603161877270084287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
