@@ -28,6 +28,7 @@ namespace Gameplay.Enemies
 
         protected WorldManager _worldManager;
         protected RhythmManager _rhythmManager;
+        protected Dancer _dancer;
 
 
         #region Starting methods
@@ -39,17 +40,23 @@ namespace Gameplay.Enemies
         private void TakeReferences()
         {
             _worldManager = ServiceLocatorSubsystem.Instance.GetService<WorldManager>();
-            if (_worldManager == null )
+            if (_worldManager == null)
             {
                 Debug.LogError("AEnemy::TakeReferences: The WorldManager was null");
             }
 
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
-            if ( _rhythmManager == null )
+            if (_rhythmManager == null)
             {
                 Debug.LogError("AEnemy::TakeReferences: The RhythmManager was null");
             }
             SubscribeToRhythm();
+            
+            _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("AEnemy::TakeReferences: The Dancer was null");
+            }
         }
 
         protected abstract void SubscribeToRhythm();
@@ -84,7 +91,7 @@ namespace Gameplay.Enemies
         public void Attack() {
             Debug.Log("En metodo atacar");
 
-            Dancer.Instance.TakeDamage(_damage);
+            _dancer.TakeDamage(_damage);
         }
         public void TakeDamage(DamageType type, int damageToTake) 
         {
