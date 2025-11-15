@@ -1,4 +1,6 @@
 using System.Collections;
+using UI.Menus;
+using UI.Menus.States;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -22,7 +24,7 @@ namespace UI.GameplayUI.Buttons
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            throw new System.NotImplementedException();
+            MenuManager.Instance.SetState(new Pause());
         }
 
         public void OnPointerEnter(PointerEventData eventData)
