@@ -1,7 +1,6 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
 using Gameplay.World;
-using Input;
 using System;
 using UI.Menus;
 using UI.Menus.States;
@@ -69,8 +68,6 @@ namespace Gameplay
 
             _dancer.onDancerDeath += Defeat;
             /**/
-
-            InputReader.Instance.onChangeToBattlePhase += ChangeFightState;
 
             switch (this.Currentstate)
             {

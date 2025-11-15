@@ -37,8 +37,6 @@ namespace Gameplay.World
             _waveManager.onEnemyDeath += AddVinyl;
 
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
-
-            InputReader.Instance.onClick += InputHandler;
         }
 
         #region ClickMethods 

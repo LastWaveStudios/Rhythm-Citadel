@@ -14,13 +14,9 @@ namespace Input
 
         #region TowersMap
         public Action<int> onTapGroup = delegate { };
+        [SerializeField] private EconomyManager _economyManager;
+        [SerializeField] private GameplayManager _gameplayManager;
         #endregion
-
-        #region BattleMap
-        public Action onClick = delegate { };
-        public Action onChangeToBattlePhase = delegate { };
-        #endregion
-
         private void Awake()
         {
             base.Awake();
@@ -66,11 +62,11 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onClick.Invoke();
+            if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) onChangeToBattlePhase.Invoke();
+            if (context.phase == InputActionPhase.Started) _gameplayManager.ChangeFightState();
         }
 
         #region TowersMap
