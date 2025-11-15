@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4917816632294706385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6743458890667738213}
+  - component: {fileID: 5761621768764317907}
+  m_Layer: 0
+  m_Name: CitadelMarch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6743458890667738213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917816632294706385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 497.3083, y: 276.06915, z: -1.4610634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5761621768764317907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917816632294706385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc34641f758ae6643a7f2c133457626f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipsRhythms:
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 94afb34d2063a2449ae7e6cef82e6177, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 60fa8ab9842e96c478ea538ee6ac0c46, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 29b5060bbccbf804585b452e78827d0e, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 84c6ead20731cf348874bc85688c0a8c, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: e0fe1e54c30f00647af0b8d0dc19baf6, type: 3}
+    measuresDuration: 8
+  - audioSources: []
+    audioSourceIndex: 0
+    audioClip: {fileID: 8300000, guid: 036b99dab81ca6f4da50c0826f933ad0, type: 3}
+    measuresDuration: 8
