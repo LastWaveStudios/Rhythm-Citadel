@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 97b551c62e494da439fc35ff3dddadc7
+guid: c8d48b3f8a7a983449f37f28d807763b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7226405695312399860
-    second: Pausa_0
+      213: 6379457563110028627
+    second: EngranajeMediano_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pausa_0
+      name: EngranajeMediano_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 20
-        width: 134
-        height: 134
+        x: 55
+        y: 47
+        width: 103
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fd84f751b9594460800000000000000
-      internalID: 7226405695312399860
+      spriteID: 3553ad49ad2688850800000000000000
+      internalID: 6379457563110028627
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 48a603b04f46fb249b5002beab977545
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pausa_0: 7226405695312399860
+      EngranajeMediano_0: 6379457563110028627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
