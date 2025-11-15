@@ -178,7 +178,7 @@ namespace Gameplay
         public void Victory()
         {
 
-            MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
+            MenuManager.Instance.SetState(new UI.Menus.States.Victory());
 
         }
         
