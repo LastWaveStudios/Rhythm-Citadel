@@ -43,7 +43,6 @@ namespace Gameplay.World
 
         public void InputHandler()
         {
-            Debug.Log("Se ejecuta el Economy Manager");
             if (_selectedTilePosition != null)
             {
                 if (_countExitMenu >= 1) CloseMenu();

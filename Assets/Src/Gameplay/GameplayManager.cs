@@ -38,7 +38,6 @@ namespace Gameplay
 
         public override void Init()
         {
-            Debug.Log("Init del GamplayManager");
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
             if ( _waveManager == null )
             {
@@ -104,12 +103,12 @@ namespace Gameplay
 
             _waveManager.InitNextWave();
 
-            InputReader.Instance.EnableBuildActions();  //ESTO SI ESTA BIEN
+            InputReader.Instance.EnableBuildActions(); 
 
         }
 
         // Must be called by the user with the button, so this GameplayManager must subscribe to that button
-        private void ChangeFightState()
+        public void ChangeFightState()
         {
             if (Currentstate == GameplayState.Fight) return;
 
@@ -117,7 +116,7 @@ namespace Gameplay
 
             FightAction();
         }
-        public void FightAction()
+        private void FightAction()
         {
             _waveManager.StartWave();
 

@@ -20,14 +20,12 @@ namespace Input
         private void Awake()
         {
             base.Awake();
-            Debug.Log("InputReader Awake ejecutado");
             _actions = new Actions();
-            //Si no funcionan los botones habilitar aqui
             EnableBuildActions();
         }
 
         #region EnablersAndDisablers
-         private void OnEnable() //Esto activa todos los mapas
+         private void OnEnable() 
          {
              if (_actions == null)
              {
@@ -50,14 +48,12 @@ namespace Input
         }
         public void EnableBuildActions()
         {
-            Debug.Log("Acciones build habilitadas");
             _actions.Build.Enable();
             _actions.Battle.Disable();
         }
 
         public void EnableBattleActions()
         {
-            Debug.Log("Acciones battle habilitadas");
             _actions.Battle.Enable();
             _actions.Build.Disable();
         }
@@ -70,8 +66,7 @@ namespace Input
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
-            Debug.Log("Accion cambiar fase");
-            if (context.phase == InputActionPhase.Started) _gameplayManager.FightAction();
+            if (context.phase == InputActionPhase.Started) _gameplayManager.ChangeFightState();
         }
 
         #region TowersMap
