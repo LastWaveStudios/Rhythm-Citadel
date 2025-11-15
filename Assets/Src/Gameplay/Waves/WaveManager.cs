@@ -97,7 +97,7 @@ namespace Gameplay.Waves
                 _waves[CurrentWave].enemiesToSpawn[LastEnemySpawnedInCurrentWave + 1].SixteenthOfSpawn == _rhythmManager.SixteenthCountGlobal)
             {
                 _currentWaveEnemies[++LastEnemySpawnedInCurrentWave].gameObject.SetActive(true);
-                Debug.Log($"Active the {LastEnemySpawnedInCurrentWave} enemy");
+                //Debug.Log($"Active the {LastEnemySpawnedInCurrentWave} enemy");
             }
             if (LastEnemySpawnedInCurrentWave == _currentWaveEnemies.Count - 1)
             {

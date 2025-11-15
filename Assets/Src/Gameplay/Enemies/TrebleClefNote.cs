@@ -17,11 +17,6 @@ namespace Gameplay.Enemies
             _rhythmManager.onMeasure += OnRhythmUpdate; //CHANGE
         }
 
-        protected override void OnRhythmUpdate()
-        {
-            StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
-        }
-
         protected override void Death()
         {
             _isAlive = false;

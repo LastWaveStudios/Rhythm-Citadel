@@ -12,11 +12,6 @@ namespace Gameplay.Towers.SpecificTowers
             focusType = FocusStrategies.AreaAttack;
         }
 
-        void LateUpdate()
-        {
-            //Lower is, higher appear
-            spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-        }
     }
 }
 

@@ -106,3 +106,4 @@ MonoBehaviour:
   _moveTime: 0.5
   _resistance: 0
   _vinylDrop: 3
+  _preparationBeats: 4

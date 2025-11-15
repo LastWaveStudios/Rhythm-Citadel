@@ -2,6 +2,7 @@ using Gameplay.Towers;
 using Gameplay.Waves;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
@@ -18,9 +19,11 @@ namespace Gameplay.World
         [SerializeField] private TileBase _unBuildableTile;
         [SerializeField] private GameObject _buildingMenu;
         [SerializeField] private GameObject _updateMenu;
+        [SerializeField] private GameObject _vinylTextPrefab;
+
         [SerializeField] private int _vinyl = 0;
         private int _countExitMenu = 0;
-
+        private TextMeshProUGUI _vinylText;
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
         private Vector3Int? _selectedTilePosition = null;
 
@@ -37,6 +40,11 @@ namespace Gameplay.World
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
         }
 
+        private void Start()
+        {
+            _vinylText = _vinylTextPrefab.GetComponent<TextMeshProUGUI>();
+            _vinylText.text = _vinyl.ToString();
+        }
         #region ClickMethods 
 
         void Update()
@@ -92,13 +100,13 @@ namespace Gameplay.World
         /// <param name="towerToSpawn"> Prefab de la torre a spawnear</param>
         void SpawnTower(Vector3Int spawnPosition, GameObject towerToSpawn)
         {
-            Debug.Log("Comprando");
             Vector3 offset = new Vector3(0, _tilemap.cellSize.y / 2, 0);
             Vector3 tileCenter = _tilemap.GetCellCenterWorld(spawnPosition);
             UnityEngine.GameObject instantiatedTower = Instantiate(towerToSpawn, tileCenter - offset, Quaternion.identity);
             _existingTowers.Add(spawnPosition, instantiatedTower);
 
             ATower aTower = instantiatedTower.GetComponent<ATower>();
+            aTower.SetTile(spawnPosition);
             _towersManager.AddTower(aTower, aTower.GetGroup());
         }
 
@@ -153,10 +161,10 @@ namespace Gameplay.World
         void AddVinyl(int vinyl)
         {
             _vinyl += vinyl;
+            _vinylText.text = _vinyl.ToString();
         }
         public void TryBuyTower(GameObject towerToBuy)
         {
-            Debug.Log("Intentando comprar");
             ATower script = towerToBuy.GetComponent<ATower>();
             int towerPrice = script.GetPrice();
             if (CanBuy(towerPrice))
@@ -179,6 +187,7 @@ namespace Gameplay.World
         void SpendVinyl(int price)
         {
             _vinyl -= price;
+            _vinylText.text = _vinyl.ToString();
         }
         #endregion
 

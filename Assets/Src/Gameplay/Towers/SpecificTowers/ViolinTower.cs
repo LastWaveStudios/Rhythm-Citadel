@@ -13,12 +13,6 @@ namespace Gameplay.Towers.SpecificTowers
             focusType = FocusStrategies.FirstEnemy;
         }
         
-        void LateUpdate()
-        {
-            //Lower is, higher appear
-            spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
-        }
-
     }
 }
 

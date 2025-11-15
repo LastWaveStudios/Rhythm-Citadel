@@ -92,9 +92,12 @@ MonoBehaviour:
   _beatGearPrefab: {fileID: 2447438426616030232, guid: d47caf0958a286a42bf42b0ef01fedf3, type: 3}
   _measureGearPrefab: {fileID: 1298656763154408885, guid: 95df4638c32dfeb4e8b595e08462bc6b, type: 3}
   _gearsContainer: {fileID: 4796557764142353839}
+  _bigGearGameObject: {fileID: 3717280821959901752}
   _gear: {fileID: 6570540687862238293}
   _spawnTransform: {fileID: 7339200840593469580}
   _moveTime: 0.1
+  _rotateCantity: 25
+  _rotateScale: 0.8
 --- !u!1 &3717280821959901752
 GameObject:
   m_ObjectHideFlags: 0
