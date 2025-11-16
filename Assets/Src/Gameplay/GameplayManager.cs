@@ -66,7 +66,6 @@ namespace Gameplay
                 Debug.LogError("GameplayManager::Init: Dancer is null");
                 return;
             }
-
             _dancer.onDancerDeath += Defeat;
             InputReader.Instance.EnableBuildActions();
 
@@ -103,13 +102,11 @@ namespace Gameplay
 
         public void Resume()
         {
-            Time.timeScale = 1.0f;
             onResume.Invoke(Currentstate);
         }
 
         public void Pause()
         {
-            Time.timeScale = 0.0f;
             onPause.Invoke(Currentstate);
         }
 
@@ -181,7 +178,7 @@ namespace Gameplay
             MenuManager.Instance.SetState(new UI.Menus.States.Victory());
 
         }
-        
+
         public void Defeat()
         {
 

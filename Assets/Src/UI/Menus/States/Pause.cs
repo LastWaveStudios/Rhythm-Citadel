@@ -39,5 +39,19 @@ namespace UI.Menus.States
                 MenuManager.Instance.SetState(new Gameplay());
             }
         }
+
+        public override void Enter()
+        {
+            base.Enter();
+            Time.timeScale = 0.0f;
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            Time.timeScale = 1.0f;
+        }
+
+
     }
 }
