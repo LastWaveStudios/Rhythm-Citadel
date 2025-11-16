@@ -6,7 +6,7 @@ namespace Gameplay.World
 {
     public class Dancer : Utilities.ServiceLocator.AService
     {
-        private float _health = 100;
+        [SerializeField] private float _health = 100;
         public Action onDancerDeath;
 
         public override void Init()
@@ -17,6 +17,7 @@ namespace Gameplay.World
         public void TakeDamage(float damage)
         {
             _health -= damage;
+            CheckDeath();
             Debug.Log("La vida actual es " + _health);
         }
 

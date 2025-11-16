@@ -53,13 +53,13 @@ namespace Gameplay.Enemies
                 Debug.LogError("AEnemy::TakeReferences: The RhythmManager was null");
             }
             SubscribeToRhythm();
-            /**
+            
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
             if (_dancer == null)
             {
                 Debug.LogError("AEnemy::TakeReferences: The Dancer was null");
             }
-            /**/
+            
         }
 
         protected abstract void SubscribeToRhythm();
@@ -141,6 +141,7 @@ namespace Gameplay.Enemies
             if (nextTile == finalTile)
             {
                 Debug.Log("Estamos en el Tile final");
+                _dancer.TakeDamage(_damage);
                 Death();
 
                 yield break;
