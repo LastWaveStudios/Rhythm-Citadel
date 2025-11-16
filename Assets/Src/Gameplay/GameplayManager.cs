@@ -1,6 +1,7 @@
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
 using Gameplay.World;
+using Input;
 using System;
 using UI.Menus;
 using UI.Menus.States;
@@ -58,7 +59,7 @@ namespace Gameplay
 
             _rhythmManager.onEndRhythm += OnRhythmEnd;
 
-            /**
+            
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
             if (_dancer == null)
             {
@@ -67,7 +68,7 @@ namespace Gameplay
             }
 
             _dancer.onDancerDeath += Defeat;
-            /**/
+            
 
             switch (this.Currentstate)
             {
@@ -127,7 +128,7 @@ namespace Gameplay
 
             _waveManager.InitNextWave();
 
-            // TODO: Activate the InputMap
+            InputReader.Instance.EnableBuildActions();
 
         }
 
@@ -143,11 +144,10 @@ namespace Gameplay
         private void FightAction()
         {
             _waveManager.StartWave();
-
+            Debug.Log("FIGHT ACTION");
             onBuildStateEnd.Invoke();
             onFightStateStart.Invoke();
-            // TODO: Activate the map of Fight
-
+            InputReader.Instance.EnableBattleActions();
         }
 
         private void ChangeFinishRhythmState()
