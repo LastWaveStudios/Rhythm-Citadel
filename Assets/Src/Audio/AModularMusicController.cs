@@ -124,6 +124,8 @@ namespace Audio
         /// </summary>
         public virtual void StartPlay()
         {
+            _currentMeasure = 0;
+            _changeOnNextMeasure = false;
             for (int i = 0; i < _currentClipsRhythms.Length; ++i)
             {
                 _clipsRhythms[_currentClipsRhythms[i]].audioSources[_clipsRhythms[_currentClipsRhythms[i]].audioSourceIndex].Play();
