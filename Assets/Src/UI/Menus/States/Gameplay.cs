@@ -59,10 +59,10 @@ namespace UI.Menus.States
         public void Update(float deltaTime)
         {
             // TODO: Change to input system if we finally use it
-            /*if (Input.GetKeyDown(KeyCode.Escape))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
             {
                 MenuManager.Instance.SetState(new Pause());
-            }*/
+            }
         }
     }
 }

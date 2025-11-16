@@ -31,6 +31,13 @@ namespace UI.Menus.States
                     return;
             }
         }
-        public override void Update(float deltaTime) { }
+        public override void Update(float deltaTime)
+        {
+            // TODO: Change to input system if we finally use it
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
+            {
+                MenuManager.Instance.SetState(new Gameplay());
+            }
+        }
     }
 }

@@ -117,7 +117,7 @@ MonoBehaviour:
       isDottedNote: 0
       isSilence: 0
       durationInSixteenths: 8
-    spaceInSixteenths: 0
+    spaceInSixteenths: 16
   _damageType: 4
   _minDamage: 9
   _MaxDamage: 14
