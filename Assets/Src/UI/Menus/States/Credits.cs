@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UI.Menus.Navigation;
 using UnityEngine;
 
@@ -6,6 +9,7 @@ namespace UI.Menus.States
     internal class Credits : AMenuState
     {
         public Credits() : base("Menus/CreditsMenu") { }
+       
 
         protected override void OnMenuNavigation(EMenuButton option)
         {
