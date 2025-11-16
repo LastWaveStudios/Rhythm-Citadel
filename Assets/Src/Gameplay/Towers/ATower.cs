@@ -94,6 +94,11 @@ namespace Gameplay.Towers
         {
             return _groupId;
         }
+
+        public RhythmPattern GetPattern()
+        {
+            return _pattern;
+        }
         
         public void SetTile(Vector3Int tile)
         {

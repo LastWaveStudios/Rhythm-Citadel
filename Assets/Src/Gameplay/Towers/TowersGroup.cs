@@ -77,8 +77,14 @@ namespace Gameplay.Towers
         {
             if (!isEnabled) return CheckRhythmStatus.SkipActions;
             if (_towers.Count == 0) return CheckRhythmStatus.SkipActions;
-            
+
             _indexOfNoteInPattern = (_indexOfNoteInPattern + 1) % _pattern.patternNotes.Count;
+
+            // Skip Silences
+            while (_pattern.patternNotes[_indexOfNoteInPattern].isSilence)
+            {
+                _indexOfNoteInPattern = (_indexOfNoteInPattern + 1) % _pattern.patternNotes.Count;
+            }
             
             if (_rhythmManager.IsInTime(_pattern.patternNotes[_indexOfNoteInPattern], _pattern.GetIndexOfSixteenthOnMeasure(_indexOfNoteInPattern), _maxOffset))
             {

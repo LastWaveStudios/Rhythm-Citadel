@@ -102,6 +102,9 @@ namespace Gameplay.World
             ATower aTower = instantiatedTower.GetComponent<ATower>();
             aTower.SetTile(spawnPosition);
             _towersManager.AddTower(aTower, aTower.GetGroup());
+
+            // TODO: Not really god have it here
+            _towersManager.SetPatternGroup(aTower.GetPattern(), aTower.GetGroup());
         }
 
         /// <summary>
