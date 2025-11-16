@@ -68,7 +68,8 @@ namespace Gameplay
             }
 
             _dancer.onDancerDeath += Defeat;
-            
+            InputReader.Instance.EnableBuildActions();
+
 
             switch (this.Currentstate)
             {
@@ -144,7 +145,6 @@ namespace Gameplay
         private void FightAction()
         {
             _waveManager.StartWave();
-            Debug.Log("FIGHT ACTION");
             onBuildStateEnd.Invoke();
             onFightStateStart.Invoke();
             InputReader.Instance.EnableBattleActions();

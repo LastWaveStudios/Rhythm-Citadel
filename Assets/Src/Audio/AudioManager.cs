@@ -17,6 +17,11 @@ namespace Audio
         public float MusicVol { get { return _musicVol; } private set { _musicVol = value; } }
         public float SFXVol { get { return _SFXVol; } private set { _SFXVol = value; } }
 
+        private void Awake()
+        {
+            base.Awake();
+            DontDestroyOnLoad(gameObject);
+        }
         private void Start()
         {
             audioControl.SetFloat("Master", ConvertToLogValue(_masterVol));
