@@ -8,8 +8,8 @@ namespace UI.GameplayUI.Buttons
     {
         public override void OnPointerClick(PointerEventData eventData)
         {
-            _economyManager.UpdateTower();
-            _economyManager.CloseMenu();
+            //_economyManager.UpdateTower();
+            //_economyManager.CloseMenu();
         }
     }
 }
