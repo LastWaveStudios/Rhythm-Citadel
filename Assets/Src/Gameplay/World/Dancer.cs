@@ -1,15 +1,18 @@
 using System;
 using UnityEngine;
 using Utilities.ServiceLocator;
+using UnityEngine.UI;
 
 namespace Gameplay.World
 {
     public class Dancer : Utilities.ServiceLocator.AService
     {
         [SerializeField] private float _health = 100;
+        private float _maxLife;
         public Action onDancerDeath;
         private SpriteRenderer _spriteRender;
         [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private Image lifeFill;
 
         public override void Init()
         {
@@ -18,11 +21,13 @@ namespace Gameplay.World
         private void Awake()
         {
             _spriteRender = GetComponent<SpriteRenderer>();
+            _maxLife = _health;
         }
 
         public void TakeDamage(float damage)
         {
             _health -= damage;
+            lifeFill.fillAmount = _health/ _maxLife;
             CheckDeath();
             Debug.Log("La vida actual es " + _health);
            if (_health < 25)
