@@ -89,7 +89,14 @@
   - 9.1.4. [Hito 4: Desarrollo del WorldManager](#hito-4-desarrollo-del-worldmanager)
   - 9.1.5. [Hito 5: Diseño de personajes](#hito-5-diseño-de-personajes)
 - 9.2. [Hitos para la Beta](#hitos-para-la-beta)
-  - 9.2.1. [Hito 6: ejemplo](hito-6-ejemplo)
+  - 9.2.1. [Hito 6: Diseño de interfaces](hito-6-diseño-de-interfaces)
+  - 9.2.2. [Hito 7: Interacción de enemigos](hito-7-interacción-de-enemigos)
+  - 9.2.3. [Hito 8: Interacción de torretas](hito-8-interacción-de-torretas)
+  - 9.2.4. [Hito 9: Diseño de los tiles finales](hito-9-diseño-de-los-tiles-finales)
+  - 9.2.5. [Hito 10: Bucle de juego completo](hito-10-bucle-de-juego-completo)
+  - 9.2.6. [Hito 11: Menús implementados](hito-11-menús-implementados)
+  - 9.2.7. [Hito 12: Creación de oleadas](hito-12-creación-de-oleadas)
+  - 9.2.8. [Hito 13: Tutorial](hito-13-tutorial)
 - 9.3. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
 ## 10. [PostMortem](#postmortem)
@@ -231,7 +238,6 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
 
 - **Arte:**
   - Interaces finales
-  - Arte promocional
   - Flyer
   - Animaciones
  
@@ -245,16 +251,17 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
 
 2. ## **Estimación temporal del desarrollo**
 
-///////////////Rehacer tabla////////////////////////
-
-| Área | Tarea | Duración (d) | Comienzo | Fin |
+| Área | Tarea | Duración (h) | Comienzo | Fin |
 |------|-------|-------------|----------|-----|
 | **Arte** | Logo de Equipo | 1 | 26/9 | 27/9 |
 | | Diseño 2D Enemigos | 4 | 30/9 | 4/10 |
 | | Diseño 2D Torretas | 4 | 5/10 | 9/10 |
-| | Diseño 2D Bailarina | 2 | 10/10 | 12/10 |
+| | Diseño 2D Ballarina | 2 | 10/10 | 12/10 |
 | | Bocetos de interfaces | 1 | 13/10 | 14/10 |
-| **Programación** | Flujo de juego | 1 | 30/9 | 1/10 |
+| | Interfaces finales | 5 | 2/11 | 15/11 |
+| | Flyer | 4 | 19/10 | 1/11 |
+| **Programación** | Animaciones | 6 | 3/11 | 10/11 |
+| | Flujo de juego | 1 | 30/9 | 1/10 |
 | | Diagrama de interfaces | 1 | 30/9 | 1/10 |
 | | Implementación de interfaces | 2 | 2/10 | 4/10 |
 | | Movimiento de enemigos | 2 | 16/10 | 18/10 |
@@ -262,16 +269,21 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
 | | Base bailarina | 1 | 14/10 | 15/10 |
 | | Secuencia rítmica | 3 | 8/10 | 11/10 |
 | | Gestor del mundo | 3 | 9/10 | 12/10 |
-| | Object Pool | 1 | 17/10 | 18/10 |
-| | Nivel completo jugable | 16 | 2/10 | 18/10 |
+| | Objet Pool | 1 | 17/10 | 18/10 |
+| | Nivel completo jugable | 4 | 11/11 | 15/11 |
+| | Patrón de daño | 2 | 3/11 | 5/11 |
+| | Elección de torreta | 2 | 6/11 | 8/11 |
+| | Spawn de diversos enemigos | 1 | 9/11 | 10/11 |
 | **Diseño y Funcionalidad** | Conceptualización del juego | 3 | 25/9 | 28/9 |
 | | Diseño de niveles | 1 | 5/10 | 6/10 |
 | | Estadística de Entidades | 2 | 30/9 | 2/10 |
 | | Economía del juego | 1 | 7/10 | 8/10 |
-| **Otros** | GDD | 3 | 25/9 | 19/10 |
-| | Página web | 3 | 15/10 | 18/10 |
-| | Reuniones | 10 | 25/9 | 19/10 |
-| **Total** |  | **67** | **26/9** | **19/10** |
+| **Audio** | Música | 3 | 6/11 | 10/11 |
+| | SFX | 2 | 6/11 | 8/11 |
+| **Otros** | GDD/ReadMe | 15 | 25/9 | 16/11 |
+| | Página web | 10 | 15/10 | 16/11 |
+| | Reuniones | 20 | 25/9 | 16/11 |
+| **Total** |  | **109** | **26/9** | **16/11** |
 
   # **Mecánicas y Elementos de Juego**
 1. ## **Descripción detallada del concepto de juego**
@@ -303,11 +315,11 @@ Para construir las torretas, el jugador deberá pulsar encima de los puntos del 
 
 Cada torreta tendrá una tecla asignada que tendrá que pulsar al ritmo correspondiente para poder destruir a los enemigos:
 
-- Trompeta: tecla W
-- Violín: tecla V
-- Piano: tecla H
-- Saxofón: tecla U
-- Tambor: tecla L
+- Trompeta: tecla J
+- Violín: tecla K
+- Piano: tecla D
+- Tambor: tecla S
+- Saxofón: tecla C
 
 
 4. ## **Niveles y misiones**
@@ -382,12 +394,12 @@ Para desarrollar la economía del juego, se ha establecido que los enemigos base
 Para que las torres sean asequibles al principio, a las torretas básicas se les asigna un coste de 55-75 Vinilos; a las del tier 2 120-150; y a las del tier 3, 160-200.
 Para las mejoras, se usará el coste básico con un multiplicador. Para la primera mejora, dicho multiplicador será de 0.6, para la segunda de 0.8 y para la tercera de 1.2.
 
-| Torre | Precio de compra | Mejora 1 | Mejora 2 | Mejora 3 |
+| Torre | Precio de compra | Mejora 1 | Mejora 2 | Mejora A / B |
 |-------|------------------|----------|----------|----------|
-| Violín | 55 | 33 | 44 | 66 |
-| Trompeta | 75 | 45 | 60 | 90 |
-| Piano | 130 | 78 | 104 | 156 |
-| Tambor | 180 | 108 | 144 | 216 |  
+| Violín | 70 | 110 | 160 | 210/220 |
+| Trompeta | 95 | 150 | 220 | 280/310 |
+| Piano | 110 | 170 | 250 | 300/325 |
+| Tambor | 130 | 200 | 260 | 350/300 |  
 
 A continuación se recoge una estimación del número de enemigos por oleada y vinilos conseguidos o esperados.  
 
@@ -663,7 +675,7 @@ Las diferentes pantallas planteadas son las siguientes:
 *Figura 34: Boceto Interfaz Tutorial*  
 
 <a id="figura-35"></a>
-![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.png)  
+![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
 *Figura 35: Interfaz Tutorial*  
 
 
@@ -750,10 +762,30 @@ Se ha desarrollado un gestor para administrar los diferentes posibles caminos qu
 Se tienen los diseños o sprites de las torres, los enemigos y la bailarina.
 
 ## **Hitos para la BETA**
-1. ### **Hito 6: prueba**
-Texto
+1. ### **Hito 6: Diseño de interfaces**
+Se han diseñado las interfaces en su totalidad, desde los fondos de estas, los botones y sus decoraciones, incluyendo animaciones.
 
-2. 
+2. ### **Hito 7: Interacción de enemigos**
+El movimiento de los enemigos ha sido refinado para no superponerse y se les ha añadido la funcionalidad de atacar el edificio nexo (la Bailarina).  
+
+3. ### **Hito 8: Interacción de torretas**
+Las torretas son capaces de disparar, sacando balas de un Object Pool para ser computacionalmente eficientes. Cada una tiene un coste y hace un tipo de daño distinto y se controlan con un botón específico al ritmo de la música.
+
+4. ### **Hito 9: Diseño del los tiles finales**
+Se han diseñado los tiles que se usarán durante todo el proyecto, incluyendo las decoraciones para los mapas.
+
+5. ### **Hito 10: Bucle de juego completado**
+El juego se puede jugar en bucle, habiendo menú principal, pantalla de juego, y pantallas de victoria y derrota desde las que se puede volver a acceder a las dos anteriores para jugar nuevas partidas.
+
+6. ### **Hito 11: Menús implementados**
+Se han implementado menús de uso mayor, como son el principal, los créditos, y las variantes de victoria y derrota incluyendo animaciones de los botones.
+
+7. ### **Hito 12: Creación de oleadas**
+Se ha creado un nivel de juego con varias oleadas, cada una con distintos enemigos que van aumentando la dificultad de la partida.
+
+8. ### **Hito 13: Tutorial**
+Se ha añadido un tutorial de tipo manual para enseñar la funcionalidad del juego, incluyendo las mecánicas básicas y los patrones de cada torre.    
+   
 
 ## **Fecha de lanzamiento**
 Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubre del 2025.
@@ -800,30 +832,31 @@ Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubr
 ### Lecciones aprendidas individuales
 
 1. #### Claudia Alejandra Fernández Torrejón  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: El planteamiento desde el inicio se ha hecho bien permitiendo un avance organizado del proyecto así como teniendo en cuenta su prioridad. Respecto al arte, al haber varios assets ya hechos de la fase anterior no hubo saturación pese a ser una sola persona a cargo. Dando tiempo incluso a incluir detalles que se esperaban tener para la Golden.
+   - **Cosas que se pueden mejorar**: Se puede mejorar el diseño de los tiles, añadiendo más decoraciones y más versiones para que el juego pueda tener mayor diversidad. 
 
 2. #### Iván García García  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Se ha llevado un buen ritmo del desarrollo, con buena comunicación en términos generales, al igual que durante la beta ha habido mucho trabajo durante las clases, y un ritmo fluido.
+   - **Cosas que se pueden mejorar**: La comunicación quizás ha sido un poco menor, sobre todo en el equipo de programación, puesto que se ha tendido a ir algo más por libre y eso ha complicado algo el proceso de desarrollo.
+
 
 3. #### George Picu Hordoan  
-   - **Cosas que se han hecho bien** 
-   - **Cosas que se pueden mejorar**
+   - **Cosas que se han hecho bien**: Plantear bien las tareas y las prioridades. Otra cosa que consideraría que se hizo bien es avanzar en las tareas en general (no creo que se hayan dejado para el último momento, aunque al principio se avanzó más lento). También la comunicación con el equipo diría que es un punto fuerte.   
+   - **Cosas que se pueden mejorar**: El centrarse en una tarea, porque me veo empezando varias y haciéndolas simultáneas en vez de hacer una bien y después la otra. Organizar mejor el tiempo entre este proyecto y otros. También incluiría la calidad de la comunicación, porque aunque sea positivo creo que podría haber sido más eficaz.
 
 4. #### Unai Retes Corada  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Se ha tenido una buena organización de las tareas desde el principio, y el equipo se ha coordinado correctamente para avanzar en las tareas.
+   - **Cosas que se pueden mejorar**: No hacer mucho trabajo en una sola sesión, y mejor ir trabajando regularmente en menor medida.
 
 5. #### Ángela Fernández Hernández  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: El planteamiento de tareas en dos tandas según su prioridad. A nivel de trabajo, me he organizado mejor que en la fase anterior y he avanzado en mis tareas asignadas.
+   - **Cosas que se pueden mejorar**: Plantearme que ciertas tareas de las que tengo poco conocimiento pueden llevar más horas de las que me planteo en primer lugar.
 
 6. #### Arturo Carretero Aguado  
-   - **Cosas que se han hecho bien**: 
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Dedicarme a las tareas que se me han asignado con constancia y consistencia cuando se me ha sido posible/el avance general en mis tareas. Diría que he gestionado mejor la carga de trabajo durante la semana final debido a la presión elevada y a que ya concluyeron las entregas de otros trabajos previos con más urgencia.
+   - **Cosas que se pueden mejorar**: Organizarme mejor para coordinar este proyecto con otros que también requiere mucho trabajo. También podría intentar comunicarme más con el equipo.
 
 
 ### Trabajo grupal  
-- **Cosas que se han hecho bien:**
-- **Cosas que se pueden mejorar:**
+- **Cosas que se han hecho bien:** Se ha avanzado a buen ritmo en esta fase, mucho mejor que en la anterior, lo que ha evitado que se dejen las cosas para el último día.
+- **Cosas que se pueden mejorar:** Tener un código más uniforme, con un estilo más coherente. Tener una comunicación de mayor calidad.
