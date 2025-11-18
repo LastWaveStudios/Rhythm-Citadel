@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BehaviourAPI.Demos
 {
-    public class CubeChangeFSM : MonoBehaviour
+    public class CubeChangeFSMMoore : MonoBehaviour
     {
         private SpriteRenderer _spriteRenderer;
 
@@ -40,19 +40,21 @@ namespace BehaviourAPI.Demos
         }
 
         #region Functions for agent
-
         private void ChangeRed()
         {
+            Debug.Log("Change Red");
             _spriteRenderer.color = Color.red;
         }
 
         private void ChangeGreen()
         {
+            Debug.Log("Change Green");
             _spriteRenderer.color = Color.green;
         }
 
         private void ChangeBlue()
         {
+            Debug.Log("Change Blue");
             _spriteRenderer.color = Color.blue;
         }
         #endregion
