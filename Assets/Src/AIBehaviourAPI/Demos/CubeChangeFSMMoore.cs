@@ -14,24 +14,24 @@ namespace BehaviourAPI.Demos
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
-            _fsm = new FSM("Cube Change");
+            _fsm = new FSM("Cube Change", false, 3, 3);
             
-            Node redNode = new Node("Red", ChangeRed);
-            Node greenNode = new Node("Green", ChangeGreen);
-            Node blueNode = new Node("Blue",  ChangeBlue);
+            NodeFSM redNodeFsm = new NodeFSM("Red", ChangeRed);
+            NodeFSM greenNodeFsm = new NodeFSM("Green", ChangeGreen);
+            NodeFSM blueNodeFsm = new NodeFSM("Blue",  ChangeBlue);
             
-            Transition redToGreen = new Transition(redNode, greenNode, "redToGreen", () => UnityEngine.Input.GetKey(KeyCode.G), () => Debug.Log("Red -> Green"));
-            Transition greenToBlue = new Transition(greenNode, blueNode, "greenToBlue", () => UnityEngine.Input.GetKey(KeyCode.B), () => Debug.Log("Green -> Blue"));
-            Transition blueToRed = new Transition(blueNode, redNode, "blueToRed", () => UnityEngine.Input.GetKey(KeyCode.R), () => Debug.Log("Blue -> Red"));
+            TransitionFSM redToGreen = new TransitionFSM(redNodeFsm, greenNodeFsm, "redToGreen", () => UnityEngine.Input.GetKey(KeyCode.G), () => Debug.Log("Red -> Green"));
+            TransitionFSM greenToBlue = new TransitionFSM(greenNodeFsm, blueNodeFsm, "greenToBlue", () => UnityEngine.Input.GetKey(KeyCode.B), () => Debug.Log("Green -> Blue"));
+            TransitionFSM blueToRed = new TransitionFSM(blueNodeFsm, redNodeFsm, "blueToRed", () => UnityEngine.Input.GetKey(KeyCode.R), () => Debug.Log("Blue -> Red"));
             
-            _fsm.RegisterNode(redNode);
-            _fsm.RegisterNode(greenNode);
-            _fsm.RegisterNode(blueNode);
+            _fsm.RegisterNode(redNodeFsm);
+            _fsm.RegisterNode(greenNodeFsm);
+            _fsm.RegisterNode(blueNodeFsm);
             _fsm.RegisterTransition(redToGreen);
             _fsm.RegisterTransition(greenToBlue);
             _fsm.RegisterTransition(blueToRed);
             
-            _fsm.Init(redNode);
+            _fsm.Init(redNodeFsm);
         }
 
         private void Update()

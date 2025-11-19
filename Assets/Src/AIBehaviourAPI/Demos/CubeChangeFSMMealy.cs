@@ -14,24 +14,24 @@ namespace BehaviourAPI.Demos
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
-            _fsm = new FSM("Cube Change");
+            _fsm = new FSM("Cube Change", false, 3, 3);
             
-            Node redNode = new Node("Red");
-            Node greenNode = new Node("Green");
-            Node blueNode = new Node("Blue");
+            NodeFSM redNodeFsm = new NodeFSM("Red");
+            NodeFSM greenNodeFsm = new NodeFSM("Green");
+            NodeFSM blueNodeFsm = new NodeFSM("Blue");
             
-            Transition redToGreen = new Transition(redNode, greenNode, "redToGreen", () => UnityEngine.Input.GetKey(KeyCode.G), ChangeGreen);
-            Transition greenToBlue = new Transition(greenNode, blueNode, "greenToBlue", () => UnityEngine.Input.GetKey(KeyCode.B), ChangeBlue);
-            Transition blueToRed = new Transition(blueNode, redNode, "blueToRed", () => UnityEngine.Input.GetKey(KeyCode.R), ChangeRed);
+            TransitionFSM redToGreen = new TransitionFSM(redNodeFsm, greenNodeFsm, "redToGreen", () => UnityEngine.Input.GetKey(KeyCode.G), ChangeGreen);
+            TransitionFSM greenToBlue = new TransitionFSM(greenNodeFsm, blueNodeFsm, "greenToBlue", () => UnityEngine.Input.GetKey(KeyCode.B), ChangeBlue);
+            TransitionFSM blueToRed = new TransitionFSM(blueNodeFsm, redNodeFsm, "blueToRed", () => UnityEngine.Input.GetKey(KeyCode.R), ChangeRed);
             
-            _fsm.RegisterNode(redNode);
-            _fsm.RegisterNode(greenNode);
-            _fsm.RegisterNode(blueNode);
+            _fsm.RegisterNode(redNodeFsm);
+            _fsm.RegisterNode(greenNodeFsm);
+            _fsm.RegisterNode(blueNodeFsm);
             _fsm.RegisterTransition(redToGreen);
             _fsm.RegisterTransition(greenToBlue);
             _fsm.RegisterTransition(blueToRed);
             
-            _fsm.Init(redNode);
+            _fsm.Init(redNodeFsm);
         }
 
         private void Update()

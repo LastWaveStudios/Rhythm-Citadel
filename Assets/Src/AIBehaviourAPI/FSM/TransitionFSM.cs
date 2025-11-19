@@ -2,7 +2,7 @@
 
 namespace AIBehaviourAPI.FSM
 {
-    public class Transition : ITransition
+    public class TransitionFSM : ITransition
     {
         private INode _originNode;
         private INode _destinationNode;
@@ -16,7 +16,7 @@ namespace AIBehaviourAPI.FSM
         public Func<bool> Condition => _condition;
         public string Name => _name;
         
-        public Transition(INode originNode, INode destinationNode, string name, Func<bool> condition, Action action = null)
+        public TransitionFSM(INode originNode, INode destinationNode, string name, Func<bool> condition, Action action = null)
         {
             _originNode = originNode;
             _destinationNode = destinationNode;

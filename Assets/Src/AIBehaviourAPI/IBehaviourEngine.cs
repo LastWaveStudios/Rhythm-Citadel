@@ -3,6 +3,7 @@ namespace AIBehaviourAPI
 {
     public interface IBehaviourEngine
     {   
+        public System.Action<INode, INode> OnCurrentNodeDoesTransition { get; set; }
         public Status Status { get; }
         public void Init(INode initialNode);
 

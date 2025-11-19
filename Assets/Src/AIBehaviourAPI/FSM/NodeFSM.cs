@@ -4,17 +4,18 @@ using System.Text;
 
 namespace AIBehaviourAPI.FSM
 {
-    public class Node : INode
+    public class NodeFSM : INode
     {
-        private Action _action;
-        private List<ITransition> _inputTransitions;
-        private List<ITransition> _outputTransitions;
-        private string _name;
+        protected Action _action;
+        protected List<ITransition> _inputTransitions;
+        protected List<ITransition> _outputTransitions;
+        protected string _name;
+        
         public Action Action => _action;
         public List<ITransition> InputTransitions => _inputTransitions;
         public List<ITransition> OutputTransitions => _outputTransitions;
         public string Name => _name;
-        public Node(string name, Action action = null)
+        public NodeFSM(string name, Action action = null)
         {
             _action = action;
             _name = name;

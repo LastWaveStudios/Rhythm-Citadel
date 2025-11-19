@@ -1,5 +1,6 @@
 
 
+using System;
 using System.Collections.Generic;
 
 namespace AIBehaviourAPI.FSM
@@ -7,6 +8,7 @@ namespace AIBehaviourAPI.FSM
     public class FSM : IBehaviourGraph
     {
         #region --------------------------- Properties And Variables ---------------------------
+        protected Action<INode, INode> _onCurrentNodeDoesTransition;
         protected Status _status;
         protected INode _initialNode;
         protected INode _currentNode;
@@ -15,7 +17,12 @@ namespace AIBehaviourAPI.FSM
         
         protected List<INode> _nodes;
         protected List<ITransition> _transitions;
-        
+
+        public Action<INode, INode> OnCurrentNodeDoesTransition
+        {
+            get { return _onCurrentNodeDoesTransition; }
+            set { _onCurrentNodeDoesTransition = value; }
+        }
         public Status Status => _status;
         public INode InitialNode => _initialNode;
 
@@ -56,6 +63,7 @@ namespace AIBehaviourAPI.FSM
 
             _status = Status.Running;
             _initialNode = initialNode;
+            _onCurrentNodeDoesTransition?.Invoke(_currentNode, initialNode);
             _currentNode = initialNode;
         }
 
@@ -73,6 +81,7 @@ namespace AIBehaviourAPI.FSM
                 if (_currentNode.OutputTransitions[i].Condition())
                 {
                     _currentNode.OutputTransitions[i].Action?.Invoke();
+                    _onCurrentNodeDoesTransition?.Invoke(_currentNode, _currentNode.OutputTransitions[i].DestinationNode);
                     _currentNode = _currentNode.OutputTransitions[i].DestinationNode;
                     break;
                 }
@@ -105,6 +114,7 @@ namespace AIBehaviourAPI.FSM
             
             if (!_mustRestartToInitialNode) return;
             
+            _onCurrentNodeDoesTransition?.Invoke(_currentNode, _initialNode);
             _currentNode = _initialNode;
         }
         #endregion
