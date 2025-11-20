@@ -93,12 +93,25 @@ namespace Gameplay.Enemies
         {
             return (_currentPreparation >= _preparationBeats);
         }
+
+        public bool isLastTile()
+        {
+            return _worldManager.GetNextTile(_path, _index) == _worldManager.GetLastTile(_path);
+        }
+        public void AddPreparation()
+        {
+            _currentPreparation++;
+        }
+
+        public void ResetPreparation()
+        {
+            _currentPreparation = 0;
+        }
         #endregion
 
         #region Other methods
-        public void Attack() {
-            Debug.Log("En metodo atacar");
-
+        public void Attack() 
+        {
             _dancer.TakeDamage(_damage);
         }
         public void TakeDamage(DamageType type, int damageToTake) 
@@ -107,6 +120,12 @@ namespace Gameplay.Enemies
             else _health -= damageToTake;
             if (_health <= 0 && this.isActiveAndEnabled) Death();
         }
+
+        public void Move()
+        {
+            StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
+        }
+
         #endregion
 
         #region Abstract Methods
@@ -115,7 +134,6 @@ namespace Gameplay.Enemies
             if (isPrepared())
             {
                 _currentPreparation = 0;
-                StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
             }
             else _currentPreparation ++;
         }
