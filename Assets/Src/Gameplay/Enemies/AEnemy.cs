@@ -12,28 +12,35 @@ namespace Gameplay.Enemies
 {
     public abstract class AEnemy : MonoBehaviour
     {
+        #region --------------------------- Variables ---------------------------
+
         [SerializeField] const float RESISTANCE_MULTIPLAYER = 0.5f;
 
-        [SerializeField] protected int _health;
         [SerializeField] protected EnemyDamageType _damageType;   //Melee, Range, Contact
-        [SerializeField] protected int _damage;
+        [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
+
         [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected DamageType _resistance;   //None, String, Percussion or Hybrid
+        [SerializeField] protected int _health;        
+        [SerializeField] protected int _damage;
         [SerializeField] protected int _vinylDrop = 0;
-        [SerializeField] protected int _preparationBeats = 4;   // Beats that the enemy needs to prepare to move. Some enemies may change this value
+        [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
 
+        // Non editable variables
         protected int _path = 0;    
-        protected int _index = 0;   //Current Tile
-        protected bool _isAlive = false; // If is death is not active
+        protected int _index = 0;           //Current Tile
+        public bool IsAlive { get; protected set; } = true;    // If is death is not active
         protected int _currentPreparation = 0;
-        public Action<AEnemy> onDeath = delegate {  };
 
+        public Action<AEnemy> onDeath = delegate { };
+
+        // References
         protected WorldManager _worldManager;
         protected RhythmManager _rhythmManager;
         protected Dancer _dancer;
 
+        #endregion
 
-        #region Starting methods
+        #region ------------------------------ Starting methods ------------------------------
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
@@ -59,10 +66,15 @@ namespace Gameplay.Enemies
             {
                 Debug.LogError("AEnemy::TakeReferences: The Dancer was null");
             }
-            
+
+            InitializeBehaviour();
         }
 
         protected abstract void SubscribeToRhythm();
+
+        protected abstract void InitializeBehaviour();
+
+        protected abstract void PushDeath();
 
         public void Init(int path)
         {
@@ -71,13 +83,18 @@ namespace Gameplay.Enemies
         }
         #endregion
 
-        #region Getters and setters
+        #region ------------------------------ Getters and setters ------------------------------
 
         public int GetDrop()
         {
             return _vinylDrop;
         }
 
+        // Method used in case the enemy attacks, then you get no reward
+        public void SetDrop(int drop)
+        {
+            _vinylDrop = drop;
+        }
         public Vector3Int GetTile()
         {
             return _worldManager.GetTile(_path, _index);
@@ -89,45 +106,61 @@ namespace Gameplay.Enemies
             return pathTilesCount - _index;
         }
 
-        public bool isPrepared()
+        #region PerceptionsMethods
+        public bool IsMovementPrepared()
         {
             return (_currentPreparation >= _preparationBeats);
         }
+        public bool IsInTarget()
+        {
+            return _worldManager.GetNextTile(_path, _index) == _worldManager.GetLastTile(_path);
+        }
+        public void PrepareMovement()
+        {
+            _currentPreparation++;
+        }
+
+        public void RestartMovementPreparation()
+        {
+            _currentPreparation = 0;
+        }
+        #endregion
+
         #endregion
 
         #region Other methods
-        public void Attack() {
-            Debug.Log("En metodo atacar");
-
+        public void Attack() 
+        {
             _dancer.TakeDamage(_damage);
         }
+
         public void TakeDamage(DamageType type, int damageToTake) 
         {
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
-            if (_health <= 0 && this.isActiveAndEnabled) Death();
+            if (_health <= 0 && this.isActiveAndEnabled) PushDeath();
         }
+
+        public void Move()
+        {
+            StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
+        }
+
         #endregion
 
-        #region Abstract Methods
-        protected virtual void OnRhythmUpdate()
-        {
-            if (isPrepared())
-            {
-                _currentPreparation = 0;
-                StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
-            }
-            else _currentPreparation ++;
-        }
+        #region ------------------------------ Abstract Methods ------------------------------
+
+        // Honestly can be just deleted and manage in the children but for have the same name in all of them and do not forget it is not bad
+        protected abstract void OnRhythmUpdate();
 
         /// <summary>
         /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
         /// </summary>
-        protected abstract void Death();
+        public abstract void Death();
 
         #endregion
 
-        #region Corutines
+        #region ------------------------------ Corutines ------------------------------
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
@@ -135,17 +168,6 @@ namespace Gameplay.Enemies
         {
             Vector3Int nextTile = _worldManager.GetNextTile(_path, _index);
             _index++;
-            
-            // Cambiar para q sea el WorldManager del q coja el utimo Tile. Ya he creado la variable ahora relacionemosla
-            Vector3Int finalTile = _worldManager.GetLastTile(_path);
-            if (nextTile == finalTile)
-            {
-                Debug.Log("Estamos en el Tile final");
-                _dancer.TakeDamage(_damage);
-                Death();
-
-                yield break;
-            }
             
             Vector3 originPos = transform.position;
             Vector3 targetPos = _worldManager.GetCellCenterWorld(nextTile);

@@ -9,7 +9,7 @@ namespace AIBehaviourAPI
 
         public void Update();
 
-        public void UnInit();
+        public void Finish();
 
         public void Pause();
 

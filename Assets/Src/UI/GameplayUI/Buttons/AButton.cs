@@ -9,7 +9,7 @@ namespace UI.GameplayUI.Buttons
 {
     public abstract class AButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        public string name;
+        public new string name;
         public TextMeshProUGUI text;
         private Animator _animator;
 

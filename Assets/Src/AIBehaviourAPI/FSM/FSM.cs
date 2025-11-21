@@ -89,7 +89,7 @@ namespace AIBehaviourAPI.FSM
             _currentNode.Action?.Invoke();
         }
 
-        public void UnInit()
+        public void Finish()
         {
             if (_status == Status.None && _status == Status.Finished)
                 throw new BehaviourAPIException("Cannot uninitialize FSM after it has been uninitialized or before he was been initialized.");
@@ -117,8 +117,17 @@ namespace AIBehaviourAPI.FSM
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, _initialNode);
             _currentNode = _initialNode;
         }
+
+        public void ChangeState(INode target)
+        {
+            if (!_nodes.Contains(target))
+                throw new BehaviourAPIException("Target not found.");
+
+            _onCurrentNodeDoesTransition?.Invoke(_currentNode, target);
+            _currentNode = target;
+        }
         #endregion
-        
+
         #region --------------------------- Creation Methods ---------------------------
         public void RegisterNode(INode node)
         {
