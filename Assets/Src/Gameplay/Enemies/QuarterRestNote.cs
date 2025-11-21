@@ -17,9 +17,27 @@ namespace Gameplay.Enemies
             _rhythmManager.onQuarter += OnRhythmUpdate;
         }
 
+        protected override void InitializeBehaviour()
+        {
+            //TODO: Behaviour
+            throw new System.NotImplementedException();
+        }
+
+        protected override void PushDeath()
+        {
+            //TODO: Behaviour
+            throw new System.NotImplementedException();
+        }
+
+        protected override void OnRhythmUpdate()
+        {
+            //TODO: Behaviour
+            throw new System.NotImplementedException();
+        }
+
         public override void Death()
         {
-            _isAlive = false;
+            IsAlive = false;
             _rhythmManager.onQuarter -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);

@@ -28,12 +28,10 @@ namespace Gameplay.Enemies
         // Non editable variables
         protected int _path = 0;    
         protected int _index = 0;           //Current Tile
-        protected bool _isAlive = false;    // If is death is not active
+        public bool IsAlive { get; protected set; } = true;    // If is death is not active
         protected int _currentPreparation = 0;
 
-        // Delegates
-        public Action<AEnemy> onDeath = delegate {  };
-        public Action<AEnemy> OnBeatEvent = delegate { };
+        public Action<AEnemy> onDeath = delegate { };
 
         // References
         protected WorldManager _worldManager;
@@ -68,10 +66,15 @@ namespace Gameplay.Enemies
             {
                 Debug.LogError("AEnemy::TakeReferences: The Dancer was null");
             }
-            
+
+            InitializeBehaviour();
         }
 
         protected abstract void SubscribeToRhythm();
+
+        protected abstract void InitializeBehaviour();
+
+        protected abstract void PushDeath();
 
         public void Init(int path)
         {
@@ -103,24 +106,26 @@ namespace Gameplay.Enemies
             return pathTilesCount - _index;
         }
 
-        public bool isPrepared()
+        #region PerceptionsMethods
+        public bool IsMovementPrepared()
         {
             return (_currentPreparation >= _preparationBeats);
         }
-
-        public bool isInLastTile()
+        public bool IsInTarget()
         {
             return _worldManager.GetNextTile(_path, _index) == _worldManager.GetLastTile(_path);
         }
-        public void AddPreparation()
+        public void PrepareMovement()
         {
             _currentPreparation++;
         }
 
-        public void ResetPreparation()
+        public void RestartMovementPreparation()
         {
             _currentPreparation = 0;
         }
+        #endregion
+
         #endregion
 
         #region Other methods
@@ -133,7 +138,7 @@ namespace Gameplay.Enemies
         {
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
-            if (_health <= 0 && this.isActiveAndEnabled) Death();
+            if (_health <= 0 && this.isActiveAndEnabled) PushDeath();
         }
 
         public void Move()
@@ -144,10 +149,9 @@ namespace Gameplay.Enemies
         #endregion
 
         #region ------------------------------ Abstract Methods ------------------------------
-        protected virtual void OnRhythmUpdate()
-        {
-            OnBeatEvent?.Invoke(this);
-        }
+
+        // Honestly can be just deleted and manage in the children but for have the same name in all of them and do not forget it is not bad
+        protected abstract void OnRhythmUpdate();
 
         /// <summary>
         /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate

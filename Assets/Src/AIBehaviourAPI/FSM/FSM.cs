@@ -89,7 +89,7 @@ namespace AIBehaviourAPI.FSM
             _currentNode.Action?.Invoke();
         }
 
-        public void UnInit()
+        public void Finish()
         {
             if (_status == Status.None && _status == Status.Finished)
                 throw new BehaviourAPIException("Cannot uninitialize FSM after it has been uninitialized or before he was been initialized.");
