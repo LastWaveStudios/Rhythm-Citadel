@@ -96,7 +96,7 @@ namespace Audio
                 for (int i = 0; i < _nextClipsRhythms.Length; ++i)
                 {
                     _clipsRhythms[_nextClipsRhythms[i]].SwitchAudioSource();
-                    Debug.Log($"{_nextClipsRhythms[i]} : Next index of music = {_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex}");
+                    //Debug.Log($"{_nextClipsRhythms[i]} : Next index of music = {_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex}");
                     _clipsRhythms[_nextClipsRhythms[i]].audioSources[_clipsRhythms[_nextClipsRhythms[i]].audioSourceIndex].PlayScheduled(_rhythmManager.GetNextMeasureTime());
                 }
             }

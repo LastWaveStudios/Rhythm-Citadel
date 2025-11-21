@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using AIBehaviourAPI.FSM;
 using Gameplay.Enemies;
+using Gameplay.World;
 using UnityEngine;
 
 namespace BehaviourAPI.Enemies
@@ -10,63 +12,81 @@ namespace BehaviourAPI.Enemies
         private AEnemy _aEnemy;
 
         private FSM _fsm;
+        private bool _moveFinished;
 
+        private NodeFSM _movementPreparation;
+        private NodeFSM _movement;
+        private NodeFSM _dying;
+        private NodeFSM _attacking;
         private void Start()
         {
             _aEnemy = GetComponent<AEnemy>();
+            _aEnemy.onDeath += HandleDeath;
 
+            _aEnemy.OnBeatEvent += OnBeatUpdate;
             _fsm = new FSM("Base Enemy Behaviour", false, 3, 3);
 
-            NodeFSM movementPreparation = new NodeFSM("movementPreparation", _aEnemy.AddPreparation);
-            NodeFSM movement = new NodeFSM("movement");
-            NodeFSM dying = new NodeFSM("dying", _aEnemy.Attack);
+            _movementPreparation = new NodeFSM("prepare", Prepare);
+            _movement = new NodeFSM("move", OnMove);
+            _dying = new NodeFSM("death", OnDeath);
+            _attacking = new NodeFSM("attack", Attack);
 
-            TransitionFSM startMovement = new TransitionFSM(movementPreparation, movement, "start movement", _aEnemy.isPrepared, ChangeToMovement);
-            TransitionFSM startPreparation = new TransitionFSM(movement, movementPreparation, "start preparation", () => true);
+            TransitionFSM startMovement = new TransitionFSM(_movementPreparation, _movement, "start movement", transitionToMovement, ()=> Debug.Log("start movement"));
+            TransitionFSM startAttack = new TransitionFSM(_movementPreparation, _attacking, "start movement", transitionToAttack, ()=> Debug.Log("start attack"));
+            TransitionFSM startPreparation = new TransitionFSM(_movement, _movementPreparation, "start preparation", () => true, () => _aEnemy.ResetPreparation());
 
-            TransitionFSM redToGreen = new TransitionFSM(redNodeFsm, greenNodeFsm, "redToGreen", () => UnityEngine.Input.GetKey(KeyCode.G), ChangeGreen);
-            TransitionFSM greenToBlue = new TransitionFSM(greenNodeFsm, blueNodeFsm, "greenToBlue", () => UnityEngine.Input.GetKey(KeyCode.B), ChangeBlue);
-            TransitionFSM blueToRed = new TransitionFSM(blueNodeFsm, redNodeFsm, "blueToRed", () => UnityEngine.Input.GetKey(KeyCode.R), ChangeRed);
 
-            _fsm.RegisterNode(redNodeFsm);
-            _fsm.RegisterNode(greenNodeFsm);
-            _fsm.RegisterNode(blueNodeFsm);
-            _fsm.RegisterTransition(redToGreen);
-            _fsm.RegisterTransition(greenToBlue);
-            _fsm.RegisterTransition(blueToRed);
+            _fsm.RegisterNode(_movementPreparation);
+            _fsm.RegisterNode(_movement);
+            _fsm.RegisterNode(_dying);
+            _fsm.RegisterNode(_attacking);
+            _fsm.RegisterTransition(startMovement);
+            _fsm.RegisterTransition(startPreparation);
+            _fsm.RegisterTransition(startAttack);
 
-            _fsm.Init(redNodeFsm);
+            _fsm.Init(_movementPreparation);
         }
 
-        private void Update()
+        private void OnBeatUpdate(AEnemy enemy)
         {
             _fsm.Update();
         }
 
-        #region Functions for agent
-
-        private void ChangeToMovement()
+        private void HandleDeath(AEnemy enemy)
         {
-
-        }
-        private void ChangeRed()
-        {
-            Debug.Log("Change Red");
-            _spriteRenderer.color = Color.red;
+            _fsm.ChangeState(_dying);
         }
 
-        private void ChangeGreen()
+        private void Prepare()
         {
-            Debug.Log("Change Green");
-            _spriteRenderer.color = Color.green;
+            _aEnemy.AddPreparation();
         }
 
-        private void ChangeBlue()
+        private void OnMove()
         {
-            Debug.Log("Change Blue");
-            _spriteRenderer.color = Color.blue;
+            _aEnemy.Move();
         }
-        #endregion
+
+        private void OnDeath() 
+        {
+            _aEnemy.Death();
+        }
+
+        private void Attack() 
+        {
+            _aEnemy.SetDrop(0);
+            _aEnemy.Attack();
+            _aEnemy.Death();
+        }
+        private bool transitionToMovement()
+        {
+            return _aEnemy.isPrepared() && !_aEnemy.isInLastTile();
+        }
+        private bool transitionToAttack()
+        {
+            return _aEnemy.isPrepared() && _aEnemy.isInLastTile();
+        }
+
     }
 }
 

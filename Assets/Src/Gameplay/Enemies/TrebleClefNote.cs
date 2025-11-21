@@ -17,7 +17,7 @@ namespace Gameplay.Enemies
             _rhythmManager.onMeasure += OnRhythmUpdate; //CHANGE
         }
 
-        protected override void Death()
+        public override void Death()
         {
             _isAlive = false;
             _rhythmManager.onMeasure -= OnRhythmUpdate;

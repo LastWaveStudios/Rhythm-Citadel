@@ -29,7 +29,6 @@ namespace Gameplay.World
             _health -= damage;
             lifeFill.fillAmount = _health/ _maxLife;
             CheckDeath();
-            Debug.Log("La vida actual es " + _health);
            if (_health < 25)
             {
                 _spriteRender.sprite = _sprites[0];

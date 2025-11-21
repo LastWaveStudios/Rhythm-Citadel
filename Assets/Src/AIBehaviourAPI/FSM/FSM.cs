@@ -117,8 +117,17 @@ namespace AIBehaviourAPI.FSM
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, _initialNode);
             _currentNode = _initialNode;
         }
+
+        public void ChangeState(INode target)
+        {
+            if (!_nodes.Contains(target))
+                throw new BehaviourAPIException("Target not found.");
+
+            _onCurrentNodeDoesTransition?.Invoke(_currentNode, target);
+            _currentNode = target;
+        }
         #endregion
-        
+
         #region --------------------------- Creation Methods ---------------------------
         public void RegisterNode(INode node)
         {
