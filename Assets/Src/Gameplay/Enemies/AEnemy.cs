@@ -3,8 +3,6 @@ using Gameplay.World;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using Utilities.ObjectPool;
 using Utilities.ServiceLocator;
 
 
@@ -20,13 +18,13 @@ namespace Gameplay.Enemies
         [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
 
         [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected int _health;        
+        [SerializeField] protected int _health;
         [SerializeField] protected int _damage;
         [SerializeField] protected int _vinylDrop = 0;
         [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
 
         // Non editable variables
-        protected int _path = 0;    
+        protected int _path = 0;
         protected int _index = 0;           //Current Tile
         public bool IsAlive { get; protected set; } = true;    // If is death is not active
         protected int _currentPreparation = 0;
@@ -44,6 +42,7 @@ namespace Gameplay.Enemies
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
+            StartPosition();
         }
 
         private void TakeReferences()
@@ -60,7 +59,7 @@ namespace Gameplay.Enemies
                 Debug.LogError("AEnemy::TakeReferences: The RhythmManager was null");
             }
             SubscribeToRhythm();
-            
+
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
             if (_dancer == null)
             {
@@ -83,6 +82,10 @@ namespace Gameplay.Enemies
         }
         #endregion
 
+        private void StartPosition()
+        {
+            transform.position = _worldManager.GetCellCenterWorld(_worldManager.GetTile(_path, _index));
+        }
         #region ------------------------------ Getters and setters ------------------------------
 
         public int GetDrop()
@@ -129,12 +132,12 @@ namespace Gameplay.Enemies
         #endregion
 
         #region Other methods
-        public void Attack() 
+        public void Attack()
         {
             _dancer.TakeDamage(_damage);
         }
 
-        public void TakeDamage(DamageType type, int damageToTake) 
+        public void TakeDamage(DamageType type, int damageToTake)
         {
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
@@ -168,13 +171,13 @@ namespace Gameplay.Enemies
         {
             Vector3Int nextTile = _worldManager.GetNextTile(_path, _index);
             _index++;
-            
+
             Vector3 originPos = transform.position;
             Vector3 targetPos = _worldManager.GetCellCenterWorld(nextTile);
 
             Vector3 tileSize = _worldManager.GetTileSize();
             //Offset for enemy stacking
-            float offsetFactor = 0.3f; 
+            float offsetFactor = 0.3f;
             targetPos += new Vector3(UnityEngine.Random.Range(-tileSize.x * offsetFactor, tileSize.x * offsetFactor),
                                      UnityEngine.Random.Range(-tileSize.y * offsetFactor, tileSize.y * offsetFactor),
                                      0f);
@@ -183,7 +186,7 @@ namespace Gameplay.Enemies
             while (t <= _moveTime)
             {
                 //transform.position = Vector3.Lerp(originPos, targetPos, EaseInBack(t / _moveTime));
-            
+
                 float T;
                 if (easingFunction == null) T = t / _moveTime;
                 else T = easingFunction(t / _moveTime);
@@ -191,7 +194,7 @@ namespace Gameplay.Enemies
                 t += Time.deltaTime;
                 yield return null;
             }
-            
+
             transform.position = targetPos;   // Fix for center final positions
             yield return null;
         }
