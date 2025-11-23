@@ -152,6 +152,10 @@ namespace Gameplay.World
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
         }
 
+        public Vector3Int GetSelectedSite()
+        {
+            return _selectedTilePosition.Value;
+        }
         #endregion
 
         #region Economy methods

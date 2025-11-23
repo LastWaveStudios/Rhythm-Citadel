@@ -21,24 +21,24 @@ namespace UI.GameplayUI.Buttons
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
         }
 
-        private void TakeReferences()
+        protected virtual void TakeReferences()
         {
             _economyManager = ServiceLocatorSubsystem.Instance.GetService<EconomyManager>();
             if (_economyManager == null)
             {
                 Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
-            }
+            } 
         }
 
         public abstract void OnPointerClick(PointerEventData eventData);
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
             _animator.SetBool("hover", true);
             text.text = name;
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
             _animator.SetBool("hover", false);
             text.text = "";

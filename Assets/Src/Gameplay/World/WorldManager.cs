@@ -68,15 +68,45 @@ namespace Gameplay.World
 
         public Vector3Int GetLastTile(int pathID)
         {
-            return _paths[pathID].GetTile(_paths[pathID].TilesCount-1);
-		}
+            return _paths[pathID].GetTile(_paths[pathID].TilesCount - 1);
+        }
 
         public Vector3 GetTileSize()
         {
             return _tilemap.layoutGrid.cellSize;
         }
+
+        public List<Vector3Int> GetTilesInRange(Vector3Int center, int range)
+        {
+            List<Vector3Int> tilesInRange = new List<Vector3Int>();
+
+            for (int x = -range; x <= range; x++)
+            {
+                for (int y = -range; y <= range; y++)
+                {
+                    if (Mathf.Abs(x) + Mathf.Abs(y) <= range)
+                    {
+                        Vector3Int selectedTile = new Vector3Int(center.x + x, center.y + y, center.z);
+                        tilesInRange.Add(selectedTile);
+                    }
+
+                }
+            }
+            return tilesInRange;
+        }
+
+        public void Highlight(Vector3Int tile, Color color)
+        {
+            _tilemap.SetTileFlags(tile, TileFlags.None);
+
+            _tilemap.SetColor(tile, color);
+        }
+
+        public void ClearHightlight(Vector3Int tile)
+        {
+            _tilemap.SetColor(tile, Color.white);
+        }
     }
-    
 }
 
 

@@ -48,14 +48,14 @@ namespace Input
         }
         public void EnableBuildActions()
         {
-            Debug.Log("BUILD habilitado");
+            //Debug.Log("BUILD habilitado");
             _actions.Build.Enable();
             _actions.Battle.Disable();
         }
 
         public void EnableBattleActions()
         {
-            Debug.Log("BATTLE habilitado");
+            //Debug.Log("BATTLE habilitado");
             _actions.Battle.Enable();
             _actions.Build.Disable();
         }

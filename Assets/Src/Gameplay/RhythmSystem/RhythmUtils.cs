@@ -77,7 +77,7 @@ namespace Gameplay.RhythmSystem
             Eighth = Whole / 8.0;
             Sixteenth = Whole / 16.0;
 
-            UnityEngine.Debug.Log($"TIMES: {beat}, {Whole}, {Half}, {Quarter}, {Eighth}, {Sixteenth}");
+            //UnityEngine.Debug.Log($"TIMES: {beat}, {Whole}, {Half}, {Quarter}, {Eighth}, {Sixteenth}");
         }
     }
 
