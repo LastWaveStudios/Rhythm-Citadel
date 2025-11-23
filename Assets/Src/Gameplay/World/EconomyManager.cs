@@ -37,9 +37,9 @@ namespace Gameplay.World
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
-            _waveManager.onEnemyDeath += AddVinyl;
-
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
+
+            _waveManager.onEnemyDeath += AddVinyl;
         }
 
         private void Start()
