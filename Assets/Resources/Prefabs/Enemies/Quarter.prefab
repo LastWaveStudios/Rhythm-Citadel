@@ -104,6 +104,6 @@ MonoBehaviour:
   _resistance: 0
   _moveTime: 0.5
   _health: 40
-  _damage: 20
-  _vinylDrop: 3
+  _damage: 12
+  _vinylDrop: 5
   _preparationBeats: 4

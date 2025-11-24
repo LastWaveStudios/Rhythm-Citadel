@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1037ece26c4974d4da1f7a1c0554aa85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
   _damageType: 0
-  _damage: 18
-  _moveTime: 0.5
   _resistance: 1
-  _vinylDrop: 12
-  _preparationBeats: 2
+  _moveTime: 0.5
+  _health: 25
+  _damage: 20
+  _vinylDrop: 3
+  _preparationBeats: 3

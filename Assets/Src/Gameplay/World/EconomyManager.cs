@@ -127,7 +127,7 @@ namespace Gameplay.World
         {
             _existingTowers.TryGetValue(_selectedTilePosition.Value, out UnityEngine.GameObject towerToImprove);
             ATower script = towerToImprove.GetComponent<ATower>();
-            int towerPrice = script.GetPrice();
+            int towerPrice = script.GetImprovePrice();
             if (CanBuy(towerPrice))
             {
                 script.Improve();

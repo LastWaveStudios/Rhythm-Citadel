@@ -18,19 +18,22 @@ namespace Gameplay.Towers
     public abstract class ATower : MonoBehaviour
     {
         [SerializeField] const float PRICEMULTIPLIER = 0.7f;
-        [SerializeField] const int MAX_LEVEL = 2;
+        [SerializeField] const int MAX_LEVEL = 4;
 
-        [SerializeField] protected int _level;
-        [SerializeField] protected int _groupId;
         [SerializeField] protected RhythmPattern _pattern;
         [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
-        [SerializeField] protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
-        [SerializeField] protected int _MaxDamage;
-        [SerializeField] protected int _range;
         [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component  
+        
+        [SerializeField] protected int _groupId;
+        [SerializeField] protected int _damage;   //The damage the towers can do is between two values: minDamage and maxDamage
+        [SerializeField] protected int _range;
         [SerializeField] protected int _price;
+        
+        [SerializeField] protected float _damageMultiplier = 1.15f;
         [SerializeField] protected float _timeForProjectile = 0.1f; // Time of projectile to reach the target
+        
         protected bool _isEnabled = true;
+        protected int _level = 1;
 
         protected IPoolManager _poolManager;
         protected Vector3Int _positionInWorldCell;
@@ -74,6 +77,10 @@ namespace Gameplay.Towers
             return _price;
         }
 
+        public int GetImprovePrice()
+        {
+            return (int)(_price * _level * PRICEMULTIPLIER);
+        }
         public int GetSellingPrice()
         {
             return (int)Mathf.Round((float)(_price * PRICEMULTIPLIER * _level));
@@ -81,8 +88,7 @@ namespace Gameplay.Towers
         
         public int GetDamage()
         {
-            if (_level == 1) return _minDamage;
-            else return _MaxDamage;
+            return _damage;
         }
 
         public bool IsMaxLevel()
@@ -139,7 +145,8 @@ namespace Gameplay.Towers
         public void Improve()
         {
             _level++;
-            _price = (int)(PRICEMULTIPLIER * _price);
+            if (_level % 2 == 0) _range += (int)_level / 2;
+            _damage = (int)Math.Ceiling(_damage * _damageMultiplier);
         }
         #endregion
 
