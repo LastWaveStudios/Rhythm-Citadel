@@ -1,0 +1,1508 @@
+fileFormatVersion: 2
+guid: a4426bcc629cd314b8a3ec720e9bb7b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2676140802082847027
+    second: ExplosionMuerteNotas_0
+  - first:
+      213: 3183829671493908202
+    second: ExplosionMuerteNotas_1
+  - first:
+      213: 2923294280729560276
+    second: ExplosionMuerteNotas_2
+  - first:
+      213: -3628341066292416769
+    second: ExplosionMuerteNotas_3
+  - first:
+      213: -222228940918679890
+    second: ExplosionMuerteNotas_4
+  - first:
+      213: 304581361825547726
+    second: ExplosionMuerteNotas_5
+  - first:
+      213: -6837390002795385313
+    second: ExplosionMuerteNotas_6
+  - first:
+      213: 3274665112217212824
+    second: ExplosionMuerteNotas_7
+  - first:
+      213: -6773539460618374523
+    second: ExplosionMuerteNotas_8
+  - first:
+      213: 6938530320447693679
+    second: ExplosionMuerteNotas_9
+  - first:
+      213: 1131010640980144129
+    second: ExplosionMuerteNotas_10
+  - first:
+      213: 6413971432339281635
+    second: ExplosionMuerteNotas_11
+  - first:
+      213: -6948715300240121128
+    second: ExplosionMuerteNotas_12
+  - first:
+      213: 2306299134949590580
+    second: ExplosionMuerteNotas_13
+  - first:
+      213: -2420222078571715158
+    second: ExplosionMuerteNotas_14
+  - first:
+      213: -4446895335717202192
+    second: ExplosionMuerteNotas_15
+  - first:
+      213: -4472450954579368405
+    second: ExplosionMuerteNotas_16
+  - first:
+      213: 6159394697349690531
+    second: ExplosionMuerteNotas_17
+  - first:
+      213: -8747654047274394974
+    second: ExplosionMuerteNotas_18
+  - first:
+      213: -6037575681109149550
+    second: ExplosionMuerteNotas_19
+  - first:
+      213: 4072232639184077219
+    second: ExplosionMuerteNotas_20
+  - first:
+      213: -661046055890959037
+    second: ExplosionMuerteNotas_21
+  - first:
+      213: 8039062375073724639
+    second: ExplosionMuerteNotas_22
+  - first:
+      213: -3130143182015092199
+    second: ExplosionMuerteNotas_23
+  - first:
+      213: 5478029906760969747
+    second: ExplosionMuerteNotas_24
+  - first:
+      213: -6643391146549617026
+    second: ExplosionMuerteNotas_25
+  - first:
+      213: 7704564295122476749
+    second: ExplosionMuerteNotas_26
+  - first:
+      213: 6485926518741771194
+    second: ExplosionMuerteNotas_27
+  - first:
+      213: 804068797221852929
+    second: ExplosionMuerteNotas_28
+  - first:
+      213: -5887540240998637987
+    second: ExplosionMuerteNotas_29
+  - first:
+      213: 362442096548096269
+    second: ExplosionMuerteNotas_30
+  - first:
+      213: 4544883790889723188
+    second: ExplosionMuerteNotas_31
+  - first:
+      213: 7611453024016021393
+    second: ExplosionMuerteNotas_32
+  - first:
+      213: -5000844364695365024
+    second: ExplosionMuerteNotas_33
+  - first:
+      213: 861637873604967783
+    second: ExplosionMuerteNotas_34
+  - first:
+      213: 4242351428838464560
+    second: ExplosionMuerteNotas_35
+  - first:
+      213: 9214020725028904680
+    second: ExplosionMuerteNotas_36
+  - first:
+      213: 5498127007440743142
+    second: ExplosionMuerteNotas_37
+  - first:
+      213: -8241904149511003136
+    second: ExplosionMuerteNotas_38
+  - first:
+      213: -4642338728500642262
+    second: ExplosionMuerteNotas_39
+  - first:
+      213: 155369427081846011
+    second: ExplosionMuerteNotas_40
+  - first:
+      213: -2099118194828608800
+    second: ExplosionMuerteNotas_41
+  - first:
+      213: 8552863835109728709
+    second: ExplosionMuerteNotas_42
+  - first:
+      213: 2401645515894116873
+    second: ExplosionMuerteNotas_43
+  - first:
+      213: -9209620454095626696
+    second: ExplosionMuerteNotas_44
+  - first:
+      213: 8627060450215234063
+    second: ExplosionMuerteNotas_45
+  - first:
+      213: -6610650137019163477
+    second: ExplosionMuerteNotas_46
+  - first:
+      213: -7006924017364132296
+    second: ExplosionMuerteNotas_47
+  - first:
+      213: 5873958451299257863
+    second: ExplosionMuerteNotas_48
+  - first:
+      213: -384325924568901559
+    second: ExplosionMuerteNotas_49
+  - first:
+      213: -1808523669462233994
+    second: ExplosionMuerteNotas_50
+  - first:
+      213: 767967067828049901
+    second: ExplosionMuerteNotas_51
+  - first:
+      213: -3131984590075544699
+    second: ExplosionMuerteNotas_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_0
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1190
+        width: 822
+        height: 708
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339b31571ef832520800000000000000
+      internalID: 2676140802082847027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_1
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 1002
+        width: 955
+        height: 942
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae63eb2b73c3f2c20800000000000000
+      internalID: 3183829671493908202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_2
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 1081
+        width: 1102
+        height: 837
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d401d8f8a0a19820800000000000000
+      internalID: 2923294280729560276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_3
+      rect:
+        serializedVersion: 2
+        x: 4133
+        y: 1002
+        width: 1311
+        height: 995
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffeada3260b85adc0800000000000000
+      internalID: -3628341066292416769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_4
+      rect:
+        serializedVersion: 2
+        x: 5658
+        y: 1061
+        width: 1154
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea61bb5a4fb7aecf0800000000000000
+      internalID: -222228940918679890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_5
+      rect:
+        serializedVersion: 2
+        x: 7018
+        y: 1053
+        width: 1079
+        height: 906
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec501d482271a3400800000000000000
+      internalID: 304581361825547726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_6
+      rect:
+        serializedVersion: 2
+        x: 7046
+        y: 1794
+        width: 158
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ee29cb406bc11a0800000000000000
+      internalID: -6837390002795385313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_7
+      rect:
+        serializedVersion: 2
+        x: 8089
+        y: 1548
+        width: 106
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8975214d192f17d20800000000000000
+      internalID: 3274665112217212824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_8
+      rect:
+        serializedVersion: 2
+        x: 5501
+        y: 1388
+        width: 155
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58230c19fbd8ff1a0800000000000000
+      internalID: -6773539460618374523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_9
+      rect:
+        serializedVersion: 2
+        x: 6856
+        y: 1385
+        width: 141
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63ef85809c9a4060800000000000000
+      internalID: 6938530320447693679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_10
+      rect:
+        serializedVersion: 2
+        x: 7016
+        y: 1426
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100fec48f2822bf00800000000000000
+      internalID: 1131010640980144129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_11
+      rect:
+        serializedVersion: 2
+        x: 5720
+        y: 1021
+        width: 102
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e61618f801030950800000000000000
+      internalID: 6413971432339281635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_12
+      rect:
+        serializedVersion: 2
+        x: 7079
+        y: 1011
+        width: 95
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2add31044319f90800000000000000
+      internalID: -6948715300240121128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_13
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 53
+        width: 1152
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436067c08de910020800000000000000
+      internalID: 2306299134949590580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_14
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 860
+        width: 105
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5ec29a7d4a96ed0800000000000000
+      internalID: -2420222078571715158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_15
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 30
+        width: 1186
+        height: 951
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f61c39b0447942c0800000000000000
+      internalID: -4446895335717202192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_16
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 24
+        width: 1168
+        height: 963
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26a0f88d89aee1c0800000000000000
+      internalID: -4472450954579368405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_17
+      rect:
+        serializedVersion: 2
+        x: 4610
+        y: 850
+        width: 132
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4f3f6e7d09a7550800000000000000
+      internalID: 6159394697349690531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_18
+      rect:
+        serializedVersion: 2
+        x: 4872
+        y: 821
+        width: 275
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa9336bdf61a9680800000000000000
+      internalID: -8747654047274394974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_19
+      rect:
+        serializedVersion: 2
+        x: 6257
+        y: 879
+        width: 190
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298b3fe08e8363ca0800000000000000
+      internalID: -6037575681109149550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_20
+      rect:
+        serializedVersion: 2
+        x: 7647
+        y: 929
+        width: 139
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1815d720a738830800000000000000
+      internalID: 4072232639184077219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_21
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 356
+        width: 339
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34542725d1e73d6f0800000000000000
+      internalID: -661046055890959037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_22
+      rect:
+        serializedVersion: 2
+        x: 4507
+        y: 267
+        width: 646
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd83a7923ac709f60800000000000000
+      internalID: 8039062375073724639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_23
+      rect:
+        serializedVersion: 2
+        x: 5224
+        y: 573
+        width: 158
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a21e33c5f7f84d0800000000000000
+      internalID: -3130143182015092199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_24
+      rect:
+        serializedVersion: 2
+        x: 5537
+        y: 463
+        width: 215
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e24752d2fd50c40800000000000000
+      internalID: 5478029906760969747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_25
+      rect:
+        serializedVersion: 2
+        x: 5962
+        y: 665
+        width: 241
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e5fed43feedc3a0800000000000000
+      internalID: -6643391146549617026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_26
+      rect:
+        serializedVersion: 2
+        x: 6424
+        y: 471
+        width: 159
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcedee7e76c1cea60800000000000000
+      internalID: 7704564295122476749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_27
+      rect:
+        serializedVersion: 2
+        x: 6623
+        y: 594
+        width: 123
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3a3ec0ec3a20a50800000000000000
+      internalID: 6485926518741771194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_28
+      rect:
+        serializedVersion: 2
+        x: 6847
+        y: 513
+        width: 121
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10752699f40a82b00800000000000000
+      internalID: 804068797221852929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_29
+      rect:
+        serializedVersion: 2
+        x: 7303
+        y: 713
+        width: 79
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e557628514b4ea0800000000000000
+      internalID: -5887540240998637987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_30
+      rect:
+        serializedVersion: 2
+        x: 7506
+        y: 718
+        width: 66
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09a560aa27a70500800000000000000
+      internalID: 362442096548096269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_31
+      rect:
+        serializedVersion: 2
+        x: 7871
+        y: 674
+        width: 95
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435a96d5abba21f30800000000000000
+      internalID: 4544883790889723188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_32
+      rect:
+        serializedVersion: 2
+        x: 8123
+        y: 628
+        width: 85
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1973c09b23051a960800000000000000
+      internalID: 7611453024016021393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_33
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 554
+        width: 52
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a9151cb8e699ab0800000000000000
+      internalID: -5000844364695365024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_34
+      rect:
+        serializedVersion: 2
+        x: 6225
+        y: 528
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76d3f35b41725fb00800000000000000
+      internalID: 861637873604967783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_35
+      rect:
+        serializedVersion: 2
+        x: 5954
+        y: 250
+        width: 193
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c9948c52cdfda30800000000000000
+      internalID: 4242351428838464560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_36
+      rect:
+        serializedVersion: 2
+        x: 6206
+        y: 526
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee5f6c0807cedf70800000000000000
+      internalID: 9214020725028904680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_37
+      rect:
+        serializedVersion: 2
+        x: 5084
+        y: 234
+        width: 223
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eaac7802654d4c40800000000000000
+      internalID: 5498127007440743142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_38
+      rect:
+        serializedVersion: 2
+        x: 6359
+        y: 347
+        width: 144
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004249fe7dfde9d80800000000000000
+      internalID: -8241904149511003136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_39
+      rect:
+        serializedVersion: 2
+        x: 7272
+        y: 428
+        width: 61
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e3ea8c589139fb0800000000000000
+      internalID: -4642338728500642262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_40
+      rect:
+        serializedVersion: 2
+        x: 7976
+        y: 414
+        width: 48
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc5b26bbabf72200800000000000000
+      internalID: 155369427081846011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 373
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea7ea79f1f6ed2e0800000000000000
+      internalID: -2099118194828608800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_42
+      rect:
+        serializedVersion: 2
+        x: 6530
+        y: 228
+        width: 166
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c12000d750e1b670800000000000000
+      internalID: 8552863835109728709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_43
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 81
+        width: 217
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902574b4fdb545120800000000000000
+      internalID: 2401645515894116873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_44
+      rect:
+        serializedVersion: 2
+        x: 7780
+        y: 279
+        width: 94
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e557dddfad03080800000000000000
+      internalID: -9209620454095626696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_45
+      rect:
+        serializedVersion: 2
+        x: 8026
+        y: 229
+        width: 108
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a86e675c979b770800000000000000
+      internalID: 8627060450215234063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_46
+      rect:
+        serializedVersion: 2
+        x: 4721
+        y: 52
+        width: 318
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacd590a9b04244a0800000000000000
+      internalID: -6610650137019163477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_47
+      rect:
+        serializedVersion: 2
+        x: 5714
+        y: 85
+        width: 147
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e9bd00bb762ce90800000000000000
+      internalID: -7006924017364132296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_48
+      rect:
+        serializedVersion: 2
+        x: 7314
+        y: 217
+        width: 115
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e8813071e748150800000000000000
+      internalID: 5873958451299257863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_49
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 9
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948d81c9b999aaaf0800000000000000
+      internalID: -384325924568901559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_50
+      rect:
+        serializedVersion: 2
+        x: 6124
+        y: 26
+        width: 228
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c41d9fd45d6e6e0800000000000000
+      internalID: -1808523669462233994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_51
+      rect:
+        serializedVersion: 2
+        x: 7017
+        y: 61
+        width: 93
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7d615bafd58aa00800000000000000
+      internalID: 767967067828049901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionMuerteNotas_52
+      rect:
+        serializedVersion: 2
+        x: 7524
+        y: 3
+        width: 152
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58bbc8afb94f884d0800000000000000
+      internalID: -3131984590075544699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ExplosionMuerteNotas_0: 2676140802082847027
+      ExplosionMuerteNotas_1: 3183829671493908202
+      ExplosionMuerteNotas_10: 1131010640980144129
+      ExplosionMuerteNotas_11: 6413971432339281635
+      ExplosionMuerteNotas_12: -6948715300240121128
+      ExplosionMuerteNotas_13: 2306299134949590580
+      ExplosionMuerteNotas_14: -2420222078571715158
+      ExplosionMuerteNotas_15: -4446895335717202192
+      ExplosionMuerteNotas_16: -4472450954579368405
+      ExplosionMuerteNotas_17: 6159394697349690531
+      ExplosionMuerteNotas_18: -8747654047274394974
+      ExplosionMuerteNotas_19: -6037575681109149550
+      ExplosionMuerteNotas_2: 2923294280729560276
+      ExplosionMuerteNotas_20: 4072232639184077219
+      ExplosionMuerteNotas_21: -661046055890959037
+      ExplosionMuerteNotas_22: 8039062375073724639
+      ExplosionMuerteNotas_23: -3130143182015092199
+      ExplosionMuerteNotas_24: 5478029906760969747
+      ExplosionMuerteNotas_25: -6643391146549617026
+      ExplosionMuerteNotas_26: 7704564295122476749
+      ExplosionMuerteNotas_27: 6485926518741771194
+      ExplosionMuerteNotas_28: 804068797221852929
+      ExplosionMuerteNotas_29: -5887540240998637987
+      ExplosionMuerteNotas_3: -3628341066292416769
+      ExplosionMuerteNotas_30: 362442096548096269
+      ExplosionMuerteNotas_31: 4544883790889723188
+      ExplosionMuerteNotas_32: 7611453024016021393
+      ExplosionMuerteNotas_33: -5000844364695365024
+      ExplosionMuerteNotas_34: 861637873604967783
+      ExplosionMuerteNotas_35: 4242351428838464560
+      ExplosionMuerteNotas_36: 9214020725028904680
+      ExplosionMuerteNotas_37: 5498127007440743142
+      ExplosionMuerteNotas_38: -8241904149511003136
+      ExplosionMuerteNotas_39: -4642338728500642262
+      ExplosionMuerteNotas_4: -222228940918679890
+      ExplosionMuerteNotas_40: 155369427081846011
+      ExplosionMuerteNotas_41: -2099118194828608800
+      ExplosionMuerteNotas_42: 8552863835109728709
+      ExplosionMuerteNotas_43: 2401645515894116873
+      ExplosionMuerteNotas_44: -9209620454095626696
+      ExplosionMuerteNotas_45: 8627060450215234063
+      ExplosionMuerteNotas_46: -6610650137019163477
+      ExplosionMuerteNotas_47: -7006924017364132296
+      ExplosionMuerteNotas_48: 5873958451299257863
+      ExplosionMuerteNotas_49: -384325924568901559
+      ExplosionMuerteNotas_5: 304581361825547726
+      ExplosionMuerteNotas_50: -1808523669462233994
+      ExplosionMuerteNotas_51: 767967067828049901
+      ExplosionMuerteNotas_52: -3131984590075544699
+      ExplosionMuerteNotas_6: -6837390002795385313
+      ExplosionMuerteNotas_7: 3274665112217212824
+      ExplosionMuerteNotas_8: -6773539460618374523
+      ExplosionMuerteNotas_9: 6938530320447693679
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

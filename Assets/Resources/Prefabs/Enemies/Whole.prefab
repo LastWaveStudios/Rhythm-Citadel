@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bab673537238a4b8b1b2423ebef3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
   _damageType: 2
-  _damage: 50
-  _moveTime: 0.5
   _resistance: 2
+  _moveTime: 0.5
+  _health: 300
+  _damage: 65
   _vinylDrop: 70
+  _preparationBeats: 4

@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabe34590962a324586afcc26fe9225c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 1
-  _groupId: 0
   _pattern:
     signature:
       top: 4
@@ -135,9 +133,10 @@ MonoBehaviour:
       durationInSixteenths: 2
     spaceInSixteenths: 16
   _damageType: 2
-  _minDamage: 8
-  _MaxDamage: 15
-  _range: 3
   _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
-  _price: 130
+  _groupId: 0
+  _damage: 3
+  _range: 2
+  _price: 90
+  _damageMultiplier: 1.15
   _timeForProjectile: 0.8
