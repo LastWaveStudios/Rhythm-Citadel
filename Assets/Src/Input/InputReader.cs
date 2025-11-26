@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Gameplay;
+using Gameplay.World;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Gameplay.World;
-using Gameplay;
+using static UnityEditor.PlayerSettings;
 
 namespace Input
 {
     public class InputReader : Utilities.Singleton<InputReader>, Actions.IBattleActions, Actions.IBuildActions
     {
         private Actions _actions;
+        public Vector2 PointerPosition { get; private set; }
 
         // The delegate { } are just for initialice them to something and ignore the null check on the invokes
 
@@ -64,11 +66,20 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
+            Debug.Log("TOUCH / CLICK DETECTADO");
             if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Started) _gameplayManager.ChangeFightState();
+        }
+
+        public void OnPointerPosition(InputAction.CallbackContext context)
+        {
+            //PointerPosition =context.ReadValue<Vector2>();
+            var pos = context.ReadValue<Vector2>();
+            Debug.Log("Pointer pos: " + pos);
+            PointerPosition = pos;
         }
 
         #region TowersMap
@@ -102,6 +113,8 @@ namespace Input
         {
             if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(5);
         }
+
+        
         #endregion
     }
 }

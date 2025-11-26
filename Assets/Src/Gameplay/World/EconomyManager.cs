@@ -146,7 +146,10 @@ namespace Gameplay.World
 
         void GetPositionClicked() // FUNCIONA CON LA CAMARA CENITAL
         {
-            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            //Vector2 position = InputReader.Instance.PointerPosition;
+            Vector2 position = Pointer.current.position.ReadValue();
+            //Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(position);
             clickedPosition.z = 0;
 
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
