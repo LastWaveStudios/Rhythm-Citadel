@@ -29,7 +29,7 @@ namespace AIBehaviourAPI.Bt
             _outputNodes = new List<ANodeBT>();
         }
         
-        public void SetParent(ANodeBT parent)
+        internal void SetParent(ANodeBT parent)
         {
             if (ParentNode != null)
                 throw new BehaviourAPIException($"The BT Node: {_name} can have just one Parent Node");
