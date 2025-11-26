@@ -10,6 +10,11 @@ namespace AIBehaviourAPI.Bt.Composites
         {
             _outputNodes = childNodes;
             _condition = NodeAction;
+
+            foreach (ANodeBT childNode in childNodes)
+            {
+                childNode.SetParent(this);
+            }
         }
 
         protected abstract bool NodeAction();

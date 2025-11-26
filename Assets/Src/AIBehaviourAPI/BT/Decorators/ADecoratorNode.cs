@@ -12,6 +12,8 @@ namespace AIBehaviourAPI.Bt.Decorators
             _outputNodes.Capacity = 1;
             _outputNodes.Add(child);
             _condition = NodeAction;
+            
+            child.SetParent(this);
         }
 
         protected abstract bool NodeAction();
