@@ -7,9 +7,11 @@ namespace AIBehaviourAPI
     {
         public System.Action Action { get; }
         
-        public List<ITransition> InputTransitions { get; }
+        public System.Func<bool> Condition { get; }
         
-        public List<ITransition> OutputTransitions { get; }
+        public List<INode> InputNodes { get; }
+        
+        public List<INode> OutputNodes { get; }
         
         public string Name { get; }
     }

@@ -1,7 +1,7 @@
-﻿using AIBehaviourAPI.FSM;
+﻿using AIBehaviourAPI.Fsm;
 using UnityEngine;
 
-namespace BehaviourAPI.Demos
+namespace AIBehaviourAPI.Demos
 {
     public class HierarchicalFSMWithoutSugarNodes : MonoBehaviour
     {
@@ -36,17 +36,17 @@ namespace BehaviourAPI.Demos
             _smallFsm.Init(greenNodeFsm);
             _smallFsm.Pause();
             
-            NodeFSM subFSMActivation = new NodeFSM("Sub", () => _smallFsm.Update());
+            NodeFSM subActivation = new NodeFSM("Sub", () => _smallFsm.Update());
             
-            TransitionFSM bigToSmall = new TransitionFSM(redNodeFsm, subFSMActivation, "bigToSmall", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () => _smallFsm.Resume());
-            TransitionFSM smallToBig = new TransitionFSM(subFSMActivation, redNodeFsm, "smallToBig", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () =>
+            TransitionFSM bigToSmall = new TransitionFSM(redNodeFsm, subActivation, "bigToSmall", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () => _smallFsm.Resume());
+            TransitionFSM smallToBig = new TransitionFSM(subActivation, redNodeFsm, "smallToBig", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () =>
             {
                 _currentTime = 0.0f;
                 _smallFsm.Pause();
             });
             
             _fsm.RegisterNode(redNodeFsm);
-            _fsm.RegisterNode(subFSMActivation);
+            _fsm.RegisterNode(subActivation);
             _fsm.RegisterTransition(bigToSmall);
             _fsm.RegisterTransition(smallToBig);
             

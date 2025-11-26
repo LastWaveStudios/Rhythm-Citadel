@@ -1,4 +1,4 @@
-using AIBehaviourAPI.FSM;
+using AIBehaviourAPI.Fsm;
 
 namespace Gameplay.Enemies.Behaviours
 {
@@ -13,7 +13,7 @@ namespace Gameplay.Enemies.Behaviours
             
             _rootFSM = new FSM("Base Enemy Behaviour", false, 2, 2);
 
-            NodeFSM deathNode = new NodeFSM("Death Node", () =>
+            NodeFSM deathNodeFsm = new NodeFSM("Death NodeFSM", () =>
             {
                 _rootFSM.Finish(); // Exit State so finish the fsm
                 _enemy.Death();
@@ -21,28 +21,28 @@ namespace Gameplay.Enemies.Behaviours
             #region AliveFSM
             FSM aliveFSM = new FSM("Alive FSM", true, 2, 3);
             
-            NodeFSM prepareMovementNode = new NodeFSM("Prepare Movement", _enemy.PrepareMovement);
-            NodeFSM moveNode = new NodeFSM("Move", _enemy.Move);
+            NodeFSM prepareMovementNodeFsm = new NodeFSM("Prepare Movement", _enemy.PrepareMovement);
+            NodeFSM moveNodeFsm = new NodeFSM("Move", _enemy.Move);
             
-            TransitionFSM finishMovementPreparationTransition = new TransitionFSM(prepareMovementNode, moveNode, "prepareMovement to move", _enemy.IsMovementPrepared);
-            TransitionFSM movementFinishTransition = new TransitionFSM(moveNode, prepareMovementNode, "move to prepareMovement", () => true, _enemy.RestartMovementPreparation);
-            TransitionFSM goAttackTransition = new TransitionFSM(prepareMovementNode, deathNode, "prepareMovement to death (attack)", _enemy.IsInTarget, _enemy.Attack);
+            TransitionFSM finishMovementPreparationTransition = new TransitionFSM(prepareMovementNodeFsm, moveNodeFsm, "prepareMovement to move", _enemy.IsMovementPrepared);
+            TransitionFSM movementFinishTransition = new TransitionFSM(moveNodeFsm, prepareMovementNodeFsm, "move to prepareMovement", () => true, _enemy.RestartMovementPreparation);
+            TransitionFSM goAttackTransition = new TransitionFSM(prepareMovementNodeFsm, deathNodeFsm, "prepareMovement to death (attack)", _enemy.IsInTarget, _enemy.Attack);
             
-            aliveFSM.RegisterNode(prepareMovementNode);
-            aliveFSM.RegisterNode(moveNode);
+            aliveFSM.RegisterNode(prepareMovementNodeFsm);
+            aliveFSM.RegisterNode(moveNodeFsm);
 
             aliveFSM.RegisterTransition(finishMovementPreparationTransition);
             aliveFSM.RegisterTransition(movementFinishTransition);
             aliveFSM.RegisterTransition(goAttackTransition);
             
-            aliveFSM.Init(prepareMovementNode);
+            aliveFSM.Init(prepareMovementNodeFsm);
             aliveFSM.Pause(); // Always must have on the internal FSM
             #endregion
             NodeHFSM aliveNode = new NodeHFSM("Alive node", _rootFSM, aliveFSM);
             
-            TransitionFSM deathTransition = new TransitionFSM(aliveNode, deathNode, "alive to death", () => !_enemy.IsAlive);
+            TransitionFSM deathTransition = new TransitionFSM(aliveNode, deathNodeFsm, "alive to death", () => !_enemy.IsAlive);
             
-            _rootFSM.RegisterNode(deathNode);
+            _rootFSM.RegisterNode(deathNodeFsm);
             _rootFSM.RegisterNode(aliveNode);
             
             _rootFSM.RegisterTransition(deathTransition);
