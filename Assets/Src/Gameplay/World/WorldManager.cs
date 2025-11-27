@@ -22,6 +22,9 @@ namespace Gameplay.World
         {
             _paths = new List<Path>();
             InitPaths();
+            if (_pathTilemap == null) Debug.LogWarning("There is no path tilemap added in editor");
+            if (_highlightTilemap == null) Debug.LogWarning("There is no hghlight tilemap added in editor");
+            
         }
 
         public Vector3Int GetNextTile(int pathID, int currentIndex)
