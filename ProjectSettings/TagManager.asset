@@ -59,5 +59,8 @@ TagManager:
   - name: Towers
     uniqueID: 2932057597
     locked: 0
+  - name: Highlight
+    uniqueID: 2821625941
+    locked: 0
   m_RenderingLayers:
   - Default

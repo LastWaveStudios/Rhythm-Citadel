@@ -19,6 +19,10 @@ namespace UI.GameplayUI.Buttons
         private Vector3Int _buildingPosition;
         private List<Vector3Int> _affectedTiles;
 
+        private void Awake()
+        {
+            TakeReferences();
+        }
         protected override void TakeReferences()
         {
             base.TakeReferences();
@@ -40,18 +44,18 @@ namespace UI.GameplayUI.Buttons
         {
             base.OnPointerEnter(eventData);
             _affectedTiles = _worldManager.GetTilesInRange(_buildingPosition, _buildingRange);
-            foreach (var tile in _affectedTiles) {_worldManager.Highlight(tile, _hightlight); }
+            foreach (var tile in _affectedTiles) {_worldManager.Highlight(tile); }
         }
 
         public override void OnPointerExit(PointerEventData eventData)
         {
             base.OnPointerExit(eventData);
-            foreach (var tile in _affectedTiles) { _worldManager.ClearHightlight(tile); }
+            foreach (var tile in _affectedTiles) { _worldManager.ClearHighlight(tile); }
         }
         public override void OnPointerClick(PointerEventData eventData)
         {
             _economyManager.TryBuyTower(_towerToBuild);
-            foreach (var tile in _affectedTiles) { _worldManager.ClearHightlight(tile); }
+            foreach (var tile in _affectedTiles) { _worldManager.ClearHighlight(tile); }
             _economyManager.CloseMenu();
         }
 
