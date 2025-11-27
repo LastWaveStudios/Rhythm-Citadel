@@ -110,6 +110,11 @@ namespace Gameplay.Towers
         {
             _positionInWorldCell = tile;
         }
+
+        public int GetRange()
+        {
+            return _range;
+        }
         #endregion
 
         #region Other methods

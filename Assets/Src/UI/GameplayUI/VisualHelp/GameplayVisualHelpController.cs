@@ -40,7 +40,7 @@ namespace UI.GameplayUI.VisualHelp
         }
         public void Init()
         {
-            Debug.Log("Gamplay Visual Help INIT");
+            //Debug.Log("Gamplay Visual Help INIT");
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
             if ( _rhythmManager == null )
             {
