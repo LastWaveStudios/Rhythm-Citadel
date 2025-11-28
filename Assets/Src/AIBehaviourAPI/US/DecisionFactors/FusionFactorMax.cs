@@ -5,6 +5,10 @@
         public FusionFactorMax(string name, ANodeUS[] parents) : base(name)
         {
             _inputNodes.AddRange(parents);
+            foreach (ANodeUS parentNode in parents)
+            {
+                parentNode.OutputNodes.Add(this);
+            }
         }
 
         public override float GetUtilityValue()
@@ -17,8 +21,10 @@
                 float value = parentNode.GetUtilityValue();
                 if (value > max) max = value;
             }
-
-            return max;
+            
+            _cachedUtilityValue = max;
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }

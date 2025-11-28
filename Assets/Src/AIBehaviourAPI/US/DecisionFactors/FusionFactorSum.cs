@@ -5,6 +5,10 @@
         public FusionFactorSum(string name, ANodeUS[] parents) : base(name)
         {
             _inputNodes.AddRange(parents);
+            foreach (ANodeUS parentNode in parents)
+            {
+                parentNode.OutputNodes.Add(this);
+            }
         }
 
         public override float GetUtilityValue()
@@ -15,7 +19,9 @@
                 sumValue += parentNode.GetUtilityValue();
             }
             
-            return sumValue / (float)_inputNodes.Count;
+            _cachedUtilityValue = sumValue / (float)_inputNodes.Count;
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }

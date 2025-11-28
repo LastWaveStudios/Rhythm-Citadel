@@ -7,6 +7,11 @@
         public FusionFactorWeightedSum(string name, ANodeUS[] parents, float[] weights) : base(name)
         {
             _inputNodes.AddRange(parents);
+            foreach (ANodeUS parentNode in parents)
+            {
+                parentNode.OutputNodes.Add(this);
+            }
+            
             _weights = weights;
 
             if (weights.Length != parents.Length)
@@ -24,7 +29,9 @@
                 sumValue += _inputNodes[i].GetUtilityValue() * _weights[i];
             }
 
-            return sumValue;
+            _cachedUtilityValue = sumValue;
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }

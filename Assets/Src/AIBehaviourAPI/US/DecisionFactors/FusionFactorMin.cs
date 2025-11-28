@@ -5,6 +5,10 @@
         public FusionFactorMin(string name, ANodeUS[] parents) : base(name)
         {
             _inputNodes.AddRange(parents);
+            foreach (ANodeUS parentNode in parents)
+            {
+                parentNode.OutputNodes.Add(this);
+            }
         }
 
         public override float GetUtilityValue()
@@ -18,7 +22,9 @@
                 if (value < min) min = value;
             }
 
-            return min;
+            _cachedUtilityValue = min;
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }

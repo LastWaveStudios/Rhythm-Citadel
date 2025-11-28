@@ -32,6 +32,11 @@ namespace AIBehaviourAPI.US
             _outputNodes = new List<ANodeUS>();
         }
         
+        public void ClearCacheValue()
+        {
+            _isCachedUtilityValueValid = false;
+        }
+        
         public override string ToString()
         {
             return $"N: {_name}; CUV: {(_isCachedUtilityValueValid? _cachedUtilityValue : "Not valid")} IN: [{NodesListToString(InputNodes)}]; ON: [{NodesListToString(OutputNodes)}]";

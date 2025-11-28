@@ -8,15 +8,18 @@ namespace AIBehaviourAPI.US
         
         public UtilityAction(string name, Action action, ANodeUS parent) : base(name)
         {
-            _inputNodes.Add(parent);
             _action = action;
+            _inputNodes.Add(parent);
+            parent.OutputNodes.Add(this);
         }
 
         public override float GetUtilityValue()
         {
             if (_isCachedUtilityValueValid) return _cachedUtilityValue;
-            
-            return _parentNode.GetUtilityValue();
+
+            _cachedUtilityValue = _parentNode.GetUtilityValue();
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }

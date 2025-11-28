@@ -121,16 +121,16 @@ namespace AIBehaviourAPI.Fsm
         public void RegisterNode(INode node)
         {
             if (_nodes.Contains(node))
-                throw new BehaviourAPIException($"Cannot register one node more than one time in FSM: {_name}.");
+                throw new BehaviourAPIException($"Cannot register one node more than one time in FSM: {_name}; node: {node.Name}.");
             
             _nodes.Add(node);
         }
         public void RegisterTransition(ITransition transition)
         {
             if (_transitions.Contains(transition))
-                throw new BehaviourAPIException($"Cannot register transition more than one time in FSM: {_name}.");
+                throw new BehaviourAPIException($"Cannot register transition more than one time in FSM: {_name}; transition: {transition.Name}.");
             if (transition.OriginNode == null && transition.DestinationNode == null)
-                throw new BehaviourAPIException($"Cannot register a transition with nodes that are null in FSM: {_name}.");
+                throw new BehaviourAPIException($"Cannot register a transition with nodes that are null in FSM: {_name}; transition: {transition.Name}.");
             
             transition.OriginNode.OutputNodes.Add(transition);
             transition.DestinationNode.InputNodes.Add(transition);

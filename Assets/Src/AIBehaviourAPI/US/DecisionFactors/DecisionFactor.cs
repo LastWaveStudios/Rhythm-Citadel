@@ -12,13 +12,16 @@ namespace AIBehaviourAPI.US.DecisionFactors
         {
             _utilityFunction = utilityFunction;
             _inputNodes.Add(parent);
+            parent.OutputNodes.Add(this);
         }
 
         public override float GetUtilityValue()
         {
             if (_isCachedUtilityValueValid) return _cachedUtilityValue;
 
-            return _utilityFunction.GetValue(_parentNode.GetUtilityValue());
+            _cachedUtilityValue = _utilityFunction.GetValue(_parentNode.GetUtilityValue());
+            _isCachedUtilityValueValid = true;
+            return _cachedUtilityValue;
         }
     }
 }
