@@ -87,7 +87,7 @@ namespace AIBehaviourAPI.US
         public void Update()
         {
             if (_status != Status.Running)
-                throw new BehaviourAPIException($"Cannot update FSM: {_name} if is not in Running state.");
+                throw new BehaviourAPIException($"Cannot update US: {_name} if is not in Running state.");
 
             foreach (ANodeUS node in _nodes)
             {

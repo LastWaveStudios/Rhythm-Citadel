@@ -1,4 +1,5 @@
 ﻿using System;
+using AIBehaviourAPI.Fsm;
 using AIBehaviourAPI.US;
 using AIBehaviourAPI.US.DecisionFactors;
 using AIBehaviourAPI.US.UtilityFunctions;
@@ -6,11 +7,11 @@ using UnityEngine;
 
 namespace AIBehaviourAPI.Demos
 {
-    public class CubeChangeUS : MonoBehaviour
+    public class CubeChangeFSMWithUS : MonoBehaviour
     {
         private SpriteRenderer _spriteRenderer;
 
-        private UtilitySystem _US;
+        private FSM _fsm;
 
         private float _currentTime = 0.0f;
         private float _maxTime = 3.0f;
@@ -19,7 +20,12 @@ namespace AIBehaviourAPI.Demos
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
-            _US = new UtilitySystem("Cube change US", USMode.Max);
+            _fsm = new FSM("Main fsm");
+            
+            NodeFSM greenNode = new NodeFSM("green node", ChangeGreen);
+            
+            // US
+            UtilitySystem us = new UtilitySystem("Cube change US", USMode.Max, 10, 3);
             
             UtilityPerception pressRPerception = new UtilityPerception("press R perception", () => UnityEngine.Input.GetKey(KeyCode.R)? 0.5f : 0.0f);
             UtilityPerception pressYPerception = new UtilityPerception("press Y perception", () => UnityEngine.Input.GetKey(KeyCode.Y)? 0.5f : 0.0f);
@@ -37,28 +43,42 @@ namespace AIBehaviourAPI.Demos
             UtilityAction yellowAction = new UtilityAction("yellow action", ChangeYellow, yDecisionFactor);
             UtilityAction blueAction = new UtilityAction("blue action", ChangeBlue, fusionFactor);
             
-            _US.RegisterNode(pressRPerception);
-            _US.RegisterNode(pressYPerception);
-            _US.RegisterNode(timerPerception);
+            us.RegisterNode(pressRPerception);
+            us.RegisterNode(pressYPerception);
+            us.RegisterNode(timerPerception);
             
-            _US.RegisterNode(rDecisionFactor);
-            _US.RegisterNode(yDecisionFactor);
-            _US.RegisterNode(timerDecisionFactor);
+            us.RegisterNode(rDecisionFactor);
+            us.RegisterNode(yDecisionFactor);
+            us.RegisterNode(timerDecisionFactor);
             
-            _US.RegisterNode(fusionFactor);
+            us.RegisterNode(fusionFactor);
             
-            _US.RegisterAction(redAction);
-            _US.RegisterAction(yellowAction);
-            _US.RegisterAction(blueAction);
+            us.RegisterAction(redAction);
+            us.RegisterAction(yellowAction);
+            us.RegisterAction(blueAction);
             
-            _US.Init();
+            us.Init();
+            us.Pause();
+            
+            NodeHFSM utilitySystemNode = new NodeHFSM("utility system node", _fsm, us);
+
+            TransitionFSM greenToUSTransition = new TransitionFSM(greenNode, utilitySystemNode, "green to US", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () => _currentTime = 0.0f);
+            TransitionFSM usToGreenTransition = new TransitionFSM(utilitySystemNode, greenNode, "US to green", () => UnityEngine.Input.GetKeyDown(KeyCode.C), () => _currentTime = 0.0f);
+            
+            _fsm.RegisterNode(greenNode);
+            _fsm.RegisterNode(utilitySystemNode);
+            
+            _fsm.RegisterTransition(greenToUSTransition);
+            _fsm.RegisterTransition(usToGreenTransition);
+            
+            _fsm.Init(greenNode);
         }
 
         private void Update()
         {
             UpdateTime();
             
-            _US.Update();
+            _fsm.Update();
         }
 
         private void UpdateTime()
