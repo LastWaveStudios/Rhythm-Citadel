@@ -158,10 +158,10 @@ TextureImporter:
       name: Negra_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 36
-        width: 206
-        height: 138
+        x: 0
+        y: 0
+        width: 215
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: Negra_1
       rect:
         serializedVersion: 2
-        x: 225
-        y: 36
-        width: 206
-        height: 138
+        x: 215
+        y: 0
+        width: 215
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Negra_2
       rect:
         serializedVersion: 2
-        x: 440
-        y: 36
-        width: 206
-        height: 138
+        x: 430
+        y: 0
+        width: 215
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: Negra_3
       rect:
         serializedVersion: 2
-        x: 655
-        y: 36
-        width: 206
-        height: 138
+        x: 645
+        y: 0
+        width: 215
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Negra_4
       rect:
         serializedVersion: 2
-        x: 870
-        y: 36
-        width: 205
-        height: 138
+        x: 860
+        y: 0
+        width: 215
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,231 +264,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Negra_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 95
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 109c8ee0b9d467200800000000000000
-      internalID: 177414563693119745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_6
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 5
-        width: 81
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87b5be81697339ea0800000000000000
-      internalID: -5867284771730924680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_7
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 0
-        width: 96
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59d621f0b7292db10800000000000000
-      internalID: 2004825841364790677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_8
-      rect:
-        serializedVersion: 2
-        x: 313
-        y: 5
-        width: 81
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 228e9cbb6212cfb70800000000000000
-      internalID: 8934052211039266850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_9
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 0
-        width: 96
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f49e97d2aaf8e030800000000000000
-      internalID: 3524342285726553333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_10
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 5
-        width: 81
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc869e4db2f329b20800000000000000
-      internalID: 3139641347718867151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_11
-      rect:
-        serializedVersion: 2
-        x: 644
-        y: 0
-        width: 96
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69ae5a641ba10e3e0800000000000000
-      internalID: -2026590483619911018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_12
-      rect:
-        serializedVersion: 2
-        x: 743
-        y: 5
-        width: 81
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a55152596f705290800000000000000
-      internalID: -7903677255705864800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_13
-      rect:
-        serializedVersion: 2
-        x: 859
-        y: 0
-        width: 96
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af7aeda3cfad0d400800000000000000
-      internalID: 347017948161812474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Negra_14
-      rect:
-        serializedVersion: 2
-        x: 958
-        y: 5
-        width: 81
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74a06cb4b5c25b8f0800000000000000
-      internalID: -525465010893878713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fcd516c25bad15d498b5b4fa3f204651
     internalID: 0
     vertices: []
     indices: 
@@ -500,19 +280,9 @@ TextureImporter:
     nameFileIdTable:
       Negra_0: 240788479033540198
       Negra_1: 6825836544771981563
-      Negra_10: 3139641347718867151
-      Negra_11: -2026590483619911018
-      Negra_12: -7903677255705864800
-      Negra_13: 347017948161812474
-      Negra_14: -525465010893878713
       Negra_2: 4715719461083501781
       Negra_3: -4846259370500680315
       Negra_4: -3013396374798180573
-      Negra_5: 177414563693119745
-      Negra_6: -5867284771730924680
-      Negra_7: 2004825841364790677
-      Negra_8: 8934052211039266850
-      Negra_9: 3524342285726553333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

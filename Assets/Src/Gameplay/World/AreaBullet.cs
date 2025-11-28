@@ -6,23 +6,14 @@ using Utilities.ObjectPool;
 
 namespace Gameplay.World
 {
-    public class Bullet : APoolableObject
+    public class AreaBullet : APoolableObject
     {
-        /**
-        public bool IsActive
+        private Animator _animator;
+        private IPoolManager _poolManager;
+        private void Start()
         {
-            get => gameObject.activeSelf;
-            set => gameObject.SetActive(value);
+            _animator = GetComponent<Animator>();
         }
-        /**/
-        //Just use IsActive from APoolableObject it's a public method
-
-        /**/
-        public override void Reset()
-        {
-            // Not needed, because the shot that will be called instantly after the bullet is get from the pool sets the values
-        }
-        /**/
 
         public void Shot(Vector3 from, List<AEnemy> enemy, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
@@ -43,7 +34,7 @@ namespace Gameplay.World
         {
 
             //Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
-
+            _poolManager = pool;
             AEnemy enemy = enemyList[0];
             Vector3 start = transform.position;
             Vector3 end = enemy.transform.position;
@@ -59,13 +50,23 @@ namespace Gameplay.World
                 transform.position = Vector3.Lerp(start, end, time / dur); // It is better to give a dur limited for not to be 0 or negative, but honestly pass that to this is be retard so ...
                 yield return null;
             }
-            pool.Release(this);
+            //_animator.Play("AreaExplosion");
             DamageEnemies(enemyList, damageType, damage);
         }
 
         private void DamageEnemies(List<AEnemy> enemyList, DamageType damageType, int damage)
         {
             foreach (AEnemy enemy in enemyList) enemy.TakeDamage(damageType, damage);
+        }
+
+        public void ExplotionAnimationFinished()
+        {
+            //_poolManager.Release(this);
+        }
+
+        public override void Reset()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
