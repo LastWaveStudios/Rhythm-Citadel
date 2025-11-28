@@ -61,6 +61,9 @@ namespace AIBehaviourAPI.Bt
         /// </summary>
         public void Update()
         {
+            if (_status != Status.Running)
+                throw new BehaviourAPIException($"Cannot update BT: {_name} if is not in Running state.");
+            
             if (_rootNode.Condition()) return;
 
             _status = Status.Finished;
@@ -98,7 +101,7 @@ namespace AIBehaviourAPI.Bt
         public void RegisterNode(INode node)
         {
             if (_nodes.Contains(node))
-                throw new BehaviourAPIException($"Cannot register one node more than one time in BT: {_name}.");
+                throw new BehaviourAPIException($"Cannot register one node more than one time in BT: {_name}; node: {node.Name}.");
             
             _nodes.Add(node);
         }
