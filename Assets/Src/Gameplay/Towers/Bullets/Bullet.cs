@@ -1,38 +1,15 @@
 using Gameplay.Enemies;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
 using Utilities.ObjectPool;
 
-namespace Gameplay.World
+namespace Gameplay.Towers.Bullets
 {
-    public class Bullet : APoolableObject
+    public class Bullet : ABullet
     {
-        /**
-        public bool IsActive
-        {
-            get => gameObject.activeSelf;
-            set => gameObject.SetActive(value);
-        }
-        /**/
-        //Just use IsActive from APoolableObject it's a public method
 
-        /**/
-        public override void Reset()
-        {
-            // Not needed, because the shot that will be called instantly after the bullet is get from the pool sets the values
-        }
-        /**/
 
-        public void Shot(Vector3 from, List<AEnemy> enemy, float dur, IPoolManager pool, DamageType damageType, int damage)
-        {
-            Debug.Log("Bullets::Shot: Reached");
-            transform.position = from;
-
-            StartCoroutine(BulletMovement(enemy, dur, pool, damageType, damage));
-        }
 
         /// <summary>
         /// Moves the bullet to the enemy position in the duration time, and when reach is stored in pool
@@ -41,7 +18,7 @@ namespace Gameplay.World
         /// <param name="dur"> must be > 0 </param>
         /// <param name="pool"></param>
         /// <returns></returns>
-        private IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
+        protected override IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
 
             //Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
@@ -65,9 +42,6 @@ namespace Gameplay.World
             DamageEnemies(enemyList, damageType, damage);
         }
 
-        private void DamageEnemies(List<AEnemy> enemyList, DamageType damageType, int damage)
-        {
-            foreach (AEnemy enemy in enemyList) enemy.TakeDamage(damageType, damage);
-        }
+
     }
 }

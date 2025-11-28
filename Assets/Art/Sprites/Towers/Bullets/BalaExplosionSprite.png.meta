@@ -293,10 +293,10 @@ TextureImporter:
       name: BalaExplosionSprite_0
       rect:
         serializedVersion: 2
-        x: 354
-        y: 3574
-        width: 35
-        height: 34
+        x: 0
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: BalaExplosionSprite_1
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 3572
-        width: 38
-        height: 37
+        x: 741
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: BalaExplosionSprite_2
       rect:
         serializedVersion: 2
-        x: 1836
-        y: 3571
-        width: 42
-        height: 40
+        x: 1482
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: BalaExplosionSprite_3
       rect:
         serializedVersion: 2
-        x: 2577
-        y: 3572
-        width: 38
-        height: 37
+        x: 2223
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: BalaExplosionSprite_4
       rect:
         serializedVersion: 2
-        x: 3322
-        y: 3574
-        width: 35
-        height: 34
+        x: 2964
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: BalaExplosionSprite_5
       rect:
         serializedVersion: 2
-        x: 4063
-        y: 3572
-        width: 38
-        height: 37
+        x: 3705
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +425,10 @@ TextureImporter:
       name: BalaExplosionSprite_6
       rect:
         serializedVersion: 2
-        x: 4799
-        y: 3571
-        width: 42
-        height: 40
+        x: 4446
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +447,10 @@ TextureImporter:
       name: BalaExplosionSprite_7
       rect:
         serializedVersion: 2
-        x: 5542
-        y: 3572
-        width: 38
-        height: 37
+        x: 5187
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +469,10 @@ TextureImporter:
       name: BalaExplosionSprite_8
       rect:
         serializedVersion: 2
-        x: 6286
-        y: 3574
-        width: 35
-        height: 34
+        x: 5928
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +491,10 @@ TextureImporter:
       name: BalaExplosionSprite_9
       rect:
         serializedVersion: 2
-        x: 7024
-        y: 3572
-        width: 40
-        height: 38
+        x: 6669
+        y: 3192
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -513,10 +513,10 @@ TextureImporter:
       name: BalaExplosionSprite_10
       rect:
         serializedVersion: 2
-        x: 349
-        y: 2772
-        width: 44
-        height: 43
+        x: 0
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -535,10 +535,10 @@ TextureImporter:
       name: BalaExplosionSprite_11
       rect:
         serializedVersion: 2
-        x: 1096
-        y: 2775
-        width: 40
-        height: 38
+        x: 741
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,10 +557,10 @@ TextureImporter:
       name: BalaExplosionSprite_12
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 2777
-        width: 35
-        height: 34
+        x: 1482
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,10 +579,10 @@ TextureImporter:
       name: BalaExplosionSprite_13
       rect:
         serializedVersion: 2
-        x: 2576
-        y: 2775
-        width: 40
-        height: 38
+        x: 2223
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +601,10 @@ TextureImporter:
       name: BalaExplosionSprite_14
       rect:
         serializedVersion: 2
-        x: 3317
-        y: 2772
-        width: 44
-        height: 43
+        x: 2964
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -623,10 +623,10 @@ TextureImporter:
       name: BalaExplosionSprite_15
       rect:
         serializedVersion: 2
-        x: 4062
-        y: 2775
-        width: 40
-        height: 38
+        x: 3705
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +645,10 @@ TextureImporter:
       name: BalaExplosionSprite_16
       rect:
         serializedVersion: 2
-        x: 4798
-        y: 2773
-        width: 41
-        height: 37
+        x: 4446
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,10 +667,10 @@ TextureImporter:
       name: BalaExplosionSprite_17
       rect:
         serializedVersion: 2
-        x: 5536
-        y: 2786
-        width: 26
-        height: 27
+        x: 5187
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -689,10 +689,10 @@ TextureImporter:
       name: BalaExplosionSprite_18
       rect:
         serializedVersion: 2
-        x: 5562
-        y: 2789
-        width: 24
-        height: 24
+        x: 5928
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -711,10 +711,10 @@ TextureImporter:
       name: BalaExplosionSprite_19
       rect:
         serializedVersion: 2
-        x: 6271
-        y: 2780
-        width: 64
-        height: 39
+        x: 6669
+        y: 2394
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,10 +733,10 @@ TextureImporter:
       name: BalaExplosionSprite_20
       rect:
         serializedVersion: 2
-        x: 7005
-        y: 2762
-        width: 77
-        height: 73
+        x: 0
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -755,10 +755,10 @@ TextureImporter:
       name: BalaExplosionSprite_21
       rect:
         serializedVersion: 2
-        x: 5543
-        y: 2767
-        width: 34
-        height: 16
+        x: 741
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,10 +777,10 @@ TextureImporter:
       name: BalaExplosionSprite_22
       rect:
         serializedVersion: 2
-        x: 5547
-        y: 2780
-        width: 6
-        height: 6
+        x: 1482
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -799,10 +799,10 @@ TextureImporter:
       name: BalaExplosionSprite_23
       rect:
         serializedVersion: 2
-        x: 6287
-        y: 2758
-        width: 31
-        height: 16
+        x: 2223
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -821,10 +821,10 @@ TextureImporter:
       name: BalaExplosionSprite_24
       rect:
         serializedVersion: 2
-        x: 7031
-        y: 2750
-        width: 27
-        height: 14
+        x: 2964
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -843,10 +843,10 @@ TextureImporter:
       name: BalaExplosionSprite_25
       rect:
         serializedVersion: 2
-        x: 316
-        y: 1936
-        width: 108
-        height: 110
+        x: 3705
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,10 +865,10 @@ TextureImporter:
       name: BalaExplosionSprite_26
       rect:
         serializedVersion: 2
-        x: 1044
-        y: 1919
-        width: 143
-        height: 151
+        x: 4446
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,10 +887,10 @@ TextureImporter:
       name: BalaExplosionSprite_27
       rect:
         serializedVersion: 2
-        x: 1768
-        y: 1901
-        width: 177
-        height: 187
+        x: 5187
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -909,10 +909,10 @@ TextureImporter:
       name: BalaExplosionSprite_28
       rect:
         serializedVersion: 2
-        x: 2489
-        y: 1883
-        width: 212
-        height: 223
+        x: 5928
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -931,10 +931,10 @@ TextureImporter:
       name: BalaExplosionSprite_29
       rect:
         serializedVersion: 2
-        x: 3214
-        y: 1865
-        width: 248
-        height: 259
+        x: 6669
+        y: 1596
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -953,10 +953,10 @@ TextureImporter:
       name: BalaExplosionSprite_30
       rect:
         serializedVersion: 2
-        x: 3940
-        y: 1847
-        width: 282
-        height: 295
+        x: 0
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -975,10 +975,10 @@ TextureImporter:
       name: BalaExplosionSprite_31
       rect:
         serializedVersion: 2
-        x: 4660
-        y: 1828
-        width: 318
-        height: 333
+        x: 741
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -997,10 +997,10 @@ TextureImporter:
       name: BalaExplosionSprite_32
       rect:
         serializedVersion: 2
-        x: 5384
-        y: 1810
-        width: 352
-        height: 369
+        x: 1482
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1019,10 +1019,10 @@ TextureImporter:
       name: BalaExplosionSprite_33
       rect:
         serializedVersion: 2
-        x: 6109
-        y: 1792
-        width: 386
-        height: 405
+        x: 2223
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1041,10 +1041,10 @@ TextureImporter:
       name: BalaExplosionSprite_34
       rect:
         serializedVersion: 2
-        x: 6832
-        y: 1774
-        width: 422
-        height: 441
+        x: 2964
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1063,10 +1063,10 @@ TextureImporter:
       name: BalaExplosionSprite_35
       rect:
         serializedVersion: 2
-        x: 3041
-        y: 872
-        width: 594
-        height: 623
+        x: 3705
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1085,10 +1085,10 @@ TextureImporter:
       name: BalaExplosionSprite_36
       rect:
         serializedVersion: 2
-        x: 3773
-        y: 861
-        width: 615
-        height: 652
+        x: 4446
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,10 +1107,10 @@ TextureImporter:
       name: BalaExplosionSprite_37
       rect:
         serializedVersion: 2
-        x: 4494
-        y: 843
-        width: 650
-        height: 688
+        x: 5187
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1129,10 +1129,10 @@ TextureImporter:
       name: BalaExplosionSprite_38
       rect:
         serializedVersion: 2
-        x: 4796
-        y: 1488
-        width: 38
-        height: 6
+        x: 5928
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1151,10 +1151,10 @@ TextureImporter:
       name: BalaExplosionSprite_39
       rect:
         serializedVersion: 2
-        x: 5218
-        y: 825
-        width: 683
-        height: 724
+        x: 6669
+        y: 798
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1173,10 +1173,10 @@ TextureImporter:
       name: BalaExplosionSprite_40
       rect:
         serializedVersion: 2
-        x: 5947
-        y: 816
-        width: 713
-        height: 752
+        x: 0
+        y: 0
+        width: 741
+        height: 798
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1191,429 +1191,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_41
-      rect:
-        serializedVersion: 2
-        x: 6674
-        y: 802
-        width: 733
-        height: 784
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab960108fc46fd680800000000000000
-      internalID: -8728146710451164742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_42
-      rect:
-        serializedVersion: 2
-        x: 2315
-        y: 890
-        width: 560
-        height: 587
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb1511e9c47a6a890800000000000000
-      internalID: -7447080986299248196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_43
-      rect:
-        serializedVersion: 2
-        x: 4060
-        y: 1467
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96a1cc30f3d8e20b0800000000000000
-      internalID: -5751504372319380887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_44
-      rect:
-        serializedVersion: 2
-        x: 142
-        y: 945
-        width: 456
-        height: 477
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4242751ca360ee420800000000000000
-      internalID: 2661071279244125220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_45
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 927
-        width: 490
-        height: 513
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73b307bdd362a9290800000000000000
-      internalID: -7882946150642205897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_46
-      rect:
-        serializedVersion: 2
-        x: 1593
-        y: 908
-        width: 526
-        height: 551
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b94ae9dd019c0f90800000000000000
-      internalID: -6986049433281869390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_47
-      rect:
-        serializedVersion: 2
-        x: 4383
-        y: 1191
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f0def5c2450191f0800000000000000
-      internalID: -1040044254598082317
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_48
-      rect:
-        serializedVersion: 2
-        x: 5138
-        y: 1192
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae808ab5620a66960800000000000000
-      internalID: 7594933908213860586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_49
-      rect:
-        serializedVersion: 2
-        x: 5895
-        y: 1192
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b3a40ff881c5a2a0800000000000000
-      internalID: -6726757674269760585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_50
-      rect:
-        serializedVersion: 2
-        x: 2113
-        y: 1176
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf0ebce4e8fd00090800000000000000
-      internalID: -8070204729947594501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_51
-      rect:
-        serializedVersion: 2
-        x: 2869
-        y: 1175
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b16f35ce3bfba750800000000000000
-      internalID: 6317419149333062068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_52
-      rect:
-        serializedVersion: 2
-        x: 3629
-        y: 1175
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c4912a5656500d90800000000000000
-      internalID: -7133606880875539259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_53
-      rect:
-        serializedVersion: 2
-        x: 4380
-        y: 1177
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9db493091fe00d0f0800000000000000
-      internalID: -1094358278781449255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_54
-      rect:
-        serializedVersion: 2
-        x: 5892
-        y: 1176
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07376a457810b5e70800000000000000
-      internalID: 9104872752411997040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_55
-      rect:
-        serializedVersion: 2
-        x: 6679
-        y: 1170
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd755b61f37bed3c0800000000000000
-      internalID: -4332824309892032547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_56
-      rect:
-        serializedVersion: 2
-        x: 5220
-        y: 1158
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f778bc50f59b98aa0800000000000000
-      internalID: -6158187197682186369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_57
-      rect:
-        serializedVersion: 2
-        x: 5575
-        y: 828
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 785517ebe1c3cb220800000000000000
-      internalID: 2502941595652937095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_58
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 742
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 29a1e6bab704f7c50800000000000000
-      internalID: 6665116873432898194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BalaExplosionSprite_59
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 349
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0011763a8dbd8e210800000000000000
-      internalID: 1362580610780434688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8fdfba746d07ea04dbc672db0ae68e33
     internalID: 0
     vertices: []
     indices: 
@@ -1659,26 +1241,7 @@ TextureImporter:
       BalaExplosionSprite_39: 7672413541235991629
       BalaExplosionSprite_4: 3487414094158642886
       BalaExplosionSprite_40: 8793789570008574924
-      BalaExplosionSprite_41: -8728146710451164742
-      BalaExplosionSprite_42: -7447080986299248196
-      BalaExplosionSprite_43: -5751504372319380887
-      BalaExplosionSprite_44: 2661071279244125220
-      BalaExplosionSprite_45: -7882946150642205897
-      BalaExplosionSprite_46: -6986049433281869390
-      BalaExplosionSprite_47: -1040044254598082317
-      BalaExplosionSprite_48: 7594933908213860586
-      BalaExplosionSprite_49: -6726757674269760585
       BalaExplosionSprite_5: -3565632820551564277
-      BalaExplosionSprite_50: -8070204729947594501
-      BalaExplosionSprite_51: 6317419149333062068
-      BalaExplosionSprite_52: -7133606880875539259
-      BalaExplosionSprite_53: -1094358278781449255
-      BalaExplosionSprite_54: 9104872752411997040
-      BalaExplosionSprite_55: -4332824309892032547
-      BalaExplosionSprite_56: -6158187197682186369
-      BalaExplosionSprite_57: 2502941595652937095
-      BalaExplosionSprite_58: 6665116873432898194
-      BalaExplosionSprite_59: 1362580610780434688
       BalaExplosionSprite_6: -2083319294069278409
       BalaExplosionSprite_7: 7652022193584612360
       BalaExplosionSprite_8: -8329347712759963624
