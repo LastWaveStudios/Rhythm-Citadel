@@ -8,6 +8,7 @@ using Utilities.ObjectPool;
 using Utilities.ServiceLocator;
 using System.Collections;
 using Gameplay.RhythmSystem;
+using Gameplay.Towers.Bullets;
 
 namespace Gameplay.Towers
 {
@@ -22,7 +23,7 @@ namespace Gameplay.Towers
 
         [SerializeField] protected RhythmPattern _pattern;
         [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
-        [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component  
+        [SerializeField] protected ABullet _bulletPrefab; // Must be one that have Bullet Component  
         
         [SerializeField] protected int _groupId;
         [SerializeField] protected int _damage;   //The damage the towers can do is between two values: minDamage and maxDamage
@@ -65,6 +66,11 @@ namespace Gameplay.Towers
                 Debug.LogError("ATower::Init: The world manager is null");
                 return;
             }
+            PoolInit();
+        }
+
+        protected virtual void PoolInit()
+        {
             _poolManager = new PoolManager();
             _poolManager.RegisterPool<Bullet>(new ObjectPool<Bullet>(_bulletPrefab.GetComponent<Bullet>()));
         }
@@ -142,10 +148,15 @@ namespace Gameplay.Towers
             List<AEnemy> objectives = focusType(enemies, _positionInWorldCell, _range);
             if (objectives == null || objectives.Count == 0 || objectives[0] == null) return;
 
-            Bullet bullet = _poolManager.Get<Bullet>();
+            ABullet bullet = GetFromPool();
 
             Vector3 from = transform.position;
             bullet.Shot(from, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
+        }
+
+        protected virtual ABullet GetFromPool()
+        {
+            return _poolManager.Get<Bullet>();
         }
         public void Improve()
         {

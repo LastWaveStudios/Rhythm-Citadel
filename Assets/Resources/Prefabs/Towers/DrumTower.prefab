@@ -133,7 +133,7 @@ MonoBehaviour:
       durationInSixteenths: 2
     spaceInSixteenths: 16
   _damageType: 2
-  _bulletPrefab: {fileID: 5550800652619723848, guid: b2dbba2f634edb249bbc91f84086446d, type: 3}
+  _bulletPrefab: {fileID: 5655018363554610079, guid: b2dbba2f634edb249bbc91f84086446d, type: 3}
   _groupId: 0
   _damage: 3
   _range: 2

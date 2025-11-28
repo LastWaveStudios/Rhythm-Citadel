@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7796486985453749290}
   - component: {fileID: 1242182839186431583}
   - component: {fileID: 6746852402381985141}
-  - component: {fileID: 5550800652619723848}
+  - component: {fileID: 5655018363554610079}
   m_Layer: 0
   m_Name: AreaBullet
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5550800652619723848
+--- !u!114 &5655018363554610079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +120,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3685542597191702083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3ea7e0c85ad4e44970431668b27900, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f229f4c7dc35f449882806b7b5bf2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

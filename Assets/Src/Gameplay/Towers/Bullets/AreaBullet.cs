@@ -4,33 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities.ObjectPool;
 
-namespace Gameplay.World
+namespace Gameplay.Towers.Bullets
 {
-    public class Bullet : APoolableObject
+    public class AreaBullet : ABullet
     {
-        /**
-        public bool IsActive
+        private Animator _animator;
+        private void Start()
         {
-            get => gameObject.activeSelf;
-            set => gameObject.SetActive(value);
+            _animator = GetComponent<Animator>();
         }
-        /**/
-        //Just use IsActive from APoolableObject it's a public method
 
-        /**/
-        public override void Reset()
-        {
-            // Not needed, because the shot that will be called instantly after the bullet is get from the pool sets the values
-        }
-        /**/
-
-        public void Shot(Vector3 from, List<AEnemy> enemy, float dur, IPoolManager pool, DamageType damageType, int damage)
-        {
-            Debug.Log("Bullets::Shot: Reached");
-            transform.position = from;
-
-            StartCoroutine(BulletMovement(enemy, dur, pool, damageType, damage));
-        }
 
         /// <summary>
         /// Moves the bullet to the enemy position in the duration time, and when reach is stored in pool
@@ -39,11 +22,10 @@ namespace Gameplay.World
         /// <param name="dur"> must be > 0 </param>
         /// <param name="pool"></param>
         /// <returns></returns>
-        private IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
+        protected override IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
 
             //Debug.Log("Bullet::BulletMovement: Start the movement of the bullet");
-
             AEnemy enemy = enemyList[0];
             Vector3 start = transform.position;
             Vector3 end = enemy.transform.position;
@@ -59,13 +41,15 @@ namespace Gameplay.World
                 transform.position = Vector3.Lerp(start, end, time / dur); // It is better to give a dur limited for not to be 0 or negative, but honestly pass that to this is be retard so ...
                 yield return null;
             }
-            pool.Release(this);
+            _animator.Play("AreaExplosion");
+            yield return null;
+            float animLength = _animator.GetCurrentAnimatorStateInfo(0).length;
+
             DamageEnemies(enemyList, damageType, damage);
+            yield return new WaitForSeconds(animLength);
+
+            pool.Release(this);
         }
 
-        private void DamageEnemies(List<AEnemy> enemyList, DamageType damageType, int damage)
-        {
-            foreach (AEnemy enemy in enemyList) enemy.TakeDamage(damageType, damage);
-        }
     }
 }
