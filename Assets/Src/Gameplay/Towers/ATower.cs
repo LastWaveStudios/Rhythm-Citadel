@@ -32,6 +32,7 @@ namespace Gameplay.Towers
         
         [SerializeField] protected float _damageMultiplier = 1.15f;
         [SerializeField] protected float _timeForProjectile = 0.1f; // Time of projectile to reach the target
+        [SerializeField] protected Vector3 _bulletOffset = new Vector3(0f, 1.2f, 0f);
         
         protected bool _isEnabled = true;
         protected int _level = 1;
@@ -151,7 +152,7 @@ namespace Gameplay.Towers
             ABullet bullet = GetFromPool();
 
             Vector3 from = transform.position;
-            bullet.Shot(from, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
+            bullet.Shot(from + _bulletOffset, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
         }
 
         protected virtual ABullet GetFromPool()
