@@ -85,10 +85,12 @@ namespace Gameplay
         // TODO: Destroy this method -> Just for test purpose
         private void Update()
         {
+            /**
             if (UnityEngine.Input.GetKeyDown(KeyCode.L))
             {
                 ChangeFightState();
             }
+            **/
         }
 
 
