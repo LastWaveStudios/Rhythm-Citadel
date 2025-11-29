@@ -88,10 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58df5893943100a449fef88ce996148a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSprite: {fileID: -5218233680455115955, guid: 83bc17f1328741a4097987af975c3dd5, type: 3}
-  hoverSprite: {fileID: 6379457563110028627, guid: c8d48b3f8a7a983449f37f28d807763b, type: 3}
-  inactiveSprite: {fileID: -5236580769812691595, guid: c6d02633e82db3d46a1d4e6b194a04a8, type: 3}
-  inactiveHoverSprite: {fileID: 2118856551448195418, guid: 7c66696978efacd4e9e77d5a83c3c4e3, type: 3}
+  normalSprite: {fileID: 6208176927266180224, guid: c511367d9ec3fae4bbe9b565e7a222ad, type: 3}
+  hoverSprite: {fileID: -1003667974950918684, guid: f035d805fa5fc6d46ba224e9592358f6, type: 3}
+  inactiveSprite: {fileID: 6208176927266180224, guid: c511367d9ec3fae4bbe9b565e7a222ad, type: 3}
+  inactiveHoverSprite: {fileID: -1003667974950918684, guid: f035d805fa5fc6d46ba224e9592358f6, type: 3}
 --- !u!1 &7565829371783325886
 GameObject:
   m_ObjectHideFlags: 0
