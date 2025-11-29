@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5218233680455115955, guid: 83bc17f1328741a4097987af975c3dd5, type: 3}
+  m_Sprite: {fileID: 6208176927266180224, guid: 72b6f3a040e1091419ee5c515709636c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -88,10 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58df5893943100a449fef88ce996148a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSprite: {fileID: 6208176927266180224, guid: c511367d9ec3fae4bbe9b565e7a222ad, type: 3}
-  hoverSprite: {fileID: -1003667974950918684, guid: f035d805fa5fc6d46ba224e9592358f6, type: 3}
-  inactiveSprite: {fileID: 6208176927266180224, guid: c511367d9ec3fae4bbe9b565e7a222ad, type: 3}
-  inactiveHoverSprite: {fileID: -1003667974950918684, guid: f035d805fa5fc6d46ba224e9592358f6, type: 3}
+  normalSprite: {fileID: 6208176927266180224, guid: 72b6f3a040e1091419ee5c515709636c, type: 3}
+  hoverSprite: {fileID: -1003667974950918684, guid: 481c71aa614e4524986a74e0086ebdba, type: 3}
+  inactiveSprite: {fileID: 6208176927266180224, guid: 72b6f3a040e1091419ee5c515709636c, type: 3}
+  inactiveHoverSprite: {fileID: -1003667974950918684, guid: 481c71aa614e4524986a74e0086ebdba, type: 3}
 --- !u!1 &7565829371783325886
 GameObject:
   m_ObjectHideFlags: 0
