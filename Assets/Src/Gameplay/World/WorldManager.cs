@@ -115,13 +115,14 @@ namespace Gameplay.World
         [SerializeField] private float MINALPHA = 1f;
         [SerializeField] private float MAXALPHA = 55f;
 
-        public void Highlight(Vector3Int tile)
+        public void Highlight(Vector3Int tile, Color? color = null)
         {
             if (_activeHighlights.ContainsKey(tile)) return;
 
             _highlightTilemap.SetTileFlags(tile, TileFlags.None);
+            if (color == null) color = _highlightTilemap.GetColor(tile);
 
-            Coroutine c = StartCoroutine(HighlightRoutine(tile));
+            Coroutine c = StartCoroutine(HighlightRoutine(tile, color.Value));
             _activeHighlights.Add(tile, c);
         }
 
@@ -145,25 +146,25 @@ namespace Gameplay.World
         /// 
         /// We can use the same courutine from 0 to 55 as 55 to 0 so just just call lerp Alpha
         /// </summary>
-        private IEnumerator HighlightRoutine(Vector3Int tile)
+        private IEnumerator HighlightRoutine(Vector3Int tile, Color color)
         {
 
             while (true)
             {
-                yield return LerpAlpha(tile, MINALPHA, MAXALPHA, TIMETOMAXALPHA);
+                yield return LerpAlpha(tile, MINALPHA, MAXALPHA, TIMETOMAXALPHA, color);
 
-                Debug.Log("Esperando 2s");
                 yield return new WaitForSeconds(TIMETOWAIT);
 
-                yield return LerpAlpha(tile, MAXALPHA, MINALPHA, TIMETOMAXALPHA);
+                yield return LerpAlpha(tile, MAXALPHA, MINALPHA, TIMETOMAXALPHA, color);
             }
         }
 
-        private IEnumerator LerpAlpha(Vector3Int tile, float from, float to, float duration)
+        private IEnumerator LerpAlpha(Vector3Int tile, float from, float to, float duration, Color color)
         {
             float t = 0f;
 
-            Color c = _highlightTilemap.GetColor(tile);
+            //Color c = _highlightTilemap.GetColor(tile);
+            Color c = color;
             while (t < duration)
             {
                 t += Time.deltaTime;
