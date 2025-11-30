@@ -14,7 +14,7 @@ namespace Gameplay.Towers
 
         [SerializeField] private const int NUMBER_OF_GROUPS = 6;
         [SerializeField] private const double DEFAULT_MAX_OFFSET = 200;
-        [SerializeField] private const double DEFAULT_TIME_OF_DISABLE = 5000;
+        [SerializeField] private const double DEFAULT_TIME_OF_DISABLE = 2000;
         public override void Init()
         {
             _towersGroups = new List<TowersGroup>();
