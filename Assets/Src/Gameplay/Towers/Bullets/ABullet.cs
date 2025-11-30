@@ -15,7 +15,6 @@ namespace Gameplay.Towers.Bullets
         }
         public void Shot(Vector3 from, List<AEnemy> enemy, float dur, IPoolManager pool, DamageType damageType, int damage)
         {
-            Debug.Log("Bullets::Shot: Reached");
             transform.position = from;
 
             StartCoroutine(BulletMovement(enemy, dur, pool, damageType, damage));

@@ -144,5 +144,12 @@ namespace Gameplay.RhythmSystem
                 patternNotes.RemoveAt(index);
             }
         }
+
+        public int GetNotes()
+        {
+            int notes = 0;
+            foreach (Note note in patternNotes) if (!note.isSilence) notes++;
+            return notes;
+        }
     }
 }

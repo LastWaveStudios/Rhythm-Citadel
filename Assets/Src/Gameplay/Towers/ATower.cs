@@ -18,8 +18,9 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        [SerializeField] const float PRICEMULTIPLIER = 0.7f;
-        [SerializeField] const int MAX_LEVEL = 4;
+        const float PRICEMULTIPLIER = 0.7f;
+        const int MAX_LEVEL = 4;
+        const int RANGEIMPROVEMENT = 1;
 
         [SerializeField] protected RhythmPattern _pattern;
         [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
@@ -88,16 +89,31 @@ namespace Gameplay.Towers
         {
             return (int)(_price * _level * PRICEMULTIPLIER);
         }
+
         public int GetSellingPrice()
         {
             return (int)Mathf.Round((float)(_price * PRICEMULTIPLIER * _level));
         }
         
+        public int GetLevel()
+        {
+            return _level;
+        }
+
         public int GetDamage()
         {
             return _damage;
         }
 
+        public int GetImprovedDamage()
+        {
+            return (int)Math.Ceiling(_damage * _damageMultiplier);
+        }
+
+        public int GetAttacksPerBeat()
+        {
+            return _pattern.GetNotes();
+        }
         public bool IsMaxLevel()
         {
             return _level == MAX_LEVEL;
@@ -121,6 +137,12 @@ namespace Gameplay.Towers
         public int GetRange()
         {
             return _range;
+        }
+
+        public int GetImprovedRange()
+        {
+            if (_level % 2 == 0) return (_range + RANGEIMPROVEMENT);
+            else return _range;
         }
         #endregion
 
@@ -161,9 +183,9 @@ namespace Gameplay.Towers
         }
         public void Improve()
         {
-            _level++;
-            if (_level % 2 == 0) _range += (int)_level / 2;
+            if (_level % 2 == 0) _range += RANGEIMPROVEMENT;
             _damage = (int)Math.Ceiling(_damage * _damageMultiplier);
+            _level++;
         }
         #endregion
 
