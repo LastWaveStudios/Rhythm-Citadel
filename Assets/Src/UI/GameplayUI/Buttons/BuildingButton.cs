@@ -91,7 +91,7 @@ namespace UI.GameplayUI.Buttons
             ATower _aTower = _towerToBuild.GetComponent<ATower>();
             _title.text = name;
             _damage.text = ($"Damage per hit: {_aTower.GetDamage().ToString()}");
-            _hitsPerBeat.text = ($"Hits: {_aTower.GetAttacksPerBeat().ToString()}");
+            _hitsPerBeat.text = ($"Hits: {_aTower.GetAttacksPerMeasure().ToString()}");
             _price.text = ($"Price: {_aTower.GetPrice().ToString()}");
         }
         

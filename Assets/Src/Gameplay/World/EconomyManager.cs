@@ -52,7 +52,7 @@ namespace Gameplay.World
         {
             _vinylText = _vinylTextPrefab.GetComponent<TextMeshProUGUI>();
             _vinylText.text = _vinyl.ToString();
-            _canvas = FindObjectOfType<Canvas>();
+            _canvas = FindFirstObjectByType<Canvas>();
         }
         
         #region ClickMethods 
@@ -107,7 +107,7 @@ namespace Gameplay.World
             // This part gets the position clicked relative to the canvas, then we will copy this out value to the global one, so we can use it out of here
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
             _canvas.transform as RectTransform,
-            mousePosition,
+            RectTransformUtility.WorldToScreenPoint(Camera.main, _tilemap.GetCellCenterWorld(_selectedTilePosition.Value)),
             _canvas.worldCamera,
             out Vector2 localPoint);
 

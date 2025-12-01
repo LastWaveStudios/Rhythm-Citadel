@@ -110,7 +110,7 @@ namespace Gameplay.Towers
             return (int)Math.Ceiling(_damage * _damageMultiplier);
         }
 
-        public int GetAttacksPerBeat()
+        public int GetAttacksPerMeasure()
         {
             return _pattern.GetNotes();
         }
