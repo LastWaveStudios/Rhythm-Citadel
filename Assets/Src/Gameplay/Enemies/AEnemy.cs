@@ -141,7 +141,7 @@ namespace Gameplay.Enemies
         {
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
-            if (_health <= 0 && this.isActiveAndEnabled) PushDeath();
+            if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled) PushDeath();
         }
 
         public void Move()

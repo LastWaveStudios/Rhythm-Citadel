@@ -22,7 +22,12 @@ namespace Gameplay.Towers.Bullets
         protected abstract IEnumerator BulletMovement(List<AEnemy> enemyList, float dur, IPoolManager pool, DamageType damageType, int damage);
         protected void DamageEnemies(List<AEnemy> enemyList, DamageType damageType, int damage)
         {
-            foreach (AEnemy enemy in enemyList) enemy.TakeDamage(damageType, damage);
+            foreach (AEnemy enemy in enemyList)
+            {
+                if (!enemy.IsAlive) continue;
+
+                enemy.TakeDamage(damageType, damage);
+            }
         }
     }
 }
