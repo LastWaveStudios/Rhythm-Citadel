@@ -41,9 +41,15 @@ namespace Gameplay.Towers
         protected IPoolManager _poolManager;
         protected Vector3Int _positionInWorldCell;
 
+        [SerializeField]
+        private List<Sprite> frames = new List<Sprite>();
+        private int currentFrame = 0;
+        private SpriteRenderer sprite;
+
         #region Services references
         protected WaveManager _waveManager;
         protected WorldManager _worldManager;
+        protected RhythmManager _rhythmManager;
         #endregion
 
         public Func<List<AEnemy>, Vector3Int, int, List<AEnemy>> focusType;
@@ -52,6 +58,7 @@ namespace Gameplay.Towers
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+            sprite = GetComponent<SpriteRenderer>();
         }
 
         private void Init()
@@ -68,6 +75,13 @@ namespace Gameplay.Towers
                 Debug.LogError("ATower::Init: The world manager is null");
                 return;
             }
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("ATower::Init: The rhythm manager is null");
+                return;
+            }
+            _rhythmManager.onBeat += StepOneFrame;
             PoolInit();
         }
 
@@ -149,13 +163,13 @@ namespace Gameplay.Towers
         #region Other methods
         public virtual void Disable() // call it when disable the tower (just for sound and animations)
         {
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = false;
             sprite.color = Color.red;
         }
         public virtual void Enable() // call it when Enable the tower (just for sound and animations)
         {
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = true;
             sprite.color = Color.white;
         }
@@ -187,6 +201,24 @@ namespace Gameplay.Towers
             _damage = (int)Math.Ceiling(_damage * _damageMultiplier);
             _level++;
         }
+
+        public void StepOneFrame(bool isFirstBeat)
+        {
+            if (frames == null || frames.Count == 0)
+            {
+                Debug.LogError("ATower is missing animation frames");
+                return;
+            }
+
+            currentFrame++;
+
+            if (currentFrame >= frames.Count)
+                currentFrame = 0;
+
+            sprite.sprite = frames[currentFrame];
+            Debug.Log("Current frame: " + currentFrame);
+        }
+
         #endregion
 
         #region Corutines
