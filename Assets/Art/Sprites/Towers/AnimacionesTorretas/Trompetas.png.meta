@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2fc26fd91c406544aae4e8af6b7a54e
+guid: 24b05e69efa411d4d809ba1f47f358ac
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -124,6 +124,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,11 +145,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 663
-        width: 548
-        height: 623
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 647
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +166,12 @@ TextureImporter:
       name: Trompetas_1
       rect:
         serializedVersion: 2
-        x: 546
-        y: 663
-        width: 532
-        height: 627
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 544
+        y: 647
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +188,12 @@ TextureImporter:
       name: Trompetas_2
       rect:
         serializedVersion: 2
-        x: 1087
-        y: 663
-        width: 533
-        height: 631
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1088
+        y: 647
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,10 +212,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 548
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +232,12 @@ TextureImporter:
       name: Trompetas_4
       rect:
         serializedVersion: 2
-        x: 546
+        x: 544
         y: 0
-        width: 532
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +254,12 @@ TextureImporter:
       name: Trompetas_5
       rect:
         serializedVersion: 2
-        x: 1087
+        x: 1088
         y: 0
-        width: 533
-        height: 650
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 544
+        height: 647
+      alignment: 9
+      pivot: {x: 0.36, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e5727a4e121d3134ab8f129e5b69ebf9
     internalID: 0
     vertices: []
     indices: 

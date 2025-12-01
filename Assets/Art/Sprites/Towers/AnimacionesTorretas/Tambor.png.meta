@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54b2c5a1524cfb549b19793a9e8852ce
+guid: 9b41b51fdcaff684ca25c4673119dc21
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -142,6 +142,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,11 +163,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 645
+        y: 650
         width: 422
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 646
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +184,12 @@ TextureImporter:
       name: Tambor_1
       rect:
         serializedVersion: 2
-        x: 445
-        y: 645
-        width: 436
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 464
+        y: 650
+        width: 422
+        height: 646
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +206,12 @@ TextureImporter:
       name: Tambor_2
       rect:
         serializedVersion: 2
-        x: 909
-        y: 645
-        width: 464
-        height: 651
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 929
+        y: 650
+        width: 422
+        height: 646
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,11 +229,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1394
-        y: 647
-        width: 438
-        height: 649
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 650
+        width: 422
+        height: 646
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,78 +250,12 @@ TextureImporter:
       name: Tambor_4
       rect:
         serializedVersion: 2
-        x: 1838
-        y: 805
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 058ed08c92f308810800000000000000
-      internalID: 1765480502611798096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tambor_5
-      rect:
-        serializedVersion: 2
-        x: 1369
-        y: 787
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 660266c8e6248f970800000000000000
-      internalID: 8788847715382861926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tambor_6
-      rect:
-        serializedVersion: 2
-        x: 890
-        y: 771
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 477ac6c36e9980010800000000000000
-      internalID: 1155342518555813748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tambor_7
-      rect:
-        serializedVersion: 2
         x: 0
         y: 0
-        width: 428
+        width: 422
         height: 646
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,15 +269,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tambor_8
+      name: Tambor_5
       rect:
         serializedVersion: 2
         x: 464
         y: 0
-        width: 417
+        width: 422
         height: 646
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,37 +291,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tambor_9
-      rect:
-        serializedVersion: 2
-        x: 917
-        y: 197
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53a35a1eea5e68590800000000000000
-      internalID: -7672192375906289099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tambor_10
+      name: Tambor_6
       rect:
         serializedVersion: 2
         x: 929
         y: 0
-        width: 467
+        width: 422
         height: 646
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,33 +312,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Tambor_11
-      rect:
-        serializedVersion: 2
-        x: 454
-        y: 177
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ddec93cc8ae8c050800000000000000
-      internalID: 5821160408674528722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8fae114a4a924774482cf84b3d6d4819
     internalID: 0
     vertices: []
     indices: 
@@ -425,15 +328,12 @@ TextureImporter:
     nameFileIdTable:
       Tambor_0: 8929369444933569912
       Tambor_1: 1430248681303602984
-      Tambor_10: 6596228801946942571
       Tambor_11: 5821160408674528722
       Tambor_2: 5810675263178310010
       Tambor_3: 6776964412511759130
-      Tambor_4: 1765480502611798096
-      Tambor_5: 8788847715382861926
-      Tambor_6: 1155342518555813748
-      Tambor_7: 4836810804073958515
-      Tambor_8: 7050785767806869234
+      Tambor_4: 4836810804073958515
+      Tambor_5: 7050785767806869234
+      Tambor_6: 6596228801946942571
       Tambor_9: -7672192375906289099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

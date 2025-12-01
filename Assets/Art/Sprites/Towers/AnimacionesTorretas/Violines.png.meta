@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a30ddcc51657f1c4ba1ae4a52c91a1b0
+guid: e3c2ea44705790940ad3305430b461df
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -157,19 +157,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Violines_0
+      name: Violines_1
       rect:
         serializedVersion: 2
-        x: 764
-        y: 2716
-        width: 530
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 695
+        y: 2709
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -183,37 +196,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_1
+      name: Violines_3
       rect:
         serializedVersion: 2
-        x: 1705
-        y: 3546
-        width: 82
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d4a384f956ed6d00800000000000000
-      internalID: 967682768983270611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Violines_2
-      rect:
-        serializedVersion: 2
-        x: 2184
-        y: 2716
-        width: 548
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2085
+        y: 2709
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,15 +218,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_3
+      name: Violines_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 2708
-        width: 537
-        height: 810
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 2709
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +243,12 @@ TextureImporter:
       name: Violines_4
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 2716
-        width: 514
-        height: 802
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1806
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +265,12 @@ TextureImporter:
       name: Violines_5
       rect:
         serializedVersion: 2
-        x: 747
-        y: 1813
-        width: 632
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 695
+        y: 1806
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,37 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_6
-      rect:
-        serializedVersion: 2
-        x: 1705
-        y: 2643
-        width: 82
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 889078d566a16eb10800000000000000
-      internalID: 2010323310625622408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Violines_7
       rect:
         serializedVersion: 2
-        x: 2124
-        y: 1813
-        width: 645
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2085
+        y: 1806
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,12 +309,12 @@ TextureImporter:
       name: Violines_8
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1805
-        width: 593
-        height: 810
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 903
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -359,15 +328,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_9
+      name: Violines_6
       rect:
         serializedVersion: 2
-        x: 1441
-        y: 1813
-        width: 645
-        height: 802
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1390
+        y: 1806
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -381,15 +350,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_10
+      name: Violines_9
       rect:
         serializedVersion: 2
-        x: 712
-        y: 910
-        width: 630
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 695
+        y: 903
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,34 +375,12 @@ TextureImporter:
       name: Violines_11
       rect:
         serializedVersion: 2
-        x: 1705
-        y: 1740
-        width: 82
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ea10fcd26399cb90800000000000000
-      internalID: -7221078474689078558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Violines_12
-      rect:
-        serializedVersion: 2
-        x: 2084
-        y: 910
-        width: 595
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2085
+        y: 903
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -447,37 +394,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_13
+      name: Violines_10
       rect:
         serializedVersion: 2
-        x: 28
-        y: 906
-        width: 639
-        height: 806
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb1a8460f6bd71170800000000000000
-      internalID: 8149223320643477951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Violines_14
-      rect:
-        serializedVersion: 2
-        x: 1389
-        y: 910
-        width: 624
-        height: 802
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1390
+        y: 903
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -491,37 +416,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Violines_15
+      name: Violines_12
       rect:
         serializedVersion: 2
-        x: 316
-        y: 837
-        width: 82
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1640448d3c4b8f470800000000000000
-      internalID: 8428685455863841889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Violines_16
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 7
-        width: 558
-        height: 802
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -534,11 +437,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Violines_2
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 2709
+        width: 695
+        height: 903
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc72cd0b5b1a8c4f81085ef74826373
+      internalID: -2020185614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2d58bb85d84744d46bbf6323c32df7a1
     internalID: 0
     vertices: []
     indices: 
@@ -548,23 +473,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Violines_0: 9042077298943896264
-      Violines_1: 967682768983270611
-      Violines_10: 6564587987646219489
-      Violines_11: -7221078474689078558
-      Violines_12: -2636163603523848896
-      Violines_13: 8149223320643477951
-      Violines_14: 8804296569365617986
-      Violines_15: 8428685455863841889
-      Violines_16: 6964827238834400737
-      Violines_2: 228158168781521440
-      Violines_3: -5006599194444775177
+      Violines_0: -5006599194444775177
+      Violines_1: 9042077298943896264
+      Violines_10: 8804296569365617986
+      Violines_11: -2636163603523848896
+      Violines_12: 6964827238834400737
+      Violines_2: -2020185614
+      Violines_3: 228158168781521440
       Violines_4: 7190991742034893960
       Violines_5: -7181814795685462307
-      Violines_6: 2010323310625622408
+      Violines_6: -287777482025221468
       Violines_7: -2578388508742030518
       Violines_8: 5208865457327340364
-      Violines_9: -287777482025221468
+      Violines_9: 6564587987646219489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
