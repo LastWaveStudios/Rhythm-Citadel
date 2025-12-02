@@ -22,12 +22,15 @@ namespace Gameplay.Enemies
         [SerializeField] protected int _damage;
         [SerializeField] protected int _vinylDrop = 0;
         [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
-
+        [SerializeField] private int _shieldMaxStacks = 2;
+        
         // Non editable variables
         protected int _path = 0;
         protected int _index = 0;           //Current Tile
         public bool IsAlive { get; protected set; } = true;    // If is death is not active
         protected int _currentPreparation = 0;
+
+        protected int _currentShield = 0;
 
         public Action<AEnemy> onDeath = delegate { };
 
@@ -132,13 +135,22 @@ namespace Gameplay.Enemies
         #endregion
 
         #region Other methods
-        public void Attack()
+        public virtual void Attack()
         {
             _dancer.TakeDamage(_damage);
         }
 
         public void TakeDamage(DamageType type, int damageToTake)
         {
+            if (_currentShield > 0)
+            {
+                _currentShield--;
+                // TODO: Remove the visual Shield if it is 0
+                Debug.Log($"NOT Passed the shields in the enemy: {this.name}");
+                
+                return;
+            }
+            Debug.Log($"Passed the shields in the enemy: {this.name}");
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
             if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled) PushDeath();
@@ -147,6 +159,13 @@ namespace Gameplay.Enemies
         public void Move()
         {
             StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
+        }
+
+        public void GiveShield(int shieldStacks)
+        {
+            _currentShield = Math.Min(_currentShield + shieldStacks, _shieldMaxStacks);
+            // TODO: Add the visual shield
+            Debug.Log($"Shield Applied in the enemy: {this.name}; Current Shield: {_currentShield}");
         }
 
         #endregion

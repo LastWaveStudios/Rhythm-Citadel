@@ -19,7 +19,7 @@ namespace AIBehaviourAPI.Demos
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
-            _US = new UtilitySystem("Cube change US", USMode.Max);
+            _US = new UtilitySystem("Cube change US", USMode.Max, 10, 3);
             
             UtilityPerception pressRPerception = new UtilityPerception("press R perception", () => UnityEngine.Input.GetKey(KeyCode.R)? 0.5f : 0.0f);
             UtilityPerception pressYPerception = new UtilityPerception("press Y perception", () => UnityEngine.Input.GetKey(KeyCode.Y)? 0.5f : 0.0f);

@@ -39,7 +39,7 @@ namespace Audio.SpecificImplementations
             // Behaviour of the Music
 
             // It is a custom mode so i must to set the custom function for it
-            _us = new UtilitySystem("Citadel March US controller", USMode.Custom);
+            _us = new UtilitySystem("Citadel March US controller", USMode.Custom, 18, 6);
             _us.SetCustomFunction(CustomUSFunction);
 
             UtilityPerception wavePercentageP = new UtilityPerception("Wave Percentage Perception", () => _levelStats.WavePercentageSpawned);
