@@ -13,6 +13,9 @@ namespace Gameplay.World
         private SpriteRenderer _spriteRender;
         [SerializeField] private Sprite[] _sprites;
         [SerializeField] private Image lifeFill;
+        
+        public float Health => _health;
+        public float MaxLife => _maxLife;
 
         public override void Init()
         {

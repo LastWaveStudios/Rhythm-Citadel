@@ -43,7 +43,7 @@ namespace Audio
             ServiceLocatorSubsystem.SubscribeToInitialice(Init);
         }
 
-        private void Init()
+        protected virtual void Init()
         {
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
             if (_rhythmManager == null)

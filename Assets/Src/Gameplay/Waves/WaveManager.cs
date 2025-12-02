@@ -20,6 +20,7 @@ namespace Gameplay.Waves
         [SerializeField] private List<Wave> _waves;
         private List<AEnemy> _currentWaveEnemies;
 
+        public int NumberOfWaves => _waves.Count;
         public int CurrentWave { get; private set; } = -1;
         public int LastEnemySpawnedInCurrentWave { get; private set; } = -1;
         public bool AllEnemiesDeadInCurrentWave { get; private set; } = false;
