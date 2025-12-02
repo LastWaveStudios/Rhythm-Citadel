@@ -11,6 +11,7 @@ namespace Input
     {
         private Actions _actions;
         public Vector2 PointerPosition { get; private set; }
+        private bool useMobileInput = false;
 
         // The delegate { } are just for initialice them to something and ignore the null check on the invokes
 
@@ -24,6 +25,8 @@ namespace Input
             base.Awake();
             _actions = new Actions();
             EnableBuildActions();
+            useMobileInput = Application.isMobilePlatform
+                         || SystemInfo.deviceType == DeviceType.Handheld;
         }
 
         #region EnablersAndDisablers
@@ -66,7 +69,6 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            Debug.Log("TOUCH / CLICK DETECTADO");
             if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
@@ -76,10 +78,7 @@ namespace Input
 
         public void OnPointerPosition(InputAction.CallbackContext context)
         {
-            //PointerPosition =context.ReadValue<Vector2>();
-            var pos = context.ReadValue<Vector2>();
-            Debug.Log("Pointer pos: " + pos);
-            PointerPosition = pos;
+            PointerPosition =context.ReadValue<Vector2>();
         }
 
         #region TowersMap
@@ -113,8 +112,29 @@ namespace Input
         {
             if (context.phase == InputActionPhase.Started) onTapGroup.Invoke(5);
         }
-
-        
         #endregion
+
+        //MOBILE
+        public void MobileGroup1()
+        {
+            onTapGroup.Invoke(0);
+            Debug.Log("Disparo TAMBOR");
+        }
+        public void MobileGroup2()
+        {
+            onTapGroup.Invoke(1);
+            Debug.Log("Disparo PIANO");
+        }
+        public void MobileGroup5()
+        {
+            onTapGroup.Invoke(4);
+            Debug.Log("Disparo TROMPETA");
+        }
+        public void MobileGroup6()
+        {
+            onTapGroup.Invoke(5);
+            Debug.Log("Disparo VIOLIN");
+        }
+
     }
 }

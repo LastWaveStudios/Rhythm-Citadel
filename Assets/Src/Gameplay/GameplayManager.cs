@@ -23,6 +23,11 @@ namespace Gameplay
     public class GameplayManager : Utilities.ServiceLocator.AService
     {
         [SerializeField] private GameplayState _currentState = GameplayState.Build;
+        [SerializeField] GameObject pianoButton;
+        [SerializeField] GameObject ViolinButton;
+        [SerializeField] GameObject DrumButton;
+        [SerializeField] GameObject TrumpetButton;
+        [SerializeField] GameObject TowersButton;
         public GameplayState Currentstate { get { return _currentState; } }
 
         #region events
@@ -42,6 +47,7 @@ namespace Gameplay
 
         public override void Init()
         {
+            TowersButton.SetActive(false);
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
             if (_waveManager == null)
             {
@@ -144,6 +150,7 @@ namespace Gameplay
             _waveManager.StartWave();
             onBuildStateEnd.Invoke();
             onFightStateStart.Invoke();
+            TowersButton.SetActive(true);
             InputReader.Instance.EnableBattleActions();
         }
 
