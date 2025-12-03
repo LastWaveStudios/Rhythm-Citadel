@@ -23,6 +23,7 @@ namespace Gameplay.Enemies
         [SerializeField] protected int _vinylDrop = 0;
         [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
         [SerializeField] private int _shieldMaxStacks = 2;
+        [SerializeField] private 
         
         // Non editable variables
         protected int _path = 0;
