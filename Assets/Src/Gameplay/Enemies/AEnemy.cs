@@ -56,15 +56,16 @@ namespace Gameplay.Enemies
 
         private void StartStats()
         {
-            DifficultyManager manager = FindAnyObjectByType<DifficultyManager>();
-            _stats = DifficultyManager.GetStats(DifficultyManager.currentDifficulty, manager);
+            Debug.Log("Trying to get stats");
+            _stats = DifficultyManager.Instance.GetStats(this);
 
             _health = _stats.health;
             _damage = _stats.damage;
             _vinylDrop = _stats.vinylDrop;
-            _preparationBeats = _stats.vinylDrop;
+            _preparationBeats = _stats.preparationBeats;
             _resistanceMultiplayer = _stats.reststanceMultiplayer;
 
+            Debug.Log("I got " + _preparationBeats + " preparations beats");
         }
 
         private void TakeReferences()
