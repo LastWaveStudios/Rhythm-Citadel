@@ -12,16 +12,20 @@ namespace Gameplay.Enemies
     {
         #region --------------------------- Variables ---------------------------
 
-        [SerializeField] const float RESISTANCE_MULTIPLAYER = 0.5f;
-
         [SerializeField] protected EnemyDamageType _damageType;   //Melee, Range, Contact
         [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
 
         [SerializeField] protected float _moveTime = 0.5f;
-        [SerializeField] protected int _health;
-        [SerializeField] protected int _damage;
-        [SerializeField] protected int _vinylDrop = 0;
-        [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
+
+        // Enemy stats that it gets from the scriptable objects
+
+        protected EnemyStats _stats;
+
+        protected int _health;
+        protected int _damage;
+        protected int _vinylDrop = 0;
+        protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
+        protected float _resistanceMultiplayer = 0.5f;
 
         // Non editable variables
         protected int _path = 0;
@@ -43,6 +47,25 @@ namespace Gameplay.Enemies
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
             StartPosition();
+            StartStats();
+        }
+        private void StartPosition()
+        {
+            transform.position = _worldManager.GetCellCenterWorld(_worldManager.GetTile(_path, _index));
+        }
+
+        private void StartStats()
+        {
+            Debug.Log("Trying to get stats");
+            _stats = DifficultyManager.Instance.GetStats(this);
+
+            _health = _stats.health;
+            _damage = _stats.damage;
+            _vinylDrop = _stats.vinylDrop;
+            _preparationBeats = _stats.preparationBeats;
+            _resistanceMultiplayer = _stats.reststanceMultiplayer;
+
+            Debug.Log("I got " + _preparationBeats + " preparations beats");
         }
 
         private void TakeReferences()
@@ -82,10 +105,6 @@ namespace Gameplay.Enemies
         }
         #endregion
 
-        private void StartPosition()
-        {
-            transform.position = _worldManager.GetCellCenterWorld(_worldManager.GetTile(_path, _index));
-        }
         #region ------------------------------ Getters and setters ------------------------------
 
         public int GetDrop()
@@ -131,7 +150,7 @@ namespace Gameplay.Enemies
 
         #endregion
 
-        #region Other methods
+        #region ---------------------------- Other methods ----------------------------
         public void Attack()
         {
             _dancer.TakeDamage(_damage);
@@ -139,7 +158,7 @@ namespace Gameplay.Enemies
 
         public void TakeDamage(DamageType type, int damageToTake)
         {
-            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
+            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * _resistanceMultiplayer);
             else _health -= damageToTake;
             if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled) PushDeath();
         }
