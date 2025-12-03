@@ -53,6 +53,8 @@ namespace Gameplay.World
             _vinylText = _vinylTextPrefab.GetComponent<TextMeshProUGUI>();
             _vinylText.text = _vinyl.ToString();
             _canvas = FindFirstObjectByType<Canvas>();
+
+            InputReader.Instance.onPlaceTower += InputHandler;
         }
         
         #region ClickMethods 
@@ -222,6 +224,7 @@ namespace Gameplay.World
         private void OnDestroy()
         {
             _waveManager.onEnemyDeath -= AddVinyl;
+            InputReader.Instance.onPlaceTower -= InputHandler;
         }
     }
 }

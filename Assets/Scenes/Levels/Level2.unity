@@ -1550,9 +1550,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 580433218}
     - target: {fileID: 5651462744584587827, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: _services.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651462744584587827, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: '_services.Array.data[5]'
       value: 
       objectReference: {fileID: 1505594877}
+    - target: {fileID: 5651462744584587827, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: '_services.Array.data[7]'
+      value: 
+      objectReference: {fileID: 382101199}
     - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: _waves.Array.size
       value: 4
@@ -1578,6 +1586,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+--- !u!114 &382101199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3215009817282179922, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+  m_PrefabInstance: {fileID: 382101198}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf11374c664d2c85b675f4c910e1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &488595043
 GameObject:
   m_ObjectHideFlags: 0
