@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3165651851740969169}
   - component: {fileID: 8248473845017190694}
   - component: {fileID: 2401943950562056903}
-  - component: {fileID: 3915315923249477739}
   - component: {fileID: 3215009817282179922}
   m_Layer: 0
   m_Name: LevelManager
@@ -159,20 +158,6 @@ MonoBehaviour:
   TIMETOWAIT: 0.5
   MINALPHA: 1
   MAXALPHA: 80
---- !u!114 &3915315923249477739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850158397969786127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7262e4541bc3b4bae7b8a46d47efff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _economyManager: {fileID: 5485630679646346319}
-  _gameplayManager: {fileID: 7847313591794621855}
 --- !u!114 &3215009817282179922
 MonoBehaviour:
   m_ObjectHideFlags: 0
