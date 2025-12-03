@@ -67,7 +67,8 @@ namespace Gameplay
                 return;
             }
             _dancer.onDancerDeath += Defeat;
-            InputReader.Instance.EnableBuildActions();
+
+            InputReader.Instance.onChangeToBattlePhase += ChangeFightState;
 
 
             switch (this.Currentstate)
@@ -81,18 +82,6 @@ namespace Gameplay
                     break;
             }
         }
-
-        // TODO: Destroy this method -> Just for test purpose
-        private void Update()
-        {
-            /**
-            if (UnityEngine.Input.GetKeyDown(KeyCode.L))
-            {
-                ChangeFightState();
-            }
-            **/
-        }
-
 
         private void OnEnemyDeath(int vinyls)
         {
@@ -145,7 +134,9 @@ namespace Gameplay
         {
             _waveManager.StartWave();
             onBuildStateEnd.Invoke();
+            
             onFightStateStart.Invoke();
+            
             InputReader.Instance.EnableBattleActions();
         }
 
@@ -186,6 +177,14 @@ namespace Gameplay
 
             MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
                 
+        }
+
+        private void OnDestroy()
+        {
+            InputReader.Instance.onChangeToBattlePhase -= ChangeFightState;
+            _waveManager.onEnemyDeath -= OnEnemyDeath;
+            _rhythmManager.onEndRhythm -= OnRhythmEnd;
+            _dancer.onDancerDeath -= Defeat;
         }
     }
 }

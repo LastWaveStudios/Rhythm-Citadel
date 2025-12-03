@@ -12,10 +12,11 @@ namespace Input
 
         // The delegate { } are just for initialice them to something and ignore the null check on the invokes
 
-        #region TowersMap
+        #region Events
         public Action<int> onTapGroup = delegate { };
-        [SerializeField] private EconomyManager _economyManager;
-        [SerializeField] private GameplayManager _gameplayManager;
+        
+        public Action onPlaceTower = delegate { };
+        public Action onChangeToBattlePhase = delegate { };
         #endregion
         private void Awake()
         {
@@ -64,11 +65,11 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
+            if (context.phase == InputActionPhase.Started) onPlaceTower.Invoke();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) _gameplayManager.ChangeFightState();
+            if (context.phase == InputActionPhase.Started) onChangeToBattlePhase.Invoke();
         }
 
         #region TowersMap
