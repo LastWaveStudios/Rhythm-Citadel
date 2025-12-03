@@ -1,4 +1,5 @@
 using Gameplay.Enemies;
+using Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace Gameplay.Towers
             {
                 if (enemy.isActiveAndEnabled)
                 {
-                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    int distanceToEnemy = Distances.ManhattanDistance(startingPos, enemy.GetTile());
                     if (IsInRange(distanceToEnemy, range))
                     {
                         int distanceToObjective = enemy.GetDistanceToObjective();
@@ -37,7 +38,7 @@ namespace Gameplay.Towers
             {
                 if (enemy.isActiveAndEnabled)
                 {
-                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    int distanceToEnemy = Distances.ManhattanDistance(startingPos, enemy.GetTile());
                     if (IsInRange(distanceToEnemy, range) && closestEnemyRange > distanceToEnemy)
                     {
                         closestEnemy = enemy;
@@ -56,7 +57,7 @@ namespace Gameplay.Towers
             {
                 if (enemy.isActiveAndEnabled)
                 {
-                    int distanceToEnemy = GetDistance(startingPos, enemy.GetTile());
+                    int distanceToEnemy = Distances.ManhattanDistance(startingPos, enemy.GetTile());
                     if (IsInRange(distanceToEnemy, range))
                     {
                         enemiesInRange.Add(enemy);
@@ -69,11 +70,6 @@ namespace Gameplay.Towers
         private static bool IsInRange(int distance, int range)
         {
             return distance <= range;
-        }
-
-        private static int GetDistance(Vector3Int pos1, Vector3Int pos2)
-        {
-            return Mathf.Abs(pos1.x - pos2.x) + Mathf.Abs(pos1.y - pos2.y);
         }
     }
 }
