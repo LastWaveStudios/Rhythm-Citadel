@@ -2,6 +2,7 @@ using Gameplay.RhythmSystem;
 using Gameplay.World;
 using System;
 using System.Collections;
+using Gameplay.Enemies.Common;
 using UnityEngine;
 using Utilities.ServiceLocator;
 
@@ -22,8 +23,14 @@ namespace Gameplay.Enemies
         [SerializeField] protected int _damage;
         [SerializeField] protected int _vinylDrop = 0;
         [SerializeField] protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
+        [Header("Shield configuration")]
         [SerializeField] private int _shieldMaxStacks = 2;
-        [SerializeField] private 
+        [SerializeField] private GameObject _shieldPrefab;
+        [SerializeField] private float _radius;
+        [SerializeField] private float _shieldScaleFactor;
+        [SerializeField] private float _timeToRotate = 0.1f;
+        [SerializeField] private float _angleToRotate = 30.0f; // In Degrees
+        private ShieldWheelController _shieldWheelController;
         
         // Non editable variables
         protected int _path = 0;
@@ -41,12 +48,16 @@ namespace Gameplay.Enemies
         protected Dancer _dancer;
 
         #endregion
+        
 
         #region ------------------------------ Starting methods ------------------------------
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
             StartPosition();
+            
+            _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
+            _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
         }
 
         private void TakeReferences()
@@ -63,6 +74,7 @@ namespace Gameplay.Enemies
                 Debug.LogError("AEnemy::TakeReferences: The RhythmManager was null");
             }
             SubscribeToRhythm();
+            _rhythmManager.onBeat += OnBeat;
 
             _dancer = ServiceLocatorSubsystem.Instance.GetService<Dancer>();
             if (_dancer == null)
@@ -71,6 +83,11 @@ namespace Gameplay.Enemies
             }
 
             InitializeBehaviour();
+        }
+
+        private void OnBeat(bool isMeasure)
+        {
+            _shieldWheelController.RotateShields();
         }
 
         protected abstract void SubscribeToRhythm();
@@ -143,18 +160,26 @@ namespace Gameplay.Enemies
 
         public void TakeDamage(DamageType type, int damageToTake)
         {
-            if (_currentShield > 0)
-            {
-                _currentShield--;
-                // TODO: Remove the visual Shield if it is 0
-                Debug.Log($"NOT Passed the shields in the enemy: {this.name}");
-                
-                return;
-            }
-            Debug.Log($"Passed the shields in the enemy: {this.name}");
+            if (RemoveShield(1)) return;
+            
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * RESISTANCE_MULTIPLAYER);
             else _health -= damageToTake;
             if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled) PushDeath();
+        }
+
+        // Return true if can remove the shield and 0 if not
+        protected bool RemoveShield(int stacksToRemove)
+        {
+            if (_currentShield > 0)
+            {
+                _currentShield = Math.Max(0, _currentShield - stacksToRemove);
+                
+                _shieldWheelController.SetCurrentShields(_currentShield);
+                
+                return true;
+            }
+
+            return false;
         }
 
         public void Move()
@@ -166,16 +191,16 @@ namespace Gameplay.Enemies
         {
             _currentShield = Math.Min(_currentShield + shieldStacks, _shieldMaxStacks);
             // TODO: Add the visual shield
-            Debug.Log($"Shield Applied in the enemy: {this.name}; Current Shield: {_currentShield}");
+            _shieldWheelController.SetCurrentShields(_currentShield);
+            Debug.Log($"Called give shield on enemy: {name} with a shield value of {_currentShield}");
         }
 
         #endregion
-
-        #region ------------------------------ Abstract Methods ------------------------------
-
-        // Honestly can be just deleted and manage in the children but for have the same name in all of them and do not forget it is not bad
+        
+        // Override in all the children classes, but this is a general behaviour that have it all of them, so call base.OnRhythmUpdate on his override
         protected abstract void OnRhythmUpdate();
 
+        #region ------------------------------ Abstract Methods ------------------------------
         /// <summary>
         /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
         /// </summary>

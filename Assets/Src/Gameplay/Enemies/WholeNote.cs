@@ -61,7 +61,7 @@ namespace Gameplay.Enemies
         {
             Vector3Int tilePosition = GetTile();
 
-            for (int i = 0; i < _waveManager.LastEnemySpawnedInCurrentWave; ++i)
+            for (int i = 0; i <= _waveManager.LastEnemySpawnedInCurrentWave; ++i)
             {
                 AEnemy ally = _waveManager.GetEnemy(i);
                 if (Utilities.Distances.ManhattanDistance(ally.GetTile(), tilePosition) <=
