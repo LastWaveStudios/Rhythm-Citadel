@@ -62,7 +62,7 @@ namespace Gameplay.World
                 {
                     Type t = stats.GetEnemyType();
                     if (t != null) tmpDictionary[t] = stats;
-                    else Debug.LogWarning("Stats are null in LoadStats");
+                    else Debug.LogWarning("Stats are null in LoadStats from: " + stats);
                 }
                 Debug.Log("Happy day, we found some new and fresh stats :)");
                 return tmpDictionary;

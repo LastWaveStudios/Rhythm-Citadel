@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: QuarterEasy
   m_EditorClassIdentifier: 
   enemyClassName: Gameplay.Enemies.QuarterNote
-  health: 100
-  damage: 100
-  vinylDrop: 100
-  preparationBeats: 2
+  health: 40
+  damage: 12
+  vinylDrop: 5
+  preparationBeats: 4
   reststanceMultiplayer: 0
