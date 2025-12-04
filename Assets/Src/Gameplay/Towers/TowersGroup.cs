@@ -88,7 +88,7 @@ namespace Gameplay.Towers
             
             if (_rhythmManager.IsInTime(_pattern.patternNotes[_indexOfNoteInPattern], _pattern.GetIndexOfSixteenthOnMeasure(_indexOfNoteInPattern), _maxOffset))
             {
-                UnityEngine.Debug.Log("Tapped GOOD");
+                //UnityEngine.Debug.Log("Tapped GOOD");
                 foreach (ATower tower in _towers)
                 {
                     tower.OnRhythmHit();
@@ -96,7 +96,7 @@ namespace Gameplay.Towers
                 return CheckRhythmStatus.Good;
             }
             
-            UnityEngine.Debug.Log("Tapped BAD");
+            //UnityEngine.Debug.Log("Tapped BAD");
             _indexOfNoteInPattern = -1;
             return CheckRhythmStatus.Bad;
         }
