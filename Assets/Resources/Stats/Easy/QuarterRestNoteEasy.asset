@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 888d5094e88318c4cb241cd12d547bc4, type: 3}
-  m_Name: QuarterHard
+  m_Name: QuarterRestNoteEasy
   m_EditorClassIdentifier: 
-  enemyClassName: Gameplay.Enemies.QuarterNote
-  health: 100
-  damage: 15
-  vinylDrop: 5
+  enemyClassName: Gameplay.Enemies.QuarterRestNote
+  health: 30
+  damage: 13
+  vinylDrop: 7
   preparationBeats: 4
-  reststanceMultiplayer: 25
+  reststanceMultiplayer: 0
