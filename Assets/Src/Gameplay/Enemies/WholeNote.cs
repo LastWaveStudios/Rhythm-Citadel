@@ -10,7 +10,7 @@ using UnityEngine.Tilemaps;
 
 namespace Gameplay.Enemies
 {
-    public class WholerNote : AEnemy
+    public class WholeNote : AEnemy
     {
         protected override void SubscribeToRhythm()
         {

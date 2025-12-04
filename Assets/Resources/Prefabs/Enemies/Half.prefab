@@ -101,9 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageType: 0
-  _resistance: 0
+  _resistance: 2
   _moveTime: 0.5
-  _health: 120
-  _damage: 6
-  _vinylDrop: 12
-  _preparationBeats: 3
