@@ -163,16 +163,16 @@ namespace Gameplay.RhythmSystem
             
             if (SixteenthCount == 0 && indexOfSixteenthOnMeasure == Signature.maxSixteenthsOnOneMeasure - 1)
             {
-                Debug.Log($"TIME: 1 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
-                $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
+                // Debug.Log($"TIME: 1 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+                // $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfLastMeasureSinceStart - timeSinceStart}");
                 return (Math.Abs(timeOfLastMeasureSinceStart - timeSinceStart) <= maxOffset) ? true : false;
             }
 
             if (SixteenthCount == Signature.maxSixteenthsOnOneMeasure - 1 && indexOfSixteenthOnMeasure == 0)
             {
                 double timeOfTargetSinceStartSpecialCase = timeOfLastMeasureSinceStart + Signature.maxSixteenthsOnOneMeasure * _timesOfNotes.Sixteenth;
-                Debug.Log($"TIME: 2 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
-               $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
+               //  Debug.Log($"TIME: 2 -> SixteenthCount: {SixteenthCount}; TargetSixteenth: {indexOfSixteenthOnMeasure};" +
+               // $" timeOfLastMeasureSinceStart: {timeOfLastMeasureSinceStart}; timeSinceStart: {timeSinceStart}; rawOffsetTime: {timeOfTargetSinceStartSpecialCase - timeSinceStart}");
                 return (Math.Abs(timeOfTargetSinceStartSpecialCase - timeSinceStart) <= maxOffset) ? true : false;
             }
 

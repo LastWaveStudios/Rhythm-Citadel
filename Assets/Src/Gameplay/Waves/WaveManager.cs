@@ -20,6 +20,7 @@ namespace Gameplay.Waves
         [SerializeField] private List<Wave> _waves;
         private List<AEnemy> _currentWaveEnemies;
 
+        public int NumberOfWaves => _waves.Count;
         public int CurrentWave { get; private set; } = -1;
         public int LastEnemySpawnedInCurrentWave { get; private set; } = -1;
         public bool AllEnemiesDeadInCurrentWave { get; private set; } = false;
@@ -55,13 +56,16 @@ namespace Gameplay.Waves
 
             _activeEnemies = _currentWaveEnemies.Capacity; //Count how many have to die
 
+            int i = 0;
             foreach (EnemyToSpawnData enemyData in _waves[CurrentWave].enemiesToSpawn)
             {
                 AEnemy enemy = GameObject.Instantiate(enemyData.enemyPrefab).GetComponent<AEnemy>();
                 enemy.Init(enemyData.idSpawnpoint); // Same as path
                 enemy.gameObject.SetActive(false);
+                enemy.name = $"enemy {i}";
                 enemy.onDeath += OnEnemyDead;
                 _currentWaveEnemies.Add(enemy);
+                i++;
             }
             LastEnemySpawnedInCurrentWave = -1;
 
