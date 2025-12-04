@@ -22,7 +22,7 @@ namespace Gameplay.Enemies
 
         protected EnemyStats _stats;
 
-        protected int _health;
+        [SerializeField] protected int _health;
         protected int _damage;
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
@@ -59,13 +59,13 @@ namespace Gameplay.Enemies
         #region ------------------------------ Starting methods ------------------------------
         public void Start()
         {
+            _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
+            _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
+            
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
             StartPosition();
             
             StartStats();
-
-            _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
-            _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
         }
         
         private void StartPosition()
@@ -119,6 +119,12 @@ namespace Gameplay.Enemies
 
         protected abstract void SubscribeToRhythm();
 
+        // Method that must be call in the childrens when the enemy dead
+        protected void DeSubscribeToRhythmParent()
+        {
+            _rhythmManager.onBeat -= OnBeat;
+        }
+
         protected abstract void InitializeBehaviour();
 
         protected abstract void PushDeath();
@@ -165,11 +171,13 @@ namespace Gameplay.Enemies
         public void PrepareMovement()
         {
             _currentPreparation++;
+            Debug.Log($"Enemy: {name} got {_currentPreparation} preparations beats");
         }
 
         public void RestartMovementPreparation()
         {
             _currentPreparation = 0;
+            Debug.Log($"Enemy: {name} restart the preparation beats");
         }
         #endregion
 
@@ -187,7 +195,11 @@ namespace Gameplay.Enemies
             
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * _resistanceMultiplayer);
             else _health -= damageToTake;
-            if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled) PushDeath();
+            if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled)
+            {
+                //Debug.LogWarning($"Enemy: {name} enter Push Dead");
+                PushDeath();
+            }
         }
 
         // Return true if can remove the shield and 0 if not

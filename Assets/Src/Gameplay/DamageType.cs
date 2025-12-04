@@ -8,6 +8,7 @@ namespace Gameplay
         String = 1,
         Percusion = (1 << 1),
         Hybrid = String | Percusion,
-        Wind = (1 << 2)
+        Wind = (1 << 2),
+        TrueDamage = (1 << 3)
     }
 }

@@ -37,6 +37,7 @@ namespace Gameplay.Enemies
 
         public override void Death()
         {
+            DeSubscribeToRhythmParent();
             _rhythmManager.onQuarter -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);

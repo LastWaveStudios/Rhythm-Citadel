@@ -148,3 +148,11 @@ MonoBehaviour:
   _damageType: 2
   _resistance: 4
   _moveTime: 0.5
+  _shieldMaxStacks: 2
+  _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
+  _radius: 1.25
+  _shieldScaleFactor: 0.25
+  _timeToRotate: 0.1
+  _angleToRotate: 30
+  _shieldRange: 3
+  _shieldStacksPerActivation: 1
