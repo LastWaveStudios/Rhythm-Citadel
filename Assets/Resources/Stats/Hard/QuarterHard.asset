@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyClassName: Gameplay.Enemies.QuarterNote
   health: 100
-  damage: 10
-  vinylDrop: 10
+  damage: 15
+  vinylDrop: 5
   preparationBeats: 4
-  reststanceMultiplayer: 50
+  reststanceMultiplayer: 25

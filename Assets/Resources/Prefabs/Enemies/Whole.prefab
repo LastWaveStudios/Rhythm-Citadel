@@ -146,12 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageType: 2
-  _resistance: 2
+  _resistance: 4
   _moveTime: 0.5
-  _health: 300
-  _damage: 65
-  _vinylDrop: 70
-  _preparationBeats: 4
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.25

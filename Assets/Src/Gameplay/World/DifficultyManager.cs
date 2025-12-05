@@ -10,6 +10,8 @@ namespace Gameplay.World
     {
         public Difficulty currentDifficulty = Difficulty.Normal;
 
+        public Action<Difficulty> OnDifficultyChange;
+
         public Dictionary<Type, EnemyStats> easyStats;
         public Dictionary<Type, EnemyStats> normalStats;
         public Dictionary<Type, EnemyStats> hardStats;
@@ -17,7 +19,6 @@ namespace Gameplay.World
         // In order for this to work, the stats must be in Resources/Stats/Dificuly !!
         private void Start()
         {
-            Debug.Log("Getting started... on difficulty manager");
             easyStats = LoadStats("Stats/Easy");
             normalStats = LoadStats("Stats/Normal");
             hardStats = LoadStats("Stats/Hard");
@@ -45,6 +46,12 @@ namespace Gameplay.World
             
         }
 
+        public void SetDifficulty(Difficulty newDifficulty)
+        {
+            currentDifficulty = newDifficulty;
+            OnDifficultyChange?.Invoke(newDifficulty);
+        }
+
         /// <summary>
         /// Method that loads the stats from the folder so it wont be neccesary to do it manually using the editor
         /// </summary>
@@ -62,7 +69,7 @@ namespace Gameplay.World
                 {
                     Type t = stats.GetEnemyType();
                     if (t != null) tmpDictionary[t] = stats;
-                    else Debug.LogWarning("Stats are null in LoadStats");
+                    else Debug.LogWarning("Stats are null in LoadStats from: " + stats);
                 }
                 Debug.Log("Happy day, we found some new and fresh stats :)");
                 return tmpDictionary;
