@@ -1,4 +1,4 @@
-using Gameplay;
+﻿using Gameplay;
 using Gameplay.RhythmSystem;
 using System;
 using System.Collections;
@@ -16,19 +16,21 @@ namespace UI.GameplayUI.VisualHelp
         [SerializeField] private GameObject _measureGearPrefab;
 
         [Header("Objects")]
-        [SerializeField] private GameObject _gearsContainer;
+        [SerializeField] private RectTransform _gearsContainer;
         [SerializeField] private GameObject _bigGearGameObject;
 
         [Header("Transforms")]
-        [SerializeField] private Transform _gear;
-        [SerializeField] private Transform _spawnTransform;
+        [SerializeField] private RectTransform _gear;
+        [SerializeField] private RectTransform _spawnTransform;
 
         [Header("Configuration")]
         [SerializeField] private float _moveTime = 0.25f; // Time of the movement in seconds
         [SerializeField] private float _rotateCantity = 0.25f;
         [SerializeField] private float _rotateScale = 0.8f;
 
-        private Vector3[] _targetsPositions;
+        [SerializeField] private Canvas _canvas;
+
+        private Vector2[] _targetsPositions;
 
         private bool _mustSpawnGears = true;
 
@@ -42,7 +44,7 @@ namespace UI.GameplayUI.VisualHelp
         {
             Debug.Log("Gamplay Visual Help INIT");
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
-            if ( _rhythmManager == null )
+            if (_rhythmManager == null)
             {
                 Debug.LogError("GameplayVisualHelpController::Init: The RhythmManager is null");
                 return;
@@ -50,13 +52,38 @@ namespace UI.GameplayUI.VisualHelp
 
             gameObject.SetActive(true);
             uint beatsOnOneMeasure = _rhythmManager.Signature.top;
-            _targetsPositions = new Vector3[beatsOnOneMeasure + 1];
-            Vector3 step = (_gear.transform.position - _spawnTransform.position) / (beatsOnOneMeasure);
-            
+            // _targetsPositions = new Vector2[beatsOnOneMeasure + 1];
+            //Vector2 step = (_gear.anchoredPosition - _spawnTransform.anchoredPosition) / (beatsOnOneMeasure);
+            //  Debug.Log("GEAR" + _gear.anchoredPosition);
+            // Debug.Log("SPAWN" + _spawnTransform.anchoredPosition);
+
+            /*  for (int i = 0; i <= beatsOnOneMeasure; ++i)
+              {
+                  _targetsPositions[i] = _spawnTransform.anchoredPosition + (step * i);
+                  //_targetsPositions[i] = _spawnTransform.anchoredPosition;
+                 // Debug.Log("TARGET POSITION" + _targetsPositions[i]);
+              }*/
+            _targetsPositions = new Vector2[beatsOnOneMeasure + 1];
+
+            // 1. Pasamos SPAWN y GEAR a coordenadas locales de DinamicGears
+            Vector3 spawnLocal3 = _gearsContainer.InverseTransformPoint(_spawnTransform.position);
+            Vector3 gearLocal3 = _gearsContainer.InverseTransformPoint(_gear.position);
+
+            Vector2 spawnLocal = new Vector2(spawnLocal3.x, spawnLocal3.y);
+            Vector2 gearLocal = new Vector2(gearLocal3.x, gearLocal3.y);
+
+            // 2. Mismo sitio de partida y llegada, pero AHORA en el mismo sistema
+            Vector2 step = (gearLocal - spawnLocal) / beatsOnOneMeasure;
+
             for (int i = 0; i <= beatsOnOneMeasure; ++i)
             {
-                _targetsPositions[i] = _spawnTransform.position + (step * i);
+                _targetsPositions[i] = spawnLocal + step * i;
             }
+
+            Debug.Log($"SPAWN LOCAL {spawnLocal}");
+            Debug.Log($"GEAR  LOCAL {gearLocal}");
+            Debug.Log($"FIRST TARGET  {_targetsPositions[0]}");
+            Debug.Log($"LAST  TARGET  {_targetsPositions[_targetsPositions.Length - 1]}");
 
             _rhythmManager.onBeat += OnBeat;
             _rhythmManager.onFinishRhythmNextMeasure += OnFinishRhythmNextMeasure;
@@ -91,14 +118,30 @@ namespace UI.GameplayUI.VisualHelp
                 GenerateGear(_measureGearPrefab);
                 return;
             }
-            
+
             GenerateGear(_beatGearPrefab);
         }
 
         private void GenerateGear(GameObject prefab)
         {
-            GameObject spawnedGear = GameObject.Instantiate(prefab, _spawnTransform.position, Quaternion.identity, _gearsContainer.transform);
-            BeatGearController beatGearController = spawnedGear.GetComponent<BeatGearController>();
+            GameObject go = Instantiate(prefab, _gearsContainer);
+            RectTransform gearRect = (RectTransform)go.transform;
+
+            // 1) Anclar el engranaje al lado derecho, centrado verticalmente en la barra
+            gearRect.anchorMin = new Vector2(1f, 0.5f);
+            gearRect.anchorMax = new Vector2(1f, 0.5f);
+            gearRect.pivot = new Vector2(0.5f, 0.5f);
+            gearRect.localScale = Vector3.one;
+
+            // 2) Offset desde la derecha (en píxeles). 
+            //    Por ejemplo, -20 para que quede 20 px dentro de la barra.
+            float offsetDesdeDerecha = -20f;
+            gearRect.anchoredPosition = new Vector2(offsetDesdeDerecha, 0f);
+
+          //  Debug.Log($"SPAWN GEAR {gearRect.anchoredPosition}");
+
+
+            BeatGearController beatGearController = gearRect.GetComponent<BeatGearController>();
             if (beatGearController == null)
             {
                 Debug.LogError($"GameplayVisualHelpController::GenerateGear The Gear spawned {prefab}, has not BeatGearController component");
@@ -127,4 +170,3 @@ namespace UI.GameplayUI.VisualHelp
         }
     }
 }
-
