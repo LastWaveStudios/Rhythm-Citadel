@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 2223669706408595597}
   - component: {fileID: 5098203420926413031}
   - component: {fileID: 5245795480293600743}
+  - component: {fileID: 1853759359982351961}
   m_Layer: 5
   m_Name: WheelFragment1
   m_TagString: Untagged
@@ -426,6 +427,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myArrow: {fileID: 3125935712115599061}
   _myDifficulty: 0
+--- !u!114 &1853759359982351961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842207846481406597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17863fa5523ed21419a5f5266aec4019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enterHoverSound: {fileID: 8300000, guid: 0261c7176a215e6418a4cb0e086cbbb2, type: 3}
+  _clickSound: {fileID: 8300000, guid: 50deb2c7b37c9394b89a51013730fd44, type: 3}
+  _exitHoverSound: {fileID: 8300000, guid: 493d97b6c3493414694def28de24713f, type: 3}
 --- !u!1 &2909988600831690654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1057,7 @@ GameObject:
   - component: {fileID: 4132058855218412398}
   - component: {fileID: 8592256203981786359}
   - component: {fileID: 2566664497328783339}
+  - component: {fileID: 8407338567372886686}
   m_Layer: 5
   m_Name: WheelFragment2
   m_TagString: Untagged
@@ -1119,6 +1136,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myArrow: {fileID: 470605649685565136}
   _myDifficulty: 1
+--- !u!114 &8407338567372886686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141191949990472915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17863fa5523ed21419a5f5266aec4019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enterHoverSound: {fileID: 8300000, guid: 0261c7176a215e6418a4cb0e086cbbb2, type: 3}
+  _clickSound: {fileID: 8300000, guid: 50deb2c7b37c9394b89a51013730fd44, type: 3}
+  _exitHoverSound: {fileID: 8300000, guid: 493d97b6c3493414694def28de24713f, type: 3}
 --- !u!1 &6349253545661437380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1228,7 @@ GameObject:
   - component: {fileID: 8819369248557187112}
   - component: {fileID: 3638939234695617}
   - component: {fileID: 2553456442816013200}
+  - component: {fileID: 4072202621131432071}
   m_Layer: 5
   m_Name: WheelFragment3
   m_TagString: Untagged
@@ -1274,6 +1307,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myArrow: {fileID: 737183500949314242}
   _myDifficulty: 2
+--- !u!114 &4072202621131432071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779887181483512332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17863fa5523ed21419a5f5266aec4019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enterHoverSound: {fileID: 8300000, guid: 0261c7176a215e6418a4cb0e086cbbb2, type: 3}
+  _clickSound: {fileID: 8300000, guid: 50deb2c7b37c9394b89a51013730fd44, type: 3}
+  _exitHoverSound: {fileID: 8300000, guid: 493d97b6c3493414694def28de24713f, type: 3}
 --- !u!1001 &28823565169086679
 PrefabInstance:
   m_ObjectHideFlags: 0
