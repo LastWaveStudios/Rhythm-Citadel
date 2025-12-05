@@ -15,8 +15,8 @@ namespace Gameplay.Enemies.Behaviours
 
             NodeFSM deathNodeFsm = new NodeFSM("Death NodeFSM", () =>
             {
-                _rootFSM.Finish(); // Exit State so finish the fsm
                 _enemy.Death();
+                _rootFSM.Finish(); // Exit State so finish the fsm
             });
             #region AliveFSM
             FSM aliveFSM = new FSM("Alive FSM", true, 2, 3);
@@ -57,8 +57,7 @@ namespace Gameplay.Enemies.Behaviours
 
         public void PushDeath()
         {
-            _rootFSM.Update(); // Go to Death state
-            _rootFSM.Update(); // Immediate second Update for do the action of Death because in this case we want to have it immediate
+            _rootFSM.Update();
         }
     }
 }

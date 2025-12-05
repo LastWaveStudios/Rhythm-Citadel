@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888d5094e88318c4cb241cd12d547bc4, type: 3}
   m_Name: TrebleClefNoteNormal
   m_EditorClassIdentifier: 
-  enemyClassName: Gameplay.Enemies.TrebleClef
+  enemyClassName: Gameplay.Enemies.TrebleClefNote
   health: 1000
   damage: 120
   vinylDrop: 100
