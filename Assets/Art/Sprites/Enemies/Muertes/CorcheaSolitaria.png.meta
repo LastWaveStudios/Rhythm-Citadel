@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 4650427232eb75049bf5d0806e7b414c
+guid: f1a2af416e43f5c45bd73bafdb18ac01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3817821035928854734
-    second: Cuadrada_0
+      213: -8518998761565977476
+    second: CorcheaSolitaria_0
+  - first:
+      213: 9075680242088338143
+    second: CorcheaSolitaria_1
+  - first:
+      213: 8011769166013987787
+    second: CorcheaSolitaria_2
+  - first:
+      213: -8606716346540070116
+    second: CorcheaSolitaria_3
+  - first:
+      213: -4266051715661368389
+    second: CorcheaSolitaria_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cuadrada_0
+      name: CorcheaSolitaria_0
       rect:
         serializedVersion: 2
-        x: 670
-        y: 248
-        width: 580
-        height: 581
+        x: 0
+        y: 0
+        width: 454
+        height: 197
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec0ad862100abf430800000000000000
-      internalID: 3817821035928854734
+      spriteID: c740ede03cf66c980800000000000000
+      internalID: -8518998761565977476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorcheaSolitaria_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 458
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2e4bc581b43fd70800000000000000
+      internalID: 9075680242088338143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorcheaSolitaria_2
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 458
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbf0babb958f2f60800000000000000
+      internalID: 8011769166013987787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorcheaSolitaria_3
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 457
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b6ee9451dce8880800000000000000
+      internalID: -8606716346540070116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorcheaSolitaria_4
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 0
+        width: 463
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3fe8e2190fbc4c0800000000000000
+      internalID: -4266051715661368389
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cuadrada_0: 3817821035928854734
+      CorcheaSolitaria_0: -8518998761565977476
+      CorcheaSolitaria_1: 9075680242088338143
+      CorcheaSolitaria_2: 8011769166013987787
+      CorcheaSolitaria_3: -8606716346540070116
+      CorcheaSolitaria_4: -4266051715661368389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

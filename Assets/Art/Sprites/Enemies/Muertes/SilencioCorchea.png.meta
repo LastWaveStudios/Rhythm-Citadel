@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 4650427232eb75049bf5d0806e7b414c
+guid: bfaf82016038e814d99631a45c20ed61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3817821035928854734
-    second: Cuadrada_0
+      213: -7071498333518943591
+    second: SilencioCorchea_0
+  - first:
+      213: -7347787901175100466
+    second: SilencioCorchea_1
+  - first:
+      213: 6649893889006405446
+    second: SilencioCorchea_2
+  - first:
+      213: -4466143588296941947
+    second: SilencioCorchea_3
+  - first:
+      213: -8515696928924783492
+    second: SilencioCorchea_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cuadrada_0
+      name: SilencioCorchea_0
       rect:
         serializedVersion: 2
-        x: 670
-        y: 248
-        width: 580
-        height: 581
+        x: 0
+        y: 0
+        width: 589
+        height: 239
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec0ad862100abf430800000000000000
-      internalID: 3817821035928854734
+      spriteID: 99a26d86bbdfcdd90800000000000000
+      internalID: -7071498333518943591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioCorchea_1
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 0
+        width: 590
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb8b8985d9670a90800000000000000
+      internalID: -7347787901175100466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioCorchea_2
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 0
+        width: 590
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6478448624b294c50800000000000000
+      internalID: 6649893889006405446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioCorchea_3
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 0
+        width: 590
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e1cafa1121502c0800000000000000
+      internalID: -4466143588296941947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioCorchea_4
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 0
+        width: 589
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7cad80e2ca22d980800000000000000
+      internalID: -8515696928924783492
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cuadrada_0: 3817821035928854734
+      SilencioCorchea_0: -7071498333518943591
+      SilencioCorchea_1: -7347787901175100466
+      SilencioCorchea_2: 6649893889006405446
+      SilencioCorchea_3: -4466143588296941947
+      SilencioCorchea_4: -8515696928924783492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,6 +10,8 @@ namespace Gameplay.World
     {
         public Difficulty currentDifficulty = Difficulty.Normal;
 
+        public Action<Difficulty> OnDifficultyChange;
+
         public Dictionary<Type, EnemyStats> easyStats;
         public Dictionary<Type, EnemyStats> normalStats;
         public Dictionary<Type, EnemyStats> hardStats;
@@ -17,7 +19,6 @@ namespace Gameplay.World
         // In order for this to work, the stats must be in Resources/Stats/Dificuly !!
         private void Start()
         {
-            Debug.Log("Getting started... on difficulty manager");
             easyStats = LoadStats("Stats/Easy");
             normalStats = LoadStats("Stats/Normal");
             hardStats = LoadStats("Stats/Hard");
@@ -43,6 +44,12 @@ namespace Gameplay.World
             }
             return null;
             
+        }
+
+        public void SetDifficulty(Difficulty newDifficulty)
+        {
+            currentDifficulty = newDifficulty;
+            OnDifficultyChange?.Invoke(newDifficulty);
         }
 
         /// <summary>

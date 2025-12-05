@@ -64,8 +64,8 @@ namespace Gameplay.Enemies
             
             StartStats();
 
-            _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
-            _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
+            //_shieldWheelController = GetComponentInChildren<ShieldWheelController>();
+            //_shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
         }
         
         private void StartPosition()
@@ -114,7 +114,7 @@ namespace Gameplay.Enemies
 
         private void OnBeat(bool isMeasure)
         {
-            _shieldWheelController.RotateShields();
+            //_shieldWheelController.RotateShields();
         }
 
         protected abstract void SubscribeToRhythm();
