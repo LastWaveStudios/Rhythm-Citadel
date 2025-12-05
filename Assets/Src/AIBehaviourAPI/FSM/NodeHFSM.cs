@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AIBehaviourAPI.FSM
+namespace AIBehaviourAPI.Fsm
 {
     public class NodeHFSM : NodeFSM
     {
         private IBehaviourEngine _engine;
-        private FSM _fsm;
+        private IBehaviourEngine _internalEngine;
         
         /// <summary>
-        /// Create a Node that count like the big node that inside have other FSM
+        /// Create a NodeFSM that count like the big node that inside have other FSM
         /// </summary>
         /// <param name="name"> Name of the node </param>
         /// <param name="engine"> The FSM that this node is part of it </param>
-        /// <param name="fsm"> Fsm that have inside, must be initialized and Paused if this node is not the initial node, and UnPaused if it is </param>
-        public NodeHFSM(string name, FSM engine, FSM fsm) : base(name)
+        /// <param name="internalEngine"> Engine that have inside, must be initialized and Paused </param>
+        public NodeHFSM(string name, FSM engine, IBehaviourEngine internalEngine) : base(name)
         {
-            _fsm = fsm;
-            _action = () => _fsm.Update();
+            _internalEngine = internalEngine;
+            _action = () => _internalEngine.Update();
             _engine = engine;
             _engine.OnCurrentNodeDoesTransition += OnNodesChange;
         }
@@ -28,11 +28,11 @@ namespace AIBehaviourAPI.FSM
             
             if (this == lastNode)
             {
-                _fsm.Pause();
+                _internalEngine.Pause();
             }
             else if (this == currentNode)
             {
-                _fsm.Resume();
+                _internalEngine.Resume();
             }
         }
     }

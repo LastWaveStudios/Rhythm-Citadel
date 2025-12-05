@@ -9,7 +9,7 @@ namespace Utilities
         
         protected void Awake()
         {
-            Debug.Log("Singleton Awake ejecutado");
+            //Debug.Log("Singleton Awake ejecutado");
             if (Instance == null)
             {
                 Instance = this as T;

@@ -7,6 +7,7 @@ TagManager:
   - Canvas
   - PathObject
   - SpawnPoint
+  - HighlightLayer
   layers:
   - Default
   - TransparentFX
@@ -53,11 +54,17 @@ TagManager:
   - name: Decoration
     uniqueID: 1056092215
     locked: 0
+  - name: Shield
+    uniqueID: 1465778769
+    locked: 0
   - name: Notes
     uniqueID: 1594761013
     locked: 0
   - name: Towers
     uniqueID: 2932057597
+    locked: 0
+  - name: Highlight
+    uniqueID: 2821625941
     locked: 0
   m_RenderingLayers:
   - Default

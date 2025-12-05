@@ -1,0 +1,1279 @@
+fileFormatVersion: 2
+guid: 8cc20c92b4e28e443bf997a1a84a82ff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2444542706619587850
+    second: BalaExplosionSprite_0
+  - first:
+      213: 6301688712396523709
+    second: BalaExplosionSprite_1
+  - first:
+      213: 2521564479528868682
+    second: BalaExplosionSprite_2
+  - first:
+      213: 7503012008659879810
+    second: BalaExplosionSprite_3
+  - first:
+      213: 3487414094158642886
+    second: BalaExplosionSprite_4
+  - first:
+      213: -3565632820551564277
+    second: BalaExplosionSprite_5
+  - first:
+      213: -2083319294069278409
+    second: BalaExplosionSprite_6
+  - first:
+      213: 7652022193584612360
+    second: BalaExplosionSprite_7
+  - first:
+      213: -8329347712759963624
+    second: BalaExplosionSprite_8
+  - first:
+      213: 2551280324453924199
+    second: BalaExplosionSprite_9
+  - first:
+      213: 3698133292261665119
+    second: BalaExplosionSprite_10
+  - first:
+      213: -2719829074169063655
+    second: BalaExplosionSprite_11
+  - first:
+      213: 98771685377069262
+    second: BalaExplosionSprite_12
+  - first:
+      213: -1621499831645040378
+    second: BalaExplosionSprite_13
+  - first:
+      213: 3254056933437948280
+    second: BalaExplosionSprite_14
+  - first:
+      213: 6662078962164931515
+    second: BalaExplosionSprite_15
+  - first:
+      213: -5277738070261796645
+    second: BalaExplosionSprite_16
+  - first:
+      213: -4523636932079277891
+    second: BalaExplosionSprite_17
+  - first:
+      213: 2879239452620464200
+    second: BalaExplosionSprite_18
+  - first:
+      213: 7522041632554983040
+    second: BalaExplosionSprite_19
+  - first:
+      213: -4891687777238626565
+    second: BalaExplosionSprite_20
+  - first:
+      213: 1613610030951426878
+    second: BalaExplosionSprite_21
+  - first:
+      213: -5080102216228042313
+    second: BalaExplosionSprite_22
+  - first:
+      213: -3667542488319515912
+    second: BalaExplosionSprite_23
+  - first:
+      213: -8603684342897590198
+    second: BalaExplosionSprite_24
+  - first:
+      213: -5428336644567770682
+    second: BalaExplosionSprite_25
+  - first:
+      213: 3199159692554750452
+    second: BalaExplosionSprite_26
+  - first:
+      213: 2963417999274578106
+    second: BalaExplosionSprite_27
+  - first:
+      213: 2119339632720920889
+    second: BalaExplosionSprite_28
+  - first:
+      213: 6014946960151285516
+    second: BalaExplosionSprite_29
+  - first:
+      213: -6083318084819397492
+    second: BalaExplosionSprite_30
+  - first:
+      213: -6981103148405546367
+    second: BalaExplosionSprite_31
+  - first:
+      213: 6919208176587125611
+    second: BalaExplosionSprite_32
+  - first:
+      213: -4860479480064184496
+    second: BalaExplosionSprite_33
+  - first:
+      213: 3279530109891461786
+    second: BalaExplosionSprite_34
+  - first:
+      213: 3838440747355984023
+    second: BalaExplosionSprite_35
+  - first:
+      213: -7146863013505158329
+    second: BalaExplosionSprite_36
+  - first:
+      213: -8352930273813495203
+    second: BalaExplosionSprite_37
+  - first:
+      213: 1988873837973990970
+    second: BalaExplosionSprite_38
+  - first:
+      213: 7672413541235991629
+    second: BalaExplosionSprite_39
+  - first:
+      213: 8793789570008574924
+    second: BalaExplosionSprite_40
+  - first:
+      213: -8728146710451164742
+    second: BalaExplosionSprite_41
+  - first:
+      213: -7447080986299248196
+    second: BalaExplosionSprite_42
+  - first:
+      213: -5751504372319380887
+    second: BalaExplosionSprite_43
+  - first:
+      213: 2661071279244125220
+    second: BalaExplosionSprite_44
+  - first:
+      213: -7882946150642205897
+    second: BalaExplosionSprite_45
+  - first:
+      213: -6986049433281869390
+    second: BalaExplosionSprite_46
+  - first:
+      213: -1040044254598082317
+    second: BalaExplosionSprite_47
+  - first:
+      213: 7594933908213860586
+    second: BalaExplosionSprite_48
+  - first:
+      213: -6726757674269760585
+    second: BalaExplosionSprite_49
+  - first:
+      213: -8070204729947594501
+    second: BalaExplosionSprite_50
+  - first:
+      213: 6317419149333062068
+    second: BalaExplosionSprite_51
+  - first:
+      213: -7133606880875539259
+    second: BalaExplosionSprite_52
+  - first:
+      213: -1094358278781449255
+    second: BalaExplosionSprite_53
+  - first:
+      213: 9104872752411997040
+    second: BalaExplosionSprite_54
+  - first:
+      213: -4332824309892032547
+    second: BalaExplosionSprite_55
+  - first:
+      213: -6158187197682186369
+    second: BalaExplosionSprite_56
+  - first:
+      213: 2502941595652937095
+    second: BalaExplosionSprite_57
+  - first:
+      213: 6665116873432898194
+    second: BalaExplosionSprite_58
+  - first:
+      213: 1362580610780434688
+    second: BalaExplosionSprite_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BalaExplosionSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2eaad2c5d331ed0800000000000000
+      internalID: -2444542706619587850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_1
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8cb730f78147750800000000000000
+      internalID: 6301688712396523709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b9f88c8856ef220800000000000000
+      internalID: 2521564479528868682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_3
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28789a15bad002860800000000000000
+      internalID: 7503012008659879810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_4
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce340b34a8c56030800000000000000
+      internalID: 3487414094158642886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_5
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04cc8b57d3548ec0800000000000000
+      internalID: -3565632820551564277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_6
+      rect:
+        serializedVersion: 2
+        x: 4446
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7397843d3209613e0800000000000000
+      internalID: -2083319294069278409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_7
+      rect:
+        serializedVersion: 2
+        x: 5187
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804240694a1713a60800000000000000
+      internalID: 7652022193584612360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_8
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810ea32d266386c80800000000000000
+      internalID: -8329347712759963624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_9
+      rect:
+        serializedVersion: 2
+        x: 6669
+        y: 3192
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76df48510f7f76320800000000000000
+      internalID: 2551280324453924199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f596d41c2a8625330800000000000000
+      internalID: 3698133292261665119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_11
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9179f580ed9314ad0800000000000000
+      internalID: -2719829074169063655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_12
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec054c41358ee5100800000000000000
+      internalID: 98771685377069262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_13
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60111738e764f79e0800000000000000
+      internalID: -1621499831645040378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_14
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871477c4a8bb82d20800000000000000
+      internalID: 3254056933437948280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_15
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb9175d485747c50800000000000000
+      internalID: 6662078962164931515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_16
+      rect:
+        serializedVersion: 2
+        x: 4446
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd07d701035b1c6b0800000000000000
+      internalID: -5277738070261796645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_17
+      rect:
+        serializedVersion: 2
+        x: 5187
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8a3927d20d831c0800000000000000
+      internalID: -4523636932079277891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_18
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840abbcf60d15f720800000000000000
+      internalID: 2879239452620464200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_19
+      rect:
+        serializedVersion: 2
+        x: 6669
+        y: 2394
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e9326e209a36860800000000000000
+      internalID: 7522041632554983040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe429542eb3d1cb0800000000000000
+      internalID: -4891687777238626565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_21
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3beddc16c1b46610800000000000000
+      internalID: 1613610030951426878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_22
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b98d0b23f9df79b0800000000000000
+      internalID: -5080102216228042313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_23
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f22011d9854a1dc0800000000000000
+      internalID: -3667542488319515912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_24
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40cff5aca2999880800000000000000
+      internalID: -8603684342897590198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_25
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c95d43159caaa4b0800000000000000
+      internalID: -5428336644567770682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_26
+      rect:
+        serializedVersion: 2
+        x: 4446
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9497e5ac2b56c20800000000000000
+      internalID: 3199159692554750452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_27
+      rect:
+        serializedVersion: 2
+        x: 5187
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab092cf28fc202920800000000000000
+      internalID: 2963417999274578106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_28
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931ccbeca28696d10800000000000000
+      internalID: 2119339632720920889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_29
+      rect:
+        serializedVersion: 2
+        x: 6669
+        y: 1596
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f02a64462697350800000000000000
+      internalID: 6014946960151285516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8451a2ce66b39ba0800000000000000
+      internalID: -6083318084819397492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_31
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1822dea8ca32e1f90800000000000000
+      internalID: -6981103148405546367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_32
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6334745d27f50060800000000000000
+      internalID: 6919208176587125611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_33
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fe2b03aab1c8cb0800000000000000
+      internalID: -4860479480064184496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_34
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92474e524b338d20800000000000000
+      internalID: 3279530109891461786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_35
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 790d985d581e44530800000000000000
+      internalID: 3838440747355984023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_36
+      rect:
+        serializedVersion: 2
+        x: 4446
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743b5a574fd31dc90800000000000000
+      internalID: -7146863013505158329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_37
+      rect:
+        serializedVersion: 2
+        x: 5187
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d528db3fb2e641c80800000000000000
+      internalID: -8352930273813495203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_38
+      rect:
+        serializedVersion: 2
+        x: 5928
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ee187d736e99b10800000000000000
+      internalID: 1988873837973990970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_39
+      rect:
+        serializedVersion: 2
+        x: 6669
+        y: 798
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44a44f2773e97a60800000000000000
+      internalID: 7672413541235991629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BalaExplosionSprite_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 741
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb65edb501d90a70800000000000000
+      internalID: 8793789570008574924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8fdfba746d07ea04dbc672db0ae68e33
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BalaExplosionSprite_0: -2444542706619587850
+      BalaExplosionSprite_1: 6301688712396523709
+      BalaExplosionSprite_10: 3698133292261665119
+      BalaExplosionSprite_11: -2719829074169063655
+      BalaExplosionSprite_12: 98771685377069262
+      BalaExplosionSprite_13: -1621499831645040378
+      BalaExplosionSprite_14: 3254056933437948280
+      BalaExplosionSprite_15: 6662078962164931515
+      BalaExplosionSprite_16: -5277738070261796645
+      BalaExplosionSprite_17: -4523636932079277891
+      BalaExplosionSprite_18: 2879239452620464200
+      BalaExplosionSprite_19: 7522041632554983040
+      BalaExplosionSprite_2: 2521564479528868682
+      BalaExplosionSprite_20: -4891687777238626565
+      BalaExplosionSprite_21: 1613610030951426878
+      BalaExplosionSprite_22: -5080102216228042313
+      BalaExplosionSprite_23: -3667542488319515912
+      BalaExplosionSprite_24: -8603684342897590198
+      BalaExplosionSprite_25: -5428336644567770682
+      BalaExplosionSprite_26: 3199159692554750452
+      BalaExplosionSprite_27: 2963417999274578106
+      BalaExplosionSprite_28: 2119339632720920889
+      BalaExplosionSprite_29: 6014946960151285516
+      BalaExplosionSprite_3: 7503012008659879810
+      BalaExplosionSprite_30: -6083318084819397492
+      BalaExplosionSprite_31: -6981103148405546367
+      BalaExplosionSprite_32: 6919208176587125611
+      BalaExplosionSprite_33: -4860479480064184496
+      BalaExplosionSprite_34: 3279530109891461786
+      BalaExplosionSprite_35: 3838440747355984023
+      BalaExplosionSprite_36: -7146863013505158329
+      BalaExplosionSprite_37: -8352930273813495203
+      BalaExplosionSprite_38: 1988873837973990970
+      BalaExplosionSprite_39: 7672413541235991629
+      BalaExplosionSprite_4: 3487414094158642886
+      BalaExplosionSprite_40: 8793789570008574924
+      BalaExplosionSprite_5: -3565632820551564277
+      BalaExplosionSprite_6: -2083319294069278409
+      BalaExplosionSprite_7: 7652022193584612360
+      BalaExplosionSprite_8: -8329347712759963624
+      BalaExplosionSprite_9: 2551280324453924199
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

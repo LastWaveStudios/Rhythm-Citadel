@@ -26,6 +26,7 @@ namespace Gameplay.Enemies
 
         protected override void PushDeath()
         {
+            IsAlive = false;
             _behaviour.PushDeath();
         }
 
@@ -36,7 +37,7 @@ namespace Gameplay.Enemies
 
         public override void Death()
         {
-            IsAlive = false;
+            DeSubscribeToRhythmParent();
             _rhythmManager.onHalf -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);

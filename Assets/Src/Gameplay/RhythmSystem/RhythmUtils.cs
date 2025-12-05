@@ -77,7 +77,7 @@ namespace Gameplay.RhythmSystem
             Eighth = Whole / 8.0;
             Sixteenth = Whole / 16.0;
 
-            UnityEngine.Debug.Log($"TIMES: {beat}, {Whole}, {Half}, {Quarter}, {Eighth}, {Sixteenth}");
+            //UnityEngine.Debug.Log($"TIMES: {beat}, {Whole}, {Half}, {Quarter}, {Eighth}, {Sixteenth}");
         }
     }
 
@@ -143,6 +143,13 @@ namespace Gameplay.RhythmSystem
                 spaceInSixteenths += (int)patternNotes[index].durationInSixteenths;
                 patternNotes.RemoveAt(index);
             }
+        }
+
+        public int GetNotes()
+        {
+            int notes = 0;
+            foreach (Note note in patternNotes) if (!note.isSilence) notes++;
+            return notes;
         }
     }
 }

@@ -8,6 +8,7 @@ using Utilities.ObjectPool;
 using Utilities.ServiceLocator;
 using System.Collections;
 using Gameplay.RhythmSystem;
+using Gameplay.Towers.Bullets;
 
 namespace Gameplay.Towers
 {
@@ -17,27 +18,38 @@ namespace Gameplay.Towers
     /// </summary>
     public abstract class ATower : MonoBehaviour
     {
-        [SerializeField] const float PRICEMULTIPLIER = 0.7f;
-        [SerializeField] const int MAX_LEVEL = 2;
+        const float PRICEMULTIPLIER = 0.7f;
+        const int MAX_LEVEL = 4;
+        const int RANGEIMPROVEMENT = 1;
 
-        [SerializeField] protected int _level;
-        [SerializeField] protected int _groupId;
         [SerializeField] protected RhythmPattern _pattern;
         [SerializeField] protected DamageType _damageType; // String, Percussion, Hybrid
-        [SerializeField] protected int _minDamage;   //The damage the towers can do is between two values: minDamage and maxDamage
-        [SerializeField] protected int _MaxDamage;
+        [SerializeField] protected ABullet _bulletPrefab; // Must be one that have Bullet Component  
+        
+        [SerializeField] protected int _groupId;
+        [SerializeField] protected int _damage;   //The damage the towers can do is between two values: minDamage and maxDamage
         [SerializeField] protected int _range;
-        [SerializeField] protected Bullet _bulletPrefab; // Must be one that have Bullet Component  
         [SerializeField] protected int _price;
+        
+        [SerializeField] protected float _damageMultiplier = 1.15f;
         [SerializeField] protected float _timeForProjectile = 0.1f; // Time of projectile to reach the target
+        [SerializeField] protected Vector3 _bulletOffset = new Vector3(0f, 1.2f, 0f);
+        
         protected bool _isEnabled = true;
+        protected int _level = 1;
 
         protected IPoolManager _poolManager;
         protected Vector3Int _positionInWorldCell;
 
+        [SerializeField]
+        private List<Sprite> frames = new List<Sprite>();
+        private int currentFrame = 0;
+        private SpriteRenderer sprite;
+
         #region Services references
         protected WaveManager _waveManager;
         protected WorldManager _worldManager;
+        protected RhythmManager _rhythmManager;
         #endregion
 
         public Func<List<AEnemy>, Vector3Int, int, List<AEnemy>> focusType;
@@ -46,6 +58,7 @@ namespace Gameplay.Towers
         public void Start()
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(Init);
+            sprite = GetComponent<SpriteRenderer>();
         }
 
         private void Init()
@@ -62,6 +75,18 @@ namespace Gameplay.Towers
                 Debug.LogError("ATower::Init: The world manager is null");
                 return;
             }
+            _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
+            if (_rhythmManager == null)
+            {
+                Debug.LogError("ATower::Init: The rhythm manager is null");
+                return;
+            }
+            _rhythmManager.onBeat += StepOneFrame;
+            PoolInit();
+        }
+
+        protected virtual void PoolInit()
+        {
             _poolManager = new PoolManager();
             _poolManager.RegisterPool<Bullet>(new ObjectPool<Bullet>(_bulletPrefab.GetComponent<Bullet>()));
         }
@@ -74,17 +99,35 @@ namespace Gameplay.Towers
             return _price;
         }
 
+        public int GetImprovePrice()
+        {
+            return (int)(_price * _level * PRICEMULTIPLIER);
+        }
+
         public int GetSellingPrice()
         {
             return (int)Mathf.Round((float)(_price * PRICEMULTIPLIER * _level));
         }
         
-        public int GetDamage()
+        public int GetLevel()
         {
-            if (_level == 1) return _minDamage;
-            else return _MaxDamage;
+            return _level;
         }
 
+        public int GetDamage()
+        {
+            return _damage;
+        }
+
+        public int GetImprovedDamage()
+        {
+            return (int)Math.Ceiling(_damage * _damageMultiplier);
+        }
+
+        public int GetAttacksPerMeasure()
+        {
+            return _pattern.GetNotes();
+        }
         public bool IsMaxLevel()
         {
             return _level == MAX_LEVEL;
@@ -104,18 +147,29 @@ namespace Gameplay.Towers
         {
             _positionInWorldCell = tile;
         }
+
+        public int GetRange()
+        {
+            return _range;
+        }
+
+        public int GetImprovedRange()
+        {
+            if (_level % 2 == 0) return (_range + RANGEIMPROVEMENT);
+            else return _range;
+        }
         #endregion
 
         #region Other methods
         public virtual void Disable() // call it when disable the tower (just for sound and animations)
         {
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = false;
             sprite.color = Color.red;
         }
         public virtual void Enable() // call it when Enable the tower (just for sound and animations)
         {
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = true;
             sprite.color = Color.white;
         }
@@ -131,16 +185,40 @@ namespace Gameplay.Towers
             List<AEnemy> objectives = focusType(enemies, _positionInWorldCell, _range);
             if (objectives == null || objectives.Count == 0 || objectives[0] == null) return;
 
-            Bullet bullet = _poolManager.Get<Bullet>();
+            ABullet bullet = GetFromPool();
 
             Vector3 from = transform.position;
-            bullet.Shot(from, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
+            bullet.Shot(from + _bulletOffset, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
+        }
+
+        protected virtual ABullet GetFromPool()
+        {
+            return _poolManager.Get<Bullet>();
         }
         public void Improve()
         {
+            if (_level % 2 == 0) _range += RANGEIMPROVEMENT;
+            _damage = (int)Math.Ceiling(_damage * _damageMultiplier);
             _level++;
-            _price = (int)(PRICEMULTIPLIER * _price);
         }
+
+        public void StepOneFrame(bool isFirstBeat)
+        {
+            if (frames == null || frames.Count == 0)
+            {
+                Debug.LogError("ATower is missing animation frames");
+                return;
+            }
+
+            currentFrame++;
+
+            if (currentFrame >= frames.Count)
+                currentFrame = 0;
+
+            sprite.sprite = frames[currentFrame];
+            //Debug.Log("Current frame: " + currentFrame);
+        }
+
         #endregion
 
         #region Corutines

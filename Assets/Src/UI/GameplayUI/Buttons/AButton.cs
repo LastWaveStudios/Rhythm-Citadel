@@ -9,39 +9,45 @@ namespace UI.GameplayUI.Buttons
 {
     public abstract class AButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
+        [SerializeField] protected GameObject _towerInfo;
+
         public new string name;
-        public TextMeshProUGUI text;
         private Animator _animator;
 
         protected EconomyManager _economyManager;
 
-        void Start()
+        protected virtual void Start()
         {
             _animator = GetComponent<Animator>();
+            _animator.speed = 0;
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
+            TakeTextReferences();
         }
 
-        private void TakeReferences()
+        protected virtual void TakeReferences()
         {
             _economyManager = ServiceLocatorSubsystem.Instance.GetService<EconomyManager>();
-            if (_economyManager == null)
-            {
-                Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
-            }
+            if (_economyManager == null) Debug.LogError("AButton::TakeReferences: The EconomyManager was null");
+
         }
 
         public abstract void OnPointerClick(PointerEventData eventData);
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
-            _animator.SetBool("hover", true);
-            text.text = name;
+            _animator.speed = 1;
+            _towerInfo.SetActive(true);
+            UpdateTowerInfo();
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
-            _animator.SetBool("hover", false);
-            text.text = "";
+            _animator.speed = 0;
+            _towerInfo.SetActive(false);
         }
+
+        protected abstract void TakeTextReferences();
+        protected abstract void UpdateTowerInfo();
+
     }
 }

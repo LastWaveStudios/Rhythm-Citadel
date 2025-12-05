@@ -1,9 +1,7 @@
-
-
 using System;
 using System.Collections.Generic;
 
-namespace AIBehaviourAPI.FSM
+namespace AIBehaviourAPI.Fsm
 {
     public class FSM : IBehaviourGraph
     {
@@ -46,20 +44,20 @@ namespace AIBehaviourAPI.FSM
             _name = name;
             _mustRestartToInitialNode = mustRestartToInitialNode;
             
-            _nodes = new List<INode>();
-            _nodes.Capacity = numberOfNodes;
+            _nodes = new List<INode>(numberOfNodes);
+            _transitions = new List<ITransition>(numberOfTransitions);
             
-            _transitions = new List<ITransition>();
-            _transitions.Capacity = numberOfTransitions;
+            _status = Status.None;
+            _currentNode = null;
         }
         
         #region --------------------------- Control Methods ---------------------------
         public void Init(INode initialNode)
         {
             if (_status != Status.None)
-                throw new BehaviourAPIException("Cannot initialize FSM after it has been initialized.");
+                throw new BehaviourAPIException($"Cannot initialize FSM: {_name} after it has been initialized.");
             if (!_nodes.Contains(initialNode))
-                throw new BehaviourAPIException("The initialNode is not register in the FSM.");
+                throw new BehaviourAPIException($"The initialNode is not register in the FSM: {_name}.");
 
             _status = Status.Running;
             _initialNode = initialNode;
@@ -74,15 +72,15 @@ namespace AIBehaviourAPI.FSM
         public void Update()
         {
             if (_status != Status.Running)
-                throw new BehaviourAPIException("Cannot update FSM if is not in Running state.");
+                throw new BehaviourAPIException($"Cannot update FSM: {_name} if is not in Running state.");
 
-            for (int i = 0; i < _currentNode.OutputTransitions.Count; ++i)
+            for (int i = 0; i < _currentNode.OutputNodes.Count; ++i)
             {
-                if (_currentNode.OutputTransitions[i].Condition())
+                if (_currentNode.OutputNodes[i].Condition())
                 {
-                    _currentNode.OutputTransitions[i].Action?.Invoke();
-                    _onCurrentNodeDoesTransition?.Invoke(_currentNode, _currentNode.OutputTransitions[i].DestinationNode);
-                    _currentNode = _currentNode.OutputTransitions[i].DestinationNode;
+                    _currentNode.OutputNodes[i].Action?.Invoke();
+                    _onCurrentNodeDoesTransition?.Invoke(_currentNode, _currentNode.OutputNodes[i].OutputNodes[0]); // A little tricky that this nodes are transitions but instead of cast to ITransition just take the first that is like the Transitions Store that access
+                    _currentNode = _currentNode.OutputNodes[i].OutputNodes[0]; // Same as line before, this node is in truth a transition for how this FSM class is build
                     break;
                 }
             }
@@ -92,7 +90,7 @@ namespace AIBehaviourAPI.FSM
         public void Finish()
         {
             if (_status == Status.None && _status == Status.Finished)
-                throw new BehaviourAPIException("Cannot uninitialize FSM after it has been uninitialized or before he was been initialized.");
+                throw new BehaviourAPIException($"Cannot uninitialize FSM: {_name} after it has been uninitialized or before he was been initialized.");
 
             _status = Status.Finished;
             _currentNode = null;
@@ -100,7 +98,7 @@ namespace AIBehaviourAPI.FSM
         public void Pause()
         {
             if (_status != Status.Running)
-                throw new BehaviourAPIException("Cannot pause FSM if is not Running.");
+                throw new BehaviourAPIException($"Cannot pause FSM: {_name} if is not Running.");
             
             _status = Status.Paused;
         }
@@ -108,7 +106,7 @@ namespace AIBehaviourAPI.FSM
         public void Resume()
         {
             if (_status != Status.Paused)
-                throw new BehaviourAPIException("Cannot resume FSM if is not Paused.");
+                throw new BehaviourAPIException($"Cannot resume FSM: {_name} if is not Paused.");
             
             _status = Status.Running;
             
@@ -117,34 +115,25 @@ namespace AIBehaviourAPI.FSM
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, _initialNode);
             _currentNode = _initialNode;
         }
-
-        public void ChangeState(INode target)
-        {
-            if (!_nodes.Contains(target))
-                throw new BehaviourAPIException("Target not found.");
-
-            _onCurrentNodeDoesTransition?.Invoke(_currentNode, target);
-            _currentNode = target;
-        }
         #endregion
 
         #region --------------------------- Creation Methods ---------------------------
         public void RegisterNode(INode node)
         {
             if (_nodes.Contains(node))
-                throw new BehaviourAPIException("Cannot register one node more than one time in FSM.");
+                throw new BehaviourAPIException($"Cannot register one node more than one time in FSM: {_name}; node: {node.Name}.");
             
             _nodes.Add(node);
         }
         public void RegisterTransition(ITransition transition)
         {
             if (_transitions.Contains(transition))
-                throw new BehaviourAPIException("Cannot register transition more than one time in FSM.");
+                throw new BehaviourAPIException($"Cannot register transition more than one time in FSM: {_name}; transition: {transition.Name}.");
             if (transition.OriginNode == null && transition.DestinationNode == null)
-                throw new BehaviourAPIException("Cannot register a transition with nodes that are null.");
+                throw new BehaviourAPIException($"Cannot register a transition with nodes that are null in FSM: {_name}; transition: {transition.Name}.");
             
-            transition.OriginNode.OutputTransitions.Add(transition);
-            transition.DestinationNode.InputTransitions.Add(transition);
+            transition.OriginNode.OutputNodes.Add(transition);
+            transition.DestinationNode.InputNodes.Add(transition);
             _transitions.Add(transition);
         }
         #endregion

@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.27, y: 2.84, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1362909699
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3434121250917235243, guid: 20db753ff52a60d4f9ae2c44c3cf56f3, type: 3}
+  m_Sprite: {fileID: -6796936202335012708, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf984539214ee94184c88ec52f6137c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 1
-  _groupId: 4
   _pattern:
     signature:
       top: 4
@@ -119,9 +117,18 @@ MonoBehaviour:
       durationInSixteenths: 8
     spaceInSixteenths: 16
   _damageType: 4
-  _minDamage: 9
-  _MaxDamage: 14
-  _range: 5
   _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
+  _groupId: 4
+  _damage: 10
+  _range: 5
   _price: 95
+  _damageMultiplier: 1.15
   _timeForProjectile: 0.8
+  _bulletOffset: {x: 0, y: 1.2, z: 0}
+  frames:
+  - {fileID: -6796936202335012708, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
+  - {fileID: 7047571795280588477, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
+  - {fileID: -8496804029238602895, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
+  - {fileID: 7894216303379929688, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
+  - {fileID: 5859830616148839234, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}
+  - {fileID: 2090368789272769596, guid: 24b05e69efa411d4d809ba1f47f358ac, type: 3}

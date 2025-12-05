@@ -15,10 +15,11 @@ namespace Input
 
         // The delegate { } are just for initialice them to something and ignore the null check on the invokes
 
-        #region TowersMap
+        #region Events
         public Action<int> onTapGroup = delegate { };
-        [SerializeField] private EconomyManager _economyManager;
-        [SerializeField] private GameplayManager _gameplayManager;
+        
+        public Action onPlaceTower = delegate { };
+        public Action onChangeToBattlePhase = delegate { };
         #endregion
         private void Awake()
         {
@@ -38,29 +39,24 @@ namespace Input
 
                  _actions.Battle.SetCallbacks(this);
                  _actions.Build.SetCallbacks(this);
+                 EnableBattleActions();
             }
-            _actions.Battle.SetCallbacks(this);
-            _actions.Build.SetCallbacks(this);
-
-            //
          }
 
         private void OnDisable()
         {
-            _actions.Battle.SetCallbacks(null);
-            _actions.Build.SetCallbacks(null);
             _actions.Disable();
         }
         public void EnableBuildActions()
         {
-            Debug.Log("BUILD habilitado");
+            //Debug.Log("BUILD habilitado");
             _actions.Build.Enable();
             _actions.Battle.Disable();
         }
 
         public void EnableBattleActions()
         {
-            Debug.Log("BATTLE habilitado");
+            //Debug.Log("BATTLE habilitado");
             _actions.Battle.Enable();
             _actions.Build.Disable();
         }
@@ -69,11 +65,11 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) _economyManager.InputHandler();
+            if (context.phase == InputActionPhase.Started) onPlaceTower.Invoke();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started) _gameplayManager.ChangeFightState();
+            if (context.phase == InputActionPhase.Started) onChangeToBattlePhase.Invoke();
         }
 
         public void OnPointerPosition(InputAction.CallbackContext context)

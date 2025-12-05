@@ -19,15 +19,21 @@ namespace Gameplay.World
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private TileBase _buildableTile;
         [SerializeField] private TileBase _unBuildableTile;
-        [SerializeField] private GameObject _buildingMenu;
-        [SerializeField] private GameObject _updateMenu;
+
+        [SerializeField] private GameObject _buildingMenuPrefab;
+        [SerializeField] private GameObject _updateMenuPrefab;
         [SerializeField] private GameObject _vinylTextPrefab;
 
         [SerializeField] private int _vinyl = 0;
+
+        private Canvas _canvas;
+        private GameObject _currentMenu;
+
         private int _countExitMenu = 0;
         private TextMeshProUGUI _vinylText;
         private Dictionary<Vector3Int, UnityEngine.GameObject> _existingTowers = new Dictionary<Vector3Int, UnityEngine.GameObject>();
         private Vector3Int? _selectedTilePosition = null;
+        private Vector2? _selectedScreenPosition = null;
 
         #region Services references
         private WaveManager _waveManager;
@@ -37,21 +43,25 @@ namespace Gameplay.World
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
-            _waveManager.onEnemyDeath += AddVinyl;
-
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
+
+            _waveManager.onEnemyDeath += AddVinyl;
         }
 
         private void Start()
         {
             _vinylText = _vinylTextPrefab.GetComponent<TextMeshProUGUI>();
             _vinylText.text = _vinyl.ToString();
+            _canvas = FindFirstObjectByType<Canvas>();
+
+            InputReader.Instance.onPlaceTower += InputHandler;
         }
+        
         #region ClickMethods 
 
         public void InputHandler()
         {
-            if (_selectedTilePosition != null)
+            if (_currentMenu != null)
             {
                 if (_countExitMenu >= 1) CloseMenu();
                 else _countExitMenu++;
@@ -66,11 +76,19 @@ namespace Gameplay.World
                 selectedTile = _tilemap.GetTile(_selectedTilePosition.Value);
 
             if (selectedTile == _buildableTile)
-                _buildingMenu.SetActive(true);
+            {
+                _currentMenu = Instantiate(_buildingMenuPrefab, _canvas.transform);
+                _currentMenu.GetComponent<RectTransform>().localPosition = _selectedScreenPosition.Value;
+            }
+
             else if (selectedTile == _unBuildableTile)
-                _updateMenu.SetActive(true);
+            {
+                _currentMenu = Instantiate(_updateMenuPrefab, _canvas.transform);
+                _currentMenu.GetComponent<RectTransform>().localPosition = _selectedScreenPosition.Value;
+            }
+           
             else
-                Debug.Log("Otro tile)");
+                Debug.Log("Otro tile");
 
         }
 
@@ -78,11 +96,26 @@ namespace Gameplay.World
         {
             _countExitMenu = 0;
             _selectedTilePosition = null;
-            _buildingMenu.SetActive(false);
-            _updateMenu.SetActive(false);
-            return;
+            Destroy(_currentMenu);
 
         }
+
+        void GetPositionClicked() // Works only with top down camera
+        {
+            Vector3 mousePosition = Mouse.current.position.ReadValue();
+
+            _selectedTilePosition = _tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(mousePosition));  // Getting the tile clicked - for the towers and the other stuff
+
+            // This part gets the position clicked relative to the canvas, then we will copy this out value to the global one, so we can use it out of here
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            _canvas.transform as RectTransform,
+            RectTransformUtility.WorldToScreenPoint(Camera.main, _tilemap.GetCellCenterWorld(_selectedTilePosition.Value)),
+            _canvas.worldCamera,
+            out Vector2 localPoint);
+
+            _selectedScreenPosition = localPoint;
+        }
+
         #endregion
 
         #region Tower methods
@@ -127,11 +160,19 @@ namespace Gameplay.World
         {
             _existingTowers.TryGetValue(_selectedTilePosition.Value, out UnityEngine.GameObject towerToImprove);
             ATower script = towerToImprove.GetComponent<ATower>();
-            int towerPrice = script.GetPrice();
+            int towerPrice = script.GetImprovePrice();
             if (CanBuy(towerPrice))
             {
+                AddVinyl(-towerPrice);
                 script.Improve();
             }
+        }
+
+        public ATower GetActiveTower()
+        {
+            _existingTowers.TryGetValue(_selectedTilePosition.Value, out UnityEngine.GameObject towerToImprove);
+            ATower activeTower = towerToImprove.GetComponent<ATower>();
+            return activeTower;
         }
         #endregion
 
@@ -144,7 +185,7 @@ namespace Gameplay.World
                 _tilemap.SetTile(clickedCellPosition, _unBuildableTile);
         }
 
-        void GetPositionClicked() // FUNCIONA CON LA CAMARA CENITAL
+        public Vector3Int GetSelectedSite()
         {
             //Vector2 position = InputReader.Instance.PointerPosition;
             Vector2 position = Pointer.current.position.ReadValue();
@@ -154,7 +195,6 @@ namespace Gameplay.World
 
             _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
         }
-
         #endregion
 
         #region Economy methods
@@ -169,7 +209,7 @@ namespace Gameplay.World
             int towerPrice = script.GetPrice();
             if (CanBuy(towerPrice))
             {
-                SpendVinyl(towerPrice);
+                AddVinyl(-towerPrice);
                 SpawnTower(_selectedTilePosition.Value, towerToBuy);
                 ChangeTile(_selectedTilePosition.Value);
             }
@@ -177,23 +217,20 @@ namespace Gameplay.World
         }
         public void SellTower()
         {
-            _vinyl += DestroyTower(_selectedTilePosition.Value);
+            AddVinyl(DestroyTower(_selectedTilePosition.Value));
             ChangeTile(_selectedTilePosition.Value);
         }
         bool CanBuy(int price)
         {
             return price <= _vinyl;
         }
-        void SpendVinyl(int price)
-        {
-            _vinyl -= price;
-            _vinylText.text = _vinyl.ToString();
-        }
+
         #endregion
 
         private void OnDestroy()
         {
             _waveManager.onEnemyDeath -= AddVinyl;
+            InputReader.Instance.onPlaceTower -= InputHandler;
         }
     }
 }

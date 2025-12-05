@@ -18,7 +18,7 @@ namespace Gameplay.Towers
         private RhythmPattern _pattern;
         private List<ATower> _towers;
 
-        public double timeOfDisable; // Just base time for the disbale duration in the group, the timing thing is controlled by the manager
+        public double timeOfDisable = 2f; // Just base time for the disbale duration in the group, the timing thing is controlled by the manager
         public bool isEnabled;
 
         private int _indexOfNoteInPattern;
@@ -88,7 +88,7 @@ namespace Gameplay.Towers
             
             if (_rhythmManager.IsInTime(_pattern.patternNotes[_indexOfNoteInPattern], _pattern.GetIndexOfSixteenthOnMeasure(_indexOfNoteInPattern), _maxOffset))
             {
-                UnityEngine.Debug.Log("Tapped GOOD");
+                //UnityEngine.Debug.Log("Tapped GOOD");
                 foreach (ATower tower in _towers)
                 {
                     tower.OnRhythmHit();
@@ -96,7 +96,7 @@ namespace Gameplay.Towers
                 return CheckRhythmStatus.Good;
             }
             
-            UnityEngine.Debug.Log("Tapped BAD");
+            //UnityEngine.Debug.Log("Tapped BAD");
             _indexOfNoteInPattern = -1;
             return CheckRhythmStatus.Bad;
         }

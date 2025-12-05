@@ -1,8 +1,8 @@
-using System;
-using AIBehaviourAPI.FSM;
+
+using AIBehaviourAPI.Fsm;
 using UnityEngine;
 
-namespace BehaviourAPI.Demos
+namespace AIBehaviourAPI.Demos
 {
     public class CubeChangeFSMMealy : MonoBehaviour
     {

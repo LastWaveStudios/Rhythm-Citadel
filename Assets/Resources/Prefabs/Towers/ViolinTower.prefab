@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.48, y: 3.11, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1362909699
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -242939261221526619, guid: 606d3cd726a94734585c5e9021c48d5a, type: 3}
+  m_Sprite: {fileID: -5006599194444775177, guid: e3c2ea44705790940ad3305430b461df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b9d100a19b47745b94770df22b6a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 1
-  _groupId: 5
   _pattern:
     signature:
       top: 4
@@ -127,9 +125,25 @@ MonoBehaviour:
       durationInSixteenths: 4
     spaceInSixteenths: 16
   _damageType: 1
-  _minDamage: 4
-  _MaxDamage: 6
-  _range: 6
   _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
+  _groupId: 5
+  _damage: 5
+  _range: 4
   _price: 70
-  _timeForProjectile: 0.8
+  _damageMultiplier: 1.15
+  _timeForProjectile: 0.7
+  _bulletOffset: {x: 0, y: 1.2, z: 0}
+  frames:
+  - {fileID: -5006599194444775177, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 9042077298943896264, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: -2020185614, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 228158168781521440, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 7190991742034893960, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: -7181814795685462307, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: -287777482025221468, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: -2578388508742030518, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 5208865457327340364, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 6564587987646219489, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 8804296569365617986, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: -2636163603523848896, guid: e3c2ea44705790940ad3305430b461df, type: 3}
+  - {fileID: 6964827238834400737, guid: e3c2ea44705790940ad3305430b461df, type: 3}
