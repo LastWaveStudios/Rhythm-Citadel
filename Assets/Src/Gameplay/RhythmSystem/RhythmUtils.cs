@@ -64,12 +64,14 @@ namespace Gameplay.RhythmSystem
         public double Sixteenth;
 
         public double beat; // Pulso
+        public double measure;
 
         public TimesForBPMAndSignature(Signature signature, int bpm)
         {
             double BPM = bpm;
 
             beat = 60000 / BPM;
+            measure = beat * signature.top;
 
             Whole = beat * signature.bottom;
             Half = Whole / 2.0;

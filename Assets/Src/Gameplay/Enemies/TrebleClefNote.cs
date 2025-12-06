@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Gameplay.Enemies.Behaviours;
+using Gameplay.RhythmSystem;
 using Gameplay.Waves;
 using Unity.Mathematics;
 using Unity.Mathematics.Geometry;
@@ -36,6 +37,7 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
             _rhythmManager.onBeat += OnBeat;
+            _timeOfNote = _rhythmManager.GetTimeOfAMeasure() / 1000.0f;
         }
         
         protected override void InitializeBehaviour()
