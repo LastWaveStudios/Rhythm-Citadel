@@ -127,6 +127,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,12 +147,12 @@ TextureImporter:
       name: "SpritesIdleBailarinaDa\xF1ada1_0"
       rect:
         serializedVersion: 2
-        x: 98
-        y: 205
-        width: 359
-        height: 853
+        x: 79
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +169,12 @@ TextureImporter:
       name: "SpritesIdleBailarinaDa\xF1ada1_1"
       rect:
         serializedVersion: 2
-        x: 550
-        y: 201
-        width: 402
-        height: 866
+        x: 559
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +191,12 @@ TextureImporter:
       name: "SpritesIdleBailarinaDa\xF1ada1_2"
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 128
-        width: 445
-        height: 924
+        x: 1061
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +213,12 @@ TextureImporter:
       name: "SpritesIdleBailarinaDa\xF1ada1_3"
       rect:
         serializedVersion: 2
-        x: 1582
-        y: 201
-        width: 461
-        height: 829
+        x: 1644
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,77 +231,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "SpritesIdleBailarinaDa\xF1ada1_4"
-      rect:
-        serializedVersion: 2
-        x: 2040
-        y: 668
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a16fcd2f9ae607c0800000000000000
-      internalID: -4105336040912363099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "SpritesIdleBailarinaDa\xF1ada1_5"
-      rect:
-        serializedVersion: 2
-        x: 947
-        y: 281
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2297b7a2590d56b0800000000000000
-      internalID: -5306074535366782418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "SpritesIdleBailarinaDa\xF1ada1_6"
-      rect:
-        serializedVersion: 2
-        x: 238
-        y: 128
-        width: 6
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 690d8ce5ec32817a0800000000000000
-      internalID: -6406331100674076522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e903e61590f67454eb07770bfd6f5b33
     internalID: 0
     vertices: []
     indices: 

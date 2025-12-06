@@ -165,12 +165,12 @@ TextureImporter:
       name: SpritesIdleBailarina_0
       rect:
         serializedVersion: 2
-        x: 100
-        y: 205
-        width: 356
-        height: 846
+        x: 79
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,11 +188,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 559
-        y: 208
-        width: 387
-        height: 841
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,56 +209,12 @@ TextureImporter:
       name: SpritesIdleBailarina_2
       rect:
         serializedVersion: 2
-        x: 821
-        y: 1045
-        width: 6
-        height: 7
+        x: 1061
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14882a2ae6a6d1510800000000000000
-      internalID: 1521489272528603201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_3
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 906
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4f448af8618a12d0800000000000000
-      internalID: -3307188688470651061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_4
-      rect:
-        serializedVersion: 2
-        x: 1083
-        y: 200
-        width: 369
-        height: 827
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,15 +228,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpritesIdleBailarina_5
+      name: SpritesIdleBailarina_3
       rect:
         serializedVersion: 2
-        x: 1588
-        y: 194
-        width: 450
-        height: 843
+        x: 1644
+        y: 203
+        width: 393
+        height: 857
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,165 +249,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_6
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 756
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4485c88a9fc0f74f0800000000000000
-      internalID: -828929539998721980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_7
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 664
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1c9fee12494c8200800000000000000
-      internalID: 183602233151036445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_8
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 639
-        width: 12
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5973e6d79f11fb670800000000000000
-      internalID: 8556577580276135829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_9
-      rect:
-        serializedVersion: 2
-        x: 2034
-        y: 649
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 090258524f99f6300800000000000000
-      internalID: 247585778409218192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_10
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 127
-        width: 6
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70cd37df91297bec0800000000000000
-      internalID: -3551209140834280441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_11
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 141
-        width: 6
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 193e9d82c120598e0800000000000000
-      internalID: -1687440165412674671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpritesIdleBailarina_12
-      rect:
-        serializedVersion: 2
-        x: 1289
-        y: 124
-        width: 7
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a20ceb3d9c9500c0800000000000000
-      internalID: -4610106444414713182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: edddcb1b8f307c143836db4b819cebcc
     internalID: 0
     vertices: []
     indices: 
@@ -466,10 +268,8 @@ TextureImporter:
       SpritesIdleBailarina_10: -3551209140834280441
       SpritesIdleBailarina_11: -1687440165412674671
       SpritesIdleBailarina_12: -4610106444414713182
-      SpritesIdleBailarina_2: 1521489272528603201
-      SpritesIdleBailarina_3: -3307188688470651061
-      SpritesIdleBailarina_4: -2942212529437659712
-      SpritesIdleBailarina_5: -8636023907092751518
+      SpritesIdleBailarina_2: -2942212529437659712
+      SpritesIdleBailarina_3: -8636023907092751518
       SpritesIdleBailarina_6: -828929539998721980
       SpritesIdleBailarina_7: 183602233151036445
       SpritesIdleBailarina_8: 8556577580276135829

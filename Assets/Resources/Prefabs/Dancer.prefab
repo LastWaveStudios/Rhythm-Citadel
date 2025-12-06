@@ -123,5 +123,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae743776586128408a2b8a3b9ddbc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 100
   _sprites:
   - {fileID: 0}
+  lifeFill: {fileID: 0}
+  normalFrames:
+  - {fileID: -3727453601456132601, guid: a7cceb79cfa69474980aeca037c69c02, type: 3}
+  - {fileID: -199069008764011900, guid: a7cceb79cfa69474980aeca037c69c02, type: 3}
+  - {fileID: -2942212529437659712, guid: a7cceb79cfa69474980aeca037c69c02, type: 3}
+  - {fileID: -8636023907092751518, guid: a7cceb79cfa69474980aeca037c69c02, type: 3}
+  L1DamagedFrames:
+  - {fileID: 1049268326929010790, guid: c1984f85f947b424489cebfb0e5b207e, type: 3}
+  - {fileID: 7307422272132720521, guid: c1984f85f947b424489cebfb0e5b207e, type: 3}
+  - {fileID: 7964136512008624047, guid: c1984f85f947b424489cebfb0e5b207e, type: 3}
+  - {fileID: 510237355653537810, guid: c1984f85f947b424489cebfb0e5b207e, type: 3}
+  L2DamagedFrames:
+  - {fileID: 4043680231111349393, guid: a58e70ed20ad5aa47bd9f66921a87ffd, type: 3}
+  - {fileID: -9078353813474110846, guid: a58e70ed20ad5aa47bd9f66921a87ffd, type: 3}
+  - {fileID: -8898676054297027914, guid: a58e70ed20ad5aa47bd9f66921a87ffd, type: 3}
+  - {fileID: -1636672149075359454, guid: a58e70ed20ad5aa47bd9f66921a87ffd, type: 3}
+  L3DamagedFrames:
+  - {fileID: -2063545033778440017, guid: 5ef7db14eaaea794ebb3b26a1f1d040e, type: 3}
+  - {fileID: 21176648632484265, guid: 5ef7db14eaaea794ebb3b26a1f1d040e, type: 3}
+  - {fileID: -50745418533579893, guid: 5ef7db14eaaea794ebb3b26a1f1d040e, type: 3}
+  - {fileID: -6649912525517434606, guid: 5ef7db14eaaea794ebb3b26a1f1d040e, type: 3}
