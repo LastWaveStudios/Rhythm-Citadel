@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fd9109a208832674dbe51c6893b4d712
+guid: 9268ac58fa8899f43961fa556f2b90be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4524937408866310484
-    second: SilencioRedonda_0
+      213: 3456271500184113427
+    second: Caer_0
+  - first:
+      213: -882237231387603012
+    second: Caer_1
+  - first:
+      213: -8133881193605580248
+    second: Caer_2
+  - first:
+      213: -5353615063934455493
+    second: Caer_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +106,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SilencioRedonda_0
+      name: Caer_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 415
-        height: 172
+        width: 199
+        height: 163
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4595a56699ecbce30800000000000000
-      internalID: 4524937408866310484
+      spriteID: 311d7c70e9427ff20800000000000000
+      internalID: 3456271500184113427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caer_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 161
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf848f89e9a1c3f0800000000000000
+      internalID: -882237231387603012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caer_2
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 0
+        width: 146
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ab8e94626ae1f80800000000000000
+      internalID: -8133881193605580248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caer_3
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 0
+        width: 161
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31b10ac67324b5b0800000000000000
+      internalID: -5353615063934455493
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 241fe339740eed045ab731afe3443d37
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SilencioRedonda_0: 4524937408866310484
+      Caer_0: 3456271500184113427
+      Caer_1: -882237231387603012
+      Caer_2: -8133881193605580248
+      Caer_3: -5353615063934455493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
