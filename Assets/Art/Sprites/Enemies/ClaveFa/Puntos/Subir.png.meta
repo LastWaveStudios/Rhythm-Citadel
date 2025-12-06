@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fd9109a208832674dbe51c6893b4d712
+guid: 1c0f2dbf793e36044b40c2094f84ebc0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4524937408866310484
-    second: SilencioRedonda_0
+      213: -2577592541225560705
+    second: Subir_0
+  - first:
+      213: -7624102057921170353
+    second: Subir_1
+  - first:
+      213: 414110188209876542
+    second: Subir_2
+  - first:
+      213: -5114337581901285355
+    second: Subir_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +106,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SilencioRedonda_0
+      name: Subir_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 415
-        height: 172
+        y: 33
+        width: 242
+        height: 94
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4595a56699ecbce30800000000000000
-      internalID: 4524937408866310484
+      spriteID: f75dd8c8d3d8a3cd0800000000000000
+      internalID: -2577592541225560705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Subir_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 202
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f44b842929fb13690800000000000000
+      internalID: -7624102057921170353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Subir_2
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 41
+        width: 243
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3eae1aa5073fb500800000000000000
+      internalID: 414110188209876542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Subir_3
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 42
+        width: 227
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518f751f0193609b0800000000000000
+      internalID: -5114337581901285355
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 241fe339740eed045ab731afe3443d37
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SilencioRedonda_0: 4524937408866310484
+      Subir_0: -2577592541225560705
+      Subir_1: -7624102057921170353
+      Subir_2: 414110188209876542
+      Subir_3: -5114337581901285355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

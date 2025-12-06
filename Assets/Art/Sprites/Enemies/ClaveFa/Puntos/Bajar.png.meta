@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fd9109a208832674dbe51c6893b4d712
+guid: 99ee42369082bd640aa157b4ec2357fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4524937408866310484
-    second: SilencioRedonda_0
+      213: 4547343905543511635
+    second: Bajar_0
+  - first:
+      213: -4067788777594153877
+    second: Bajar_1
+  - first:
+      213: -1176010308560474107
+    second: Bajar_2
+  - first:
+      213: 5262955416895407355
+    second: Bajar_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +106,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SilencioRedonda_0
+      name: Bajar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 415
-        height: 172
+        x: 2
+        y: 31
+        width: 236
+        height: 126
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4595a56699ecbce30800000000000000
-      internalID: 4524937408866310484
+      spriteID: 35e557170396b1f30800000000000000
+      internalID: 4547343905543511635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bajar_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 21
+        width: 216
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b641e2aa8af4c87c0800000000000000
+      internalID: -4067788777594153877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bajar_2
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 18
+        width: 236
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5003e0aead8fdafe0800000000000000
+      internalID: -1176010308560474107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bajar_3
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 15
+        width: 227
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4c4cc3116c90940800000000000000
+      internalID: 5262955416895407355
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 241fe339740eed045ab731afe3443d37
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SilencioRedonda_0: 4524937408866310484
+      Bajar_0: 4547343905543511635
+      Bajar_1: -4067788777594153877
+      Bajar_2: -1176010308560474107
+      Bajar_3: 5262955416895407355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

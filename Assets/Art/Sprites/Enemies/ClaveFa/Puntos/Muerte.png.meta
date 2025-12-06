@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd9109a208832674dbe51c6893b4d712
+guid: f5e81de9523590b40ba1542818d1c500
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4524937408866310484
-    second: SilencioRedonda_0
+      213: -4199157903875480805
+    second: Muerte_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SilencioRedonda_0
+      name: Muerte_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 415
-        height: 172
+        width: 1310
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4595a56699ecbce30800000000000000
-      internalID: 4524937408866310484
+      spriteID: b136abf622899b5c0800000000000000
+      internalID: -4199157903875480805
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 241fe339740eed045ab731afe3443d37
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SilencioRedonda_0: 4524937408866310484
+      Muerte_0: -4199157903875480805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

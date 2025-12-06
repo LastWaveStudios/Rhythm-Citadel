@@ -13,7 +13,6 @@ namespace Gameplay.Enemies
     {
         #region --------------------------- Variables ---------------------------
 
-        [SerializeField] protected EnemyDamageType _damageType;   //Melee, Range, Contact
         [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
 
         [SerializeField] protected float _moveTime = 0.5f;
@@ -22,7 +21,7 @@ namespace Gameplay.Enemies
 
         protected EnemyStats _stats;
 
-        [SerializeField] protected int _health;
+        [SerializeField] protected int _health; // Just for show in editor for debugging purpose
         protected int _damage;
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
@@ -278,15 +277,7 @@ namespace Gameplay.Enemies
             transform.position = targetPos;   // Fix for center final positions
             yield return null;
         }
+        #endregion
     }
-    #endregion
-
-    public enum EnemyDamageType
-    {
-        Melee,
-        Range,
-        Contact
-    }
-
 }
 
