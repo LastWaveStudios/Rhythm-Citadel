@@ -42,7 +42,6 @@ namespace UI.GameplayUI.VisualHelp
         }
         public void Init()
         {
-            //Debug.Log("Gamplay Visual Help INIT");
             _rhythmManager = ServiceLocatorSubsystem.Instance.GetService<RhythmManager>();
             if (_rhythmManager == null)
             {
@@ -52,27 +51,14 @@ namespace UI.GameplayUI.VisualHelp
 
             gameObject.SetActive(true);
             uint beatsOnOneMeasure = _rhythmManager.Signature.top;
-            // _targetsPositions = new Vector2[beatsOnOneMeasure + 1];
-            //Vector2 step = (_gear.anchoredPosition - _spawnTransform.anchoredPosition) / (beatsOnOneMeasure);
-            //  Debug.Log("GEAR" + _gear.anchoredPosition);
-            // Debug.Log("SPAWN" + _spawnTransform.anchoredPosition);
-
-            /*  for (int i = 0; i <= beatsOnOneMeasure; ++i)
-              {
-                  _targetsPositions[i] = _spawnTransform.anchoredPosition + (step * i);
-                  //_targetsPositions[i] = _spawnTransform.anchoredPosition;
-                 // Debug.Log("TARGET POSITION" + _targetsPositions[i]);
-              }*/
             _targetsPositions = new Vector2[beatsOnOneMeasure + 1];
 
-            // 1. Pasamos SPAWN y GEAR a coordenadas locales de DinamicGears
             Vector3 spawnLocal3 = _gearsContainer.InverseTransformPoint(_spawnTransform.position);
             Vector3 gearLocal3 = _gearsContainer.InverseTransformPoint(_gear.position);
 
             Vector2 spawnLocal = new Vector2(spawnLocal3.x, spawnLocal3.y);
             Vector2 gearLocal = new Vector2(gearLocal3.x, gearLocal3.y);
 
-            // 2. Mismo sitio de partida y llegada, pero AHORA en el mismo sistema
             Vector2 step = (gearLocal - spawnLocal) / beatsOnOneMeasure;
 
             for (int i = 0; i <= beatsOnOneMeasure; ++i)
@@ -104,7 +90,6 @@ namespace UI.GameplayUI.VisualHelp
         public void Disable()
         {
             gameObject.SetActive(false);
-            //_rhythmManager.onBeat -= OnBeat;
         }
 
         private void OnBeat(bool isMeasureBeat)
@@ -127,19 +112,13 @@ namespace UI.GameplayUI.VisualHelp
             GameObject go = Instantiate(prefab, _gearsContainer);
             RectTransform gearRect = (RectTransform)go.transform;
 
-            // 1) Anclar el engranaje al lado derecho, centrado verticalmente en la barra
             gearRect.anchorMin = new Vector2(1f, 0.5f);
             gearRect.anchorMax = new Vector2(1f, 0.5f);
             gearRect.pivot = new Vector2(0.5f, 0.5f);
             gearRect.localScale = Vector3.one;
 
-            // 2) Offset desde la derecha (en píxeles). 
-            //    Por ejemplo, -20 para que quede 20 px dentro de la barra.
             float offsetDesdeDerecha = -20f;
             gearRect.anchoredPosition = new Vector2(offsetDesdeDerecha, 0f);
-
-          //  Debug.Log($"SPAWN GEAR {gearRect.anchoredPosition}");
-
 
             BeatGearController beatGearController = gearRect.GetComponent<BeatGearController>();
             if (beatGearController == null)

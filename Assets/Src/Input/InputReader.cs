@@ -3,7 +3,6 @@ using Gameplay.World;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.PlayerSettings;
 
 namespace Input
 {
@@ -31,25 +30,30 @@ namespace Input
         }
 
         #region EnablersAndDisablers
-         private void OnEnable() 
-         {
-             if (_actions == null)
-             {
-                 _actions = new Actions();
+        private void OnEnable()
+        {
+            if (_actions == null)
+            {
+                _actions = new Actions();
 
-                 _actions.Battle.SetCallbacks(this);
-                 _actions.Build.SetCallbacks(this);
-                 EnableBattleActions();
+                _actions.Battle.SetCallbacks(this);
+                _actions.Build.SetCallbacks(this);
             }
-         }
+            _actions.Battle.SetCallbacks(this);
+            _actions.Build.SetCallbacks(this);
+
+            //
+        }
 
         private void OnDisable()
         {
+            _actions.Battle.SetCallbacks(null);
+            _actions.Build.SetCallbacks(null);
             _actions.Disable();
         }
         public void EnableBuildActions()
         {
-            //Debug.Log("BUILD habilitado");
+            Debug.Log("BUILD habilitado");
             _actions.Build.Enable();
             _actions.Battle.Disable();
         }
