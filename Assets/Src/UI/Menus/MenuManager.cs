@@ -12,6 +12,7 @@ namespace UI.Menus
         private IMenuState _previousState;
 
         private IMenuState _nextStateWhenChangingScene;
+        [SerializeField] private Canvas canvas;
 
         private void Start()
         {

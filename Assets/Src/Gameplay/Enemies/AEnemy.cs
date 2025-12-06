@@ -184,7 +184,7 @@ namespace Gameplay.Enemies
         public void RestartMovementPreparation()
         {
             _currentPreparation = 0;
-            Debug.Log($"Enemy: {name} restart the preparation beats");
+           // Debug.Log($"Enemy: {name} restart the preparation beats");
         }
         #endregion
 
