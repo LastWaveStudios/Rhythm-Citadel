@@ -151,15 +151,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "PointerPosition",
-                    "type": "Value",
-                    "id": "59a21cf1-4cfd-4d36-b9d3-bc7c1574e5cb",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -193,28 +184,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "ChangeToBattlePhase",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0d7e3c09-dcbe-4d84-8ed2-176cf3467967",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c77fa97b-c16f-4ffb-97d5-5a1257efdc6e",
-                    "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PointerPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

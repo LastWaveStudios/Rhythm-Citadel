@@ -708,7 +708,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1362909699
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: -80
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4868,6 +4868,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3576491366311784137, guid: e75537c014133ea4ea3a4ae4a7da6a73, type: 3}
   m_PrefabInstance: {fileID: 580433217}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &580433219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7731940023144845700, guid: e75537c014133ea4ea3a4ae4a7da6a73, type: 3}
+  m_PrefabInstance: {fileID: 580433217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &580433221 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1682946336005601174, guid: e75537c014133ea4ea3a4ae4a7da6a73, type: 3}
@@ -4963,6 +4968,10 @@ PrefabInstance:
       propertyPath: '_services.Array.data[7]'
       value: 
       objectReference: {fileID: 790820228}
+    - target: {fileID: 7847313591794621855, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: TowersButton
+      value: 
+      objectReference: {fileID: 580433219}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8734,7 +8743,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1473341355
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

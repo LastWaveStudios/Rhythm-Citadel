@@ -23,10 +23,6 @@ namespace Gameplay
     public class GameplayManager : Utilities.ServiceLocator.AService
     {
         [SerializeField] private GameplayState _currentState = GameplayState.Build;
-        [SerializeField] GameObject pianoButton;
-        [SerializeField] GameObject ViolinButton;
-        [SerializeField] GameObject DrumButton;
-        [SerializeField] GameObject TrumpetButton;
         [SerializeField] GameObject TowersButton;
         public GameplayState Currentstate { get { return _currentState; } }
 

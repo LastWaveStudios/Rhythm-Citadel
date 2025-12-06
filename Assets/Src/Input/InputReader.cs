@@ -65,6 +65,7 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
+            Debug.Log("COLOCAR TORRES");
             if (context.phase == InputActionPhase.Started) onPlaceTower.Invoke();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)

@@ -239,15 +239,6 @@ namespace Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""PointerPosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""59a21cf1-4cfd-4d36-b9d3-bc7c1574e5cb"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -283,28 +274,6 @@ namespace Input
                     ""action"": ""ChangeToBattlePhase"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0d7e3c09-dcbe-4d84-8ed2-176cf3467967"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PointerPosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c77fa97b-c16f-4ffb-97d5-5a1257efdc6e"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PointerPosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -335,7 +304,6 @@ namespace Input
             m_Build = asset.FindActionMap("Build", throwIfNotFound: true);
             m_Build_PlaceTower = m_Build.FindAction("PlaceTower", throwIfNotFound: true);
             m_Build_ChangeToBattlePhase = m_Build.FindAction("ChangeToBattlePhase", throwIfNotFound: true);
-            m_Build_PointerPosition = m_Build.FindAction("PointerPosition", throwIfNotFound: true);
         }
 
         ~@Actions()
@@ -570,7 +538,6 @@ namespace Input
         private List<IBuildActions> m_BuildActionsCallbackInterfaces = new List<IBuildActions>();
         private readonly InputAction m_Build_PlaceTower;
         private readonly InputAction m_Build_ChangeToBattlePhase;
-        private readonly InputAction m_Build_PointerPosition;
         /// <summary>
         /// Provides access to input actions defined in input action map "Build".
         /// </summary>
@@ -590,10 +557,6 @@ namespace Input
             /// Provides access to the underlying input action "Build/ChangeToBattlePhase".
             /// </summary>
             public InputAction @ChangeToBattlePhase => m_Wrapper.m_Build_ChangeToBattlePhase;
-            /// <summary>
-            /// Provides access to the underlying input action "Build/PointerPosition".
-            /// </summary>
-            public InputAction @PointerPosition => m_Wrapper.m_Build_PointerPosition;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -626,9 +589,6 @@ namespace Input
                 @ChangeToBattlePhase.started += instance.OnChangeToBattlePhase;
                 @ChangeToBattlePhase.performed += instance.OnChangeToBattlePhase;
                 @ChangeToBattlePhase.canceled += instance.OnChangeToBattlePhase;
-                @PointerPosition.started += instance.OnPointerPosition;
-                @PointerPosition.performed += instance.OnPointerPosition;
-                @PointerPosition.canceled += instance.OnPointerPosition;
             }
 
             /// <summary>
@@ -646,9 +606,6 @@ namespace Input
                 @ChangeToBattlePhase.started -= instance.OnChangeToBattlePhase;
                 @ChangeToBattlePhase.performed -= instance.OnChangeToBattlePhase;
                 @ChangeToBattlePhase.canceled -= instance.OnChangeToBattlePhase;
-                @PointerPosition.started -= instance.OnPointerPosition;
-                @PointerPosition.performed -= instance.OnPointerPosition;
-                @PointerPosition.canceled -= instance.OnPointerPosition;
             }
 
             /// <summary>
@@ -766,13 +723,6 @@ namespace Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnChangeToBattlePhase(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "PointerPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnPointerPosition(InputAction.CallbackContext context);
         }
     }
 }
