@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 3031065314200888794}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.353808, y: 1.5277883, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -145,9 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3900b79a5846a4d479cd40a8b66748ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageType: 0
   _resistance: 3
   _moveTime: 0.5
+  _jumpHeight: 0.8
+  _scaleOffsetPercentagePerPreparation: 0.9
+  _health: 0
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.25
