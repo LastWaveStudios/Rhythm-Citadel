@@ -24,6 +24,7 @@ namespace Gameplay
     {
         [SerializeField] private GameplayState _currentState = GameplayState.Build;
         [SerializeField] GameObject TowersButton;
+        private bool useMobileInput = false;
         public GameplayState Currentstate { get { return _currentState; } }
 
         #region events
@@ -43,6 +44,9 @@ namespace Gameplay
 
         public override void Init()
         {
+
+            useMobileInput = Application.isMobilePlatform
+                         || SystemInfo.deviceType == DeviceType.Handheld;
             TowersButton.SetActive(false);
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
             if (_waveManager == null)
@@ -138,7 +142,13 @@ namespace Gameplay
             onBuildStateEnd.Invoke();
             
             onFightStateStart.Invoke();
-            TowersButton.SetActive(true);
+            if (useMobileInput)
+            {
+                TowersButton.SetActive(true);
+            }
+            //#if UNITY_EDITOR
+                //TowersButton.SetActive(true);
+           // #endif
             InputReader.Instance.EnableBattleActions();
         }
 

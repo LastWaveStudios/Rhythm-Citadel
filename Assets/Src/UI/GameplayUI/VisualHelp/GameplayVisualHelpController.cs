@@ -66,11 +66,6 @@ namespace UI.GameplayUI.VisualHelp
                 _targetsPositions[i] = spawnLocal + step * i;
             }
 
-            Debug.Log($"SPAWN LOCAL {spawnLocal}");
-            Debug.Log($"GEAR  LOCAL {gearLocal}");
-            Debug.Log($"FIRST TARGET  {_targetsPositions[0]}");
-            Debug.Log($"LAST  TARGET  {_targetsPositions[_targetsPositions.Length - 1]}");
-
             _rhythmManager.onBeat += OnBeat;
             _rhythmManager.onFinishRhythmNextMeasure += OnFinishRhythmNextMeasure;
             _rhythmManager.onEndRhythm += OnRhythmEnd;
