@@ -246,6 +246,7 @@ namespace Gameplay.Enemies
             if (_health > 0)
             {
                 _vinylDrop = 0;
+                transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 StartCoroutine(PlayDeathAndWait("Explode"));
             }
             else StartCoroutine(PlayDeathAndWait("Die"));
@@ -372,6 +373,8 @@ namespace Gameplay.Enemies
                 //float sT = Utilities.EasingFunctions.NormalizeParabolaNotConvex(T);
                 
                 transform.localScale = originScale * (1.0f - T) + targetScale * T;
+
+                Debug.Log($"The Scales are: {transform.localScale}");
                 
                 t += Time.deltaTime;
                 yield return null;

@@ -34,6 +34,10 @@ namespace Gameplay.Towers
         [SerializeField] protected float _damageMultiplier = 1.15f;
         [SerializeField] protected float _timeForProjectile = 0.1f; // Time of projectile to reach the target
         [SerializeField] protected Vector3 _bulletOffset = new Vector3(0f, 1.2f, 0f);
+
+        [Header("ShootAnimation")]
+        [SerializeField] protected float _timeOfAnimation = 0.5f;
+        [SerializeField] protected float _scaleFactorForShoot = 0.9f;
         
         protected bool _isEnabled = true;
         protected int _level = 1;
@@ -179,6 +183,10 @@ namespace Gameplay.Towers
         }
         public void Attack()   //call it when the user taps correctly
         {
+            // Do the animation for let the player know that the tap was correct
+            StartCoroutine(ShootAnimationScale(Utilities.EasingFunctions.EaseOutQuart));
+            
+            // Logic of search enemies and shoot to them
             List<AEnemy> enemies = _waveManager.GetEnemiesList();
             if (enemies == null || enemies.Count == 0) return;
 
@@ -189,6 +197,7 @@ namespace Gameplay.Towers
 
             Vector3 from = transform.position;
             bullet.Shot(from + _bulletOffset, objectives, _timeForProjectile, _poolManager, _damageType, GetDamage());
+
         }
 
         protected virtual ABullet GetFromPool()
@@ -223,17 +232,27 @@ namespace Gameplay.Towers
 
         #region Corutines
 
-        private IEnumerator TestThing()
+        private IEnumerator ShootAnimationScale(Func<float, float> easingFunction = null)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-
+            Vector3 originScale = transform.localScale;
+            Vector3 targetScale = new Vector3(originScale.x, originScale.y * _scaleFactorForShoot, originScale.z);
+            
             float t = 0.0f;
-            while (t < 0.25f)
+            while (t < _timeOfAnimation)
             {
+                float T;
+                if (easingFunction == null) T = t / _timeOfAnimation;
+                else T = easingFunction(t / _timeOfAnimation);
+
+                float sT = Utilities.EasingFunctions.NormalizeParabolaNotConvex(T);
+                
+                transform.localScale = originScale * (1.0f - sT) + targetScale * sT;
+                
                 t += Time.deltaTime;
                 yield return null;
             }
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            
+            transform.localScale = originScale;
         }
         #endregion
 
