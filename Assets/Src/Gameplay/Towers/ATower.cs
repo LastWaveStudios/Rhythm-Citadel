@@ -38,6 +38,11 @@ namespace Gameplay.Towers
         [Header("ShootAnimation")]
         [SerializeField] protected float _timeOfAnimation = 0.5f;
         [SerializeField] protected float _scaleFactorForShoot = 0.9f;
+        [SerializeField] protected float _scaleFactorForFail = 1.2f;
+        
+        private Vector3 _originScale;
+        private Vector3 _offsetScale;
+        
         
         protected bool _isEnabled = true;
         protected int _level = 1;
@@ -170,12 +175,23 @@ namespace Gameplay.Towers
             //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = false;
             sprite.color = Color.red;
+            _originScale = transform.localScale;
+            _offsetScale = new Vector3(_originScale.x * _scaleFactorForFail, _originScale.y, _originScale.z);
+        }
+        public virtual void WhileDisabled(float t, float T)
+        {
+            sprite.color = Color.Lerp(Color.red, Color.white, T);
+            // Scale animation, scale in x
+            //transform.localScale = Vector3.Lerp(_originScale, _offsetScale, Utilities.EasingFunctions.NormalizeParabolaNotConvex(t));
+            float sT = Mathf.Cos(10.0f * Mathf.PI * t + Mathf.PI) * 0.5f + 0.5f;
+            transform.localScale = transform.localScale = Vector3.Lerp(_originScale, _offsetScale, sT);
         }
         public virtual void Enable() // call it when Enable the tower (just for sound and animations)
         {
             //SpriteRenderer sprite = GetComponent<SpriteRenderer>();
             _isEnabled = true;
             sprite.color = Color.white;
+            transform.localScale = _originScale;
         }
         public virtual void OnRhythmHit() // The callback when the user taps correctly, not callback of this type if not correct
         {

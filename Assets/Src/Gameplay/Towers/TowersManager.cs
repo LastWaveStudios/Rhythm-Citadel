@@ -13,8 +13,8 @@ namespace Gameplay.Towers
         private List<TowersGroup> _towersGroups;
 
         [SerializeField] private const int NUMBER_OF_GROUPS = 6;
-        [SerializeField] private const double DEFAULT_MAX_OFFSET = 200;
-        [SerializeField] private const double DEFAULT_TIME_OF_DISABLE = 2000;
+        [SerializeField] private const double DEFAULT_MAX_OFFSET = 200.0;
+        [SerializeField] private const double DEFAULT_TIME_OF_DISABLE = 2000.0;
         public override void Init()
         {
             _towersGroups = new List<TowersGroup>();
@@ -51,10 +51,12 @@ namespace Gameplay.Towers
 
         private IEnumerator EnableGroup(int groupIndex)
         {
-            double startTime = AudioSettings.dspTime;
-            while (true)
+            float t = 0.0f;
+            float timeOfDisableInSeconds = (float)_towersGroups[groupIndex].timeOfDisable / 1000.0f;
+            while (t <= timeOfDisableInSeconds)
             {
-                if ((AudioSettings.dspTime - startTime) * 1000 >= _towersGroups[groupIndex].timeOfDisable) break;
+                _towersGroups[groupIndex].WhileDisableGroup(t / timeOfDisableInSeconds, Utilities.EasingFunctions.EaseInQuint(t / timeOfDisableInSeconds));
+                t += Time.deltaTime;
                 yield return null; 
             }
 
