@@ -124,6 +124,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -135,8 +148,8 @@ TextureImporter:
         y: 0
         width: 916
         height: 1077
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +166,12 @@ TextureImporter:
       name: BailarinaInicio_1
       rect:
         serializedVersion: 2
-        x: 921
+        x: 915
         y: 0
-        width: 910
+        width: 916
         height: 1078
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,34 +188,12 @@ TextureImporter:
       name: BailarinaInicio_2
       rect:
         serializedVersion: 2
-        x: 1851
-        y: 601
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6be51927ec474ab50800000000000000
-      internalID: 6603531383666204342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BailarinaInicio_3
-      rect:
-        serializedVersion: 2
-        x: 1862
+        x: 1856
         y: 0
-        width: 911
+        width: 916
         height: 1078
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,37 +207,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BailarinaInicio_4
+      name: BailarinaInicio_3
       rect:
         serializedVersion: 2
-        x: 2771
-        y: 601
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dccd1cf520c0e980800000000000000
-      internalID: -8511592026354103084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BailarinaInicio_5
-      rect:
-        serializedVersion: 2
-        x: 2806
+        x: 2807
         y: 0
-        width: 910
+        width: 914
         height: 1078
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,10 +244,9 @@ TextureImporter:
     nameFileIdTable:
       BailarinaInicio_0: 8038780919003202929
       BailarinaInicio_1: 1237750034964469722
-      BailarinaInicio_2: 6603531383666204342
-      BailarinaInicio_3: 3113957227606854745
+      BailarinaInicio_2: 3113957227606854745
+      BailarinaInicio_3: 4910889782165847635
       BailarinaInicio_4: -8511592026354103084
-      BailarinaInicio_5: 4910889782165847635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

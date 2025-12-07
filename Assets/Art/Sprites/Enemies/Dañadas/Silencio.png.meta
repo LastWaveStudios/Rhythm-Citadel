@@ -125,12 +125,12 @@ TextureImporter:
       name: Silencio_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 52
-        width: 284
-        height: 325
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 49
+        width: 281
+        height: 328
+      alignment: 9
+      pivot: {x: 0.5357702, y: 0.54903793}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Silencio_1
       rect:
         serializedVersion: 2
-        x: 296
+        x: 298
         y: 52
-        width: 299
-        height: 346
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 295
+        height: 344
+      alignment: 9
+      pivot: {x: 0.56706905, y: 0.5261535}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,13 +169,13 @@ TextureImporter:
       name: Silencio_2
       rect:
         serializedVersion: 2
-        x: 593
+        x: 594
         y: 52
         width: 285
         height: 326
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.5849542, y: 0.55884546}
+      border: {x: 1, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Silencio_3
       rect:
         serializedVersion: 2
-        x: 890
-        y: 52
-        width: 274
-        height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 891
+        y: 50
+        width: 273
+        height: 312
+      alignment: 9
+      pivot: {x: 0.57154036, y: 0.5686531}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7ca47a8e8fefc05479359a3eaf67a3ee
     internalID: 0
     vertices: []
     indices: 

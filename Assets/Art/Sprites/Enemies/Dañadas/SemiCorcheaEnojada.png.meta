@@ -122,9 +122,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 266
-        height: 393
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 398
+      alignment: 9
+      pivot: {x: 0.3029127, y: 0.101735696}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: SemiCorcheaEnojada_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 7
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 515c8dc083a750ad0800000000000000
-      internalID: -2736646817405418219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f487f31e9cf333e4f83c3a1e491a1f2b
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +152,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       SemiCorcheaEnojada_0: 6973443804392455744
-      SemiCorcheaEnojada_1: -2736646817405418219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

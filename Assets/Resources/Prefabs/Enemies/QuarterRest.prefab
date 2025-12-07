@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 953201899062073974}
   - component: {fileID: 4748223436650821432}
   - component: {fileID: 5805700282504451750}
+  - component: {fileID: 7066603195300572785}
   m_Layer: 7
   m_Name: QuarterRest
   m_TagString: Untagged
@@ -142,19 +143,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 7544442781366727075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9345e1b434a510e4b8847305a4f46393, type: 3}
+  m_Script: {fileID: 11500000, guid: 3900b79a5846a4d479cd40a8b66748ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageType: 1
   _resistance: 2
   _moveTime: 0.5
-  _health: 50
-  _damage: 8
-  _vinylDrop: 16
-  _preparationBeats: 4
+  _health: 0
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
-  _radius: 1.5
+  _radius: 1.25
   _shieldScaleFactor: 0.25
   _timeToRotate: 0.1
   _angleToRotate: 30
+--- !u!95 &7066603195300572785
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544442781366727075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 13662a44f31cf0147babb474ecac8de5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,5 +1,6 @@
 using Gameplay.Waves;
 using Gameplay.Enemies.Behaviours;
+using Gameplay.RhythmSystem;
 using UnityEngine;
 using Utilities.ServiceLocator;
 
@@ -18,6 +19,7 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
             _rhythmManager.onWhole += OnRhythmUpdate;
+            _timeOfNote =  _rhythmManager.GetTimeOfANote(NoteDuration.Whole) / 1000.0f;
         }
 
         protected override void InitializeBehaviour()
@@ -44,7 +46,7 @@ namespace Gameplay.Enemies
             _behaviour.UpdateBehaviour();
         }
 
-        public override void Death()
+        public override void OnDeath()
         {
             DeSubscribeToRhythmParent();
             _rhythmManager.onWhole -= OnRhythmUpdate;

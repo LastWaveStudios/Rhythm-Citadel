@@ -146,7 +146,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 544
-        height: 436
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,9 +165,9 @@ TextureImporter:
       name: Corchea_1
       rect:
         serializedVersion: 2
-        x: 572
+        x: 544
         y: 0
-        width: 518
+        width: 544
         height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: Corchea_2
       rect:
         serializedVersion: 2
-        x: 1074
-        y: 368
-        width: 11
-        height: 13
+        x: 1088
+        y: 0
+        width: 544
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: Corchea_3
       rect:
         serializedVersion: 2
-        x: 1094
-        y: 8
-        width: 540
-        height: 429
+        x: 1632
+        y: 0
+        width: 544
+        height: 442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,143 +227,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Corchea_4
-      rect:
-        serializedVersion: 2
-        x: 1638
-        y: 0
-        width: 538
-        height: 432
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53c3c2fb633b10cc0800000000000000
-      internalID: -3746516367278588875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corchea_5
-      rect:
-        serializedVersion: 2
-        x: 2162
-        y: 368
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e50eb8da7ffc1080800000000000000
-      internalID: -9215209834419452441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corchea_6
-      rect:
-        serializedVersion: 2
-        x: 1093
-        y: 122
-        width: 9
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c079ca8f9f11e060800000000000000
-      internalID: 6980895667489697989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corchea_7
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 51
-        width: 8
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b413de4761758a250800000000000000
-      internalID: 5956106261160079691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corchea_8
-      rect:
-        serializedVersion: 2
-        x: 1637
-        y: 37
-        width: 9
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd02df214e3454d60800000000000000
-      internalID: 7873774170377363675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Corchea_9
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 26
-        width: 9
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c15b090ed271c720800000000000000
-      internalID: 2864697135944389061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6c6644a81da2b7f4a9f02490acd1d537
     internalID: 0
     vertices: []
     indices: 
@@ -377,12 +245,6 @@ TextureImporter:
       Corchea_1: 2719238996275736943
       Corchea_2: -6421765609885365355
       Corchea_3: -838990597403214253
-      Corchea_4: -3746516367278588875
-      Corchea_5: -9215209834419452441
-      Corchea_6: 6980895667489697989
-      Corchea_7: 5956106261160079691
-      Corchea_8: 7873774170377363675
-      Corchea_9: 2864697135944389061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

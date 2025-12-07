@@ -155,6 +155,29 @@ namespace Gameplay.RhythmSystem
             return ((AudioSettings.dspTime * 1000.0) + (timeOfOneMeasure - timePassedSinceLastMeasure)) / 1000.0;
         }
 
+        public float GetTimeOfANote(NoteDuration noteDuration)
+        {
+            switch (noteDuration)
+            {
+                case NoteDuration.Whole: return (float)_timesOfNotes.Whole;
+                case NoteDuration.Half: return (float)_timesOfNotes.Half;
+                case NoteDuration.Quarter: return (float)_timesOfNotes.Quarter;
+                case NoteDuration.Eighth: return (float)_timesOfNotes.Eighth;
+                case NoteDuration.Sixteenth: return (float)_timesOfNotes.Sixteenth;
+                default: return -1.0f;
+            }
+        }
+
+        public float GetTimeOfAMeasure()
+        {
+            return (float)_timesOfNotes.measure;
+        }
+
+        public float GetTimeOfABeat()
+        {
+            return (float)_timesOfNotes.beat;
+        }
+
         public bool IsInTime(Note note, uint indexOfSixteenthOnMeasure, double maxOffset)
         {
             double timeSinceStart = (AudioSettings.dspTime - _startTime) * 1000.0;
