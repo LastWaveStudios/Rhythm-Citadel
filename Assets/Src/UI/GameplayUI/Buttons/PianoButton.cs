@@ -20,12 +20,7 @@ public class PianoButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         activeImage = GetComponent<Image>();
         activeImage.sprite = normalSprite;
         bool mobile = Application.isMobilePlatform || SystemInfo.deviceType == DeviceType.Handheld;
-#if UNITY_EDITOR
-            mobile = true;
-#endif
-        gameObject.SetActive(mobile);
     }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         InputReader.Instance.MobileGroup2();

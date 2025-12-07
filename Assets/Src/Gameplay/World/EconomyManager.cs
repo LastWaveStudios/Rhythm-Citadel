@@ -78,7 +78,12 @@ namespace Gameplay.World
             if (selectedTile == _buildableTile)
             {
                 _currentMenu = Instantiate(_buildingMenuPrefab, _canvas.transform);
-                _currentMenu.GetComponent<RectTransform>().localPosition = _selectedScreenPosition.Value;
+                //_currentMenu.GetComponent<RectTransform>().localPosition = _selectedScreenPosition.Value;
+                if (_selectedScreenPosition.HasValue)
+                {
+                    var rect = _currentMenu.GetComponent<RectTransform>();
+                    rect.anchoredPosition = _selectedScreenPosition.Value;   // mejor anchored que localPosition
+                }
             }
 
             else if (selectedTile == _unBuildableTile)

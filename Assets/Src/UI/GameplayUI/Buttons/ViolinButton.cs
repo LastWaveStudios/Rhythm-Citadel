@@ -20,10 +20,6 @@ public class ViolinButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         activeImage = GetComponent<Image>();
         activeImage.sprite = normalSprite;
         bool mobile = Application.isMobilePlatform || SystemInfo.deviceType == DeviceType.Handheld;
-#if UNITY_EDITOR
-            mobile = true;
-#endif
-        gameObject.SetActive(mobile);
     }
 
     public void OnPointerClick(PointerEventData eventData)
