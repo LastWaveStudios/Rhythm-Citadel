@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resistance: 1
   _moveTime: 0.5
+  _jumpHeight: 0.4
+  _scaleOffsetPercentagePerPreparation: 0.9
   _health: 25
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}

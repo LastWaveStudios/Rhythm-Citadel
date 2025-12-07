@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using Gameplay.Enemies.Common;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities.ServiceLocator;
 
 
@@ -16,7 +17,11 @@ namespace Gameplay.Enemies
         [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
 
         [SerializeField] protected float _moveTime = 0.5f;
-
+        [SerializeField] protected float _jumpHeight = 0.4f;
+        [SerializeField] protected float _scaleOffsetPercentagePerPreparation = 0.9f;
+        protected float _timeOfNote;
+        protected Vector3 _originScale;
+        
         // Enemy stats that it gets from the scriptable objects
 
         protected EnemyStats _stats;
@@ -134,6 +139,7 @@ namespace Gameplay.Enemies
         {
             _path = path;
             _index = 0;
+            _originScale = transform.localScale;
         }
         #endregion
 
@@ -173,12 +179,14 @@ namespace Gameplay.Enemies
         {
             _currentPreparation++;
             Debug.Log($"Enemy: {name} got {_currentPreparation} preparations beats");
+
+            StartCoroutine(ScaleOffset(_timeOfNote, Utilities.EasingFunctions.EaseOutQuart));
         }
 
         public void RestartMovementPreparation()
         {
             _currentPreparation = 0;
-            Debug.Log($"Enemy: {name} restart the preparation beats");
+           // Debug.Log($"Enemy: {name} restart the preparation beats");
         }
         #endregion
 
@@ -222,7 +230,7 @@ namespace Gameplay.Enemies
 
         public void Move()
         {
-            StartCoroutine(MoveToNextTile(_moveTime, Utilities.EasingFunctions.EaseInBack));
+            StartCoroutine(MoveToNextTile(Utilities.EasingFunctions.EaseOutQuint));
         }
 
         public void GiveShield(int shieldStacks)
@@ -259,8 +267,9 @@ namespace Gameplay.Enemies
         /// <summary>
         /// Moves the enemy to the next tile with one animation using the easing function of the parameter delegate or a lerp if is null
         /// </summary>
-        protected virtual IEnumerator MoveToNextTile(double moveTime, Func<float, float> easingFunction = null)
+        protected virtual IEnumerator MoveToNextTile(Func<float, float> easingFunction = null)
         {
+            Vector3Int currentTile = GetTile();
             Vector3Int nextTile = _worldManager.GetNextTile(_path, _index);
             _index++;
 
@@ -273,22 +282,67 @@ namespace Gameplay.Enemies
             targetPos += new Vector3(UnityEngine.Random.Range(-tileSize.x * offsetFactor, tileSize.x * offsetFactor),
                                      UnityEngine.Random.Range(-tileSize.y * offsetFactor, tileSize.y * offsetFactor),
                                      0f);
-
+            
+            float jumpOffset;
+            float targetJumpOffset;
+            float originPosOffset;
+            bool isHorizontal;
+            bool isFlipedTheorigin = false;
+            if (nextTile.x == currentTile.x)
+            {
+                if (nextTile.y > currentTile.y)
+                {
+                    jumpOffset = targetPos.x - _jumpHeight;
+                }
+                else jumpOffset = targetPos.x + _jumpHeight;
+                targetJumpOffset = targetPos.x;
+                originPosOffset = originPos.x;
+                isHorizontal = true;
+            }
+            else
+            {
+                jumpOffset = targetPos.y + _jumpHeight;
+                targetJumpOffset = targetPos.y;
+                originPosOffset = originPos.y;
+                isHorizontal = false;
+            }
+            
+            Vector3 originScale = transform.localScale;
+            Vector3 targetScale = _originScale;
+            
             float t = 0.0f;
             while (t <= _moveTime)
             {
-                //transform.position = Vector3.Lerp(originPos, targetPos, EaseInBack(t / _moveTime));
-
                 float T;
                 if (easingFunction == null) T = t / _moveTime;
                 else T = easingFunction(t / _moveTime);
-                transform.position = originPos * (1 - T) + targetPos * T;
+                transform.position = originPos * (1.0f - T) + targetPos * T;
+                
+                // Jump offset
+                float jT = Utilities.EasingFunctions.NormalizeParabolaNotConvex(T);
+                if (!isFlipedTheorigin && jT <= 0.5)
+                {
+                    originPosOffset = targetJumpOffset;
+                    isFlipedTheorigin = true;
+                }
+                if (isHorizontal)
+                {
+                    transform.position = new Vector3(originPosOffset * (1.0f - jT) + jumpOffset * jT, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    transform.position = new Vector3(transform.position.x, originPosOffset * (1.0f - jT) + jumpOffset * jT, transform.position.z);
+                }
+                // Scale offset
+                float sT = Utilities.EasingFunctions.EaseInBounce(t / _moveTime);
+                transform.localScale = originScale * (1.0f - sT) + targetScale * sT;
+                
                 t += Time.deltaTime;
                 yield return null;
             }
 
             transform.position = targetPos;   // Fix for center final positions
-            yield return null;
+            transform.localScale = targetScale;
         }
 
         public IEnumerator PlayDeathAndWait(string triggerName)
@@ -303,6 +357,29 @@ namespace Gameplay.Enemies
             
             OnDeath();
         }
+        protected IEnumerator ScaleOffset(float duration, Func<float, float> easingFunction = null)
+        {
+            Vector3 originScale =  transform.localScale;
+            Vector3 targetScale = new Vector3(originScale.x, originScale.y * _scaleOffsetPercentagePerPreparation, originScale.z);
+
+            float t = 0.0f;
+            while (t <= duration)
+            {
+                float T;
+                if (easingFunction == null) T = t / duration;
+                else T = easingFunction(t / duration);
+                
+                //float sT = Utilities.EasingFunctions.NormalizeParabolaNotConvex(T);
+                
+                transform.localScale = originScale * (1.0f - T) + targetScale * T;
+                
+                t += Time.deltaTime;
+                yield return null;
+            }
+            
+            transform.localScale = targetScale;
+        }
+        
         #endregion
     }
 }

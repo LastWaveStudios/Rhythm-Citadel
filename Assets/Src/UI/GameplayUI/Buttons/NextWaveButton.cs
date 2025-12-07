@@ -16,9 +16,8 @@ namespace UI.GameplayUI.Buttons
         private Image activeImage;
         public Sprite normalSprite;
         public Sprite hoverSprite;
-        public Sprite inactiveSprite;
-        public Sprite inactiveHoverSprite;
         private bool _isActive;
+        private Vector3 _scale;
         #endregion
 
         #region Services
@@ -31,7 +30,7 @@ namespace UI.GameplayUI.Buttons
         {
             activeImage = GetComponent<Image>();
             activeImage.sprite = normalSprite;
-
+            _scale = gameObject.transform.localScale;
             _isActive = true;
 
             _gameplayManager = ServiceLocatorSubsystem.Instance.GetService<GameplayManager>();
@@ -56,31 +55,26 @@ namespace UI.GameplayUI.Buttons
             {
                 _gameplayManager.ChangeFightState();
                 _isActive = false;
+                gameObject.transform.localScale = Vector3.zero;
             }
-            activeImage.sprite = inactiveSprite;
+            //activeImage.sprite = inactiveSprite;
+
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_isActive)
-                activeImage.sprite = hoverSprite;
-            else
-                activeImage.sprite = inactiveHoverSprite;
+            activeImage.sprite = hoverSprite;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (_isActive)
-                activeImage.sprite = normalSprite;  
-            else
-                activeImage.sprite = inactiveSprite;    
-            
+            activeImage.sprite = normalSprite;  
         }
         #endregion
         public void WaveClear()
         {
-            activeImage.sprite = normalSprite;
             _isActive = true;
+            gameObject.transform.localScale = _scale;
         }
 
     }

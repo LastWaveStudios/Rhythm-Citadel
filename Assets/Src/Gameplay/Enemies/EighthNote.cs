@@ -18,6 +18,7 @@ namespace Gameplay.Enemies
         protected override void SubscribeToRhythm()
         {
             _rhythmManager.onEighth += OnRhythmUpdate;
+            _timeOfNote = _rhythmManager.GetTimeOfANote(NoteDuration.Eighth) / 1000.0f;
         }
 
         protected override void InitializeBehaviour()

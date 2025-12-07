@@ -22,6 +22,7 @@ namespace Gameplay.Enemies
         protected override void InitializeBehaviour()
         {
             _behaviour = new BaseEnemyBehaviour(this);
+            _timeOfNote = _rhythmManager.GetTimeOfANote(NoteDuration.Half) / 1000.0f;
         }
 
         protected override void PushDeath()

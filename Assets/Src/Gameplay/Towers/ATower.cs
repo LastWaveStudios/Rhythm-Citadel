@@ -216,7 +216,7 @@ namespace Gameplay.Towers
                 currentFrame = 0;
 
             sprite.sprite = frames[currentFrame];
-            //Debug.Log("Current frame: " + currentFrame);
+            Debug.Log("Current frame: " + currentFrame);
         }
 
         #endregion

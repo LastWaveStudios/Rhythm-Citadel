@@ -255,6 +255,17 @@ namespace Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6fcb664b-f0bd-4e33-96bc-4db3570f67d8"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""da592a1d-b48a-48fb-a8cb-852bcca88c6e"",
                     ""path"": ""<Keyboard>/#(L)"",
                     ""interactions"": """",
