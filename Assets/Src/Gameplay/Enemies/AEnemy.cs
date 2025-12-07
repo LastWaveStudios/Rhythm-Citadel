@@ -16,7 +16,7 @@ namespace Gameplay.Enemies
         [SerializeField] protected DamageType _resistance;        //None, String, Percussion or Hybrid
 
         [SerializeField] protected float _moveTime = 0.5f;
-        
+
         // Enemy stats that it gets from the scriptable objects
 
         protected EnemyStats _stats;
@@ -26,6 +26,7 @@ namespace Gameplay.Enemies
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
         protected float _resistanceMultiplayer = 0.5f;
+        protected Animator _animator;
 
         [Header("Shield configuration")]
         [SerializeField] private int _shieldMaxStacks = 2;
@@ -35,7 +36,7 @@ namespace Gameplay.Enemies
         [SerializeField] private float _timeToRotate = 0.1f;
         [SerializeField] private float _angleToRotate = 30.0f; // In Degrees
         private ShieldWheelController _shieldWheelController;
-        
+
 
         // Non editable variables
         protected int _path = 0;
@@ -53,20 +54,21 @@ namespace Gameplay.Enemies
         protected Dancer _dancer;
 
         #endregion
-        
+
 
         #region ------------------------------ Starting methods ------------------------------
         public void Start()
         {
             _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
             _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
-            
+            _animator = GetComponent<Animator>();
+
             ServiceLocatorSubsystem.SubscribeToInitialice(TakeReferences);
             StartPosition();
-            
+
             StartStats();
         }
-        
+
         private void StartPosition()
         {
             transform.position = _worldManager.GetCellCenterWorld(_worldManager.GetTile(_path, _index));
@@ -191,9 +193,11 @@ namespace Gameplay.Enemies
         public void TakeDamage(DamageType type, int damageToTake)
         {
             if (RemoveShield(1)) return;
-            
+
             if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * _resistanceMultiplayer);
             else _health -= damageToTake;
+
+            _animator.SetTrigger("Hitted");
             if (_health <= 0 && this.IsAlive && this.isActiveAndEnabled)
             {
                 //Debug.LogWarning($"Enemy: {name} enter Push Dead");
@@ -207,9 +211,9 @@ namespace Gameplay.Enemies
             if (_currentShield > 0)
             {
                 _currentShield = Math.Max(0, _currentShield - stacksToRemove);
-                
+
                 _shieldWheelController.SetCurrentShields(_currentShield);
-                
+
                 return true;
             }
 
@@ -229,8 +233,17 @@ namespace Gameplay.Enemies
             Debug.Log($"Called give shield on enemy: {name} with a shield value of {_currentShield}");
         }
 
+        public void Death()
+        {
+            if (_health > 0)
+            {
+                _vinylDrop = 0;
+                StartCoroutine(PlayDeathAndWait("Explode"));
+            }
+            else StartCoroutine(PlayDeathAndWait("Die"));
+        }
         #endregion
-        
+
         // Override in all the children classes, but this is a general behaviour that have it all of them, so call base.OnRhythmUpdate on his override
         protected abstract void OnRhythmUpdate();
 
@@ -238,8 +251,8 @@ namespace Gameplay.Enemies
         /// <summary>
         /// Must desubscribe to the delegate of his rhythm disable the gameObject and invoke the onDeath delegate
         /// </summary>
-        public abstract void Death();
 
+        public abstract void OnDeath();
         #endregion
 
         #region ------------------------------ Corutines ------------------------------
@@ -276,6 +289,19 @@ namespace Gameplay.Enemies
 
             transform.position = targetPos;   // Fix for center final positions
             yield return null;
+        }
+
+        public IEnumerator PlayDeathAndWait(string triggerName)
+        {
+            _animator.SetTrigger(triggerName);
+
+            while (!_animator.GetCurrentAnimatorStateInfo(0).IsTag("Death"))
+                yield return null;
+
+            while (_animator.GetCurrentAnimatorStateInfo(0).IsTag("Death"))
+                yield return null;
+            
+            OnDeath();
         }
         #endregion
     }

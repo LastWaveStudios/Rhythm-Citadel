@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 668397273007275417}
   - component: {fileID: 8482514577431248139}
   - component: {fileID: 6230819476546027413}
+  - component: {fileID: 7072646177701287520}
   m_Layer: 7
   m_Name: EighthAngry
   m_TagString: Untagged
@@ -71,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 4634194091953027631}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -145,16 +146,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1037ece26c4974d4da1f7a1c0554aa85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageType: 0
   _resistance: 1
   _moveTime: 0.5
   _health: 25
-  _damage: 20
-  _vinylDrop: 3
-  _preparationBeats: 3
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.5
   _shieldScaleFactor: 0.25
   _timeToRotate: 0.1
   _angleToRotate: 30
+--- !u!95 &7072646177701287520
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634194091953027631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8beddb12a9643204381a0ff4217a8b6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
