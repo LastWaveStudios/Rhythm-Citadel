@@ -8,7 +8,7 @@ namespace Input
 {
     public class InputReader : Utilities.Singleton<InputReader>, Actions.IBattleActions, Actions.IBuildActions
     {
-        private Actions _actions;
+        public Actions actions;
         public Vector2 PointerPosition { get; private set; }
         private bool useMobileInput = false;
 
@@ -23,7 +23,7 @@ namespace Input
         private void Awake()
         {
             base.Awake();
-            _actions = new Actions();
+            actions = new Actions();
             EnableBuildActions();
             useMobileInput = Application.isMobilePlatform
                          || SystemInfo.deviceType == DeviceType.Handheld;
@@ -32,37 +32,37 @@ namespace Input
         #region EnablersAndDisablers
         private void OnEnable()
         {
-            if (_actions == null)
+            if (actions == null)
             {
-                _actions = new Actions();
+                actions = new Actions();
 
-                _actions.Battle.SetCallbacks(this);
-                _actions.Build.SetCallbacks(this);
+                actions.Battle.SetCallbacks(this);
+                actions.Build.SetCallbacks(this);
             }
-            _actions.Battle.SetCallbacks(this);
-            _actions.Build.SetCallbacks(this);
+            actions.Battle.SetCallbacks(this);
+            actions.Build.SetCallbacks(this);
 
             //
         }
 
         private void OnDisable()
         {
-            _actions.Battle.SetCallbacks(null);
-            _actions.Build.SetCallbacks(null);
-            _actions.Disable();
+            actions.Battle.SetCallbacks(null);
+            actions.Build.SetCallbacks(null);
+            actions.Disable();
         }
         public void EnableBuildActions()
         {
             Debug.Log("BUILD habilitado");
-            _actions.Build.Enable();
-            _actions.Battle.Disable();
+            actions.Build.Enable();
+            actions.Battle.Disable();
         }
 
         public void EnableBattleActions()
         {
             //Debug.Log("BATTLE habilitado");
-            _actions.Battle.Enable();
-            _actions.Build.Disable();
+            actions.Battle.Enable();
+            actions.Build.Disable();
         }
 
         #endregion
