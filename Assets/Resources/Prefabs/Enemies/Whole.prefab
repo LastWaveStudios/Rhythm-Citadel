@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 5018465096742634742}
   - component: {fileID: 2653970198437842140}
   - component: {fileID: 4712129022384731891}
+  - component: {fileID: 6279459376309960236}
   m_Layer: 7
   m_Name: Whole
   m_TagString: Untagged
@@ -145,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bab673537238a4b8b1b2423ebef3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageType: 2
   _resistance: 4
   _moveTime: 0.5
+  _health: 0
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.25
@@ -156,3 +157,25 @@ MonoBehaviour:
   _angleToRotate: 30
   _shieldRange: 3
   _shieldStacksPerActivation: 1
+--- !u!95 &6279459376309960236
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763016869802612022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 85fe5efa341ddd340ab90dbaea76f91b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4864038426291559015}
   - component: {fileID: 4977218333427901902}
   - component: {fileID: 8317507482679040658}
+  - component: {fileID: 2646621004584541089}
   m_Layer: 7
   m_Name: EighthSad
   m_TagString: Untagged
@@ -101,19 +102,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1037ece26c4974d4da1f7a1c0554aa85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageType: 0
   _resistance: 1
   _moveTime: 0.5
   _health: 30
-  _damage: 15
-  _vinylDrop: 4
-  _preparationBeats: 3
   _shieldMaxStacks: 2
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.5
   _shieldScaleFactor: 0.25
   _timeToRotate: 0.1
   _angleToRotate: 30
+--- !u!95 &2646621004584541089
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165279942227222070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e127d39963a0dae47abbe5eba73229c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5929386962359901666
 GameObject:
   m_ObjectHideFlags: 0

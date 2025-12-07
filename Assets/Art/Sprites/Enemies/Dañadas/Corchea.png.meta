@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Corchea_1
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 31
-        width: 9
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f61b760c57dacb520800000000000000
-      internalID: 2719238996275736943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 40fa31ca0dc94b4448f302952ed7f7de
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +152,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Corchea_0: 3957881462776120498
-      Corchea_1: 2719238996275736943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

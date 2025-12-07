@@ -74,7 +74,7 @@ namespace Gameplay.Enemies
             OnRhythmUpdate();
         }
 
-        public override void Death()
+        public override void OnDeath()
         {
             DeSubscribeToRhythmParent();
             _rhythmManager.onBeat -= OnBeat;

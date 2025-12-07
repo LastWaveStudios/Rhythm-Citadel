@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 953201899062073974}
   - component: {fileID: 4748223436650821432}
   - component: {fileID: 5805700282504451750}
+  - component: {fileID: 7066603195300572785}
   m_Layer: 7
   m_Name: QuarterRest
   m_TagString: Untagged
@@ -154,3 +155,25 @@ MonoBehaviour:
   _shieldScaleFactor: 0.25
   _timeToRotate: 0.1
   _angleToRotate: 30
+--- !u!95 &7066603195300572785
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544442781366727075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 13662a44f31cf0147babb474ecac8de5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -131,7 +131,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1820
+        width: 364
         height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -147,11 +147,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SilencioRedonda_1
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 364
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a47518fe266dd3449699aa3ea5cd734
+      internalID: -485484497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioRedonda_2
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 364
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16570c36a38e13f40a4c9cdfde2a1380
+      internalID: -4497502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioRedonda_3
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 0
+        width: 364
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3778c6bea0672447aaff41d7e2628ce
+      internalID: -148010347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilencioRedonda_4
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 0
+        width: 364
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7d3029e7f52904d938b08c7bab00db
+      internalID: 1143166215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c925e48c0b680d44a90fe0277f33fd69
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +250,10 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       SilencioRedonda_0: 4524937408866310484
+      SilencioRedonda_1: -485484497
+      SilencioRedonda_2: -4497502
+      SilencioRedonda_3: -148010347
+      SilencioRedonda_4: 1143166215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

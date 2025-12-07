@@ -125,10 +125,10 @@ TextureImporter:
       name: SilencioVolando_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 51
-        width: 216
-        height: 278
+        x: 0
+        y: 0
+        width: 256
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: SilencioVolando_1
       rect:
         serializedVersion: 2
-        x: 269
-        y: 51
-        width: 229
-        height: 284
+        x: 256
+        y: 0
+        width: 256
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: SilencioVolando_2
       rect:
         serializedVersion: 2
-        x: 525
-        y: 51
-        width: 216
-        height: 278
+        x: 512
+        y: 0
+        width: 256
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: SilencioVolando_3
       rect:
         serializedVersion: 2
-        x: 782
-        y: 51
-        width: 207
-        height: 278
+        x: 768
+        y: 0
+        width: 256
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d5b189f9759105a4a8190b28262d0e67
     internalID: 0
     vertices: []
     indices: 
