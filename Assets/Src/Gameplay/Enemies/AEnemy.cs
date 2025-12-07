@@ -373,8 +373,6 @@ namespace Gameplay.Enemies
                 //float sT = Utilities.EasingFunctions.NormalizeParabolaNotConvex(T);
                 
                 transform.localScale = originScale * (1.0f - T) + targetScale * T;
-
-                Debug.Log($"The Scales are: {transform.localScale}");
                 
                 t += Time.deltaTime;
                 yield return null;

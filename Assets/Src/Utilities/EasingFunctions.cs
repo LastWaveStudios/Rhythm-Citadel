@@ -46,6 +46,11 @@ namespace Utilities
         {
             return 1.0f - Mathf.Pow(1.0f - t, 5.0f);
         }
+
+        public static float EaseInQuint(float t)
+        {
+            return Mathf.Pow(t, 5.0f);
+        }
         
         public static float EaseOutDouble(float t)
         {

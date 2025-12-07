@@ -107,11 +107,18 @@ namespace Gameplay.World
 
         void GetPositionClicked() // Works only with top down camera
         {
-            Vector2 position = Pointer.current.position.ReadValue();
-            Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(position);
-            clickedPosition.z = 0;
+            Vector3 mousePosition = Pointer.current.position.ReadValue();
 
-            _selectedTilePosition = _tilemap.WorldToCell(clickedPosition);
+            _selectedTilePosition = _tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(mousePosition));  // Getting the tile clicked - for the towers and the other stuff
+
+            // This part gets the position clicked relative to the canvas, then we will copy this out value to the global one, so we can use it out of here
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _canvas.transform as RectTransform,
+                RectTransformUtility.WorldToScreenPoint(Camera.main, _tilemap.GetCellCenterWorld(_selectedTilePosition.Value)),
+                _canvas.worldCamera,
+                out Vector2 localPoint);
+
+            _selectedScreenPosition = localPoint;
         }
 
         #endregion

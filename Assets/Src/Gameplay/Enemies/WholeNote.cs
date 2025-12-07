@@ -39,6 +39,8 @@ namespace Gameplay.Enemies
         {
             IsAlive = false;
             _behaviour.PushDeath();
+            DeSubscribeToRhythmParent();
+            _rhythmManager.onWhole -= OnRhythmUpdate;
         }
 
         protected override void OnRhythmUpdate()
@@ -48,8 +50,6 @@ namespace Gameplay.Enemies
 
         public override void OnDeath()
         {
-            DeSubscribeToRhythmParent();
-            _rhythmManager.onWhole -= OnRhythmUpdate;
             onDeath.Invoke(this);
             gameObject.SetActive(false);
         }

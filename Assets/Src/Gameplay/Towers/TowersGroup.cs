@@ -18,7 +18,7 @@ namespace Gameplay.Towers
         private RhythmPattern _pattern;
         private List<ATower> _towers;
 
-        public double timeOfDisable = 2f; // Just base time for the disbale duration in the group, the timing thing is controlled by the manager
+        public double timeOfDisable = 2.0f; // Just base time for the disbale duration in the group, the timing thing is controlled by the manager
         public bool isEnabled;
 
         private int _indexOfNoteInPattern;
@@ -110,6 +110,14 @@ namespace Gameplay.Towers
             foreach(ATower tower in _towers)
             {
                 tower.Disable();
+            }
+        }
+
+        public void WhileDisableGroup(float t, float T)
+        {
+            foreach (ATower tower in _towers)
+            {
+                tower.WhileDisabled(t, T);
             }
         }
 
