@@ -239,8 +239,11 @@ namespace Gameplay.Towers
 
             if (currentFrame >= frames.Count)
                 currentFrame = 0;
-
-            sprite.sprite = frames[currentFrame];
+            if (sprite != null)
+            {
+                sprite.sprite = frames[currentFrame];
+            }
+            
             Debug.Log("Current frame: " + currentFrame);
         }
 

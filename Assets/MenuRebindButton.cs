@@ -11,13 +11,21 @@ namespace UI.GameplayUI.Buttons
         public Sprite normalSprite;
         public Sprite hoverSprite;
         [SerializeField] private GameObject rebindMenu;
+        private bool useMobileInput = false;
         #endregion
 
         #region Monobehaviour
         void Start()
         {
+            gameObject.SetActive(true);
             activeImage = GetComponent<Image>();
             activeImage.sprite = normalSprite;
+            useMobileInput = Application.isMobilePlatform
+                         || SystemInfo.deviceType == DeviceType.Handheld;
+            if (useMobileInput)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
