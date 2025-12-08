@@ -124,12 +124,7 @@ namespace Gameplay.Enemies
         }
 
         protected abstract void SubscribeToRhythm();
-
-        // Method that must be call in the childrens when the enemy dead
-        protected void DeSubscribeToRhythmParent()
-        {
-            _rhythmManager.onBeat -= OnBeat;
-        }
+        protected abstract void DesubscribeToRhythm();
 
         protected abstract void InitializeBehaviour();
 
@@ -243,6 +238,9 @@ namespace Gameplay.Enemies
 
         public void Death()
         {
+            DesubscribeToRhythm();
+            _rhythmManager.onBeat -= OnBeat;
+            
             if (_health > 0)
             {
                 _vinylDrop = 0;
