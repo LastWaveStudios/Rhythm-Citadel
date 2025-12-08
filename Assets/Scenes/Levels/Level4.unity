@@ -9113,7 +9113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485630679646346319, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: _vinyl
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5485630679646346319, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: _tilemap

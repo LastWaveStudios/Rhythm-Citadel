@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bucketsToSpawn:
   - enemyPrefab: {fileID: 6763016869802612022, guid: f3ad99ebfb44b9748be5a54e8a8f6408, type: 3}
-    numberOfEnemies: 3
+    numberOfEnemies: 4
     SixteenthOfSpawn: 4
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 4
   - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
-    numberOfEnemies: 10
+    numberOfEnemies: 9
     SixteenthOfSpawn: 84
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 4
