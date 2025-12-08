@@ -120,7 +120,7 @@ namespace Gameplay.Enemies
 
         private void OnBeat(bool isMeasure)
         {
-            //_shieldWheelController.RotateShields();
+            _shieldWheelController.RotateShields();
         }
 
         protected abstract void SubscribeToRhythm();
