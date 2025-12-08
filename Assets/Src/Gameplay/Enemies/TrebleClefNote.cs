@@ -61,8 +61,6 @@ namespace Gameplay.Enemies
         {
             IsAlive = false;
             _behaviour.PushDeath();
-            DeSubscribeToRhythmParent();
-            _rhythmManager.onBeat -= OnBeat;
         }
 
         protected override void OnRhythmUpdate()
@@ -80,6 +78,10 @@ namespace Gameplay.Enemies
         {
             onDeath.Invoke(this);
             gameObject.SetActive(false);
+        }
+        protected override void DesubscribeToRhythm()
+        {
+            _rhythmManager.onBeat -= OnBeat;
         }
         
         public float GetAlliesOnRange()
