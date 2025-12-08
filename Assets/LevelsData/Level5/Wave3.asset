@@ -18,7 +18,7 @@ MonoBehaviour:
     SixteenthOfSpawn: 4
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 0
-  - enemyPrefab: {fileID: 4634194091953027631, guid: c92ad9d870439e2489d98b23ed3547f9, type: 3}
+  - enemyPrefab: {fileID: 4634194091953027631, guid: 4aaa545f1be750a498464e30c86f5664, type: 3}
     numberOfEnemies: 5
     SixteenthOfSpawn: 4
     idSpawnpoint: 0
