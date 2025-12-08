@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b66f7242e5838e4e9b81e3b3b32b08a, type: 3}
+  m_Name: Wave4
+  m_EditorClassIdentifier: 
+  _bucketsToSpawn:
+  - enemyPrefab: {fileID: 6763016869802612022, guid: f3ad99ebfb44b9748be5a54e8a8f6408, type: 3}
+    numberOfEnemies: 6
+    SixteenthOfSpawn: 4
+    idSpawnpoint: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 2
+  - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
+    numberOfEnemies: 10
+    SixteenthOfSpawn: 4
+    idSpawnpoint: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 6
+  - enemyPrefab: {fileID: 6763016869802612022, guid: f3ad99ebfb44b9748be5a54e8a8f6408, type: 3}
+    numberOfEnemies: 6
+    SixteenthOfSpawn: 84
+    idSpawnpoint: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 4
+  - enemyPrefab: {fileID: 4634194091953027631, guid: c92ad9d870439e2489d98b23ed3547f9, type: 3}
+    numberOfEnemies: 8
+    SixteenthOfSpawn: 84
+    idSpawnpoint: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 4
