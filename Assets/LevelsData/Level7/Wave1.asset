@@ -10,26 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b66f7242e5838e4e9b81e3b3b32b08a, type: 3}
-  m_Name: Wave4
+  m_Name: Wave1
   m_EditorClassIdentifier: 
   _bucketsToSpawn:
-  - enemyPrefab: {fileID: 6763016869802612022, guid: f3ad99ebfb44b9748be5a54e8a8f6408, type: 3}
-    numberOfEnemies: 4
+  - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
+    numberOfEnemies: 8
     SixteenthOfSpawn: 4
     idSpawnpoint: 0
-    spawnDelayBetweenEnemiesOnSixteenths: 2
+    spawnDelayBetweenEnemiesOnSixteenths: 4
   - enemyPrefab: {fileID: 4052407600922672126, guid: 5d264fb59ab11f24ba1629fc047ee7c4, type: 3}
-    numberOfEnemies: 5
-    SixteenthOfSpawn: 84
-    idSpawnpoint: 0
-    spawnDelayBetweenEnemiesOnSixteenths: 6
-  - enemyPrefab: {fileID: 7544442781366727075, guid: 3bafd47013f436b4fb515ee08bbaf836, type: 3}
-    numberOfEnemies: 8
-    SixteenthOfSpawn: 84
+    numberOfEnemies: 6
+    SixteenthOfSpawn: 4
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 4
   - enemyPrefab: {fileID: 3031065314200888794, guid: 10888b30a799c4c4c9d70904ddfcedb0, type: 3}
     numberOfEnemies: 10
-    SixteenthOfSpawn: 124
+    SixteenthOfSpawn: 84
     idSpawnpoint: 0
     spawnDelayBetweenEnemiesOnSixteenths: 4
