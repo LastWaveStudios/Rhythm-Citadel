@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TrebleClef
+  m_Controller: {fileID: 9100000, guid: 9b5a39e46a2875f41abb1b6b062bd7cd, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 06124dd27d533604db5d8ebd5f509e35, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 06124dd27d533604db5d8ebd5f509e35, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 312447d23b588d1459e2618ad20fbb03, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 312447d23b588d1459e2618ad20fbb03, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: da012a2e916742b45bb6afce89928ab0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: da012a2e916742b45bb6afce89928ab0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a7a4bdef7845d334e9b1d0e55fa93cd6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 37facdd6d45e77a408f22231500bdd0a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51ba1ed8e7002a9408c7553080d684c1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 99b191e79bdd685428572a14cc2fb059, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2957004d11d8297488abfaa15fc878e8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f98de3fc106bcbd4e9ea8e78b78ff86c, type: 2}

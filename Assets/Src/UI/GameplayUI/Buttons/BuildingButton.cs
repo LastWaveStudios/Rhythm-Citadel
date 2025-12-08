@@ -20,7 +20,7 @@ namespace UI.GameplayUI.Buttons
         private TextMeshProUGUI _damage;
         private TextMeshProUGUI _hitsPerBeat;
         private TextMeshProUGUI _price;
-
+        private bool _highlightActive = false;
         private WorldManager _worldManager;
 
         private Vector3Int _buildingPosition;
@@ -66,6 +66,7 @@ namespace UI.GameplayUI.Buttons
             base.OnPointerEnter(eventData);
             _tilesInRange = _worldManager.GetTilesInRange(_buildingPosition, _buildingRange);
             foreach (var tile in _tilesInRange) { _worldManager.Highlight(tile); }
+            _highlightActive = true;
         }
 
         public override void OnPointerExit(PointerEventData eventData)
@@ -73,6 +74,7 @@ namespace UI.GameplayUI.Buttons
             base.OnPointerExit(eventData);
 
             foreach (var tile in _tilesInRange) { _worldManager.ClearHighlight(tile); }
+            _highlightActive = false;
         }
         
         public override void OnPointerClick(PointerEventData eventData)
@@ -94,7 +96,11 @@ namespace UI.GameplayUI.Buttons
             _hitsPerBeat.text = ($"Hits: {_aTower.GetAttacksPerMeasure().ToString()}");
             _price.text = ($"Price: {_aTower.GetPrice().ToString()}");
         }
-        
+
+        private void OnDestroy()
+        {
+            if (_highlightActive) foreach (var tile in _tilesInRange) { _worldManager.ClearHighlight(tile); }
+        }
         #endregion
     }
 }
