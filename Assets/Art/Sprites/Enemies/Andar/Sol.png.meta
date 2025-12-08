@@ -158,10 +158,10 @@ TextureImporter:
       name: Sol_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 27
-        width: 355
-        height: 716
+        x: 0
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: Sol_1
       rect:
         serializedVersion: 2
-        x: 393
-        y: 15
-        width: 357
-        height: 871
+        x: 378
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Sol_2
       rect:
         serializedVersion: 2
-        x: 774
-        y: 196
-        width: 361
-        height: 1048
+        x: 756
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: Sol_3
       rect:
         serializedVersion: 2
-        x: 1150
-        y: 377
-        width: 354
-        height: 842
+        x: 1134
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Sol_4
       rect:
         serializedVersion: 2
-        x: 1528
-        y: 285
-        width: 357
-        height: 934
+        x: 1512
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Sol_5
       rect:
         serializedVersion: 2
-        x: 1904
-        y: 16
-        width: 332
-        height: 592
+        x: 1890
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,10 +290,10 @@ TextureImporter:
       name: Sol_6
       rect:
         serializedVersion: 2
-        x: 2267
-        y: 1
-        width: 357
-        height: 871
+        x: 2268
+        y: 0
+        width: 378
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,187 +308,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Sol_7
-      rect:
-        serializedVersion: 2
-        x: 1267
-        y: 353
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21980e26eb7f52250800000000000000
-      internalID: 5919409682323114258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_8
-      rect:
-        serializedVersion: 2
-        x: 1645
-        y: 290
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a54d210d3344e9410800000000000000
-      internalID: 1485699916403758170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_9
-      rect:
-        serializedVersion: 2
-        x: 891
-        y: 165
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f9bf2b9d9883b210800000000000000
-      internalID: 1347570924008749558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_10
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 25
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e46187d357ffe730800000000000000
-      internalID: 4030712130989810921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_11
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 20
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f754b09400c61560800000000000000
-      internalID: 7284220573158496246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_12
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 0
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52ebb9d3ccc8f6790800000000000000
-      internalID: -7534648842732716507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_13
-      rect:
-        serializedVersion: 2
-        x: 2056
-        y: 0
-        width: 11
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98157280e77fb4900800000000000000
-      internalID: 669901090269385097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sol_14
-      rect:
-        serializedVersion: 2
-        x: 2384
-        y: 6
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f14301e165fba9d40800000000000000
-      internalID: 5591992263926363167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 350897192fe39984c88308954e219a15
     internalID: 0
     vertices: []
     indices: 
@@ -500,19 +324,11 @@ TextureImporter:
     nameFileIdTable:
       Sol_0: -3816004992152039795
       Sol_1: -5035129833962548381
-      Sol_10: 4030712130989810921
-      Sol_11: 7284220573158496246
-      Sol_12: -7534648842732716507
-      Sol_13: 669901090269385097
-      Sol_14: 5591992263926363167
       Sol_2: 6493295223404544592
       Sol_3: 2902341475086574751
       Sol_4: 1983682761356488622
       Sol_5: 8074764146789875614
       Sol_6: -7478617469485869629
-      Sol_7: 5919409682323114258
-      Sol_8: 1485699916403758170
-      Sol_9: 1347570924008749558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

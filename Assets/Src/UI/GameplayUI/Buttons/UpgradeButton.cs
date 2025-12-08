@@ -25,6 +25,7 @@ namespace UI.GameplayUI.Buttons
         private WorldManager _worldManager;
 
         private bool _canUpdate = true;
+        private bool _highlightActive = false;
         private int _improvedRange;
 
         #region ------------------- Starting methods -------------------
@@ -109,6 +110,7 @@ namespace UI.GameplayUI.Buttons
 
         private void HighlightTiles()
         {
+            _highlightActive = true;
             Vector3Int _buildingPosition = _economyManager.GetSelectedSite();
             _tilesInRange = _worldManager.GetTilesInRange(_buildingPosition, _improvedRange);
             foreach (var tile in _tilesInRange) { _worldManager.Highlight(tile); }
@@ -117,6 +119,11 @@ namespace UI.GameplayUI.Buttons
         private void ClearHighlight()
         {
             foreach (var tile in _tilesInRange) { _worldManager.ClearHighlight(tile); }
+            _highlightActive = false;
+        }
+        private void OnDestroy()
+        {
+            if (_highlightActive) ClearHighlight();
         }
     }
 }
