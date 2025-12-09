@@ -247,6 +247,11 @@ namespace Gameplay.Towers
             Debug.Log("Current frame: " + currentFrame);
         }
 
+        public void SetSortingInLayer(int orderInLayer)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = orderInLayer;
+        }
+        
         #endregion
 
         #region Corutines
