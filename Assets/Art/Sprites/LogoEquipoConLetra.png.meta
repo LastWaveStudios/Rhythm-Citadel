@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 0135d10b9de80064790ffd6f03a3f1e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2505023405402697828
+    second: LogoEquipoConLetra_0
+  - first:
+      213: -8575202321549284890
+    second: LogoEquipoConLetra_1
+  - first:
+      213: -727551283532079262
+    second: LogoEquipoConLetra_2
+  - first:
+      213: 1941947451696056759
+    second: LogoEquipoConLetra_3
+  - first:
+      213: -3289676766394522787
+    second: LogoEquipoConLetra_4
+  - first:
+      213: -3094848934015230082
+    second: LogoEquipoConLetra_5
+  - first:
+      213: 5278906277346935501
+    second: LogoEquipoConLetra_6
+  - first:
+      213: 6859890022071258970
+    second: LogoEquipoConLetra_7
+  - first:
+      213: 2781934895345668169
+    second: LogoEquipoConLetra_8
+  - first:
+      213: -7841863996663770885
+    second: LogoEquipoConLetra_9
+  - first:
+      213: -2778764502787366612
+    second: LogoEquipoConLetra_10
+  - first:
+      213: 6678180410111503987
+    second: LogoEquipoConLetra_11
+  - first:
+      213: -4689150317977892594
+    second: LogoEquipoConLetra_12
+  - first:
+      213: -4486875302479940221
+    second: LogoEquipoConLetra_13
+  - first:
+      213: 3989783660638031255
+    second: LogoEquipoConLetra_14
+  - first:
+      213: 8148852643772965507
+    second: LogoEquipoConLetra_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_0
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 303
+        width: 388
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9fcee62c7e5c3dd0800000000000000
+      internalID: -2505023405402697828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 701
+        width: 172
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e923f20ce2cef880800000000000000
+      internalID: -8575202321549284890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 183
+        width: 128
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fd03d56f737e5f0800000000000000
+      internalID: -727551283532079262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 182
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b981de1bee23fa10800000000000000
+      internalID: 1941947451696056759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_4
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 183
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53e2311968b852d0800000000000000
+      internalID: -3289676766394522787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_5
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 182
+        width: 91
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f968eaa43ec05d0800000000000000
+      internalID: -3094848934015230082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 182
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc208d75a41724940800000000000000
+      internalID: 5278906277346935501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_7
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 182
+        width: 112
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5fcdcb31a9333f50800000000000000
+      internalID: 6859890022071258970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_8
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 182
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94097594c0b6b9620800000000000000
+      internalID: 2781934895345668169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_9
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 182
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf05ee53e3a1c2390800000000000000
+      internalID: -7841863996663770885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_10
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 182
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21e4e04868df69d0800000000000000
+      internalID: -2778764502787366612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_11
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 62
+        width: 53
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e2ba253b9adac50800000000000000
+      internalID: 6678180410111503987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_12
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 62
+        width: 95
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e09848641aacceeb0800000000000000
+      internalID: -4689150317977892594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_13
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 62
+        width: 87
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385b5345faa6bb1c0800000000000000
+      internalID: -4486875302479940221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_14
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 62
+        width: 55
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79dccfeb91f8e5730800000000000000
+      internalID: 3989783660638031255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoEquipoConLetra_15
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 62
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38227171e4a861170800000000000000
+      internalID: 8148852643772965507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LogoEquipoConLetra_0: -2505023405402697828
+      LogoEquipoConLetra_1: -8575202321549284890
+      LogoEquipoConLetra_10: -2778764502787366612
+      LogoEquipoConLetra_11: 6678180410111503987
+      LogoEquipoConLetra_12: -4689150317977892594
+      LogoEquipoConLetra_13: -4486875302479940221
+      LogoEquipoConLetra_14: 3989783660638031255
+      LogoEquipoConLetra_15: 8148852643772965507
+      LogoEquipoConLetra_2: -727551283532079262
+      LogoEquipoConLetra_3: 1941947451696056759
+      LogoEquipoConLetra_4: -3289676766394522787
+      LogoEquipoConLetra_5: -3094848934015230082
+      LogoEquipoConLetra_6: 5278906277346935501
+      LogoEquipoConLetra_7: 6859890022071258970
+      LogoEquipoConLetra_8: 2781934895345668169
+      LogoEquipoConLetra_9: -7841863996663770885
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
