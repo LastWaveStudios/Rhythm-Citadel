@@ -65,6 +65,11 @@ namespace Input
             actions.Build.Disable();
         }
 
+        public void DisableAll()
+        {
+            actions.Disable();
+        }
+
         #endregion
 
         public void OnPlaceTower(InputAction.CallbackContext context)
