@@ -27,4 +27,10 @@ public class ChangePnaels : MonoBehaviour
         _index = index;
 
     }
+
+    public void GoToPanel(int index)
+    {
+        _index = index;
+        ShowPanel(index);
+    }
 }
