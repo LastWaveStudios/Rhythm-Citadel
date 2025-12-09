@@ -127,12 +127,15 @@ MonoBehaviour:
   _damageType: 3
   _bulletPrefab: {fileID: -5515273298982796374, guid: 60f6c5c95da37be42abe0a31b33fd6d4, type: 3}
   _groupId: 1
-  _damage: 8
+  _damage: 10
   _range: 3
   _price: 140
   _damageMultiplier: 1.15
   _timeForProjectile: 0.8
   _bulletOffset: {x: 0, y: 1.2, z: 0}
+  _timeOfAnimation: 0.5
+  _scaleFactorForShoot: 0.9
+  _scaleFactorForFail: 1.2
   frames:
   - {fileID: -5326214486163269862, guid: 8b310846c654f834da5e239a17b92c18, type: 3}
   - {fileID: 5850114902497814101, guid: 8b310846c654f834da5e239a17b92c18, type: 3}

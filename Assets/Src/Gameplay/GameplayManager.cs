@@ -169,7 +169,6 @@ namespace Gameplay
 
         private void OnRhythmEnd()
         {
-            Debug.Log("hi");
             if (_waveManager.nextWaveExists())
             {
                 Victory();

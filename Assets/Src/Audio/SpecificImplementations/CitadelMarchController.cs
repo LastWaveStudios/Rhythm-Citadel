@@ -104,7 +104,7 @@ namespace Audio.SpecificImplementations
                 }
             }
             builder.Append($"] and the threshold are {_thresholdForReproduceThePart}");
-            Debug.Log(builder.ToString());
+            //Debug.Log(builder.ToString());
             return actionsToExecute.ToArray();
         }
 

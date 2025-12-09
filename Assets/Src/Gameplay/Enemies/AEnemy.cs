@@ -26,7 +26,7 @@ namespace Gameplay.Enemies
 
         protected EnemyStats _stats;
 
-        [SerializeField] protected int _health; // Just for show in editor for debugging purpose
+        protected int _health; 
         protected int _damage;
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
@@ -81,7 +81,7 @@ namespace Gameplay.Enemies
 
         private void StartStats()
         {
-            Debug.Log("Trying to get stats");
+            Debug.Log("Trying to get stats ");
             _stats = DifficultyManager.Instance.GetStats(this);
 
             _health = _stats.health;
@@ -197,7 +197,7 @@ namespace Gameplay.Enemies
         {
             if (RemoveShield(1)) return;
 
-            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * _resistanceMultiplayer);
+            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * GetDamageMultyplayer(type));
             else _health -= damageToTake;
 
             _animator.SetTrigger("Hitted");
@@ -206,6 +206,20 @@ namespace Gameplay.Enemies
                 //Debug.LogWarning($"Enemy: {name} enter Push Dead");
                 PushDeath();
             }
+        }
+
+        private float GetDamageMultyplayer(DamageType damageRecivedType)
+        {
+            if (_resistanceMultiplayer == 0) return 1f;
+
+            if (damageRecivedType == DamageType.Hybrid)
+            {
+                if (_resistance == DamageType.Hybrid) return (_resistanceMultiplayer / 40f);
+                else return _resistanceMultiplayer / 20f;
+            }
+            if (_resistance == DamageType.Hybrid) return (_resistanceMultiplayer / 20f);
+            if (damageRecivedType == _resistance) return (_resistanceMultiplayer / 100f);
+            return 1f;
         }
 
         // Return true if can remove the shield and 0 if not
