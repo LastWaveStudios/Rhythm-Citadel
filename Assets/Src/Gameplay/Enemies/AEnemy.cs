@@ -26,7 +26,7 @@ namespace Gameplay.Enemies
 
         protected EnemyStats _stats;
 
-        [SerializeField] protected int _health; // Just for show in editor for debugging purpose
+        protected int _health; 
         protected int _damage;
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
@@ -81,7 +81,7 @@ namespace Gameplay.Enemies
 
         private void StartStats()
         {
-            Debug.Log("Trying to get stats");
+            Debug.Log("Trying to get stats ");
             _stats = DifficultyManager.Instance.GetStats(this);
 
             _health = _stats.health;
