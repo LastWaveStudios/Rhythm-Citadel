@@ -23,9 +23,6 @@
   
 # Índice
 
-- [Índice](#índice)
-- [Índice de Referencias](#índice-de-referencias)
-
 ## 1. [Historial de Cambios](#historial-de-cambios)
 - 1.1 [Versión 1.0](#versión-10)
 - 1.2 [Versión 2.0](#versión-20)
@@ -103,7 +100,14 @@
   - 10.2.7. [Hito 12: Creación de oleadas](#hito-12-creación-de-oleadas)
   - 10.2.8. [Hito 13: Tutorial](#hito-13-tutorial)
 - 10.3. [Hitos para la Release](#hitos-para-la-release)
-  - 10.3.1. [Hito 14: ejemplo de hito](#hito-14-ejemplo-de-hito)  
+  - 10.3.1. [Hito 14: Creación nuevos enemigos](#hito-14-creación-nuevos-enemigos)
+  - 10.3.2. [Hito 15: Terminar animaciones](#hito-15-terminar-animaciones)
+  - 10.3.3. [Hito 16: Crear todos los niveles y oleadas](#hito-16-crear-todos-los-niveles-y-oleadas)
+  - 10.3.4. [Hito 17: Hacer el juego Responsive](#hito-17-hacer-el-juego-responsive)
+  - 10.3.5. [Hito 18: Implementar el comportamiento de enemigos](#hito-18-implementar-el-comportamiento-de-enemigos)
+  - 10.3.6. [Hito 19: Terminar el arte](#hito-19-terminar-el-arte)
+  - 10.3.7. [Hito 20: Equilibrar los niveles](#hito-20-equilibrar-los-niveles)
+  - 10.3.8. [Hito 21: Solucionar bugs](#hito-21-solucionar-bugs)
 - 10.4. [Fecha de lanzamiento](#fecha-de-lanzamiento)
 
 ## 11. [PostMortem](#postmortem)
@@ -119,97 +123,106 @@
 
 ## **Índice de Referencias**
 
-- [Figura 1: Diagrama Clases](#figura-1)
-- [Figura 2: Object Pool](#figura-2)
-- [Figura 3: Diagrama de flujo de una partida](#figura-3)
-- [Figura 4: Torreta Piano](#figura-4)
-- [Figura 5: Idle Torreta Piano](#figura-5)
-- [Figura 6: Torreta Tambor](#figura-6)
-- [Figura 7: Idle Torreta Tambor](#figura-7)
-- [Figura 8: Torreta Trompeta](#figura-8)
-- [Figura 9: Idle Torreta Trompeta](#figura-9)
-- [Figura 10: Torreta Violín](#figura-10)
-- [Figura 11: Idle Torreta Violín](#figura-11)
-- [Figura 12: Disparo de Bala](#figura-12)
-- [Figura 13: Daño a Enemigos](#figura-13)
-- [Figura 14: Enemigo Negra](#figura-14)
-- [Figura 15: Daño Negra](#figura-15)
-- [Figura 16: Eliminación Negra](#figura-16)
-- [Figura 17: Enemigo Blanca](#figura-17)
-- [Figura 18: Daño Blanca](#figura-18)
-- [Figura 19: Eliminación Blanca](#figura-19)
-- [Figura 20: Enemigo Corcheas](#figura-20)
-- [Figura 21: Keyframes Corcheas Caminando](#figura-21)
-- [Figura 22: Daño Corcheas](#figura-22)
-- [Figura 23: Enemigo Corcheas Rotas](#figura-23)
-- [Figura 24: Daño Corchea Enfadada](#figura-24)
-- [Figura 25: Eliminación Corchea Enfadada](#figura-25)
-- [Figura 26: Daño Corchea Triste](#figura-26)
-- [Figura 27: Corchea Triste Llorando](#figura-27)
-- [Figura 28: Eliminación Corchea Triste](#figura-28)
-- [Figura 29: Lágrima Corchea Triste](#figura-29)
-- [Figura 30: Enemigo Redonda](#figura-30)
-- [Figura 31: Daño Redonda](#figura-31)
-- [Figura 32: Eliminación Redonda](#figura-32)
-- [Figura 33: Enemigo Silencio de Negra](#figura-33)
-- [Figura 34: Keyframes Silencio de Negra](#figura-34)
-- [Figura 35: Daño Silencio de Negra](#figura-35)
-- [Figura 36: Caida Silencio de Negra](#figura-36)
-- [Figura 37: Eliminación Silencio de Negra](#figura-37)
-- [Figura 38: Enemigo Silencio de Semicorchea](#figura-38)
-- [Figura 39: Daño Silencio de Semicorchea](#figura-39)
-- [Figura 40: Eliminación Silencio de Semicorchea](#figura-40)
-- [Figura 41: Enemigo Silencio de Blanca](#figura-41)
-- [Figura 42: Daño Silencio de Blanca](#figura-42)
-- [Figura 43: Eliminación Silencio de Blanca](#figura-43)
-- [Figura 44: Enemigo Silencio de Corchea](#figura-44)
-- [Figura 45: Daño Silencio de Corchea](#figura-45)
-- [Figura 46: Eliminación Silencio de Corchea](#figura-46)
-- [Figura 47: Enemigo Silencio de Semicorchea](#figura-47)
-- [Figura 48: Daño Silencio de Semicorchea](#figura-48)
-- [Figura 49: Eliminación Silencio de Semicorchea](#figura-49)
-- [Figura 50: Enemigo Clave de Sol](#figura-50)
-- [Figura 51: Keyframes Clave de Sol](#figura-51)
-- [Figura 52: Daño Clave de Sol](#figura-52)
-- [Figura 53: Eliminación Clave de Sol](#figura-53)
-- [Figura 54: Enemigo Clave de Fa](#figura-54)
-- [Figura 55: Daño Clave de Fa](#figura-55)
-- [Figura 56: Eliminación Clave de Fa](#figura-56)
-- [Figura 57: Explosión de todas las Notas](#figura-57)
-- [Figura 58: Keyframes Bailarina](#figura-58)
-- [Figura 59: Keyframes Bailarina Levemente Dañada](#figura-59)
-- [Figura 60: Keyframes Bailarina Moderadamente Dañada](#figura-60)
-- [Figura 61: Keyframes Bailarina Gravemente Dañada](#figura-61)
-- [Figura 62: Keyframes Bailarina Inicio](#figura-62)
-- [Figura 63: Boceto Nivel 1](#figura-63)
-- [Figura 64: Nivel 1](#figura-64)
-- [Figura 65: Boceto Nivel 2](#figura-65)
-- [Figura 66: Nivel 2](#figura-66)
-- [Figura 67: Boceto Nivel 3](#figura-67)
-- [Figura 68: Nivel 3](#figura-68)
-- [Figura 69: Botones Menú Inicial](#figura-69)
-- [Figura 70: Interfaces](#figura-70)
-- [Figura 71: Tileset](#figura-71)
-- [Figura 72: Decoraciones](#figura-72)
-- [Figura 73: Boceto Interfaz Menú Inicial](#figura-73)
-- [Figura 74: Interfaz Menú Inicial](#figura-74)
-- [Figura 75: Boceto Interfaz Selector de Dificultad](#figura-75)
-- [Figura 76: Interfaz Selector de Dificultad](#figura-76)
-- [Figura 77: Boceto Interfaz Tutorial](#figura-77)
-- [Figura 78: Interfaz Tutorial](#figura-78)
-- [Figura 79: Boceto Interfaz Créditos](#figura-79)
-- [Figura 80: Interfaz Créditos](#figura-80)
-- [Figura 81: Boceto Interfaz Partida](#figura-81)
-- [Figura 82: Interfaz Partida](#figura-82)
-- [Figura 83: Interfaz Patrón Rítmico](#figura-83)
-- [Figura 84: Boceto Interfaz Pausa](#figura-84)
-- [Figura 85: Interfaz Pausa](#figura-85)
-- [Figura 86: Boceto Interfaz Opciones](#figura-86)
-- [Figura 87: Interfaz Opciones](#figura-87)
-- [Figura 88: Boceto Pantalla Victoria o Derrota](#figura-88)
-- [Figura 89: Pantalla Victoria](#figura-89)
-- [Figura 90: Pantalla Derrota](#figura-90)
-- [Figura 91: Diagrama de Interfaces](#figura-91)
+- [Figura 1: Tabla DLCs](#figura-1)
+- [Figura 2: Tabla estimación temporal](#figura-2)
+- [Figura 3: Diagrama Clases](#figura-3)
+- [Figura 4: Diagrama Object Pool](#figura-4)
+- [Figura 5: Diagrama de flujo de una partida](#figura-5)
+- [Figura 6: Torreta Piano](#figura-6)
+- [Figura 7: Idle Torreta Piano](#figura-7)
+- [Figura 8: Torreta Tambor](#figura-8)
+- [Figura 9: Idle Torreta Tambor](#figura-9)
+- [Figura 10: Torreta Trompeta](#figura-10)
+- [Figura 11: Idle Torreta Trompeta](#figura-11)
+- [Figura 12: Torreta Violín](#figura-12)
+- [Figura 13: Idle Torreta Violín](#figura-13)
+- [Figura 14: Disparo de Bala](#figura-14)
+- [Figura 15: Impacto de Bala](#figura-15)
+- [Figura 16: Enemigo Negra](#figura-16)
+- [Figura 17: Daño Negra](#figura-17)
+- [Figura 18: Eliminación Negra](#figura-18)
+- [Figura 19: Enemigo Blanca](#figura-19)
+- [Figura 20: Daño Blanca](#figura-20)
+- [Figura 21: Eliminación Blanca](#figura-21)
+- [Figura 22: Enemigo Corcheas](#figura-22)
+- [Figura 23: Keyframes Corcheas Caminando](#figura-23)
+- [Figura 24: Daño Corcheas](#figura-24)
+- [Figura 25: Enemigo Corcheas Rotas](#figura-25)
+- [Figura 26: Daño Corchea Enfadada](#figura-26)
+- [Figura 27: Eliminación Corchea Enfadada](#figura-27)
+- [Figura 28: Daño Corchea Triste](#figura-28)
+- [Figura 29: Corchea Triste Llorando](#figura-29)
+- [Figura 30: Eliminación Corchea Triste](#figura-30)
+- [Figura 31: Lágrima Corchea Triste](#figura-31)
+- [Figura 32: Enemigo Redonda](#figura-32)
+- [Figura 33: Daño Redonda](#figura-33)
+- [Figura 34: Eliminación Redonda](#figura-34)
+- [Figura 35: Enemigo Silencio de Negra](#figura-35)
+- [Figura 36: Keyframes Silencio de Negra](#figura-36)
+- [Figura 37: Daño Silencio de Negra](#figura-37)
+- [Figura 38: Caida Silencio de Negra](#figura-38)
+- [Figura 39: Eliminación Silencio de Negra](#figura-39)
+- [Figura 40: Enemigo Silencio de Semicorchea](#figura-40)
+- [Figura 41: Daño Silencio de Semicorchea](#figura-41)
+- [Figura 42: Eliminación Silencio de Semicorchea](#figura-42)
+- [Figura 43: Enemigo Silencio de Blanca](#figura-43)
+- [Figura 44: Daño Silencio de Blanca](#figura-44)
+- [Figura 45: Eliminación Silencio de Blanca](#figura-45)
+- [Figura 46: Enemigo Silencio de Corchea](#figura-46)
+- [Figura 47: Daño Silencio de Corchea](#figura-47)
+- [Figura 48: Eliminación Silencio de Corchea](#figura-48)
+- [Figura 49: Enemigo Silencio de Redonda](#figura-49)
+- [Figura 50: Daño Silencio de Redonda](#figura-50)
+- [Figura 51: Eliminación Silencio de Redonda](#figura-51)
+- [Figura 52: Enemigo Clave de Sol](#figura-52)
+- [Figura 53: Keyframes Clave de Sol](#figura-53)
+- [Figura 54: Daño Clave de Sol](#figura-54)
+- [Figura 55: Eliminación Clave de Sol](#figura-55)
+- [Figura 56: Enemigo Clave de Fa](#figura-56)
+- [Figura 57: Keyframes Clave de Fa](#figura-57)
+- [Figura 58: Daño Clave de Fa](#figura-58)
+- [Figura 59: Eliminación Clave de Fa](#figura-59)
+- [Figura 60: Explosión de todas las Notas](#figura-60)
+- [Figura 61: Keyframes Bailarina](#figura-61)
+- [Figura 62: Keyframes Bailarina Levemente Dañada](#figura-62)
+- [Figura 63: Keyframes Bailarina Moderadamente Dañada](#figura-63)
+- [Figura 64: Keyframes Bailarina Gravemente Dañada](#figura-64)
+- [Figura 65: Keyframes Bailarina Inicio](#figura-65)
+- [Figura 66: Boceto Nivel 1](#figura-66)
+- [Figura 67: Nivel 1](#figura-67)
+- [Figura 68: Boceto Nivel 2](#figura-68)
+- [Figura 69: Nivel 2](#figura-69)
+- [Figura 70: Boceto Nivel 3](#figura-70)
+- [Figura 71: Nivel 3](#figura-71)
+- [Figura 72: Nivel 4](#figura-72)
+- [Figura 73: Nivel 5](#figura-73)
+- [Figura 74: Nivel 6](#figura-74)
+- [Figura 75: Nivel 7](#figura-75)
+- [Figura 76: Nivel 8](#figura-76)
+- [Figura 77: Nivel 9](#figura-77)
+- [Figura 78: Botones Menú Inicial](#figura-78)
+- [Figura 79: Interfaces](#figura-79)
+- [Figura 80: Tileset](#figura-80)
+- [Figura 81: Decoraciones](#figura-81)
+- [Figura 82: Boceto Interfaz Menú Inicial](#figura-82)
+- [Figura 83: Interfaz Menú Inicial](#figura-83)
+- [Figura 84: Boceto Interfaz Selector de Dificultad](#figura-84)
+- [Figura 85: Interfaz Selector de Dificultad](#figura-85)
+- [Figura 86: Boceto Interfaz Tutorial](#figura-86)
+- [Figura 87: Interfaz Tutorial](#figura-87)
+- [Figura 88: Boceto Interfaz Créditos](#figura-88)
+- [Figura 89: Interfaz Créditos](#figura-89)
+- [Figura 90: Boceto Interfaz Partida](#figura-90)
+- [Figura 91: Interfaz Partida](#figura-91)
+- [Figura 92: Interfaz Patrón Rítmico](#figura-92)
+- [Figura 93: Boceto Interfaz Pausa](#figura-93)
+- [Figura 94: Interfaz Pausa](#figura-94)
+- [Figura 95: Boceto Interfaz Opciones](#figura-95)
+- [Figura 96: Interfaz Opciones](#figura-96)
+- [Figura 97: Boceto Pantalla Victoria o Derrota](#figura-97)
+- [Figura 98: Pantalla Victoria](#figura-98)
+- [Figura 99: Pantalla Derrota](#figura-99)
+- [Figura 100: Diagrama de Interfaces](#figura-100)
 
 # Historial de Cambios
   1. ## **Versión 1.0**
@@ -223,7 +236,11 @@
        3. Se ha actualizado la tabla del coste de las torres.
   3. ## **Versión 3.0**
      - Fecha: 9 de Diciembre 2025.
-     - 
+     - Se han creado nuevos niveles.
+     - Se han añadido nuevos enemigos.
+     - Se han incluido assets nuevos, que incluyen enemigos y sus spritesheets.
+     - Mejora de la estrategia de marketing.
+     - Cambio de controles.
 
 # **Introducción**
 ¿Qué pasaría si el silencio no fuera paz... sino destrucción?
@@ -253,13 +270,14 @@ Al ser un juego gratuito para jugar, sin conexión y no tener un modo competitiv
 Para ello, se ha decidido añadir DLCs al juego. En estos contenidos descargables, el jugador podrá jugar más niveles que los principales, teniendo estos una dificultad mayor. También se han añadido nuevos enemigos y torretas en los niveles adicionales, para que el jugador note el cambio con respecto a los niveles base del juego. También, en esta expansión se añadirá el modo  de dificultad "Virtuoso", el modo más difícil de juego, donde se añadirán más enemigos a las oleadas, al igual que mejorar las estadísticas de los enemigos.
   
 2. ## **Tablas de productos y precios**
-
+<a id="figura-1"></a>
 | Nombre | Descripción | Precio |
 | :-: | :-: | :-: |
 | Pack Torreta | Incluye una nueva torreta | 4,99 |
-| Pack Niveles | Incluye 3 niveles jugables | 6,99 |
-| Pack Dificultad | Incluye la dificultad "Virtuoso" | 1,95 |
+| Pack Niveles | Incluye 3 niveles jugables  y nivel de dificultad "Virtuoso" | 6,99 |
 | Pack Completo | Incluye todos los packs | 9,95 |
+
+*Figura 1: Tabla DLCs*
 
    # **Planificación y Costes**
 1.  ## **El equipo humano**
@@ -314,28 +332,38 @@ El énfasis de esta fase ha sido centrado en el desarrollo intensivo y la integr
 La fase Release representó la etapa final de desarrollo, donde el enfoque fue pulido exhaustivo y la preparación para el lanzamiento. El objetivo fue elevar la versión estable de la Beta a un estándar de calidad comercial, optimizando el rendimiento, eliminando bugs y asegurando que todos los componentes ofrezcan una experiencia de usuario completa para el día del lanzamiento.
 
 - **Arte:**
-  - Animaciones finales
+  - Diseño de Enemigos
+  - Animación de Enemigos
+  - Animación de Torretas
+  - Diseño de nuevos Niveles
+  - Cinemáticas
  
 - **Programación:**
+  - Cambios de interfaces
+  - Mejora de jugabilidad
+  - Comportamiento de Enemigos
+  - Accesibilidad y usabilidad de la partida
+  - Responsividad del juego
+  - Implementación de niveles
+  - Disparos
   - Corrección de Bugs
-  - Optimización de rendimiento
 
-- **Audio:**
-  - Ajustes finales de sonido
 
 2. ## **Estimación temporal del desarrollo**
+<a id="figura-2"></a>
 
-| Área | Tarea | Duración (h) | Comienzo | Fin |
-|------|-------|-------------|----------|-----|
+| Área | Tarea | Duración (d) | Comienzo | Fin |
+|------|-------|--------------|----------|-----|
 | **Arte** | Logo de Equipo | 1 | 26/9 | 27/9 |
-| | Diseño 2D Enemigos | 4 | 30/9 | 4/10 |
+| | Diseño 2D Enemigos | 8 | 30/9 | 7/12 |
 | | Diseño 2D Torretas | 4 | 5/10 | 9/10 |
 | | Diseño 2D Bailarina | 2 | 10/10 | 12/10 |
-| | Bocetos de interfaces | 1 | 13/10 | 14/10 |
-| | Interfaces finales | 5 | 2/11 | 15/11 |
+| | Bocetos de interfaces | 2 | 13/10 | 14/10 |
+| | Interfaces finales | 7 | 2/11 | 15/11 |
 | | Flyer | 4 | 19/10 | 1/11 |
-| **Programación** | Animaciones | 6 | 3/11 | 10/11 |
-| | Flujo de juego | 1 | 30/9 | 1/10 |
+| | Animaciones | 12 | 3/11 | 9/12 |
+| | Cinemáticas | 7 | 16/11 | 9/12 |
+| **Programación** | Flujo de juego | 1 | 30/9 | 1/10 |
 | | Diagrama de interfaces | 1 | 30/9 | 1/10 |
 | | Implementación de interfaces | 2 | 2/10 | 4/10 |
 | | Movimiento de enemigos | 2 | 16/10 | 18/10 |
@@ -348,16 +376,24 @@ La fase Release representó la etapa final de desarrollo, donde el enfoque fue p
 | | Patrón de daño | 2 | 3/11 | 5/11 |
 | | Elección de torreta | 2 | 6/11 | 8/11 |
 | | Spawn de diversos enemigos | 1 | 9/11 | 10/11 |
+| | Todos los niveles | 2 | 5/12 | 12/12 |
+| | Solución de Bugs y errores | 5 | 25/9 | 9/12 |
+| | Responsividad | 7 | 1/12 | 7/12 |
+| | Disparos | 3 | 26/11 | 29/11 |
+| | Comportamiento de enemigos | 12 | 19/11 | 30/11 |
 | **Diseño y Funcionalidad** | Conceptualización del juego | 3 | 25/9 | 28/9 |
-| | Diseño de niveles | 1 | 5/10 | 6/10 |
-| | Estadística de Entidades | 2 | 30/9 | 2/10 |
-| | Economía del juego | 1 | 7/10 | 8/10 |
+| | Diseño de niveles | 2 | 5/10 | 2/12 |
+| | Estadística de Entidades | 3 | 30/9 | 7/12 |
+| | Economía del juego | 2 | 7/10 | 7/12 |
+| | Accesibilidad y usabilidad | 3 | 1/12 | 4/12 |
 | **Audio** | Música | 3 | 6/11 | 10/11 |
 | | SFX | 2 | 6/11 | 8/11 |
-| **Otros** | GDD/ReadMe | 15 | 25/9 | 16/11 |
-| | Página web | 10 | 15/10 | 16/11 |
-| | Reuniones | 20 | 25/9 | 16/11 |
-| **Total** |  | **109** | **26/9** | **16/11** |
+| **Otros** | GDD/ReadMe | 25 (h) | 25/9 | 9/12 |
+| | Página web | 15 (h) | 15/10 | 9/12 |
+| | Reuniones | 26 (h) | 25/9 | 9/12 |
+| | **TOTAL** | **185** | **25/9** | **9/12** |
+
+*Figura 2: Tabla estimación temporal*
 
 # **Mecánicas y Elementos de Juego**
 1. ## **Descripción detallada del concepto de juego**
@@ -493,22 +529,22 @@ El objetivo de los enemigos es destruir a la bailarina, por lo que el jugador de
 - Estos diagramas son una primera aproximación de cómo deberá estar organizado el código. 
 Diagrama de clases - Entidades. En este primer diagrama se muestra una visión general de las entidades que habrá y parte de su interacción. Habrá que tener en cuenta que AEnemy y ATower son clases abstractas de las cuales cada enemigo específico y cada torre específica heredarán un comportamiento básico.  
 
-<a id="figura-1"></a>
-![DragramaClases](./Imagenes_ReadMe/DiagramaClases.png)  
-*Figura 1: Diagrama Clases*  
+<a id="figura-3"></a>
+![DragramaClases](./Imagenes_ReadMe/DiagramaClases2.png)  
+*Figura 3: Diagrama Clases*  
       
 - Diagrama de clases - Object pool. Dado que se van a crear y destruir muchas entidades (especialmente enemigos y balas), se ha propuesto implementar el patrón object pool para optimizar los recursos. Para eso se ha creado un primer diagrama de clases para mostrar una aproximación de lo que se quiere conseguir. 
 
-<a id="figura-2"></a>
+<a id="figura-4"></a>
 ![ObjectPool](./Imagenes_ReadMe/ObjectPool.png)  
-*Figura 2: Object Pool* 
+*Figura 4:  Diagrama Object Pool* 
 
 10. ## **Diagrama de Flujo de Partida**
 Se ha creado un diagrama de flujo que muestra cómo debería funcionar una partida para tener una visión más cercana al resultado final esperado.  
 
-<a id="figura-3"></a>
+<a id="figura-5"></a>
 ![FlujoPartida](./Imagenes_ReadMe/FlujoPartida.png)  
-*Figura 3: Diagrama de flujo de una partida*  
+*Figura 5: Diagrama de flujo de una partida*  
 
 # **Trasfondo**
 1. ## **Descripción detallada de la historia y la trama**
@@ -532,272 +568,300 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 
 ## 2. **Apartado visual**
 1. ###  **Torretas**
-<a id="figura-4"></a>
-![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
-*Figura 4: Torreta Piano*  
-
-<a id="figura-5"></a>
-![IdlePiano](./Imagenes_ReadMe/IdlePiano.png)  
-*Figura 5: Idle Torreta Piano*  
-      
 <a id="figura-6"></a>
-![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
-*Figura 6: Torreta Tambor*  
+![Piano](./Imagenes_ReadMe/TorretaPiano.png)  
+*Figura 6: Torreta Piano*  
 
 <a id="figura-7"></a>
-![IdleTambor](./Imagenes_ReadMe/IdleTambor.png)  
-*Figura 7: Idle Torreta Tambor*  
+![IdlePiano](./Imagenes_ReadMe/IdlePiano.png)  
+*Figura 7: Idle Torreta Piano*  
       
 <a id="figura-8"></a>
-![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
-*Figura 8: Torreta Trompeta*  
+![Tambor](./Imagenes_ReadMe/TorretaTambor.png)  
+*Figura 8: Torreta Tambor*  
 
 <a id="figura-9"></a>
-![IdleTrompeta](./Imagenes_ReadMe/IdleTrompetas.png)  
-*Figura 9: Idle Torreta Trompeta*  
+![IdleTambor](./Imagenes_ReadMe/IdleTambor.png)  
+*Figura 9: Idle Torreta Tambor*  
       
 <a id="figura-10"></a>
-![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
-*Figura 10: Torreta Violín*   
+![Trompeta](./Imagenes_ReadMe/TorretaTrompeta.png)  
+*Figura 10: Torreta Trompeta*  
 
 <a id="figura-11"></a>
-![IdleViolin](./Imagenes_ReadMe/IdleViolines.png)  
-*Figura 11: Idle Torreta Violín*  
-
+![IdleTrompeta](./Imagenes_ReadMe/IdleTrompetas.png)  
+*Figura 11: Idle Torreta Trompeta*  
+      
 <a id="figura-12"></a>
-![BalaDisparo](./Imagenes_ReadMe/balasExplosivoLanzado.png)  
-*Figura 12: Disparo de Bala*  
+![Violin](./Imagenes_ReadMe/TorretaViolin.png)  
+*Figura 12: Torreta Violín*   
 
 <a id="figura-13"></a>
-![BalaDaño](./Imagenes_ReadMe/BalaExplosionSprite.png)  
-*Figura 13: Daño a Enemigos*  
-   
-2. ###  **Enemigos**
+![IdleViolin](./Imagenes_ReadMe/IdleViolines.png)  
+*Figura 13: Idle Torreta Violín*  
+
 <a id="figura-14"></a>
-![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
-*Figura 14: Enemigo Negra*  
+![BalaDisparo](./Imagenes_ReadMe/balasExplosivoLanzado.png)  
+*Figura 14: Disparo de Bala*  
 
 <a id="figura-15"></a>
-![NegraDaño](./Imagenes_ReadMe/EnemigoNegraDaño.png)  
-*Figura 15: Daño Negra*  
-
+![ImpactoBala](./Imagenes_ReadMe/BalaExplosionSprite.png)  
+*Figura 15: Impacto de Bala*  
+   
+2. ###  **Enemigos**
 <a id="figura-16"></a>
-![NegraDerrota](./Imagenes_ReadMe/EnemigoNegraDerrota.png)  
-*Figura 16: Eliminación Negra*  
-      
+![Negra](./Imagenes_ReadMe/EnemigoNegra.png)  
+*Figura 16: Enemigo Negra*  
+
 <a id="figura-17"></a>
-![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
-*Figura 17: Enemigo Blanca*  
+![NegraDaño](./Imagenes_ReadMe/EnemigoNegraDaño.png)  
+*Figura 17: Daño Negra*  
 
 <a id="figura-18"></a>
-![BlancaDaño](./Imagenes_ReadMe/EnemigoBlancaDaño.png)  
-*Figura 18: Daño Blanca*  
-
+![NegraDerrota](./Imagenes_ReadMe/EnemigoNegraDerrota.png)  
+*Figura 18: Eliminación Negra*  
+      
 <a id="figura-19"></a>
-![BlancaDerrota](./Imagenes_ReadMe/EnemigoBlancaDerrota.png)  
-*Figura 19: Eliminación Blanca*  
+![Blanca](./Imagenes_ReadMe/EnemigoBlanca.png)  
+*Figura 19: Enemigo Blanca*  
 
 <a id="figura-20"></a>
-![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
-*Figura 20: Enemigo Corcheas*  
+![BlancaDaño](./Imagenes_ReadMe/EnemigoBlancaDaño.png)  
+*Figura 20: Daño Blanca*  
 
 <a id="figura-21"></a>
-![KeyframesCorchea](./Imagenes_ReadMe/EnemigoCorcheaKeyframes.png)  
-*Figura 21: Keyframes Corcheas Caminando*  
+![BlancaDerrota](./Imagenes_ReadMe/EnemigoBlancaDerrota.png)  
+*Figura 21: Eliminación Blanca*  
 
 <a id="figura-22"></a>
-![CorcheasDaño](./Imagenes_ReadMe/CorcheasDaño.png)  
-*Figura 22: Daño Corcheas*  
-      
+![Corchea](./Imagenes_ReadMe/EnemigoCorchea.png)  
+*Figura 22: Enemigo Corcheas*  
+
 <a id="figura-23"></a>
-![CorcheasRotas](./Imagenes_ReadMe/CorcheasRotas.png)  
-*Figura 23: Enemigo Corcheas Rotas*  
+![KeyframesCorchea](./Imagenes_ReadMe/EnemigoCorcheaKeyframes.png)  
+*Figura 23: Keyframes Corcheas Caminando*  
 
 <a id="figura-24"></a>
-![CorcheaEDaño](./Imagenes_ReadMe/CorcheaEDaño.png)  
-*Figura 24: Daño Corchea Enfadada*  
-
+![CorcheasDaño](./Imagenes_ReadMe/CorcheasDaño.png)  
+*Figura 24: Daño Corcheas*  
+      
 <a id="figura-25"></a>
-![CorcheaEDerrota](./Imagenes_ReadMe/CorcheaEDerrota.png)  
-*Figura 25: Eliminación Corchea Enfadada*  
+![CorcheasRotas](./Imagenes_ReadMe/CorcheasRotas.png)  
+*Figura 25: Enemigo Corcheas Rotas*  
 
 <a id="figura-26"></a>
-![CorcheaTDaño](./Imagenes_ReadMe/CorcheaTDaño.png)  
-*Figura 26: Daño Corchea Triste*  
+![CorcheaEDaño](./Imagenes_ReadMe/CorcheaEDaño.png)  
+*Figura 26: Daño Corchea Enfadada*  
 
 <a id="figura-27"></a>
-![CorcheaLlorando](./Imagenes_ReadMe/CorcheaLlorando.png)  
-*Figura 27: Corchea Triste Llorando*  
+![CorcheaEDerrota](./Imagenes_ReadMe/CorcheaEDerrota.png)  
+*Figura 27: Eliminación Corchea Enfadada*  
 
 <a id="figura-28"></a>
-![CorcheaTDerrota](./Imagenes_ReadMe/CorcheaTDerrota.png)  
-*Figura 28: Eliminación Corchea Triste*  
+![CorcheaTDaño](./Imagenes_ReadMe/CorcheaTDaño.png)  
+*Figura 28: Daño Corchea Triste*  
 
 <a id="figura-29"></a>
-![LágrimaCorcheaT](./Imagenes_ReadMe/Lagrima.png)  
-*Figura 29: Lágrima Corchea Triste*  
+![CorcheaLlorando](./Imagenes_ReadMe/CorcheaLlorando.png)  
+*Figura 29: Corchea Triste Llorando*  
 
 <a id="figura-30"></a>
-![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
-*Figura 30: Enemigo Redonda*  
+![CorcheaTDerrota](./Imagenes_ReadMe/CorcheaTDerrota.png)  
+*Figura 30: Eliminación Corchea Triste*  
 
 <a id="figura-31"></a>
-![RedondaDaño](./Imagenes_ReadMe/EnemigoRedondaDaño.png)  
-*Figura 31: Daño Redonda*  
+![LágrimaCorcheaT](./Imagenes_ReadMe/Lagrima.png)  
+*Figura 31: Lágrima Corchea Triste*  
 
 <a id="figura-32"></a>
-![RedondaDerrota](./Imagenes_ReadMe/EnemigodRedondaDerrota.png)  
-*Figura 32: Eliminación Redonda*  
-      
+![Redonda](./Imagenes_ReadMe/EnemigoRedonda.png)  
+*Figura 32: Enemigo Redonda*  
+
 <a id="figura-33"></a>
-![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
-*Figura 33: Enemigo Silencio de Negra*  
+![RedondaDaño](./Imagenes_ReadMe/EnemigoRedondaDaño.png)  
+*Figura 33: Daño Redonda*  
 
 <a id="figura-34"></a>
-![KeyframesSilenciodeNegra](./Imagenes_ReadMe/SilencioVolando.png)  
-*Figura 34: Keyframes Silencio de Negra*  
-
+![RedondaDerrota](./Imagenes_ReadMe/EnemigodRedondaDerrota.png)  
+*Figura 34: Eliminación Redonda*  
+      
 <a id="figura-35"></a>
-![SilencioDaño](./Imagenes_ReadMe/EnemigoSilencioDaño.png)  
-*Figura 35: Daño Silencio de Negra*  
+![Silencio](./Imagenes_ReadMe/EnemigoSilencio.png)  
+*Figura 35: Enemigo Silencio de Negra*  
 
 <a id="figura-36"></a>
-![SilencioCaida](./Imagenes_ReadMe/EnemigoSilencioCaida.png)  
-*Figura 36: Caida Silencio de Negra*  
+![KeyframesSilenciodeNegra](./Imagenes_ReadMe/SilencioVolando.png)  
+*Figura 36: Keyframes Silencio de Negra*  
 
 <a id="figura-37"></a>
-![SilencioDerrota](./Imagenes_ReadMe/EnemigoSilencioMuerte.png)  
-*Figura 37: Eliminación Silencio de Negra*  
+![SilencioDaño](./Imagenes_ReadMe/EnemigoSilencioDaño.png)  
+*Figura 37: Daño Silencio de Negra*  
 
 <a id="figura-38"></a>
-![SSC](./Imagenes_ReadMe/EnemigoSilencioSC.png)  
-*Figura 38: Enemigo Silencio de Semicorchea*  
+![SilencioCaida](./Imagenes_ReadMe/EnemigoSilencioCaida.png)  
+*Figura 38: Caida Silencio de Negra*  
 
 <a id="figura-39"></a>
-![SSCDaño](./Imagenes_ReadMe/EnemigoSilencioSCDaño.png)  
-*Figura 39: Daño Silencio de Semicorchea*  
+![SilencioDerrota](./Imagenes_ReadMe/EnemigoSilencioMuerte.png)  
+*Figura 39: Eliminación Silencio de Negra*  
 
 <a id="figura-40"></a>
-![SSCDerrota](./Imagenes_ReadMe/EnemigoSilencioSCDerrota.png)  
-*Figura 40: Eliminación Silencio de Semicorchea*  
+![SSC](./Imagenes_ReadMe/EnemigoSilencioSC.png)  
+*Figura 40: Enemigo Silencio de Semicorchea*  
 
 <a id="figura-41"></a>
-![SilencioBlanca](./Imagenes_ReadMe/EnemigoSilencioBlanca.png)  
-*Figura 41: Enemigo Silencio de Blanca*  
+![SSCDaño](./Imagenes_ReadMe/EnemigoSilencioSCDaño.png)  
+*Figura 41: Daño Silencio de Semicorchea*  
 
 <a id="figura-42"></a>
-![SilencioBlancaDaño](./Imagenes_ReadMe/EnemigoSilencioBlancaDaño.png)  
-*Figura 42: Daño Silencio de Blanca*  
+![SSCDerrota](./Imagenes_ReadMe/EnemigoSilencioSCDerrota.png)  
+*Figura 42: Eliminación Silencio de Semicorchea*  
 
 <a id="figura-43"></a>
-![SilencioBlancaDerrota](./Imagenes_ReadMe/EnemigoSilencioBlancaDerrota.png)  
-*Figura 43: Eliminación Silencio de Blanca*  
+![SilencioBlanca](./Imagenes_ReadMe/EnemigoSilencioBlanca.png)  
+*Figura 43: Enemigo Silencio de Blanca*  
 
 <a id="figura-44"></a>
-![SilencioCorchea](./Imagenes_ReadMe/EnemigoSilencioCorchea.png)  
-*Figura 44: Enemigo Silencio de Corchea*  
+![SilencioBlancaDaño](./Imagenes_ReadMe/EnemigoSilencioBlancaDaño.png)  
+*Figura 44: Daño Silencio de Blanca*  
 
 <a id="figura-45"></a>
-![SilencioCorcheaDaño](./Imagenes_ReadMe/EnemigoSilencioCorcheaDaño.png)  
-*Figura 45: Daño Silencio de Corchea*  
+![SilencioBlancaDerrota](./Imagenes_ReadMe/EnemigoSilencioBlancaDerrota.png)  
+*Figura 45: Eliminación Silencio de Blanca*  
 
 <a id="figura-46"></a>
-![SilencioCorcheaDerrota](./Imagenes_ReadMe/EnemigoSilencioCorcheaDerrota.png)  
-*Figura 46: Eliminación Silencio de Corchea*  
+![SilencioCorchea](./Imagenes_ReadMe/EnemigoSilencioCorchea.png)  
+*Figura 46: Enemigo Silencio de Corchea*  
 
 <a id="figura-47"></a>
-![SilencioRedonda](./Imagenes_ReadMe/EnemigoSilencioRedonda.png)  
-*Figura 47: Enemigo Silencio de Semicorchea*  
+![SilencioCorcheaDaño](./Imagenes_ReadMe/EnemigoSilencioCorcheaDaño.png)  
+*Figura 47: Daño Silencio de Corchea*  
 
 <a id="figura-48"></a>
-![SilencioRedondaDaño](./Imagenes_ReadMe/EnemigoSilencioRedondaDaño.png)  
-*Figura 48: Daño Silencio de Semicorchea*  
+![SilencioCorcheaDerrota](./Imagenes_ReadMe/EnemigoSilencioCorcheaDerrota.png)  
+*Figura 48: Eliminación Silencio de Corchea*  
 
 <a id="figura-49"></a>
-![SilencioRedondaDerrota](./Imagenes_ReadMe/EnemigoSilencioRedondaDerrota.png)  
-*Figura 49: Eliminación Silencio de Semicorchea*  
-      
+![SilencioRedonda](./Imagenes_ReadMe/EnemigoSilencioRedonda.png)  
+*Figura 49: Enemigo Silencio de Redonda*  
+
 <a id="figura-50"></a>
-![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
-*Figura 50: Enemigo Clave de Sol*  
+![SilencioRedondaDaño](./Imagenes_ReadMe/EnemigoSilencioRedondaDaño.png)  
+*Figura 50: Daño Silencio de Redonda*  
 
 <a id="figura-51"></a>
-![ClaveKeyframes](./Imagenes_ReadMe/EnemigoClaveKeyframes.png)  
-*Figura 51: Keyframes Clave de Sol*  
-
+![SilencioRedondaDerrota](./Imagenes_ReadMe/EnemigoSilencioRedondaDerrota.png)  
+*Figura 51: Eliminación Silencio de Redonda*  
+      
 <a id="figura-52"></a>
-![ClaveDaño](./Imagenes_ReadMe/EnemigoClaveDaño.png)  
-*Figura 52: Daño Clave de Sol*  
+![Clave](./Imagenes_ReadMe/EnemigoClave.png)  
+*Figura 52: Enemigo Clave de Sol*  
 
 <a id="figura-53"></a>
-![ClaveDerrota](./Imagenes_ReadMe/EnemigoClaveDerrota.png)  
-*Figura 53: Eliminación Clave de Sol*  
+![ClaveKeyframes](./Imagenes_ReadMe/EnemigoClaveKeyframes.png)  
+*Figura 53: Keyframes Clave de Sol*  
 
 <a id="figura-54"></a>
-![ClaveFa](./Imagenes_ReadMe/ClaveFa.png)  
-*Figura 54: Enemigo Clave de Fa*  
+![ClaveDaño](./Imagenes_ReadMe/EnemigoClaveDaño.png)  
+*Figura 54: Daño Clave de Sol*  
 
 <a id="figura-55"></a>
-![ClaveFaDaño](./Imagenes_ReadMe/ClaveFaDaño.png)  
-*Figura 55: Daño Clave de Fa*  
+![ClaveDerrota](./Imagenes_ReadMe/EnemigoClaveDerrota.png)  
+*Figura 55: Eliminación Clave de Sol*  
 
 <a id="figura-56"></a>
-![ClaveFaDerrota](./Imagenes_ReadMe/ClaveFaDerrota.png)  
-*Figura 56: Eliminación Clave de Fa*  
+![ClaveFa](./Imagenes_ReadMe/ClaveFa.png)  
+*Figura 56: Enemigo Clave de Fa*  
 
 <a id="figura-57"></a>
-![ExplosiónNotas](./Imagenes_ReadMe/ExplosionMuerteNotas.png)  
-*Figura 57: Explosión de todas las Notas*  
+![ClaveFaKeyframes](./Imagenes_ReadMe/ClaveFaKeyframes.png)  
+*Figura 57: Keyframes Clave de Fa*  
 
-3. ###  **Bailarina**
 <a id="figura-58"></a>
-![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.png)  
-*Figura 58: Keyframes Bailarina*  
+![ClaveFaDaño](./Imagenes_ReadMe/ClaveFaDaño.png)  
+*Figura 58: Daño Clave de Fa*  
 
 <a id="figura-59"></a>
-![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
-*Figura 59: Keyframes Bailarina Levemente Dañada*  
+![ClaveFaDerrota](./Imagenes_ReadMe/ClaveDaDerrota.png)  
+*Figura 59: Eliminación Clave de Fa*  
 
 <a id="figura-60"></a>
-![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
-*Figura 60: Keyframes Bailarina Moderadamente Dañada*  
+![ExplosiónNotas](./Imagenes_ReadMe/ExplosionMuerteNotas.png)  
+*Figura 60: Explosión de todas las Notas*  
 
+3. ###  **Bailarina**
 <a id="figura-61"></a>
-![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
-*Figura 61: Keyframes Bailarina Gravemente Dañada*  
-  
+![KeyframesBailarina](./Imagenes_ReadMe/Bailarina.png)  
+*Figura 61: Keyframes Bailarina*  
+
 <a id="figura-62"></a>
+![BailarinaLevementeDañada](./Imagenes_ReadMe/BailarinaDañada1.png)  
+*Figura 62: Keyframes Bailarina Levemente Dañada*  
+
+<a id="figura-63"></a>
+![BailarinaModeradamenteDañada](./Imagenes_ReadMe/BailarinaDañada2.png)  
+*Figura 63: Keyframes Bailarina Moderadamente Dañada*  
+
+<a id="figura-64"></a>
+![BailarinaGravementeDañada](./Imagenes_ReadMe/BailarinaDañada3.png)  
+*Figura 64: Keyframes Bailarina Gravemente Dañada*  
+  
+<a id="figura-65"></a>
 ![BailarinaInicio](./Imagenes_ReadMe/BailarinaInicio.png)  
-*Figura 62: Keyframes Bailarina Inicio*  
+*Figura 65: Keyframes Bailarina Inicio*  
 
 4. ###  **Niveles**
 
-<a id="figura-63"></a>
-![BN1](./Imagenes_ReadMe/BocetoInterfazNivel1.png)  
-*Figura 63: Boceto Nivel 1*  
-
-<a id="figura-64"></a>
-![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
-*Figura 64: Nivel 1*  
-      
-<a id="figura-65"></a>
-![BN2](./Imagenes_ReadMe/BocetoInterfazNivel2.png)  
-*Figura 65: Boceto Nivel 2*  
-
 <a id="figura-66"></a>
-![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
-*Figura 66: Nivel 2*  
-      
-<a id="figura-67"></a>
-![BN3](./Imagenes_ReadMe/BocetoInterfazNivel3.png)  
-*Figura 67: Boceto Nivel 3*  
+![BN1](./Imagenes_ReadMe/BocetoInterfazNivel1.png)  
+*Figura 66: Boceto Nivel 1*  
 
+<a id="figura-67"></a>
+![N1](./Imagenes_ReadMe/InterfazNivel1.png)  
+*Figura 67: Nivel 1*  
+      
 <a id="figura-68"></a>
+![BN2](./Imagenes_ReadMe/BocetoInterfazNivel2.png)  
+*Figura 68: Boceto Nivel 2*  
+
+<a id="figura-69"></a>
+![N2](./Imagenes_ReadMe/InterfazNivel2.png)  
+*Figura 69: Nivel 2*  
+      
+<a id="figura-70"></a>
+![BN3](./Imagenes_ReadMe/BocetoInterfazNivel3.png)  
+*Figura 70: Boceto Nivel 3*  
+
+<a id="figura-71"></a>
 ![N3](./Imagenes_ReadMe/InterfazNivel3.png)  
-*Figura 68: Nivel 3*  
+*Figura 71: Nivel 3*  
+
+<a id="figura-72"></a>
+![N4](./Imagenes_ReadMe/InterfazNivel4.jpeg)  
+*Figura 72: Nivel 4*  
+
+<a id="figura-73"></a>
+![N5](./Imagenes_ReadMe/InterfazNivel5.jpeg)  
+*Figura 73: Nivel 5*  
+
+<a id="figura-74"></a>
+![N6](./Imagenes_ReadMe/InterfazNivel6.jpeg)  
+*Figura 74: Nivel 6*  
+
+<a id="figura-75"></a>
+![N7](./Imagenes_ReadMe/InterfazNivel7.jpeg)  
+*Figura 75: Nivel 7*  
+
+<a id="figura-76"></a>
+![N8](./Imagenes_ReadMe/InterfazNivel8.jpeg)  
+*Figura 76: Nivel 8*  
+
+<a id="figura-77"></a>
+![N9](./Imagenes_ReadMe/InterfazNivel9.jpeg)  
+*Figura 77: Nivel 9*  
 
 5. ###  **Botones**
-<a id="figura-69"></a>
+<a id="figura-78"></a>
 ![Boton1](./Imagenes_ReadMe/Boton1.png)  
 
 ![Boton2](./Imagenes_ReadMe/Boton2.png)  
@@ -805,24 +869,24 @@ Las piezas buscan parecer lo más mecánicas posibles y llenas de engranajes, al
 ![Boton3](./Imagenes_ReadMe/Boton3.png)  
 
 ![Boton4](./Imagenes_ReadMe/Boton4.png)  
-*Figura 69: Botones Menú Inicial*
+*Figura 78: Botones Menú Inicial*
 
 6. ###  **Interfaces**
 Aquí se muestran unos bocetos de las interfaces que se proponen. La mayoría son menús, pero durante la partida se mostrará la cantidad de vinilos que tendrá el jugador y una ayuda visual para facilitar seguir el ritmo de las torres. Para indicar la cantidad de vida que le queda a la bailarina se dispone de un indicador en la parte superior de la pantalla, pero se plantea el uso de otro tipo de indicador, como el estado de la propia bailarina que se vaya destruyendo para indicar la vida restante.
 
-<a id="figura-70"></a>
+<a id="figura-79"></a>
 ![Interfaces](./Imagenes_ReadMe/Interfaces.png)  
-*Figura 70: Interfaces*   
+*Figura 79: Interfaces*   
    
 ## 3. **Escenarios**
 El juego se ambienta dentro de una caja musical, donde destacarán las piezas mecánicas que la hacen funcionar en su interior.
 Se observará desde una vista militar donde se verá un tablero por donde se dará todo el gameplay. En el tablero habrán tiles para identificar las zonas donde se podrá poner las torretas, así como el raíl por donde pasan los enemigos. 
 
-<a id="figura-71"></a>
+<a id="figura-80"></a>
 ![Tileset](./Imagenes_ReadMe/Tileset.jpeg)  
-*Figura 71: Tileset*   
+*Figura 80: Tileset*   
 
-<a id="figura-72"></a>
+<a id="figura-81"></a>
 <table style="border: none;">
   <tr>
     <td align="center" style="border: none;">
@@ -843,7 +907,7 @@ Se observará desde una vista militar donde se verá un tablero por donde se dar
   </tr>
   <tr>
     <td colspan="5" align="center" style="border: none;">
-      <em>Figura 72: Decoraciones</em>
+      <em>Figura 81: Decoraciones</em>
     </td>
   </tr>
 </table>  
@@ -888,97 +952,97 @@ General:
 1. ## **Diseños de los menús**
 Las diferentes pantallas planteadas son las siguientes:
 - Menú inicial: Es la primera pantalla que se ve y la que permite acceder al resto de pantallas.
-  <a id="figura-73"></a>
+  <a id="figura-82"></a>
 ![BocetoMenuInicial](./Imagenes_ReadMe/BocetoInterfazMenuInicial.jpeg)  
-*Figura 73: Boceto Interfaz Menú Inicial*  
+*Figura 82: Boceto Interfaz Menú Inicial*  
 
-<a id="figura-74"></a>
+<a id="figura-83"></a>
 ![MenuInicial](./Imagenes_ReadMe/InterfazMenuInicial.png)  
-*Figura 74: Interfaz Menú Inicial*  
+*Figura 83: Interfaz Menú Inicial*  
   
 - Selector de dificultad: Al entrar en un nivel el jugador deberá elegir la dificultad del nivel, esto influenciará las características base de los enemigos.
   
-<a id="figura-75"></a>
+<a id="figura-84"></a>
 ![BocetoInterfazSelectorDificultad](./Imagenes_ReadMe/BocetoInterfazSelectorDificultad.jpeg)  
-*Figura 75: Boceto Interfaz Selector de Dificultad*  
+*Figura 84: Boceto Interfaz Selector de Dificultad*  
 
-<a id="figura-76"></a>
+<a id="figura-85"></a>
 ![InterfazSelectorDificultad](./Imagenes_ReadMe/InterfazSelectorDificultad.png)  
-*Figura 76: Interfaz Selector de Dificultad*  
+*Figura 85: Interfaz Selector de Dificultad*  
   
 - Tutorial: Una pantalla donde se explica cómo jugar, explicando las mecánicas y los objetivos.
     
-<a id="figura-77"></a>
+<a id="figura-86"></a>
 ![BocetoInterfazTutorial](./Imagenes_ReadMe/BocetoInterfazTutorial.jpeg)  
-*Figura 77: Boceto Interfaz Tutorial*  
+*Figura 86: Boceto Interfaz Tutorial*  
 
-<a id="figura-78"></a>
+<a id="figura-87"></a>
 ![InterfazTutorial](./Imagenes_ReadMe/InterfazTutorial.jpeg)  
-*Figura 78: Interfaz Tutorial*  
+*Figura 87: Interfaz Tutorial*  
 
 - Créditos: Es una pantalla donde aparecen los nombres de los integrantes del grupo y sus funciones.
 
-<a id="figura-79"></a>
+<a id="figura-88"></a>
 ![BocetoInterfazCréditos](./Imagenes_ReadMe/BocetoInterfazCréditos.jpeg)  
-*Figura 79: Boceto Interfaz Créditos*  
+*Figura 88: Boceto Interfaz Créditos*  
 
-<a id="figura-80"></a>
+<a id="figura-89"></a>
 ![InterfazCréditos](./Imagenes_ReadMe/InterfazCréditos.png)  
-*Figura 80: Interfaz Créditos*  
+*Figura 89: Interfaz Créditos*  
 
 - Partida: Es la pantalla más importante del juego, donde se jugarán las partidas.
-<a id="figura-81"></a>
+<a id="figura-90"></a>
 ![BocetoInterfazPartida](./Imagenes_ReadMe/BocetoInterfazPartida.jpeg)  
-*Figura 81: Boceto Interfaz Partida*  
+*Figura 90: Boceto Interfaz Partida*  
 
-<a id="figura-82"></a>
+<a id="figura-91"></a>
 ![InterfazPartida](./Imagenes_ReadMe/InterfazPartida.png)  
-*Figura 82: Interfaz Partida*  
+*Figura 91: Interfaz Partida*  
 
 - Patrones rítmicos: Esta pantalla será accesible durante la fase de construcción. En esta interfaz veremos el patrón rítmico que siguen las torretas para poder atacar.
 
-<a id="figura-83"></a>
+<a id="figura-92"></a>
 ![InterfazPatron](./Imagenes_ReadMe/InterfazPatron.png)  
-*Figura 83: Interfaz Patrón Rítmico*    
+*Figura 92: Interfaz Patrón Rítmico*    
 
 - Pausa: Esta pantalla solo será accesible dentro de la partida y permitirá viajar a otras pantallas, al igual que volver al juego.  
   
-<a id="figura-84"></a>
+<a id="figura-93"></a>
 ![BocetoInterfazPausa](./Imagenes_ReadMe/BocetoInterfazPausa.jpeg)  
-*Figura 84: Boceto Interfaz Pausa*    
+*Figura 93: Boceto Interfaz Pausa*    
 
-<a id="figura-85"></a>
+<a id="figura-94"></a>
 ![InterfazPausa](./Imagenes_ReadMe/InterfazPausa.png)  
-*Figura 85: Interfaz Pausa*  
+*Figura 94: Interfaz Pausa*  
       
 - Opciones: Se incorporará un menú de opciones que permite ajustar el volumen del juego.
 
-<a id="figura-86"></a>
+<a id="figura-95"></a>
 ![BocetoInterfazOpciones](./Imagenes_ReadMe/BocetoInterfazOpciones.jpeg)  
-*Figura 86: Boceto Interfaz Opciones*  
+*Figura 95: Boceto Interfaz Opciones*  
 
-<a id="figura-87"></a>
+<a id="figura-96"></a>
 ![InterfazOpciones](./Imagenes_ReadMe/InterfazOpciones.png)  
-*Figura 87: Interfaz Opciones*  
+*Figura 96: Interfaz Opciones*  
 
 - Pantalla de victoria o derrota: de aquí se podrá volver al menú inicial o pasar de nivel/repetir nivel en función del resultado de la partida.
   
-<a id="figura-88"></a>
+<a id="figura-97"></a>
 ![BocetoInterfazFinal](./Imagenes_ReadMe/BocetoInterfazFinal.jpeg)  
-*Figura 88: Boceto Pantalla Victoria o Derrota*  
+*Figura 97: Boceto Pantalla Victoria o Derrota*  
 
-<a id="figura-89"></a>
+<a id="figura-98"></a>
 ![InterfazFinalVV](./Imagenes_ReadMe/InterfazFinalVV.png)  
-*Figura 89: Pantalla Victoria*  
+*Figura 98: Pantalla Victoria*  
 
-<a id="figura-90"></a>
+<a id="figura-99"></a>
 ![InterfazFinalDD](./Imagenes_ReadMe/InterfazFinalDD.png)  
-*Figura 90: Pantalla Derrota*  
+*Figura 99: Pantalla Derrota*  
 
 2. ## **Diagrama de flujo**
-<a id="figura-91"></a>
+<a id="figura-100"></a>
 ![DiagramaInterfaces](./Imagenes_ReadMe/DiagramaInterfaces.png)  
-*Figura 91: Diagrama de Interfaces*  
+*Figura 100: Diagrama de Interfaces*  
 
 # **Hoja de ruta del desarrollo**
 ## **Hitos para la ALPHA:**
@@ -1023,8 +1087,29 @@ Se ha creado un nivel de juego con varias oleadas, cada una con distintos enemig
 Se ha añadido un tutorial de tipo manual para enseñar la funcionalidad del juego, incluyendo las mecánicas básicas y los patrones de cada torre.    
 
 ## **Hitos para la Release**
-1. ### **Hito 14: ejemplo de hito**
-Texto de ejemplo  
+1. ### **Hito 14: Creación nuevos enemigos**
+Tanto a nivel de arte como de programación se han creado nuevos enemigos para aumentar la variedad del juego.
+
+2. ### **Hito 15: Terminar animaciones**
+Se han animado todos los enemigos y torres, lo que incluye el idle, cuando reciben daño y las dos maneras de morir.
+
+3. ### **Hito 16: Crear todos los niveles y oleadas**
+Se han creado los nueve niveles pensados, con sus respectivos caminos, sitios para torres y oleadas diferentes.
+
+4. ### **Hito 17: Hacer el juego Responsive**
+Se han modificado ciertos aspectos del juego para que funcione correctamente en diferentes dispositivos.
+
+5. ### **Hito 18: Implementar el comportamiento de enemigos**
+Se han implementado comportamientos distintos para cada enemigo con el fin de no hacer las partidas monótonas.
+
+6. ### **Hito 19: Terminar el arte**
+Se ha terminado el arte del juego, creando nuevos enemigos, nuevas interfaces, animaciones,  etc.
+
+7. ### **Hito 20: Equilibrar los niveles**
+Se han modificado las oleadas y valores de los enemigos para que fuese coherente.
+
+8. ### **Hito 21: Solucionar bugs**
+Se han solucionado los bugs encontrados en la fase de betatesting y otros que se han descubierto o han surgido durante el desarrollo.
 
 ## **Fecha de lanzamiento**
 Se plantea el lanzamiento de la primera versión alpha para el día 19 de octubre del 2025.
@@ -1102,29 +1187,29 @@ Se plantea el lanzamiento del juego completo para el dia 9 de diciembre del 2025
 ### Lecciones aprendidas individuales
 
 1. #### Claudia Alejandra Fernández Torrejón  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Se avanzó a buen ritmo por lo que se logró acabar con todo el arte planeado para el juego a tiempo, así como assets extra para la entrega.
+   - **Cosas que se pueden mejorar**: Faltó añadir algún jefe más pensado, que no se pudo debido a su complejidad artística. Algo que se pudo haber evitado si hubiera tenido una mejor organización para tener una mayor holgura para acabar el arte.
 
 2. #### Iván García García  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Se ha ido haciendo el trabajo de forma continua en lugar de dejarlo para el final, ha habido comunicación y ayuda con los problemas que han surgido durante el desarrollo de parte del resto de miembros del equipo.
+   - **Cosas que se pueden mejorar**: Se ha utilizado mucho menos el trello lo que hacia el final a pocos días de la entrega, me confundió momentáneamente sobre el estado exacto del proyecto.
 
 3. #### George Picu Hordoan  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Se ha ido haciendo el trabajo poco a poco y no se ha dejado para el último momento. 
+   - **Cosas que se pueden mejorar**: Ajustar más las especificaciones o lo que se quiera hacer al tiempo disponible.
 
 4. #### Unai Retes Corada  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Mejor organización y eficiencia al trabajar, lo que desemboca en mejores resultados.
+   - **Cosas que se pueden mejorar**: No depender de que otra gente acabe su sección del proyecto para poder hacer algo, y trabajar más de forma paralela.
 
 5. #### Ángela Fernández Hernández  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Ir desarrollando el trabajo asignado a un buen ritmo, además de buscar en diferentes fuentes como hacer las cosas que se desconocían.
+   - **Cosas que se pueden mejorar**: Organizar mejor las tareas y la asignación.
 
 6. #### Arturo Carretero Aguado  
-   - **Cosas que se han hecho bien**:
-   - **Cosas que se pueden mejorar**:
+   - **Cosas que se han hecho bien**: Llevar el trabajo asignado al día y mantenernos constantes. Se ha planificado correctamente y llegado a terminar todo lo necesario para el release 3.0.0.
+   - **Cosas que se pueden mejorar**: Ha faltado clarificar la descripción de algunas tareas.
 
 ### Trabajo grupal  
-- **Cosas que se han hecho bien:**
-- **Cosas que se pueden mejorar:**
+- **Cosas que se han hecho bien:** Se ha avanzado a buen ritmo. Ha habido un buen ambiente de trabajo.
+- **Cosas que se pueden mejorar:** Ser más realistas con los objetivos a hacer. Mantener el uso de herramientas de gestión hasta el final del proyecto. Generar documentación a medida que se avance.
