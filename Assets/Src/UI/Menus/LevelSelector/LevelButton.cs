@@ -20,6 +20,7 @@ public class LevelButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public void OnPointerClick(PointerEventData eventData)
     {
         activeImage.sprite = _normalSprite;
+        transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         MenuManager.Instance.ChangeSceneAndState(_myScene, new UI.Menus.States.Gameplay());
     }
 

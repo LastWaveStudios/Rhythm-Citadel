@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0ac5916c8c0b438cbb631f2a76012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilesCount: 9
+  _tilesCount: 8
   _direction: 3
 --- !u!1 &1759142758
 GameObject:
