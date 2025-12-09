@@ -81,7 +81,7 @@ namespace Gameplay.Enemies
 
         private void StartStats()
         {
-            Debug.Log("Trying to get stats ");
+            //Debug.Log("Trying to get stats ");
             _stats = DifficultyManager.Instance.GetStats(this);
 
             _health = _stats.health;
@@ -90,7 +90,7 @@ namespace Gameplay.Enemies
             _preparationBeats = _stats.preparationBeats;
             _resistanceMultiplayer = _stats.reststanceMultiplayer;
 
-            Debug.Log("I got " + _preparationBeats + " preparations beats");
+            //Debug.Log("I got " + _preparationBeats + " preparations beats");
         }
 
         private void TakeReferences()
@@ -173,7 +173,7 @@ namespace Gameplay.Enemies
         public void PrepareMovement()
         {
             _currentPreparation++;
-            Debug.Log($"Enemy: {name} got {_currentPreparation} preparations beats");
+            //Debug.Log($"Enemy: {name} got {_currentPreparation} preparations beats");
 
             StartCoroutine(ScaleOffset(_timeOfNote, Utilities.EasingFunctions.EaseOutQuart));
         }

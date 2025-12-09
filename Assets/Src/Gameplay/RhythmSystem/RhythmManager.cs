@@ -94,7 +94,7 @@ namespace Gameplay.RhythmSystem
 
                 if (SixteenthCount == 0)
                 {
-                    Debug.Log("-------------------------------------------");
+                    //Debug.Log("-------------------------------------------");
                     MeasureCount++;
                     onMeasure.Invoke(); // Important do the callback after the count increase for the logic of GetNextMeasureTime
                 }

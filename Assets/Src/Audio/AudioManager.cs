@@ -51,7 +51,7 @@ namespace Audio
                     _SFXVol = value;
                     break;
                 default:
-                    Debug.Log("AudioManager::SetVolume: ERROR IN SET VOLUME UNKOWN AUDIO CHANNEL: " + channel);
+                    Debug.LogError("AudioManager::SetVolume: ERROR IN SET VOLUME UNKOWN AUDIO CHANNEL: " + channel);
                     return;
             }
         }

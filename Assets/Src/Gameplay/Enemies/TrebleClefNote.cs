@@ -118,7 +118,7 @@ namespace Gameplay.Enemies
             _health += (stealHealth <= _maxHpRestore? stealHealth : _maxHpRestore);
             
             // TODO: Do some particles or animation for the stealth of HP
-            Debug.Log("Stealth Health");
+            //Debug.Log("Stealth Health");
         }
 
         public float GetMaxHealth()

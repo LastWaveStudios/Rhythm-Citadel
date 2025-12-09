@@ -43,19 +43,19 @@ namespace AIBehaviourAPI.Demos
 
         private void ChangeRed()
         {
-            Debug.Log("Change Red");
+            //Debug.Log("Change Red");
             _spriteRenderer.color = Color.red;
         }
 
         private void ChangeGreen()
         {
-            Debug.Log("Change Green");
+            //Debug.Log("Change Green");
             _spriteRenderer.color = Color.green;
         }
 
         private void ChangeBlue()
         {
-            Debug.Log("Change Blue");
+            //Debug.Log("Change Blue");
             _spriteRenderer.color = Color.blue;
         }
         #endregion

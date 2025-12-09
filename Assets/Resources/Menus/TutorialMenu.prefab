@@ -2046,6 +2046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 1
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1389923269345685262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4716,6 +4717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 5
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &3054042251991305117
 GameObject:
   m_ObjectHideFlags: 0
@@ -6599,6 +6601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &4376335447037443951
 GameObject:
   m_ObjectHideFlags: 0
@@ -8373,6 +8376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 3
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &5966238679569613694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8524,6 +8528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 7
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &6015040849461759779
 GameObject:
   m_ObjectHideFlags: 0
@@ -10817,6 +10822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 6
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &7272391725399190637
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,7 +11337,6 @@ GameObject:
   - component: {fileID: 8232789301366144322}
   - component: {fileID: 2203802565175211117}
   - component: {fileID: 5447648112057000324}
-  - component: {fileID: 40269257111825409}
   m_Layer: 5
   m_Name: Piano
   m_TagString: Untagged
@@ -11398,19 +11403,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &40269257111825409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759110161064211976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071d6a37f80da9a499c3a14e01d3fb8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _myGroup: 0
 --- !u!1 &7820092421692480997
 GameObject:
   m_ObjectHideFlags: 0
@@ -12070,6 +12062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuReference: {fileID: 706847298692361652}
   _idxToGo: 2
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &8337816740976371566
 GameObject:
   m_ObjectHideFlags: 0

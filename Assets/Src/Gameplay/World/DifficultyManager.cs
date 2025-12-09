@@ -39,7 +39,7 @@ namespace Gameplay.World
             }
             catch (Exception e)
             {
-                Debug.Log("Something went wrong trying to get the stats from Difficulty Manager");
+                Debug.LogError("Something went wrong trying to get the stats from Difficulty Manager");
                 Debug.LogException(e);
             }
             return null;

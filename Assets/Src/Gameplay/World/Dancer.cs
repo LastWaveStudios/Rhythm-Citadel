@@ -95,7 +95,7 @@ namespace Gameplay.World
             {
                 _spriteRender.sprite = normalFrames[currentFrame];
             }
-            Debug.Log("Current frame: " + currentFrame);
+            //Debug.Log("Current frame: " + currentFrame);
         }
 
         public void CheckDeath()

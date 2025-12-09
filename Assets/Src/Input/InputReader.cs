@@ -24,7 +24,7 @@ namespace Input
         {
             base.Awake();
             actions = new Actions();
-            EnableBuildActions();
+            actions.Disable();
             useMobileInput = Application.isMobilePlatform
                          || SystemInfo.deviceType == DeviceType.Handheld;
         }
@@ -74,7 +74,7 @@ namespace Input
 
         public void OnPlaceTower(InputAction.CallbackContext context)
         {
-            Debug.Log("COLOCAR TORRES");
+            //Debug.Log("COLOCAR TORRES");
             if (context.phase == InputActionPhase.Started) onPlaceTower.Invoke();
         }
         public void OnChangeToBattlePhase(InputAction.CallbackContext context)
@@ -124,22 +124,22 @@ namespace Input
         public void MobileGroup1()
         {
             onTapGroup.Invoke(0);
-            Debug.Log("Disparo TAMBOR");
+            //Debug.Log("Disparo TAMBOR");
         }
         public void MobileGroup2()
         {
             onTapGroup.Invoke(1);
-            Debug.Log("Disparo PIANO");
+            // Debug.Log("Disparo PIANO");
         }
         public void MobileGroup5()
         {
             onTapGroup.Invoke(4);
-            Debug.Log("Disparo TROMPETA");
+            // Debug.Log("Disparo TROMPETA");
         }
         public void MobileGroup6()
         {
             onTapGroup.Invoke(5);
-            Debug.Log("Disparo VIOLIN");
+            // Debug.Log("Disparo VIOLIN");
         }
 
     }

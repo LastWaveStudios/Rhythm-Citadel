@@ -76,7 +76,7 @@ namespace Audio
                 _currentMeasure = 1;
                 _currentClipsRhythms = _nextClipsRhythms;
                 _changeOnNextMeasure = false;
-                Debug.Log("Change the clips now");
+                //Debug.Log("Change the clips now");
             }
 
             List<int> clipsToEnd = new List<int>();

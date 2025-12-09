@@ -107,7 +107,7 @@ namespace Gameplay.Towers
         {
             if (groupIndex >= NUMBER_OF_GROUPS && groupIndex < 0)
             {
-                Debug.Log($"TowersManager::{methodNameForDebug} the groupIndex is not valid: {groupIndex}; maxIndexAllow: {NUMBER_OF_GROUPS - 1}");
+                Debug.LogError($"TowersManager::{methodNameForDebug} the groupIndex is not valid: {groupIndex}; maxIndexAllow: {NUMBER_OF_GROUPS - 1}");
                 return false;
             }
             return true;
