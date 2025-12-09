@@ -178,16 +178,14 @@ namespace Gameplay
 
         public void Victory()
         {
-
+            InputReader.Instance.DisableAll();
             MenuManager.Instance.SetState(new UI.Menus.States.Victory());
-
         }
 
         public void Defeat()
         {
-
+            InputReader.Instance.DisableAll();
             MenuManager.Instance.SetState(new UI.Menus.States.Defeat());
-                
         }
 
         private void OnDestroy()

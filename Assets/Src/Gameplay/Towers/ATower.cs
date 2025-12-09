@@ -39,7 +39,8 @@ namespace Gameplay.Towers
         [SerializeField] protected float _timeOfAnimation = 0.5f;
         [SerializeField] protected float _scaleFactorForShoot = 0.9f;
         [SerializeField] protected float _scaleFactorForFail = 1.2f;
-        
+
+        private Vector3 _startOriginScale;
         private Vector3 _originScale;
         private Vector3 _offsetScale;
         
@@ -68,6 +69,7 @@ namespace Gameplay.Towers
         {
             ServiceLocatorSubsystem.SubscribeToInitialice(Init);
             sprite = GetComponent<SpriteRenderer>();
+            _startOriginScale = transform.localScale;
         }
 
         private void Init()
@@ -258,7 +260,7 @@ namespace Gameplay.Towers
 
         private IEnumerator ShootAnimationScale(Func<float, float> easingFunction = null)
         {
-            Vector3 originScale = transform.localScale;
+            Vector3 originScale = _startOriginScale;
             Vector3 targetScale = new Vector3(originScale.x, originScale.y * _scaleFactorForShoot, originScale.z);
             
             float t = 0.0f;

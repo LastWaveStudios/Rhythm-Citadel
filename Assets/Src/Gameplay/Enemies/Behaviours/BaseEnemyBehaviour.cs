@@ -24,16 +24,16 @@ namespace Gameplay.Enemies.Behaviours
             NodeFSM prepareMovementNodeFsm = new NodeFSM("Prepare Movement", _enemy.PrepareMovement);
             NodeFSM moveNodeFsm = new NodeFSM("Move", _enemy.Move);
             
+            TransitionFSM goAttackTransition = new TransitionFSM(prepareMovementNodeFsm, deathNodeFsm, "prepareMovement to death (attack)", _enemy.IsInTarget, _enemy.Attack);
             TransitionFSM finishMovementPreparationTransition = new TransitionFSM(prepareMovementNodeFsm, moveNodeFsm, "prepareMovement to move", _enemy.IsMovementPrepared);
             TransitionFSM movementFinishTransition = new TransitionFSM(moveNodeFsm, prepareMovementNodeFsm, "move to prepareMovement", () => true, _enemy.RestartMovementPreparation);
-            TransitionFSM goAttackTransition = new TransitionFSM(prepareMovementNodeFsm, deathNodeFsm, "prepareMovement to death (attack)", _enemy.IsInTarget, _enemy.Attack);
             
             aliveFSM.RegisterNode(prepareMovementNodeFsm);
             aliveFSM.RegisterNode(moveNodeFsm);
 
+            aliveFSM.RegisterTransition(goAttackTransition);
             aliveFSM.RegisterTransition(finishMovementPreparationTransition);
             aliveFSM.RegisterTransition(movementFinishTransition);
-            aliveFSM.RegisterTransition(goAttackTransition);
             
             aliveFSM.Init(prepareMovementNodeFsm);
             aliveFSM.Pause(); // Always must have on the internal FSM
