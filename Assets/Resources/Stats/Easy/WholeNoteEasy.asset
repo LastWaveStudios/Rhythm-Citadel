@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WholeNoteEasy
   m_EditorClassIdentifier: 
   enemyClassName: Gameplay.Enemies.WholeNote
-  health: 200
+  health: 250
   damage: 25
   vinylDrop: 20
-  preparationBeats: 4
+  preparationBeats: 2
   reststanceMultiplayer: 0

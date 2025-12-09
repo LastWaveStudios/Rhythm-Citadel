@@ -16,5 +16,5 @@ MonoBehaviour:
   health: 180
   damage: 12
   vinylDrop: 10
-  preparationBeats: 4
+  preparationBeats: 3
   reststanceMultiplayer: 50

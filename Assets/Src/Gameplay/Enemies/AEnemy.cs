@@ -197,7 +197,7 @@ namespace Gameplay.Enemies
         {
             if (RemoveShield(1)) return;
 
-            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * _resistanceMultiplayer);
+            if (_resistance == type) _health = (int)Mathf.Round(_health - damageToTake * GetDamageMultyplayer(type));
             else _health -= damageToTake;
 
             _animator.SetTrigger("Hitted");
@@ -206,6 +206,20 @@ namespace Gameplay.Enemies
                 //Debug.LogWarning($"Enemy: {name} enter Push Dead");
                 PushDeath();
             }
+        }
+
+        private float GetDamageMultyplayer(DamageType damageRecivedType)
+        {
+            if (_resistanceMultiplayer == 0) return 1f;
+
+            if (damageRecivedType == DamageType.Hybrid)
+            {
+                if (_resistance == DamageType.Hybrid) return (_resistanceMultiplayer / 40f);
+                else return _resistanceMultiplayer / 20f;
+            }
+            if (_resistance == DamageType.Hybrid) return (_resistanceMultiplayer / 20f);
+            if (damageRecivedType == _resistance) return (_resistanceMultiplayer / 100f);
+            return 1f;
         }
 
         // Return true if can remove the shield and 0 if not
