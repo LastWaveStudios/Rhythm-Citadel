@@ -101,6 +101,11 @@ namespace Gameplay.World
             return tilesInRange;
         }
 
+        public bool IsPositionOnPathTileMap(Vector3Int position)
+        {
+            return _pathTilemap.HasTile(position);
+        }
+
         #region -------------------- HIGHLIGHT --------------------
         /// <summary>
         /// We have a dictionary so we can reach every tile courutine

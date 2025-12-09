@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1362909699
+  m_SortingLayerID: 1594761013
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 8929369444933569912, guid: 9b41b51fdcaff684ca25c4673119dc21, type: 3}
@@ -141,6 +141,9 @@ MonoBehaviour:
   _damageMultiplier: 1.15
   _timeForProjectile: 0.5
   _bulletOffset: {x: 0, y: 1.2, z: 0}
+  _timeOfAnimation: 0.5
+  _scaleFactorForShoot: 0.9
+  _scaleFactorForFail: 1.2
   frames:
   - {fileID: 8929369444933569912, guid: 9b41b51fdcaff684ca25c4673119dc21, type: 3}
   - {fileID: 1430248681303602984, guid: 9b41b51fdcaff684ca25c4673119dc21, type: 3}

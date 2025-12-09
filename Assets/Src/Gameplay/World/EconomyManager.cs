@@ -38,12 +38,14 @@ namespace Gameplay.World
         #region Services references
         private WaveManager _waveManager;
         private TowersManager _towersManager;
+        private WorldManager _worldManager;
         #endregion
 
         public override void Init()
         {
             _waveManager = ServiceLocatorSubsystem.Instance.GetService<WaveManager>();
             _towersManager = ServiceLocatorSubsystem.Instance.GetService<TowersManager>();
+            _worldManager = ServiceLocatorSubsystem.Instance.GetService<WorldManager>();
 
             _waveManager.onEnemyDeath += AddVinyl;
         }
@@ -139,10 +141,23 @@ namespace Gameplay.World
 
             ATower aTower = instantiatedTower.GetComponent<ATower>();
             aTower.SetTile(spawnPosition);
+            SetOrderInLayer(aTower, spawnPosition);
             _towersManager.AddTower(aTower, aTower.GetGroup());
 
             // TODO: Not really god have it here
             _towersManager.SetPatternGroup(aTower.GetPattern(), aTower.GetGroup());
+        }
+
+        private void SetOrderInLayer(ATower tower, Vector3Int position)
+        {
+            if (_worldManager.IsPositionOnPathTileMap(position + Vector3Int.up))
+            {
+                tower.SetSortingInLayer(10);
+            }
+            else if (_worldManager.IsPositionOnPathTileMap(position + Vector3Int.down))
+            {
+                tower.SetSortingInLayer(-10);
+            }
         }
 
         /// <summary>
