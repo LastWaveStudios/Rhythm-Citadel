@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Replay Level
+  m_text: Next Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1bc59f9fd91444e40a6c2ad81ca13b3a, type: 2}
   m_sharedMaterial: {fileID: -1103584226445303036, guid: 1bc59f9fd91444e40a6c2ad81ca13b3a, type: 2}
@@ -657,8 +657,8 @@ GameObject:
   - component: {fileID: 5856893138327692537}
   - component: {fileID: 3814723436148707929}
   - component: {fileID: 8094542357114505212}
-  - component: {fileID: 701626535860445688}
   - component: {fileID: 2358424904865930308}
+  - component: {fileID: 2487982799474884240}
   m_Layer: 5
   m_Name: ReplayButton
   m_TagString: Untagged
@@ -746,19 +746,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &701626535860445688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7402042456677407223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f87e544394a914eb55a3fafa913d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: 1
 --- !u!114 &2358424904865930308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,3 +758,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c926235c9694a242a5d633d15daac80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2487982799474884240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7402042456677407223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6d01ff600a8f24399b5542766e0f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myScene: 
