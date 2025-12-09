@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuarterHard
   m_EditorClassIdentifier: 
   enemyClassName: Gameplay.Enemies.QuarterNote
-  health: 100
+  health: 80
   damage: 15
   vinylDrop: 5
   preparationBeats: 3

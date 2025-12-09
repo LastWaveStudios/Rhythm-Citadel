@@ -1,6 +1,7 @@
 using UI.Menus.Navigation;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace UI.Menus.States
@@ -15,7 +16,7 @@ namespace UI.Menus.States
             switch (option)
             {
                 case EMenuButton.Play:
-                    MenuManager.Instance.ChangeSceneAndState("BaseLevel", new Gameplay());
+                    MenuManager.Instance.ChangeSceneAndState(SceneManager.GetActiveScene().name, new Gameplay());
                     break;
                 case EMenuButton.ReturnToMainMenu:
                     MenuManager.Instance.ChangeSceneAndState("MainMenu", new Main());
