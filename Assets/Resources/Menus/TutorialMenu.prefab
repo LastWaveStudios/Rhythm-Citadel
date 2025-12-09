@@ -4804,6 +4804,7 @@ GameObject:
   - component: {fileID: 8840062406169843933}
   - component: {fileID: 2126887311298122493}
   - component: {fileID: 4196589241093318905}
+  - component: {fileID: 5420820747518978212}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -4828,7 +4829,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 148.9, y: 127}
+  m_SizeDelta: {x: 191, y: 147}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8335399380729263439
 CanvasRenderer:
@@ -4896,6 +4897,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5420820747518978212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092540984511019481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a69c9c9238a20b438719e8b49fc8c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normalSprite: {fileID: 2118856551448195418, guid: 7c66696978efacd4e9e77d5a83c3c4e3, type: 3}
+  _hoverSprite: {fileID: -4703626094158423282, guid: 78c66fd05e88ed245a46a82f921b2323, type: 3}
 --- !u!1 &3099522530230121774
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,7 +6205,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 6253825733555535705, guid: 351a6dc31b89ab3419d17b963046fcd1, type: 3}
     m_PressedSprite: {fileID: 6253825733555535705, guid: 351a6dc31b89ab3419d17b963046fcd1, type: 3}
     m_SelectedSprite: {fileID: -9174947321595496092, guid: 390b131b172979f4b9ff6398182a6a23, type: 3}
     m_DisabledSprite: {fileID: -9174947321595496092, guid: 390b131b172979f4b9ff6398182a6a23, type: 3}
@@ -10486,7 +10501,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 1188136122282792399, guid: 7529eb7ba778c5a45b0688e72d548902, type: 3}
     m_PressedSprite: {fileID: 1188136122282792399, guid: 7529eb7ba778c5a45b0688e72d548902, type: 3}
     m_SelectedSprite: {fileID: -5400373965551405726, guid: 6e61cf01cac3e2040a71d729388eb7f3, type: 3}
     m_DisabledSprite: {fileID: -5400373965551405726, guid: 6e61cf01cac3e2040a71d729388eb7f3, type: 3}

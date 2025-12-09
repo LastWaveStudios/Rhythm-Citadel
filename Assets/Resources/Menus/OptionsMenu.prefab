@@ -3004,7 +3004,8 @@ GameObject:
   - component: {fileID: 4970029326620558700}
   - component: {fileID: 4504227038639315392}
   - component: {fileID: 2090135328936203432}
-  - component: {fileID: 6540607118224368964}
+  - component: {fileID: 923963543278340220}
+  - component: {fileID: 3117306538683057907}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -3029,7 +3030,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 278, y: 231}
+  m_SizeDelta: {x: 191, y: 147}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4970029326620558700
 CanvasRenderer:
@@ -3067,7 +3068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: 5
---- !u!114 &6540607118224368964
+--- !u!114 &923963543278340220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3076,7 +3077,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7091786630596454757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a69c9c9238a20b438719e8b49fc8c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _normalSprite: {fileID: 2118856551448195418, guid: 7c66696978efacd4e9e77d5a83c3c4e3, type: 3}
+  _hoverSprite: {fileID: -4703626094158423282, guid: 78c66fd05e88ed245a46a82f921b2323, type: 3}
+--- !u!114 &3117306538683057907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091786630596454757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -3087,13 +3102,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7c66696978efacd4e9e77d5a83c3c4e3, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+  m_Sprite: {fileID: 2118856551448195418, guid: 7c66696978efacd4e9e77d5a83c3c4e3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7210210793238440737
 GameObject:
   m_ObjectHideFlags: 0
