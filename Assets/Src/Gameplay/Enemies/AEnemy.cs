@@ -6,6 +6,7 @@ using Gameplay.Enemies.Common;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utilities.ServiceLocator;
+using TMPro;
 
 
 namespace Gameplay.Enemies
@@ -57,6 +58,12 @@ namespace Gameplay.Enemies
         protected WorldManager _worldManager;
         protected RhythmManager _rhythmManager;
         protected Dancer _dancer;
+
+        // AI Display
+
+        [SerializeField] public TMP_Text actionDisplayTextLevel1;
+        [SerializeField] public TMP_Text actionDisplayTextLevel2;
+        
 
         #endregion
 

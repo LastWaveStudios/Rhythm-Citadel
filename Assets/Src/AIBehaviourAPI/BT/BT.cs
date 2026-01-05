@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using AIBehaviourAPI.Fsm;
+using TMPro;
+using UnityEngine;
 
 namespace AIBehaviourAPI.Bt
 {
@@ -26,19 +28,21 @@ namespace AIBehaviourAPI.Bt
         public string Name => _name;
         
         public List<INode> Nodes => _nodes;
+        private TMP_Text _currentNodeDisplay;
 
         /// <summary>
         /// Creates a Behaviour Tree
         /// </summary>
         /// <param name="name"> Name of the Behaviour tree just for debug and exceptions info </param>
         /// <param name="numberOfNodes"> Number of nodes that will have the BehaviourTree is just for allocate all the memory at once, so it will work fine if not set </param>
-        public BT(string name, int numberOfNodes = 0)
+        public BT(string name, int numberOfNodes = 0, TMP_Text display = null)
         {
             _name = name;
             _nodes = new List<INode>(numberOfNodes);
-            
+
             _status = Status.None;
             _currentNode = null;
+            _currentNodeDisplay = display;
         }
         
         public void Init(INode initialNode)
@@ -53,7 +57,7 @@ namespace AIBehaviourAPI.Bt
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, initialNode);
             _currentNode = initialNode;
         }
-        
+
         /// <summary>
         ///  Updates and do all the logic of the nodes until the nodes result of the _initialNode was reach again the result
         ///  If That result is true the BT is not finish (but will not execute nothing until the next update execution)
@@ -63,10 +67,13 @@ namespace AIBehaviourAPI.Bt
         {
             if (_status != Status.Running)
                 throw new BehaviourAPIException($"Cannot update BT: {_name} if is not in Running state.");
-            
+
+            _currentNodeDisplay.text = CurrentNode.Name;
+
             if (_rootNode.Condition()) return;
 
             _status = Status.Finished;
+            
         }
 
         public void Finish()

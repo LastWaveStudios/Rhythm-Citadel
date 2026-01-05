@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 namespace AIBehaviourAPI.Fsm
 {
@@ -30,8 +31,13 @@ namespace AIBehaviourAPI.Fsm
         
         public List<INode> Nodes => _nodes;
         public List<ITransition> Transitions => _transitions;
+
+        // AI Display
+
+        private TMP_Text _currentActionDisplayText;
+
         #endregion
-        
+
         /// <summary>
         /// Contructor of an FSM
         /// </summary>
@@ -39,18 +45,20 @@ namespace AIBehaviourAPI.Fsm
         /// <param name="mustRestartToInitialNode"> True if the graph must restart if his execution is cut false in case not (Default = true) (used just for submachines)</param>
         /// <param name="numberOfNodes"> Number of nodes that will be allocated at start (just for reduce the memory allocations) (Default = 0)</param>
         /// <param name="numberOfTransitions"> Number of transitions that will be allocated at start (just for reduce the memory allocations) (Default = 0)</param>
-        public FSM(string name, bool mustRestartToInitialNode = true, int numberOfNodes = 0, int numberOfTransitions = 0)
+        public FSM(string name, bool mustRestartToInitialNode = true, int numberOfNodes = 0, int numberOfTransitions = 0, TMP_Text displayText = null)
         {
             _name = name;
             _mustRestartToInitialNode = mustRestartToInitialNode;
-            
+
             _nodes = new List<INode>(numberOfNodes);
             _transitions = new List<ITransition>(numberOfTransitions);
-            
+
             _status = Status.None;
             _currentNode = null;
+
+            _currentActionDisplayText = displayText;
         }
-        
+
         #region --------------------------- Control Methods ---------------------------
         public void Init(INode initialNode)
         {
@@ -63,6 +71,7 @@ namespace AIBehaviourAPI.Fsm
             _initialNode = initialNode;
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, initialNode);
             _currentNode = initialNode;
+            _currentActionDisplayText.text = _currentNode.Name;
         }
 
         /// <summary>
@@ -85,6 +94,7 @@ namespace AIBehaviourAPI.Fsm
                 }
             }
             _currentNode.Action?.Invoke();
+            _currentActionDisplayText.text = _currentNode.Name;
         }
 
         public void Finish()

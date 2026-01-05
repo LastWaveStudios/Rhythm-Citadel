@@ -13,7 +13,7 @@ namespace Gameplay.Enemies.Behaviours
         {
             _enemy = enemy;
 
-            _bt = new BT("Whole note BT", 13);
+            _bt = new BT("Whole note BT", 13, _enemy.actionDisplayTextLevel1);
 
             LeafNode attackLN = new LeafNode("Attack Leaf Node", _enemy.Attack, true);
             ConditionsAndActionsLeafNode moveCALN = new ConditionsAndActionsLeafNode("Move Leaf Node", () => !_enemy.IsInTarget(), () =>
