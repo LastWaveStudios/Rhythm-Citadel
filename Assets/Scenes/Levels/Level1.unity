@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 364334350}
   m_Layer: 0
   m_Name: BuildingLayer
-  m_TagString: Untagged
+  m_TagString: TowerLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 376614608}
   m_Layer: 7
   m_Name: PathLayer
-  m_TagString: Untagged
+  m_TagString: PathLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5159,6 +5159,14 @@ PrefabInstance:
       propertyPath: TowersButton
       value: 
       objectReference: {fileID: 580433219}
+    - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: _waves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: '_waves.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a38fa8496e036846a07aae19b09c5b9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

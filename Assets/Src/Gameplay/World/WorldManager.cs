@@ -32,6 +32,24 @@ namespace Gameplay.World
             return _paths[pathID].GetTile(currentIndex + 1);
         }
 
+        public Vector3Int GetRandomTile(Vector3 position)
+        {
+            Vector3Int currentPos = GetCellFromWorldPos(position);
+            int direction = UnityEngine.Random.Range(0, 4);
+            switch (direction)
+            {
+                case 0:
+                    return (currentPos + new Vector3Int(0, 1, 0));
+                case 1:
+                    return (currentPos + new Vector3Int(0, -1, 0));
+                case 2:
+                    return (currentPos + new Vector3Int(1, 0, 0));
+                case 3:
+                    return (currentPos + new Vector3Int(-1, 0, 0));
+            }
+            return currentPos;
+        }
+
         public Vector3Int GetTile(int pathID, int index)
         {
             return _paths[pathID].GetTile(index);

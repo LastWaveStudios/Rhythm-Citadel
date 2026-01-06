@@ -8,6 +8,9 @@ TagManager:
   - PathObject
   - SpawnPoint
   - HighlightLayer
+  - Minion
+  - PathLayer
+  - TowerLayer
   layers:
   - Default
   - TransparentFX
