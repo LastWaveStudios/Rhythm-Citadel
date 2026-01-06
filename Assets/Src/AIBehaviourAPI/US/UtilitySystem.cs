@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using AIBehaviourAPI.US.DecisionFactors;
+using TMPro;
+using UnityEngine;
 
 namespace AIBehaviourAPI.US
 {
@@ -27,7 +30,7 @@ namespace AIBehaviourAPI.US
         /// <summary>
         /// In this behaviour engine this is not used
         /// </summary>
-        public Action<INode, INode> OnCurrentNodeDoesTransition 
+        public Action<INode, INode> OnCurrentNodeDoesTransition
         {
             get { return _onCurrentNodeDoesTransition; }
             set { _onCurrentNodeDoesTransition = value; }
@@ -43,7 +46,13 @@ namespace AIBehaviourAPI.US
         public List<float> UtilityValues => _utilityValues;
         public USMode Mode => _mode;
 
+        //Display Texts
         
+        private List<TMP_Text> _perceptionTexts;
+        private List<TMP_Text> _decisionFactorTexts;
+        private TMP_Text _actionText;
+
+
         /// <summary>
         /// Create a Utility System
         /// </summary>
@@ -51,7 +60,8 @@ namespace AIBehaviourAPI.US
         /// <param name="mode"> The for select the action if set to custom you must call before any update call to the US to SetCustomFunction method for give the custom mode </param>
         /// <param name="numberOfNodes"> number of nodes(including all types of nodes) just for have it the memory allocations do it at once </param>
         /// <param name="numberOfActionNodes"> number of action nodes just for have it the memory allocations do it at once </param>
-        public UtilitySystem(string name, USMode mode, int numberOfNodes = 0, int numberOfActionNodes = 0)
+        public UtilitySystem(string name, USMode mode, int numberOfNodes = 0, int numberOfActionNodes = 0,
+                            List<TMP_Text> perceptionTextList = null, List<TMP_Text> DFTextList = null, TMP_Text actionText = null)
         {
             _name = name;
             _nodes = new List<ANodeUS>(numberOfNodes);
@@ -60,6 +70,10 @@ namespace AIBehaviourAPI.US
 
             _mode = mode;
             _status = Status.None;
+
+            _perceptionTexts = perceptionTextList;
+            _decisionFactorTexts = DFTextList;
+            _actionText = actionText;
         }
 
         /// <summary>
@@ -96,10 +110,35 @@ namespace AIBehaviourAPI.US
 
             if (_actionNodes.Count != _utilityValues.Count)
                 throw new BehaviourAPIException($"The size of the actions missmatch the size of the utility values US: {_name}; size of actions: {_actionNodes.Count}; size of  utility values: {_utilityValues.Count}.");
-            
+
             for (int i = 0; i < _actionNodes.Count; ++i)
             {
                 _utilityValues[i] = _actionNodes[i].GetUtilityValue();
+
+                if (_perceptionTexts != null && i < _perceptionTexts.Count){
+                    _perceptionTexts[i].text =
+                        $"{_actionNodes[i].Name}: {_utilityValues[i]:0.00}";
+                }
+            }
+
+            if (_decisionFactorTexts != null){
+
+                int dfIndex = 0;
+                foreach (ANodeUS node in _nodes)
+                {
+
+                    if (node is UtilityPerception)
+                        continue;
+
+                    if (node is UtilityAction)
+                        continue;
+
+                    if (dfIndex >= _decisionFactorTexts.Count)
+                        break;
+
+                    _decisionFactorTexts[dfIndex].text = $"{node.Name}: {node.GetUtilityValue():0.00}";
+                    dfIndex++;
+                }
             }
 
             switch (_mode)
@@ -114,6 +153,8 @@ namespace AIBehaviourAPI.US
                     int[] indices = _customFunction?.Invoke(_utilityValues);
                     foreach (int i in indices)
                     {
+                        if (_actionText != null)
+                            _actionText.text = _actionNodes[i].Name;
                         _actionNodes[i].Action();
                     }
                     return;
@@ -122,7 +163,7 @@ namespace AIBehaviourAPI.US
             }
             
         }
-        
+
         private void MinModeLogic()
         {
             float min = float.MaxValue;
@@ -136,7 +177,13 @@ namespace AIBehaviourAPI.US
                 }
             }
 
-            if (index != -1) _actionNodes[index].Action();
+            if (index != -1)
+            {
+                if (_actionText != null)
+                    _actionText.text = _actionNodes[index].Name;
+                _actionNodes[index].Action();
+            }
+            
         }
 
         private void MaxModeLogic()
@@ -152,7 +199,14 @@ namespace AIBehaviourAPI.US
                 }
             }
 
-            if (index != -1) _actionNodes[index].Action();
+            if (index != -1)
+            {
+                if (_actionText != null)
+                    _actionText.text = _actionNodes[index].Name;
+                _actionNodes[index].Action();
+            }
+
+            
         }
 
 
