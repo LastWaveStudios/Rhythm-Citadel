@@ -17,4 +17,4 @@ MonoBehaviour:
     numberOfEnemies: 5
     SixteenthOfSpawn: 0
     idSpawnpoint: 0
-    spawnDelayBetweenEnemiesOnSixteenths: 0
+    spawnDelayBetweenEnemiesOnSixteenths: 50
