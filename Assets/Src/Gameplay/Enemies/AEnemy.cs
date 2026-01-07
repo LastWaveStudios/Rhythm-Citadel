@@ -1,11 +1,12 @@
+using Gameplay.Enemies.Common;
 using Gameplay.RhythmSystem;
 using Gameplay.World;
 using System;
 using System.Collections;
-using Gameplay.Enemies.Common;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Utilities.ServiceLocator;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 
 namespace Gameplay.Enemies
@@ -31,6 +32,7 @@ namespace Gameplay.Enemies
         protected int _vinylDrop = 0;
         protected int _preparationBeats = 4;     // Beats that the enemy needs to prepare to move. Some enemies may change this value
         protected float _resistanceMultiplayer = 0.5f;
+        protected bool _collapsed = false;
         protected Animator _animator;
 
         [Header("Shield configuration")]
@@ -62,7 +64,7 @@ namespace Gameplay.Enemies
 
 
         #region ------------------------------ Starting methods ------------------------------
-        public void Start()
+        public virtual void Start()
         {
             _shieldWheelController = GetComponentInChildren<ShieldWheelController>();
             _shieldWheelController.Init(_radius, _shieldMaxStacks, _shieldScaleFactor, _timeToRotate, _angleToRotate, _shieldPrefab);
@@ -79,7 +81,7 @@ namespace Gameplay.Enemies
             transform.position = _worldManager.GetCellCenterWorld(_worldManager.GetTile(_path, _index));
         }
 
-        private void StartStats()
+        protected virtual void StartStats()
         {
             //Debug.Log("Trying to get stats ");
             _stats = DifficultyManager.Instance.GetStats(this);
@@ -93,7 +95,7 @@ namespace Gameplay.Enemies
             //Debug.Log("I got " + _preparationBeats + " preparations beats");
         }
 
-        private void TakeReferences()
+        protected void TakeReferences()
         {
             _worldManager = ServiceLocatorSubsystem.Instance.GetService<WorldManager>();
             if (_worldManager == null)
@@ -118,18 +120,15 @@ namespace Gameplay.Enemies
             InitializeBehaviour();
         }
 
-        private void OnBeat(bool isMeasure)
+        protected virtual void OnBeat(bool isMeasure)
         {
             _shieldWheelController.RotateShields();
         }
 
         protected abstract void SubscribeToRhythm();
         protected abstract void DesubscribeToRhythm();
-
         protected abstract void InitializeBehaviour();
-
         protected abstract void PushDeath();
-
         public void Init(int path)
         {
             _path = path;
@@ -172,6 +171,7 @@ namespace Gameplay.Enemies
         }
         public void PrepareMovement()
         {
+            if (_collapsed) return;
             _currentPreparation++;
             //Debug.Log($"Enemy: {name} got {_currentPreparation} preparations beats");
 
@@ -182,6 +182,26 @@ namespace Gameplay.Enemies
         {
             _currentPreparation = 0;
            // Debug.Log($"Enemy: {name} restart the preparation beats");
+        }
+
+        public virtual bool IsOverSomething()
+        {
+            return false;
+        }
+
+        public virtual bool CanMove()
+        {
+            return true;
+        }
+
+        public bool isCollapsed()
+        {
+            return _collapsed;
+        }
+
+        public virtual bool isCollapsing()
+        {
+            return false;
         }
         #endregion
 
@@ -242,10 +262,15 @@ namespace Gameplay.Enemies
             StartCoroutine(MoveToNextTile(Utilities.EasingFunctions.EaseOutQuint));
         }
 
+        public virtual void Collapse()
+        {
+            _collapsed = true;
+            StartCoroutine(CollapseCoroutine());
+        }
+
         public void GiveShield(int shieldStacks)
         {
             _currentShield = Math.Min(_currentShield + shieldStacks, _shieldMaxStacks);
-            // TODO: Add the visual shield
             _shieldWheelController.SetCurrentShields(_currentShield);
             Debug.Log($"Called give shield on enemy: {name} with a shield value of {_currentShield}");
         }
@@ -392,7 +417,43 @@ namespace Gameplay.Enemies
             
             transform.localScale = targetScale;
         }
-        
+
+        const float SHAKEDURATION = 1.0f;
+        const float SHAKEINTENSITY = .08f;
+        protected IEnumerator CollapseCoroutine()
+        {
+            float elapsed = 0f;
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+
+            Vector3 originalPosition = transform.localPosition;
+            sprite.material.color = Color.red;
+
+            while (elapsed < SHAKEDURATION)
+            {
+                elapsed += Time.deltaTime;
+
+                Vector3 randomOffset = UnityEngine.Random.insideUnitSphere * SHAKEINTENSITY;
+                transform.localPosition = originalPosition + randomOffset;
+
+                yield return null;
+            }
+            transform.localScale = _originScale;
+            transform.localPosition = originalPosition;
+
+            float t = 0f;
+            Color currentColor = sprite.material.color;
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime * 5f;
+                sprite.material.color = Color.Lerp(currentColor, Color.white, t);
+                yield return null;
+            }
+
+            sprite.material.color = Color.white;
+            _collapsed = false;
+
+        }
         #endregion
     }
 }
