@@ -5161,10 +5161,22 @@ PrefabInstance:
       objectReference: {fileID: 580433219}
     - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: _waves.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: '_waves.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b925538f842be0f4d95d8dc6bb606d3e, type: 2}
+    - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: '_waves.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1346226e863f27c479d4dae89652b6a3, type: 2}
+    - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: '_waves.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 42494243909cf8844be5f2cd69f11781, type: 2}
+    - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
+      propertyPath: '_waves.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: 2a38fa8496e036846a07aae19b09c5b9, type: 2}
     m_RemovedComponents: []
