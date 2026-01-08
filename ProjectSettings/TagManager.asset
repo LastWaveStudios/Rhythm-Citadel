@@ -69,5 +69,8 @@ TagManager:
   - name: Highlight
     uniqueID: 2821625941
     locked: 0
+  - name: WorldSpace UI Overlay
+    uniqueID: 1289705413
+    locked: 0
   m_RenderingLayers:
   - Default

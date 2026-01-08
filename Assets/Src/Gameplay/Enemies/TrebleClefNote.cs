@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Gameplay.Enemies.Behaviours;
 using Gameplay.RhythmSystem;
 using Gameplay.Waves;
+using TMPro;
 using Unity.Mathematics;
 using Unity.Mathematics.Geometry;
 using UnityEngine;
@@ -33,6 +34,10 @@ namespace Gameplay.Enemies
         public int EnemiesOnRangeForMaxHealth => Mathf.CeilToInt((float)_hpToStealth / _maxHpRestore);
 
         private TrebleClefNoteBehaviour _behaviour;
+
+        [SerializeField] public List<TMP_Text> perceptionTexts;
+        [SerializeField] public List<TMP_Text> decisionFactorTexts;
+        [SerializeField] public TMP_Text actionText;
         
         protected override void SubscribeToRhythm()
         {
@@ -54,7 +59,7 @@ namespace Gameplay.Enemies
 
             _maxHealth = _health;
 
-            _behaviour = new TrebleClefNoteBehaviour(this);
+            _behaviour = new TrebleClefNoteBehaviour(this, perceptionTexts, decisionFactorTexts, actionText);
         }
 
         protected override void PushDeath()

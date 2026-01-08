@@ -2680,7 +2680,7 @@ PrefabInstance:
       objectReference: {fileID: 3031643053079824475, guid: 6ba76d3d637d61c4c96c1b64e04cd16c, type: 3}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _myScene
-      value: Level1
+      value: LevelC
       objectReference: {fileID: 0}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _hoverSprite

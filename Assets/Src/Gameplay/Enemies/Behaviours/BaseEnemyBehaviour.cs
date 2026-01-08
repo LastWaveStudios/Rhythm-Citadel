@@ -11,7 +11,7 @@ namespace Gameplay.Enemies.Behaviours
         {
             _enemy = enemy;
             
-            _rootFSM = new FSM("Base Enemy Behaviour", false, 2, 2);
+            _rootFSM = new FSM("Base Enemy Behaviour", false, 2, 2, _enemy.actionDisplayTextLevel1);
 
             NodeFSM deathNodeFsm = new NodeFSM("Death NodeFSM", () =>
             {
@@ -19,7 +19,7 @@ namespace Gameplay.Enemies.Behaviours
                 _rootFSM.Finish(); // Exit State so finish the fsm
             });
             #region AliveFSM
-            FSM aliveFSM = new FSM("Alive FSM", true, 2, 3);
+            FSM aliveFSM = new FSM("Alive FSM", true, 2, 3, _enemy.actionDisplayTextLevel2);
             
             NodeFSM prepareMovementNodeFsm = new NodeFSM("Prepare Movement", _enemy.PrepareMovement);
             NodeFSM moveNodeFsm = new NodeFSM("Move", _enemy.Move);
