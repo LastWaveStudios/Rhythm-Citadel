@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1b24426efecc9459c7155e20934a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resistance: 3
+  _resistance: 0
   _moveTime: 0.5
   _jumpHeight: 0.4
   _scaleOffsetPercentagePerPreparation: 0.9
-  _shieldMaxStacks: 2
+  _shieldMaxStacks: 0
   _shieldPrefab: {fileID: 6408813881587377235, guid: 7b3183b01dfd74943b5743bd41369ca2, type: 3}
   _radius: 1.5
   _shieldScaleFactor: 0.25

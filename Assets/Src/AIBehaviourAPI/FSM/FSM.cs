@@ -71,7 +71,11 @@ namespace AIBehaviourAPI.Fsm
             _initialNode = initialNode;
             _onCurrentNodeDoesTransition?.Invoke(_currentNode, initialNode);
             _currentNode = initialNode;
-            _currentActionDisplayText.text = _currentNode.Name;
+            if (_currentActionDisplayText != null)
+            {
+                _currentActionDisplayText.text = _currentNode.Name;
+            }
+                
         }
 
         /// <summary>
@@ -94,7 +98,10 @@ namespace AIBehaviourAPI.Fsm
                 }
             }
             _currentNode.Action?.Invoke();
-            _currentActionDisplayText.text = _currentNode.Name;
+            if (_currentActionDisplayText.text != null)
+            {
+                _currentActionDisplayText.text = _currentNode.Name;
+            }
         }
 
         public void Finish()

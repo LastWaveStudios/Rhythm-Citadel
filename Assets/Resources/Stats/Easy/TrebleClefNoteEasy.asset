@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TrebleClefNoteEasy
   m_EditorClassIdentifier: 
   enemyClassName: Gameplay.Enemies.TrebleClefNote
-  health: 500
+  health: 100
   damage: 100
   vinylDrop: 100
   preparationBeats: 4
