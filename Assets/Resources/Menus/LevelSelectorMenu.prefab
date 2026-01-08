@@ -2298,7 +2298,7 @@ PrefabInstance:
       objectReference: {fileID: 2269933591466181271, guid: 432f19fcef1711c4bad5984ab8215e7f, type: 3}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _myScene
-      value: Level4
+      value: LevelCClave
       objectReference: {fileID: 0}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _hoverSprite
@@ -2424,7 +2424,7 @@ PrefabInstance:
       objectReference: {fileID: 888092937158108526, guid: 51eb980085964e149bb0b03665897dc8, type: 3}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _myScene
-      value: Level3
+      value: LevelCBlanca
       objectReference: {fileID: 0}
     - target: {fileID: 8530235301845768488, guid: b6ad82defcd9b5d4ba1eaf027fb59f66, type: 3}
       propertyPath: _hoverSprite

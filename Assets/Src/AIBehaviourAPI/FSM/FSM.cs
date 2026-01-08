@@ -98,7 +98,7 @@ namespace AIBehaviourAPI.Fsm
                 }
             }
             _currentNode.Action?.Invoke();
-            if (_currentActionDisplayText.text != null)
+            if (_currentActionDisplayText != null)
             {
                 _currentActionDisplayText.text = _currentNode.Name;
             }

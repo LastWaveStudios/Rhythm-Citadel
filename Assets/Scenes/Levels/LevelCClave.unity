@@ -5166,7 +5166,7 @@ PrefabInstance:
     - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: '_waves.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: b925538f842be0f4d95d8dc6bb606d3e, type: 2}
+      objectReference: {fileID: 11400000, guid: 42494243909cf8844be5f2cd69f11781, type: 2}
     - target: {fileID: 8248473845017190694, guid: 00088e18e050b084fb82b1451fec4ef9, type: 3}
       propertyPath: '_waves.Array.data[1]'
       value: 
